@@ -1,0 +1,9 @@
+<script>
+    require(['jquery', 'wpProductLabels'], function($, wpProductLabels){
+        $(document).ready(function() {
+            var requestUrl = '<?php echo $this->getUrl("wpproductlabels/product/index"); ?>';
+            wpProductLabels.init(requestUrl);
+            $(document).trigger("wpproductlabels:init");
+        });
+    });
+</script>

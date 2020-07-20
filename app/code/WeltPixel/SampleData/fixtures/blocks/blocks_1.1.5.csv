@@ -1,0 +1,22 @@
+title,identifier,content,is_active
+"Weltpixel FullPageScroll Section 1",fullpagescroll_home-page-v6_section_1,"
+<div class=""toc"">
+<p><img src=""{{media url=""wysiwyg/pearl_theme/sunset_cover0.jpg""}}"" /></p>
+<p class=""title"" style=""text-align: center;""><span style=""color: #ffffff; text-align: center;"">INTRODUCING THE MOST POWERFUL</span></p>
+<h1 class=""title uppercase mg-text"" style=""text-align: center;""><span style=""color: #ffffff; font-style: normal; text-align: center;"">MAGENTO 2 THEME PEARL</span></h1>
+<p class=""title"" style=""text-align: center;""><span style=""color: #ffffff; text-align: center;"">INSPIRED BY FASHION, MADE FOR YOU</span></p>
+</div>",1
+"Weltpixel FullPageScroll Section 2",fullpagescroll_home-page-v6_section_2,"
+<div class=""toc"">
+<p><img src=""{{media url=""wysiwyg/pearl_theme/sunset_cover1.jpg""}}"" width=""1920"" height=""1154"" /></p>
+<div>
+    <h1 class=""title uppercase"" style=""text-align: center;""><span style=""color: #ffffff; font-style: normal; text-align: center;"">Home for the holidays</span></h1>
+    <p  style=""color: #ffffff;text-align: center;"" class=""title uppercase underline-border clickable"" data-link=""/unisex#Product135""><span >SUNRAYS &amp; LONGER DAYS</span></p>
+</div>
+</div>",1
+"Weltpixel FullPageScroll Section 3",fullpagescroll_home-page-v6_section_3,"
+<div class=""toc"">
+<p><img src=""{{media url=""wysiwyg/pearl_theme/sunset_cover2.jpg""}}"" width=""1920"" height=""1154"" /></p>
+<h1 class=""title uppercase"" style=""text-align: center;""><span style=""color: #ffffff; font-style: normal; text-align: center;"">GET THE GOODS</span></h1>
+<p  style=""color: #ffffff;text-align: center;"" class=""title uppercase underline-border clickable"" data-link=""/unisex#Product135""><span style=""color: #ffffff;text-align: center;"">SUNRAYS &amp; LONGER DAYS</span></p>
+</div>",1

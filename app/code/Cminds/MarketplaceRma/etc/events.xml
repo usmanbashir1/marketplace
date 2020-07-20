@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="cminds_marketplacerma_status_changed">
+        <observer name="cminds_marketplacerma_status_changed_observer"
+                  instance="Cminds\MarketplaceRma\Observer\Status\StatusChangedObserver"/>
+    </event>
+    <event name="cminds_marketplacerma_new_rma">
+        <observer name="cminds_marketplacerma_new_rma_observer"
+                  instance="Cminds\MarketplaceRma\Observer\Rma\NewRmaObserver"/>
+    </event>
+    <event name="cminds_marketplacerma_rma_approval">
+        <observer name="cminds_marketplacerma_rma_approval_observer"
+                  instance="Cminds\MarketplaceRma\Observer\Rma\RmaApprovalObserver"/>
+    </event>
+    <event name="cminds_marketplacerma_new_rma_note">
+        <observer name="cminds_marketplacerma_new_rma_note_observer"
+                  instance="Cminds\MarketplaceRma\Observer\Rma\RmaNoteObserver"/>
+    </event>
+</config>

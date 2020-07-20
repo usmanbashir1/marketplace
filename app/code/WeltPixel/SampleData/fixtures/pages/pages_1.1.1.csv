@@ -1,0 +1,206 @@
+title,page_layout,meta_keywords,meta_description,identifier,content_heading,content,is_active,sort_order,layout_update_xml,custom_theme,custom_root_template,custom_layout_update_xml,custom_theme_from,custom_theme_to
+"Animations",1column,,,weltpixel-animations,"","
+<div class=""postcontent row nobottommargin clearfix"">
+<div class=""col_full clearfix"">
+    <h3>Bounce Animation</h3>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignright notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""bounce"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, libero, temporibus quam eaque numquam debitis excepturi assumenda necessitatibus dolore dolorum vero enim distinctio ipsa. Quod, dolorum, quidem eum quisquam facilis nam molestias et voluptas omnis quibusdam dignissimos illum ullam. Possimus consectetur veniam fugit libero pariatur illum eos tempora repudiandae dolorum non. Adipisci, porro, natus hic expedita sed eius provident incidunt fugit autem alias quod ratione et reprehenderit architecto qui ea.</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Flash Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignleft notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""flash"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Pulse Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignright notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""pulse"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Shake Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignleft notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""shake"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Swing Animation</h3>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignright notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""swing"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Tada Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignleft notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""tada"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Wobble Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignright notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""wobble"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Bounce-In Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignleft notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""bounceIn"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Bounce-In-Down Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignright notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""bounceInDown"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Bounce-In-Left Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignleft notopmargin not-animated"" alt=""Image"" title=""Image""  data-animate=""bounceInLeft""/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Bounce-In-Right Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignright notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""bounceInRight"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Bounce-In-Up Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignleft notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""bounceInUp"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Fade-In Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignright notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""fadeIn"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Fade-In-Down Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignleft notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""fadeInDown"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Fade-In-Down-Big Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignright notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""fadeInDownBig"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Fade-In-Down-Left Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignleft notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""fadeInLeft"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Fade-In-Right Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignright notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""fadeInRight"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Fade-In-Right-Big Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignleft notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""fadeInRightBig"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Fade-In-Up Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignright notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""fadeInUp"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Fade-In-Up-Big Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignleft notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""fadeInUpBig"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Flip Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignright notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""flip"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Flip-In-X Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignleft notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""flipInX"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Flip-In-Y Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignright notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""flipInY"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Light-Speed-In Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignleft notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""lightSpeedIn"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Slide-In-Right Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignright notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""slideInRight"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Slide-In-Left Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignleft notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""slideInLeft"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Slide-In-Down Animationz</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignright notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""slideInDown"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Rotate-In-Up-Right Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignleft notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""rotateInUpRight""  />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Rotate-In-Up-Left Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignright notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""rotateInUpLeft"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Rotate-In-Down-Right Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignleft notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""rotateInDownRight"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Rotate-In-Down-Left Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignright notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""rotateInDownLeft"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Rotate-In Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignleft notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""rotateIn"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Roll-In Animation</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignright notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""rollIn"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+<div class=""col_full nobottommargin clearfix"">
+    <div class=""fancy-title title-dotted-border"">
+        <h3>Delayed Animation - 3 sec</h3>
+    </div>
+    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/pearl_theme/animate.jpg""}}"" class=""alignleft notopmargin not-animated"" alt=""Image"" title=""Image"" data-animate=""fadeIn"" data-delay=""3000"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+</div>
+</div>
+",1,,,,,,,

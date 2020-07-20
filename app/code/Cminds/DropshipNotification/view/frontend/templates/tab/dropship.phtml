@@ -1,0 +1,42 @@
+<?php
+
+/** @var \Cminds\DropshipNotification\Block\Tab\DropShip $block */
+
+?>
+
+<?php foreach ($block->getGrids() as $header => $filter): ?>
+    <h2 class="sub-header"><?= /* @escapeNotVerified */ __($header) ?></h2>
+    <?php $collection = $block->getGridOrderItems($filter); ?>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th><?= /* @escapeNotVerified */ __('SKU') ?></th>
+                <th><?= /* @escapeNotVerified */ __('Name') ?></th>
+                <th><?= /* @escapeNotVerified */ __('Qty') ?></th>
+                <th><?= /* @escapeNotVerified */ __('Supplier Name') ?></th>
+                <th><?= /* @escapeNotVerified */ __('Status') ?></th>
+                <th><?= /* @escapeNotVerified */ __('Method') ?></th>
+                <th><?= /* @escapeNotVerified */ __('Date') ?></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php if ($collection->getSize()): ?>
+                <?php foreach ($collection as $orderItem): ?>
+                    <tr>
+                        <td><?= /* @escapeNotVerified */ $orderItem->getSku(); ?></td>
+                        <td><?= /* @escapeNotVerified */ $orderItem->getName(); ?></td>
+                        <td><?= /* @escapeNotVerified */ $orderItem->getQty(); ?></td>
+                        <td><?= /* @escapeNotVerified */ $orderItem->getSupplierName(); ?></td>
+                        <td><?= /* @escapeNotVerified */ $filter ? __('Completed') : __('Incomplete'); ?></td>
+                        <td><?= /* @escapeNotVerified */ $orderItem->getNotificationMethod(); ?></td>
+                        <td><?= /* @escapeNotVerified */ $orderItem->getDropshipNotificationDate(); ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            <?php else: ?>
+             <tr><td colspan="7" class="text-center"><?= __("We couldn't find any records."); ?></td></tr>
+            <?php endif; ?>
+            </tbody>
+        </table>
+    </div>
+<?php endforeach; ?>

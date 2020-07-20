@@ -1,0 +1,144 @@
+title,page_layout,meta_keywords,meta_description,identifier,content_heading,content,is_active,sort_order,layout_update_xml,custom_theme,custom_root_template,custom_layout_update_xml,custom_theme_from,custom_theme_to,css_global,css_phone_small,css_phone,css_tablet_small,css_tablet,css_desktop,css_desktop_large,custom_js
+"Home Page V5",1column,,,home-page-v5,"","
+<div class=""container-fluid content-v5 nopadding"">
+    <div class=""slider-custom-1 row nomargin"">
+       {{widget_nr_1}}
+    </div>
+    <div class=""row nomargin row-same-height"">
+        <div class=""image-wrapper-1 box-content-1 col-md-4 col-sm-12 col-xs-12 nopadding paddingright paddingbottom box-content valign-parent "">
+            <img class=""bg-img"" src=""{{media url=""wysiwyg/pearl_theme/section-1.jpg""}}"" alt="""" />
+        </div>
+        <div class=""box-content-2 col-md-8 col-sm-12 col-xs-12 nopadding paddingleft paddingbottom paddingright box-content valign-parent"">
+            <div class=""subtitle"">
+                <h4 class=""separator"">Fashion for Spring</h4>
+            </div>
+            <div>
+                {{widget type=""Magento\CatalogWidget\Block\Product\ProductsList"" products_count=""6"" template=""product/widget/content/grid_v5.phtml"" conditions_encoded=""{{widget_condition_1}}""  type_name=""Catalog Products List""}}
+            </div>
+        </div>
+    </div>
+    <div class=""row nomargin"">
+        <div class=""min-height-content content-green-dark col-md-4 col-sm-12 col-xs-12 nopadding paddingright paddingbottom box-content valign-parent "">
+            <div data-target=""#box-1"" class=""hcaption"" cap-effect=""fade"" cap-overlay_bg=""rgba(0, 131, 192, 0.7)"">
+                <div class=""pad-bottom-lg pad-top-lg green-title"">
+                    OUR STORY
+                </div>
+            </div>
+        </div>
+        <div class=""min-height-content content-green-light  col-md-8 col-sm-12 col-xs-12 nopadding paddingleft paddingbottom paddingright box-content valign-parent"">
+            <div class=""pad-bottom-lg pad-top-lg page-small-width"">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras <br /> tempus nulla quis magna accumsan iaculis non vitae mi. <br>Fusce lacus nunc, feugiat ac sodales et, bibendum id orci. </p><a href=""#"">SHOP NOW -&gt;</a>
+            </div>
+        </div>
+    </div>
+    <div class=""row nomargin row-same-height blockContainer"">
+        <div class=""box-content-2 col-md-8 col-sm-12 col-xs-12 nopadding paddingleft paddingbottom paddingright box-content valign-parent blockA"">
+            <div class=""subtitle"">
+                <h4 class=""separator"">Fashion for Spring</h4>
+            </div>
+            <div>
+            {{widget type=""Magento\CatalogWidget\Block\Product\ProductsList"" products_count=""6"" template=""product/widget/content/grid_v5.phtml"" conditions_encoded=""{{widget_condition_2}}"" type_name=""Catalog Products List""}}
+            </div>
+        </div>
+        <div
+            class=""image-wrapper-2 box-content-1 col-md-4 col-sm-12 col-xs-12 nopadding paddingright paddingbottom box-content valign-parent blockB"">
+            <img class=""bg-img"" src=""{{media url=""wysiwyg/pearl_theme/section-2.jpg""}}"" alt="""" />
+        </div>
+    </div>
+    <div class=""row nomargin flex-order-reverse"">
+        <div class=""min-height-content content-opengreen-light  col-md-8 col-sm-12 col-xs-12 nopadding paddingleft paddingbottom paddingright box-content valign-parent"">
+            <div class=""pad-bottom-lg  page-small-width nopadd"">
+                <h4>Stylish Designer Clothing</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras<br/> tempus nulla quis magna accumsan
+                    iaculis non vitae <br> mi. Nam ac consectetur purus, ut scelerisque turpis.
+                </p>
+                <a href=""#"">SHOP NOW -&gt;</a>
+            </div>
+        </div>
+        <div
+            class=""min-height-content content-opengreen-dark col-md-4 col-sm-12 col-xs-12 nopadding paddingright paddingbottom box-content valign-parent "">
+            <div data-target=""#box-1"" class=""hcaption"" cap-effect=""fade"" cap-overlay_bg=""rgba(0, 131, 192, 0.7)"">
+                <div class=""pad-bottom-lg pad-top-lg green-title"">
+                    SPECIAL OFFER
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=""row nomargin row-same-height"">
+        <div class=""image-wrapper-3 box-content-1 col-md-4 col-sm-12 col-xs-12 nopadding paddingright paddingbottom box-content valign-parent "">
+            <img class=""bg-img"" src=""{{media url=""wysiwyg/pearl_theme/section-3.jpg""}}"" alt="""" />
+        </div>
+        <div
+            class=""box-content-2 col-md-8 col-sm-12 col-xs-12 nopadding paddingleft paddingbottom paddingright box-content valign-parent"">
+            <div class=""subtitle"">
+                <h4 class=""separator"">Fashion for Spring</h4>
+            </div>
+            <div>
+                {{widget type=""Magento\CatalogWidget\Block\Product\ProductsList"" products_count=""6"" template=""product/widget/content/grid_v5.phtml"" conditions_encoded=""{{widget_condition_1}}"" type_name=""Catalog Products List""}}
+            </div>
+        </div>
+    </div>
+    <div class=""row nomargin"">
+        <div class=""min-height-content content-blue-dark col-md-4 col-sm-12 col-xs-12 nopadding paddingright paddingbottom box-content valign-parent "">
+            <div data-target=""#box-1"" class=""hcaption"" cap-effect=""fade"" cap-overlay_bg=""rgba(0, 131, 192, 0.7)"">
+                <div class=""pad-bottom-lg pad-top-lg green-title"">
+                    CUSTOM BLOCK
+                </div>
+            </div>
+        </div>
+        <div class=""min-height-content content-blue-light col-md-8 col-sm-12 col-xs-12 nopadding paddingleft paddingbottom paddingright box-content valign-parent"">
+            <div class=""pad-bottom-lg pad-top-lg page-small-width"">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempus nulla quis magna accumsan iaculis non vitae mi. Nam ac consectetur purus, ut scelerisque turpis. Ut id nulla cursus, convallis leo eu, placerat ipsum. Fusce lacus nunc, feugiat ac sodales et, bibendum id orci. </p>
+                <a href="""">SALE UP TO 50% -&gt;</a>
+            </div>
+        </div>
+    </div>
+    <div class=""row grey-background"">
+        <div class=""row"">
+            <div class=""col-xs-10 col-xs-offset-1 col-md-offset-0 col-md-6 col-sm-offset-3 col-sm-6"">
+                <div class=""flip-box"">
+                    <div class=""flip-box-before"">free shipping</div>
+                    <div class=""flip-box-after"">on all orders over $100</div>
+                </div>
+            </div>
+            <div class=""col-xs-10 col-xs-offset-1 col-md-offset-0 col-md-6 col-sm-offset-3 col-sm-6"">
+                <div class=""flip-box"">
+                    <div class=""flip-box-before"">free return</div>
+                    <div class=""flip-box-after"">free 90 days return</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+",1,,,,,,,,"
+.theme-pearl .page-wrapper .columns, .page.messages {width: 100%; max-width: 100%}
+.theme-pearl .row {max-width: 100% !important;}
+.theme-pearl .page-wrapper .page-main {padding: 0px;width: 100%; max-width: 100%;}
+.page-wrapper .breadcrumbs {display: none;}
+
+.owl-item .banner-item{
+    margin:0px !important;
+}
+
+.columns .column.main{
+   padding-bottom:0px;
+}
+.page-wrapper .page-footer{
+   margin-top:0px;
+}
+",,,,,,,"
+require(['jquery'], function($){
+    /* Get src attribute from img */
+    $("".bg-img"").each(function() {
+        var urlImg = $(this).attr('src'),
+        parent = $(this).parent();
+        $(this).remove();
+        parent.css(
+        {
+        'background':'url(""'+urlImg+'"") no-repeat 50% 0',
+        'background-size': 'cover'
+        });
+    });
+});
+"

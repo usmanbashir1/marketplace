@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Model\Config">
+        <plugin
+            name="weltpixel_advance_category_sorting_modelconfig"
+            type="WeltPixel\AdvanceCategorySorting\Plugin\Frontend\Model\Config" sortOrder="1" />
+    </type>
+    <type name="Magento\Catalog\Model\Product\ProductList\Toolbar">
+        <plugin
+            name="weltpixel_advance_category_sorting_modeltoolbar"
+            type="WeltPixel\AdvanceCategorySorting\Plugin\Frontend\Model\Product\ProductList\Toolbar" sortOrder="1" />
+    </type>
+    <type name="Magento\Catalog\Block\Product\ProductList\Toolbar">
+        <plugin
+            name="weltpixel_advance_category_sorting_blocktoolbar"
+            type="WeltPixel\AdvanceCategorySorting\Plugin\Frontend\Block\Product\ProductList\Toolbar" sortOrder="1" />
+    </type>
+    <type name="Magento\CatalogSearch\Model\ResourceModel\Fulltext\Collection">
+        <plugin
+                name="weltpixel_advance_category_sorting_fulltext_collection"
+                type="WeltPixel\AdvanceCategorySorting\Plugin\Frontend\Model\ResourceModel\Fulltext\Collection" sortOrder="1" />
+    </type>
+    <type name="WeltPixel\LayeredNavigation\Model\ResourceModel\Fulltext\Collection">
+        <plugin
+            name="weltpixel_advance_category_sorting_wplayerednavigation_fulltext_collection"
+            type="WeltPixel\AdvanceCategorySorting\Plugin\Frontend\Model\ResourceModel\Fulltext\Collection" sortOrder="1" />
+    </type>
+</config>

@@ -1,0 +1,839 @@
+& when (@media-common = true) {
+  /** Social Icons css */
+  @font-face {
+    font-family: 'font-icons-sl';
+    src: url("../WeltPixel_SocialLogin/css/fonts/font-icons.eot");
+    src:url('../WeltPixel_SocialLogin/css/fonts/font-icons.eot') format('embedded-opentype'),
+    url('../WeltPixel_SocialLogin/css/fonts/font-icons.woff2') format('woff2'),
+    url('../WeltPixel_SocialLogin/css/fonts/font-icons.woff') format('woff'),
+    url('../WeltPixel_SocialLogin/css/fonts/font-icons.ttf') format('truetype'),
+    url('../WeltPixel_SocialLogin/css/fonts/font-icons.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  div.reset-pass-msg {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 50px;
+    background: #fdf0d5;
+    margin-top: -20px;
+    a {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+  }
+
+  body.wp-sl {
+    .popup-authentication {
+      .block-authentication{
+        &.sl-popup{
+          .block-customer-login {
+            &:before{
+              height: 0
+            }
+          }
+        }
+      }
+
+    }
+    div.sociallogin-wrapper {
+      display: block;
+      padding: 0;
+      width: 400px;
+      margin-bottom: 24px;
+      width: 100%;
+      div.sociallogin-block{
+        width: 100%;
+        div.sociallogin-block-title{
+          font-size: 1.8rem;
+          margin-bottom: 15px;
+          padding-bottom: 12px;
+          strong {
+            font-weight: 500;
+          }
+        }
+        div.sociallogin-padding{
+          max-width: 100%;
+          div.sociallogin-box {
+            margin: 0 0px 7px;
+            cursor: pointer;
+            a.sociallogin-button{
+              width: 100%;
+              transition: all 0.2s ease;
+              display: block;
+              text-decoration: none;
+              box-shadow: 0 0 5px #999;
+              &.sociallogin-button:hover {
+                z-index: 10;
+                -webkit-transform: scale(1.03);
+                -moz-transform: scale(1.03);
+                transform: scale(1.03);
+              }
+              span.sociallogin-icon {
+                height: 34px;
+                cursor: pointer;
+                display: block;
+                position: relative;
+                z-index: 1;
+                outline: 0;
+                margin: 0 auto;
+                padding: 0 5px;
+                transition: all 0.2s ease;
+                -webkit-font-smoothing: antialiased;
+                border-radius: 2px;
+                font-size: inherit;
+                text-align: left;
+                line-height: 34px;
+                color: #fff;
+                vertical-align: middle;
+                font-family: inherit;
+                &:before {
+                  display: inline-block;
+                  height: 100%;
+                  width: 40px;
+                  border-radius: 2px;
+                  font-size: 100%;
+                  position: absolute;
+                  left: 0;
+                  text-align: center;
+                  font-family: font-icons;
+                  content: "";
+                  border-right: 1px solid #fff;
+                }
+                &:after {
+                  font-family: inherit;
+                  font-size: inherit;
+                  margin-left: 42px;
+                }
+              }
+              span.sl-fb{
+                background-color: #3b5998;
+                &:before {
+                  content: "\e86f";
+                }
+                &:after {
+                  content: 'Login with Facebook';
+                }
+              }
+              span.sociallogin-icon.sl-instagram{
+                background-color: #e72252;
+                &:before {
+                  content: "\e889";
+                }
+                &:after {
+                  content: 'Login with Instagram';
+                }
+              }
+              span.sl-google{
+                background-color: #fff;
+                &:before {
+                  background-image: url("../WeltPixel_SocialLogin/images/icons/google.svg");
+                  border-right: 1px solid #e7e7e7;
+                }
+                &:after {
+                  content: 'Login with Google';
+                  color: #212121;
+                }
+              }
+              span.sl-amazon{
+                background-color: #fd7a1f;
+                &:before {
+                  content: "\e86a";
+                }
+                &:after {
+                  content: 'Login with Amazon';
+                }
+              }
+              span.sl-twitter{
+                background-color: #00acee;
+                &:before {
+                  content: "\e85f";
+                }
+                &:after {
+                  content: 'Login with Twitter';
+                }
+              }
+              span.sl-paypal{
+                background-color: #00588b;
+                &:before {
+                  content: "\e833";
+                }
+                &:after {
+                  content: 'Login with PayPal';
+                }
+              }
+              span.sl-linkedin{
+                background-color: #0e76a8;
+                &:before {
+                  content: "\e858";
+                }
+                &:after {
+                  content: 'Login with Linkedin';
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .sl-link-line{
+      .social-icons{
+        font-size: 20px;
+        line-height: 53px;
+        text-shadow: none;
+        width: 35px;
+        display: inline-block;
+        i {
+          display: block;
+          position: relative;
+          display: inline-block;
+          font-family: font-icons;
+        }
+      }
+    }
+
+    .sl-link-line .social-icons i:last-child {
+      display: none;
+    }
+
+    .sl-ajaxlogin-title{
+      cursor: pointer;
+    }
+    .sl-ajaxlogin-title.active{
+      color: @primary__color;
+      text-decoration: underline;
+    }
+    .sl-ajaxlogin-title-space{
+      padding: 0 4px;
+      font-weight: 100;
+      font-size: smaller;
+    }
+
+    .sl-login-section {
+      .block-content {
+        .sl-actions-toolbar {
+          text-align: center;
+          padding-top: 20px;
+          .proceed {
+            button{
+              width: 222px
+            }
+          }
+        }
+      }
+    }
+
+    div.sociallogin-wrapper {
+      width: 100%;
+      float: none;
+      .sociallogin-block {
+        .sl-show-action{
+          text-align: center;
+        }
+        .sl-buttons-wrapper{
+          .block-heading{
+            padding-top: 10px
+          }
+          .sl-login-back {
+            cursor: pointer;
+            padding-bottom: 8px;
+            text-align: left;
+            &:before{
+              content: '\e617';
+              font-family: 'luma-icons';
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  body:not(.theme-pearl).wp-sl{
+    div.sociallogin-wrapper{
+      div.sociallogin-block{
+        div.sociallogin-padding{
+          div.sociallogin-box{
+            a.sociallogin-button{
+              span.sociallogin-icon{
+                &:before {
+                  font-family: font-icons-sl;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  body:not(.theme-pearl).wp-sl{
+    .social-icons{
+      i{
+        font-family: font-icons-sl;
+
+      }
+    }
+    .popup-authentication {
+      .block-customer-login {
+        padding-top: 0;
+      }
+    }
+  }
+
+  div.sl-loader{
+    &:after{
+      content: "";
+      background-image: url('../WeltPixel_SocialLogin/images/ias-spinner.gif');
+      background-size: 27px 26px;
+      background-position: right center;
+      background-repeat: no-repeat;
+      height: 25px;
+      width: 100%;
+      display: block;
+      position: absolute;
+      right: 20px;
+      top: 5px;
+    }
+  }
+  .sociallogin-container{
+    border: 1px solid #ccc;
+    max-width: 245px;
+    ul.sociallogin-buttons-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 10px;
+      li{
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+
+  body:not(.theme-pearl).wp-sl{
+    .sl-link-line{
+      .social-icons{
+        border: 0 none;
+        &:hover {
+          background: transparent !important;
+          border: 0 none;
+        }
+      }
+    }
+  }
+
+  body.theme-pearl.account.sociallogin-account-socialaccounts{
+    .social-icons i:last-child {
+      display: block;
+      color: #FFF !important;
+    }
+  }
+
+  ul.sl-unlinks{
+    list-style-type: none;
+    max-width: 45%;
+
+    li.sl-link-line{
+      padding-top: 5px;
+      border-bottom: 1px solid #d1d1d1;
+      width: auto;
+      span {
+        display: inline-block;
+        height: 50px;
+        text-align: center;
+        vertical-align: top;
+
+      }
+      div.sl-icon{
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+      }
+      .sl-link-name {
+        width: calc(~"100% - 106px");
+        font-size: 1.4rem;
+        color: #575757;
+        padding-top: 16px
+      }
+      a.sl-link-unlink{
+        max-width: 50px;
+        vertical-align: top;
+        padding-top: 0px;
+        display: inline-block;
+        height: 40px;
+        text-align: center;
+        font-size: 16px;
+        line-height: 38px;
+        color: #006bb4;
+      }
+    }
+
+  }
+
+  [class^="icon-"]{
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body.theme-pearl.sociallogin-account-socialaccounts{
+    a.social-icons:hover {
+      text-decoration: none;
+    }
+    .si-unlink:hover {
+      background-color: #ccc !important;
+    }
+  }
+
+  a.social-icons:hover {
+    text-decoration: none;
+  }
+  .si-unlink:hover {
+    background-color: #ccc !important;
+  }
+
+  body.sociallogin-account-socialaccounts {
+    .icon-facebook:before {
+      content: "\e86f";
+    }
+    .icon-amazon:before {
+      content: "\e86a";
+    }
+    .icon-google:before {
+      content: "\e853";
+    }
+    .icon-instagram:before {
+      content: "\e889";
+    }
+    .icon-twitter:before {
+      content: "\e85f";
+    }
+    .icon-linkedin:before {
+      content: "\e858";
+    }
+    .icon-paypal:before {
+      content: "\e833";
+    }
+    .icon-unlink:before {
+      content: "\e7c5";
+    }
+  }
+
+  body.wp-sl.multishipping-checkout-login,
+  body.wp-sl.customer-account-login{
+    div.page-wrapper{
+      .columns{
+        .main{
+          div.sociallogin-wrapper{
+            width: 32%;
+            float: left;
+            div.sociallogin-padding{
+              max-width: 75%;
+            }
+          }
+          .login-container{
+            width: 63%;
+            float: left;
+            padding: 1.2%;
+
+          }
+        }
+      }
+    }
+  }
+  div.sociallogin-block-title{
+
+  }
+  body.wp-sl.theme-pearl {
+    div.sociallogin-wrapper{
+      div.sociallogin-block{
+        width: 100%;
+      }
+    }
+    .sl-ajaxlogin-title-space{
+      font-size: 0.5em;
+    }
+  }
+
+  body.wp-sl.customer-account-create{
+    div.page-wrapper{
+      .columns{
+        .main{
+          div.sociallogin-wrapper{
+            margin: 0 0 0 25px;
+            width: 33%;
+            float: right;
+            div.sociallogin-padding{
+              max-width: 75%;
+            }
+            div.sociallogin-block {
+              div.sociallogin-block-title {
+                font-size: 2.2rem;
+                line-height: 1.1;
+                border-bottom: 1px solid #c6c6c6;
+                strong{
+                  font-weight: 300
+                }
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  body.wp-sl.theme-pearl.customer-account-create,
+  body.wp-sl.theme-pearl.multishipping-checkout-register{
+    div.page-wrapper{
+      .columns{
+        .main{
+          div.sociallogin-wrapper{
+            margin: 0 0 0 25px;
+            width: 33%;
+            float: right;
+            div.sociallogin-block {
+              div.sociallogin-block-title {
+                strong {
+                  font-size: inherit;
+                  font-family: inherit;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  body.wp-sl.theme-pearl.customer-account-login{
+    div.sociallogin-wrapper{
+      div.sociallogin-block {
+        width: 100%;
+        div.sociallogin-block-title{
+
+        }
+      }
+    }
+  }
+
+  body.checkout-cart-index {
+    div.cart-summary{
+      div.sociallogin-wrapper{
+        width: 100% !important;
+        margin-bottom: unset;
+        margin-top: 10px;
+        div.sociallogin-block{
+          div.sociallogin-block-title{
+            cursor: pointer;
+            border-bottom: unset;
+            margin-bottom: unset;
+            font-size: inherit;
+
+            & strong {
+              font-weight: 600;
+            }
+            &:after{
+              content: '\e622';
+              font-family: 'luma-icons';
+              font-size: 12px;
+              color: #858585;
+              position: absolute;
+              right: 20px;
+            }
+            &.open:after{
+              content: '\e621';
+              font-family: 'luma-icons';
+              font-size: 12px;
+              color: #858585;
+              position: absolute;
+              right: 20px;
+            }
+          }
+          div.sociallogin-padding{
+            display: none;
+            max-width: unset;
+          }
+        }
+      }
+    }
+  }
+
+  body.checkout-index-index {
+    div.cart-summary {
+      div.sociallogin-wrapper{
+        width: 100% !important;
+        margin-bottom: unset;
+        margin-top: 45px;
+        div.sociallogin-block{
+          div.sociallogin-block-title{
+            cursor: pointer;
+            font-size: 2.6rem;
+            & strong {
+              font-weight: 300;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  body:not(.theme-pearl).wp-sl.multishipping-checkout-login,
+  body:not(.theme-pearl).wp-sl.customer-account-login{
+    div.page-wrapper{
+      .columns{
+        .main{
+          div.sociallogin-wrapper{
+            width: 32%;
+          }
+          .login-container{
+            width: 62%;
+            padding: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  body._has-auth-shown .authentication-wrapper {
+    z-index: 9000
+  }
+
+  .popup-authentication {
+    .modal-inner-wrap {
+      max-width: 400px;
+    }
+  }
+}
+//mobile
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+  div.page-wrapper{
+    .columns{
+      .main{
+        .login-container{
+          width: initial;
+          float: none;
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  body.wp-sl{
+    .popup-authentication{
+      .modal-inner-wrap {
+        height: 100% !important;
+        .sl-popup{
+          .block-content{
+            .sociallogin-or{
+              margin-top: 35px
+            }
+          }
+        }
+      }
+    }
+  }
+
+  body.wp-sl{
+    div.sociallogin-wrapper {
+      width: 100%;
+      float: none;
+    }
+  }
+
+  body.wp-sl.customer-account-login,
+  body.wp-sl.multishipping-checkout-login{
+    div.page-wrapper{
+      .columns{
+        .main{
+          div.sociallogin-wrapper{
+            width: 96.5% !important;
+            padding: 0 10px;
+            div.sociallogin-padding{
+              max-width: unset;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  body.wp-sl.customer-account-login,
+  body.wp-sl.multishipping-checkout-login{
+    div.page-wrapper{
+      .columns{
+        .main{
+          .login-container{
+            width: initial !important;
+          }
+        }
+      }
+    }
+  }
+
+
+
+  body.wp-sl.customer-account-create,
+  body.wp-sl.multishipping-checkout-register{
+    div.page-wrapper{
+      .columns{
+        .main{
+          div.sociallogin-wrapper{
+            width: 100% !important;
+            float: none !important;
+            margin-bottom: 20px !important;
+            margin-left: 0;
+            div.sociallogin-padding{
+              max-width: unset;
+            }
+          }
+          .form-create-account {
+            width: 100% !important
+          }
+        }
+      }
+    }
+  }
+
+  div.social-accounts {
+    ul.sl-unlinks {
+      max-width: 100%
+    }
+  }
+  body.checkout-cart-index {
+    div.cart-summary {
+      div.sociallogin-wrapper {
+        width: unset !important;
+      }
+    }
+  }
+  body.checkout-cart-index {
+    div.page-wrapper {
+      .columns {
+        .main {
+          div.sociallogin-wrapper.login-container {
+            padding: 0 15px;
+
+            div.sociallogin-block {
+              div.sociallogin-block-title {
+                & strong {
+                }
+              }
+
+              div.sociallogin-padding {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  body.checkout-index-index {
+    div.sociallogin-wrapper{
+      div.sociallogin-block{
+        div.sociallogin-block-title{
+          font-size: 1.8rem;
+          & strong {
+          }
+        }
+      }
+    }
+  }
+
+  body.wp-sl.theme-pearl.customer-account-create{
+    div.page-wrapper{
+      .columns{
+        .main{
+          div.sociallogin-wrapper{
+            margin: unset;
+            div.sociallogin-block {
+              div.sociallogin-block-title {
+                strong {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  body.wp-sl {
+    .slide-popup {
+      .modal-inner-wrap {
+        .modal-content {
+          overflow-scrolling: touch;
+          -webkit-overflow-scrolling: touch;
+        }
+      }
+    }
+  }
+
+}
+
+//desktop
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  body.wp-sl{
+    .login-container .fieldset > .field > .control{
+      width: 80%
+    }
+  }
+
+  body.wp-sl{
+    .slide-popup{
+      left: unset;
+      right:-10px;
+      width: 420px;
+      height: auto;
+      .modal-inner-wrap{
+        min-width: unset;
+        display: block;
+        width: 100%;
+        .modal-content{
+          overflow-y: auto;
+          height: 90%;
+          .sl-popup{
+            display: block;
+            border-top: 0 none;
+            .block-new-customer,
+            .block-customer-login{
+              width: 100%;
+              border-left: 0 none;
+              padding: 0;
+              margin-top: 15px;
+              &:before {
+                content: '';
+                border: 0 none;
+              }
+              .sociallogin-block {
+                padding: 0;
+              }
+            }
+
+          }
+        }
+
+      }
+    }
+    .authentication-wrapper{
+      .block-authentication {
+        text-align: left;
+      }
+      .slide-popup {
+        .sociallogin-wrapper {
+          margin-top: 15px
+        }
+      }
+    }
+  }
+
+}

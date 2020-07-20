@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="products_list">
+        <parameters>
+            <parameter name="template" xsi:type="select" required="true" visible="true">
+                <options>
+                    <option name="weltpixel_hp_v8" value="product/widget/content/grid_v8.phtml" selected="false">
+                        <label translate="true">WeltPixel Home Page V8 Products Grid Template</label>
+                    </option>
+                    <option name="weltpixel_hp_v5" value="product/widget/content/grid_v5.phtml" selected="false">
+                        <label translate="true">WeltPixel Home Page V5 Products Grid Template</label>
+                    </option>
+                    <option name="weltpixel_hp_v10" value="product/widget/content/grid_v10.phtml" selected="false">
+                        <label translate="true">WeltPixel Home Page V10 Products Grid Template</label>
+                    </option>
+                    <option name="weltpixel_hp_v16" value="product/widget/content/grid_v16.phtml" selected="false">
+                        <label translate="true">WeltPixel Home Page V16 Products Grid Template</label>
+                    </option>
+                </options>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

@@ -1,0 +1,97 @@
+<?php
+    $_order = $block->getLastOrder();
+    $items = $_order->getAllItems();
+?>
+
+<?php foreach ($items as $_item): ?>
+    <?php if ($_item->getParentItem()) continue; ?>
+    <tr id="order-item-row-<?= /* @escapeNotVerified */ $_item->getId() ?>" class="order-item-row">
+        <td class="col image textalign-left">
+            <?php if ($_item->getProduct()->isVisibleInSiteVisibility()):?>
+                <a href="<?= /* @escapeNotVerified */ $_item->getProduct()->getProductUrl() ?>"
+                   title="<?= $block->escapeHtml($_item->getName()) ?>"
+                   tabindex="-1"
+                   class="product-item-photo"
+                >
+            <?php else:?>
+                <span class="product-item-photo">
+            <?php endif;?>
+                <?= $block->getImage($_item, 'cart_page_product_thumbnail')->toHtml(); ?>
+
+            <?php if ($_item->getProduct()->isVisibleInSiteVisibility()):?>
+                </a>
+            <?php else: ?>
+                </span>
+            <?php endif; ?>
+        </td>
+        <td class="col name textalign-left">
+            <?php if ($_item->getProduct()->isVisibleInSiteVisibility()):?>
+                <a href="<?= /* @escapeNotVerified */ $_item->getProduct()->getProductUrl() ?>"
+                   title="<?= $block->escapeHtml($_item->getName()) ?>"
+                   tabindex="-1"
+                   class="product-item-photo"
+                >
+            <?php else:?>
+                <strong class="product name product-item-name">
+            <?php endif; ?>
+
+                <?= $block->escapeHtml($_item->getName()) ?>
+
+            <?php if ($_item->getProduct()->isVisibleInSiteVisibility()):?>
+                </a>
+            <?php else:?>
+                </strong>
+            <?php endif; ?>
+            <?php $options = $_item->getProductOptions(); ?>
+            <?php if (isset($options['attributes_info'])): ?>
+                <dl class="item-options">
+                    <?php foreach ($options['attributes_info'] as $_option) : ?>
+                        <dt><?= $block->escapeHtml($_option['label']) ?></dt>
+                        <dd>
+                            <?= nl2br($block->escapeHtml((isset($_option['print_value']) ? $_option['print_value'] : $_option['value']))) ?>
+                        </dd>
+                    <?php endforeach; ?>
+                </dl>
+            <?php elseif (isset($options['real_product_type']) && $options['real_product_type'] == 'downloadable'): ?>
+                <dl class="item-options">
+                    <dt><?= $block->escapeHtml(__('Downloads')) ?></dt>
+                    <?php $downloadableLinks = $_item->getProduct()->getDownloadableLinks(); ?>
+                    <dd>
+                        <?php foreach ($downloadableLinks as $_link): ?>
+                            <?php if (in_array($_link->getLinkId(), $options['links'])): ?>
+                                <?= nl2br($block->escapeHtml($_link->getTitle())) ?><br>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </dd>
+                </dl>
+            <?php endif; ?>
+            <?= $block->escapeHtml($_item->getDescription()) ?>
+        </td>
+        <td class="col sku textalign-left" data-th="<?= $block->escapeHtml(__('SKU')) ?>"><?= /* @escapeNotVerified */ $block->prepareSku($_item->getSku()) ?></td>
+        <td class="col price textalign-right" data-th="<?= $block->escapeHtml(__('Price')) ?>">
+            <?= $block->getItemPriceHtml($_item) ?>
+        </td>
+        <td class="col qty textalign-center" data-th="<?= $block->escapeHtml(__('Qty')) ?>">
+            <div class="items-qty">
+                <span class="content"><?= /* @escapeNotVerified */ $_item->getQtyOrdered()*1 ?></span>
+            </div>
+        </td>
+        <td class="col subtotal textalign-right" data-th="<?= $block->escapeHtml(__('Subtotal')) ?>">
+            <?= $block->getItemRowTotalHtml($_item) ?>
+        </td>
+    </tr>
+    <tr id="order-item-row-mobile-<?= /* @escapeNotVerified */ $_item->getId() ?>" class="order-item-row-mobile">
+        <td colspan="2" class="col price textalign-left" data-th="<?= $block->escapeHtml(__('Price')) ?>">
+            <?= $block->getItemPriceHtml($_item) ?>
+        </td>
+        <td colspan="2" class="col qty textalign-center" data-th="<?= $block->escapeHtml(__('Qty')) ?>">
+            <div class="items-qty">
+                <span class="content"><?= /* @escapeNotVerified */ $_item->getQtyOrdered()*1 ?></span>
+            </div>
+        </td>
+        <td colspan="2" class="col subtotal textalign-right" data-th="<?= $block->escapeHtml(__('Subtotal')) ?>">
+            <?= $block->getItemRowTotalHtml($_item) ?>
+        </td>
+    </tr>
+<?php endforeach; ?>
+

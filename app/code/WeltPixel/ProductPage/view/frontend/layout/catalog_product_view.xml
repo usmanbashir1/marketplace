@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<referenceBlock name="product.info.sku">
+			<action method="setTemplate" ifconfig="weltpixel_product_page/general/remove_sku">
+				<argument name='template' xsi:type='string'></argument>
+			</action>
+		</referenceBlock>
+		<referenceBlock name="product.info.addto">
+			<action method="setTemplate">
+				<argument name='template' xsi:type='string'>WeltPixel_ProductPage::product/view/addto.phtml</argument>
+			</action>
+		</referenceBlock>
+		<referenceBlock name="product.info.addtocart">
+			<action method="setTemplate" ifconfig="weltpixel_product_page/general/qty_type">
+				<argument name="template" xsi:type="string">WeltPixel_ProductPage::product/view/addtocart.phtml</argument>
+			</action>
+		</referenceBlock>
+		<referenceBlock name="product.info.addtocart.additional">
+			<action method="setTemplate" ifconfig="weltpixel_product_page/general/qty_type">
+				<argument name="template" xsi:type="string">WeltPixel_ProductPage::product/view/addtocart.phtml</argument>
+			</action>
+		</referenceBlock>
+		<referenceBlock name="product.info.details">
+			<action method="setTemplate">
+				<argument name="template" xsi:type="string">WeltPixel_ProductPage::product/view/details.phtml</argument>
+			</action>
+		</referenceBlock>
+		<referenceContainer name="before.body.end">
+			<block class="Magento\Framework\View\Element\Template" name="welpixel.productpage.magnifierzoom" template="WeltPixel_ProductPage::product/view/magnifierzoom.phtml" />
+		</referenceContainer>
+	</body>
+</page>

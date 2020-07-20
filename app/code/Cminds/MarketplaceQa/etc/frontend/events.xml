@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="supplierfrontendproductuploader_navbar_init">
+        <observer name="cminds_marketplaceqa_questions_navbar_init"
+                  instance="Cminds\MarketplaceQa\Observer\Questions\Navbar\Init"/>
+    </event>
+    <event name="cminds_marketplaceqa_new_product_question">
+        <observer name="cminds_marketplaceqa_new_product_question_observer"
+                  instance="Cminds\MarketplaceQa\Observer\Questions\Save"/>
+    </event>
+</config>

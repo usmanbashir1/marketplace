@@ -1,0 +1,41 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/* @var WeltPixel\CustomHeader\Table\Block\System\Config\Field\BorderWidth $block */
+
+?>
+
+<?php
+$_htmlId = $block->getHtmlId() ? $block->getHtmlId() : '_' . uniqid();
+$_colspan = $block->isAddAfter() ? 2 : 1;
+?>
+
+<div class="design_theme_ua_regexp" id="grid<?php /* @escapeNotVerified */ echo $_htmlId; ?>">
+    <div class="admin__control-table-wrapper">
+        <table class="admin__control-table">
+            <thead>
+            <tr>
+                <?php foreach ($block->getColumns() as $columnName => $column): ?>
+                    <th><?php /* @escapeNotVerified */ echo $column['label']; ?></th>
+                <?php endforeach;?>
+            </tr>
+            </thead>
+
+            <tbody id="addRow<?php /* @escapeNotVerified */ echo $_htmlId; ?>">
+                <tr id="border-width">
+                    <?php foreach ($block->getColumns() as $columnName => $column): ?>
+                        <td>
+                            <?php /* @escapeNotVerified */ echo $block->renderCellTemplate($columnName)?>
+                        </td>
+                    <?php endforeach; ?>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <input type="hidden" name="<?php /* @escapeNotVerified */ echo $block->getElement()->getName(); ?>[__empty]" value="" />
+</div>

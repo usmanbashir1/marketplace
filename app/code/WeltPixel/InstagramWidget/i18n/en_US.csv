@@ -1,0 +1,48 @@
+"Javascript Fetching","Javascript Fetching"
+"Old Api (Deprecated)","Old Api (Deprecated)"
+User,User
+Tag,Tag
+"Original Size","Original Size"
+"As they come from Instagram","As they come from Instagram"
+"Newest to oldest","Newest to oldest"
+"Oldest to newest","Oldest to newest"
+"Highest # of likes to lowest","Highest # of likes to lowest"
+"Lowest # likes to highest","Lowest # likes to highest"
+"Highest # of comments to lowest","Highest # of comments to lowest"
+"Lowest # of comments to highes","Lowest # of comments to highes"
+"Random order","Random order"
+Random,Random
+"WeltPixel InstagramWidget","WeltPixel InstagramWidget"
+"Instagram Api Type","Instagram Api Type"
+"Instagram Client Id","Instagram Client Id"
+"Instagram Access Token","Instagram Access Token"
+Title,Title
+Description,Description
+"Container Background Color","Container Background Color"
+"Open Images in new Tab","Open Images in new Tab"
+"Images Per Row","Images Per Row"
+"Images Should Have Padding","Images Should Have Padding"
+"Add ALT text for image","Add ALT text for image"
+"Custom ALT tag","Custom ALT tag"
+"Optimize Image Layout","Optimize Image Layout"
+"Enable Lazy Image Load","Enable Lazy Image Load"
+"
+                     You must have the <a target=""_blank"" href=""https://www.weltpixel.com/magento-2-lazy-load-product-extension.html"">LAZY LOAD PRODUCTS AND IMAGES</a> module for this functionality.
+                ","
+                     You must have the <a target=""_blank"" href=""https://www.weltpixel.com/magento-2-lazy-load-product-extension.html"">LAZY LOAD PRODUCTS AND IMAGES</a> module for this functionality.
+                "
+"Number of images","Number of images"
+"Number of images to be pulled from Instagram and displayed. Insert number between 1-12. Default: 6","Number of images to be pulled from Instagram and displayed. Insert number between 1-12. Default: 6"
+SortBy,SortBy
+"Sort the images in a set order.","Sort the images in a set order."
+Resolution,Resolution
+"Size of the images to get.","Size of the images to get."
+"Feed Type","Feed Type"
+"Customize what Instafeed fetches. (Tag and Location was removed by Instagram)","Customize what Instafeed fetches. (Tag and Location was removed by Instagram)"
+"User Id","User Id"
+"Unique id of a user to get","Unique id of a user to get"
+"Customize what Instafeed fetches.","Customize what Instafeed fetches."
+"User Name","User Name"
+"Username of a user to get","Username of a user to get"
+"Tag Name","Tag Name"
+"Images with a specific tag","Images with a specific tag"

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <weltpixel_multistore>
+            <general>
+                <enable>1</enable>
+                <redirect_to_home_page>0</redirect_to_home_page>
+                <one_row>0</one_row>
+                <bar_bg_color>#000000</bar_bg_color>
+                <bar_width></bar_width>
+                <visibility>1</visibility>
+                <img_height>40px</img_height>
+                <img_width></img_width>
+                <img_height></img_height>
+                <exclude_stores></exclude_stores>
+            </general>
+        </weltpixel_multistore>
+    </default>
+</config>

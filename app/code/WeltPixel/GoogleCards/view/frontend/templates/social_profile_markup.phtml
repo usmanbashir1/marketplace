@@ -1,0 +1,66 @@
+<?php
+$facebookUrl = $this->getFacebookUrl();
+$twitterUrl = $this->getTwitterUrl();
+$googlePlusUrl = $this->getGooglePlusUrl();
+$instagramUrl = $this->getInstagramUrl();
+$youtubeUrl = $this->getYoutubeUrl();
+$linkedinUrl = $this->getLinkedinUrl();
+$myspaceUrl = $this->getMyspaceUrl();
+$pinterestUrl = $this->getPinterestUrl();
+$soundcloudUrl = $this->getSoundcloudUrl();
+$thumblrUrl = $this->getThumblrUrl();
+?>
+
+<script type="application/ld+json">
+{ "@context" : "https://schema.org",
+  "@type" : "Organization",
+  "name" : "<?= /* @escapeNotVerified */
+    $this->getStoreName(); ?>",
+  "url" : "<?= /* @escapeNotVerified */
+    $block->getBaseUrl(); ?>",
+  "sameAs" : [
+    <?php if ($facebookUrl) : ?>
+        "<?= /* @escapeNotVerified */
+        $block->stripTags($facebookUrl); ?>"
+    <?php endif; ?>
+    <?php if ($twitterUrl) : ?>
+        ,"<?= /* @escapeNotVerified */
+        $block->stripTags($twitterUrl); ?>"
+    <?php endif; ?>
+    <?php if ($googlePlusUrl) : ?>
+        ,"<?= /* @escapeNotVerified */
+        $block->stripTags($googlePlusUrl); ?>"
+    <?php endif; ?>
+    <?php if ($youtubeUrl) : ?>
+        ,"<?= /* @escapeNotVerified */
+        $block->stripTags($youtubeUrl); ?>"
+    <?php endif; ?>
+    <?php if ($instagramUrl) : ?>
+        ,"<?= /* @escapeNotVerified */
+        $block->stripTags($instagramUrl); ?>"
+    <?php endif; ?>
+    <?php if ($linkedinUrl) : ?>
+        ,"<?= /* @escapeNotVerified */
+        $block->stripTags($linkedinUrl); ?>"
+    <?php endif; ?>
+    <?php if ($myspaceUrl) : ?>
+        ,"<?= /* @escapeNotVerified */
+        $block->stripTags($myspaceUrl); ?>"
+    <?php endif; ?>
+    <?php if ($pinterestUrl) : ?>
+        ,"<?= /* @escapeNotVerified */
+        $block->stripTags($pinterestUrl); ?>"
+    <?php endif; ?>
+    <?php if ($soundcloudUrl) : ?>
+        ,"<?= /* @escapeNotVerified */
+        $block->stripTags($soundcloudUrl); ?>"
+    <?php endif; ?>
+    <?php if ($thumblrUrl) : ?>
+        ,"<?= /* @escapeNotVerified */
+        $block->stripTags($thumblrUrl); ?>"
+    <?php endif; ?>
+    ]
+}
+
+</script>
+

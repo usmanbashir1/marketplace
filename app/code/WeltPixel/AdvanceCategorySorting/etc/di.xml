@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Elasticsearch\Model\Adapter\FieldMapperInterface">
+        <plugin
+                name="weltpixel_advance_category_sorting_elastic_fieldmapper"
+                type="WeltPixel\AdvanceCategorySorting\Plugin\Frontend\Model\Elastic\Adapter\FieldMapper" sortOrder="1" />
+    </type>
+    <type name="Magento\Elasticsearch\Model\Adapter\BatchDataMapper\ProductDataMapper">
+        <plugin
+                name="weltpixel_advance_category_sorting_elastic_productdatamapper"
+                type="WeltPixel\AdvanceCategorySorting\Plugin\Frontend\Model\Elastic\ProductDataMapper" sortOrder="1" />
+    </type>
+</config>

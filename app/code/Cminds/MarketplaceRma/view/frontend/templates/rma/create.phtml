@@ -1,0 +1,253 @@
+<?php
+    $orders = $block->getOrders();
+    $packageOpened = $block->getPackage();
+    $requestTypes = $block->getRequestType();
+    $reasons = $block->getReason();
+?>
+<form class="form form-edit-account" 
+      action="<?php echo $block->getSaveUrl();?>" 
+      method="post" 
+      id="form-validate" 
+      enctype="multipart/form-data" 
+      data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>" 
+      autocomplete="off">
+    <fieldset class="fieldset" style="width: 100%;">
+        <?php echo $block->getBlockHtml('formkey')?>
+        <legend class="legend">
+            <span>
+                <?php /* @escapeNotVerified */ echo __('INFORMATION') ?>
+            </span>
+        </legend>
+        <div class="field field-name-order_id required">
+            <label class="label" 
+                   for="order_id">
+                <span><?php echo /* @escapeNotVerified */ __('Order #'); ?></span>
+            </label>
+            <div class="control">
+                <select id="order_id"
+                        name="order_id"
+                        class="input-text required-entry" 
+                        data-validate="{required:true}" 
+                        aria-required="true">
+                    <option><?php echo(__('Please select order'));?></option>
+                    <?php foreach ($orders as $order): ?>
+                        <?php echo '<option value="' . $order->getId() . '">' . $order->getRealOrderId() . '</option>';?>
+                    <?php endforeach;?>
+                </select>
+            </div>
+
+            <div class="table-wrapper" id="rma-invoices-container" style="display: none;">
+                <table class="data table table-order-items history" id="rma-invoices" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="col id"><?php echo /* @escapeNotVerified */ __('Invoice Id'); ?></th>
+                            <th scope="col" class="col id"><?php echo /* @escapeNotVerified */ __('Product Id'); ?></th>
+                            <th scope="col" class="col name"><?php echo /* @escapeNotVerified */ __('Product Name'); ?></th>
+                            <th scope="col" class="col date"><?php echo /* @escapeNotVerified */ __('SKU'); ?></th>
+                            <th scope="col" class="col shipping"><?php echo /* @escapeNotVerified */ __('QTY'); ?></th>
+                            <th scope="col" class="col total"><?php echo /* @escapeNotVerified */ __('Price'); ?></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <label class="label" 
+                   for="package_opened">
+                <span><?php echo /* @escapeNotVerified */ __('Package Opened'); ?></span>
+            </label>
+            <div class="control">
+                <select name="package_opened"
+                        id="package_opened" 
+                        class="input-text required-entry" 
+                        data-validate="{required:true}" 
+                        aria-required="true">
+                        <?php foreach ($packageOpened as $value): ?>
+                            <?php
+                                ($value['value'] == 0) ? $selected = 'selected' : $selected = '';
+                                echo '<option value="'.$value['value'].'"' . $selected . '>'.$value['label']->getText().'</option>';
+                            ?>
+                        <?php endforeach;?>
+                </select>
+            </div>
+            <label class="label" 
+                   for="request_type">
+                <span><?php echo /* @escapeNotVerified */ __('Request Type'); ?></span>
+            </label>
+            <div class="control">
+                <select name="request_type"
+                        id="request_type" 
+                        class="input-text required-entry" 
+                        data-validate="{required:true}" 
+                        aria-required="true">
+                    <?php foreach ($requestTypes['items'] as $requestType): ?>
+                        <?php
+                            echo '<option value="' . $requestType['id'].'">'.$requestType['name'].'</option>';
+                        ?>
+                    <?php endforeach;?>
+                </select>
+            </div>
+            <label class="label" 
+                   for="additional_info">
+                <span><?php echo /* @escapeNotVerified */ __('Additional Information'); ?></span>
+            </label>
+            <div class="control">
+                <textarea name="additional_info"
+                        id="additional_info" 
+                        class="input-text required-entry" 
+                        data-validate="{required:true}" 
+                        aria-required="true"></textarea>
+            </div>
+
+            <label class="label" 
+                   for="reason">
+                <span><?php echo /* @escapeNotVerified */ __('Choose Reason'); ?></span>
+            </label>
+            <div class="control">
+                <select name="reason"
+                        id="reason" 
+                        class="input-text required-entry" 
+                        data-validate="{required:true}" 
+                        aria-required="true">
+                        <?php foreach ($reasons['items'] as $reason): ?>
+                            <?php
+                                echo '<option value="'.$reason['id'].'">'.$reason['name'].'</option>';
+                            ?>
+                        <?php endforeach;?>
+                </select>
+            </div>
+        </div>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button type="submit" 
+                        class="action primary"
+                        title="<?php /* @escapeNotVerified */ echo __('Save Returns') ?>">
+                            <span>
+                                <?php /* @escapeNotVerified */ echo __('Save Returns') ?>
+                            </span>
+                </button>
+            </div>
+            <div class="secondary">
+                <a href="<?php echo $block->escapeUrl($block->getBackUrl()) ?>"
+                   class="action secondary"
+                   title="<?php /* @escapeNotVerified */ echo __('Go back') ?>">
+                            <span>
+                                <?php /* @escapeNotVerified */ echo __('Go back') ?>
+                            </span>
+                </a>
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+<script>
+    require(['jquery', 'jquery/ui'], function($){
+        $( document ).ready(function() {
+
+            // when the select list with orders is changing we need to fetch related data.
+            $('#order_id').change(function () {
+                // trigger loading spinner
+                $('body').trigger('processStart');
+
+                // make ajax call for order invoices then fetch the invoiced items.
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo $block->getFetchDataUrl(); ?>",
+                    data: $('#order_id').serialize(),
+                    dataType: "json",
+
+                    success: function(data){
+                        // if the order does not have any invoices we can not process rma request
+                        if (data.length > 0) {
+                            $('.rma-message').empty();
+                            appendTableData(data);
+                            $('#rma-invoices-container').show();
+                            $('#rma-invoices').show();
+                        } else {
+                            if (data.message) {
+                                var message = '<p class="rma-message">' + data.message + '</p>';
+                                $('#rma-invoices').children('tbody').empty();
+                                $('#rma-invoices').hide();
+                                $('#rma-invoices-container').hide();
+                                $('#order_id').parent().find('p').remove();
+                                $('#order_id').parent().append(message);
+                            } else {
+                                var message = '<p class="rma-message"><?php echo __('Order has been not shipped yet.'); ?></p>';
+                                $('#rma-invoices').children('tbody').empty();
+                                $('#rma-invoices').hide();
+                                $('#rma-invoices-container').hide();
+                                $('#order_id').parent().find('p').remove();
+                                $('#order_id').parent().append(message);
+                            }
+                        }
+
+                        // after the data is loaded we need to turn off loading spinner
+                        $('body').trigger('processStop');
+                    },
+                    error: function (e) {
+                        console.log(e.message);
+                        $('body').trigger('processStop');
+                    }
+                });
+
+                // if we have data we need to append this data to the table
+                function appendTableData(data) {
+                    var table = $('#rma-invoices');
+                    var tableBody = $('#rma-invoices').children('tbody');
+
+                    // first remove old data from table
+                    tableBody.empty();
+                    var tableRows = '';
+                    for (var i = 0; i < data.length; i++) {
+                        var items = data[i].items;                        
+
+                        for (var j = 0; j < items.length; j++) {
+                            // check is there invoiced price if not we can not process rma request
+                            if (items[j].product_price !== 0 || items[j].product_price !== '0') {
+                                var trBegin = '<tr>';
+                                var trEnd = '</tr>';
+
+                                console.log(items[j]);
+
+                                var selectName = data[i].id + '#' + items[j].product_id;
+                                var productQtySelectBegin = '<select name="rma_products[' + selectName + ']"' +
+                                    'id="' + selectName + '" ' +
+                                    'class="input-text required-entry"' +
+                                    'data-validate="{required:true}"' +
+                                    'aria-required="true">';
+
+                                var productQtySelectEnd = '</select>';
+
+                                var productQtySelectOptions = '';
+                                var productQtyAvailable = items[j].product_qty;
+
+                                for (var k = 0; k <= productQtyAvailable; k++) {
+                                    var productQtySelect = '<option value="' + k + '">' + k + '</option>'
+                                    productQtySelectOptions += productQtySelect;
+                                }
+
+                                var qtySelect = productQtySelectBegin + productQtySelectOptions + productQtySelectEnd;
+
+                                var tdInvoiceId = '<td data-th="' + data[i].id + '" class="col id">' + data[i].increment_id + '</td>';
+                                var tdProductId = '<td data-th="' + items[j].product_id + '" class="col id">' + items[j].product_id + '</td>';
+                                var tdProductName = '<td data-th="' + items[j].product_name + '" class="col id">' + items[j].product_name + '</td>';
+                                var tdProductSku = '<td data-th="' + items[j].product_sku + '" class="col id">' + items[j].product_sku + '</td>';
+                                var tdProductQty = '<td data-th="' + items[j].product_qty + '" class="col id">' + qtySelect + '</td>';
+                                var tdProductPrice = '<td data-th="' + items[j].product_price + '" class="col id">' + items[j].product_price + '</td>';
+
+                                var tdCells = tdInvoiceId + tdProductId + tdProductName + tdProductSku + tdProductQty + tdProductPrice;
+                                var tableRow = trBegin + tdCells+ trEnd;
+
+                                tableRows += tableRow;
+                            }
+                        }
+                    }
+
+                    // append the data and show the table
+                    tableBody.append(tableRows);
+                    table.show();
+                }
+            });
+        });
+    });
+</script>

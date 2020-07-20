@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+                id="WeltPixel_Multistore::Multistore_Label"
+                title="Multi Store"
+                module="WeltPixel_Multistore"
+                sortOrder="55"
+                parent="WeltPixel_Backend::WeltPixel"
+                resource="WeltPixel_Multistore::Multistore_Label"
+        />
+        <add
+                id="WeltPixel_Multistore::Multistore"
+                title="Multi Store Settings"
+                module="WeltPixel_Multistore"
+                action="adminhtml/system_config/edit/section/weltpixel_multistore/"
+                sortOrder="10"
+                parent="WeltPixel_Multistore::Multistore_Label"
+                resource="WeltPixel_Multistore::Multistore"
+        />
+    </menu>
+</config>

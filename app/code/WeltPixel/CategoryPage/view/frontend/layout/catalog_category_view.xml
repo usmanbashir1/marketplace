@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="category.view.container">
+            <block class="Magento\Catalog\Block\Category\View" name="category.show.more" after="category.description" template="WeltPixel_CategoryPage::category/description/show_more.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="before.body.end">
+            <block class="Magento\Framework\View\Element\Template" name="welpixel.categorypage.hoverimages.js" template="WeltPixel_CategoryPage::catalog/hoverimagejs.phtml" />
+        </referenceContainer>
+    </body>
+</page>

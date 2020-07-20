@@ -1,0 +1,111 @@
+& when (@media-common = true) {
+	.product-items {
+		.product-item {
+			&:hover {
+				.wp-product-label-hover {
+					display: block;
+					&.wp-product-label-middle-left, &.wp-product-label-middle-center, &.wp-product-label-middle-right {
+						display: table-cell;
+					}
+				}
+			}
+			.wp-product-label-hover {
+				display: none;
+				&.wp-product-label-middle-left, &.wp-product-label-middle-center, &.wp-product-label-middle-right {
+					display: none;
+				}
+			}
+		}
+	}
+	.catalog-product-view {
+		.fotorama--fullscreen {
+			.wp-product-label {
+				display: none;
+			}
+		}
+	}
+	.wp-product-label {
+		position: absolute;
+		z-index: 99;
+		color: #000;
+		display: block;
+		&.wp-product-label-top-left {
+			top: 0;
+			left: 0;
+		}
+		&.wp-product-label-top-center {
+			top: 0;
+			left: 0;
+			text-align: center;
+			width: 100%;
+		}
+		&.wp-product-label-top-right {
+			top: 0;
+			right: 0;
+		}
+		&.wp-product-label-bottom-left {
+			bottom: 0;
+			left: 0;
+		}
+		&.wp-product-label-bottom-center {
+			bottom: 0;
+			left: 0;
+			text-align: center;
+			width: 100%;
+		}
+		&.wp-product-label-bottom-right {
+			bottom: 0;
+			right: 0;
+		}
+		&.wp-product-label-middle-left, &.wp-product-label-middle-center, &.wp-product-label-middle-right {
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			display: table-cell;
+			vertical-align: middle;
+			text-align: left;
+			&:before {
+				content: '';
+				display: inline-block;
+				vertical-align: middle;
+				height: 100%;
+			}
+			img {
+				display: inline-block;
+				vertical-align: middle;
+				width: auto;
+			}
+		}
+		&.wp-product-label-middle-center {
+			text-align: center;
+		}
+		&.wp-product-label-middle-right {
+			text-align: right;
+		}
+		span {
+			display: inline-block;
+		}
+		&.page-position {
+			position: inherit;
+			display: inline-block;
+			vertical-align: middle;
+			margin-left: 5px;
+		}
+	}
+
+	.wp-product-label-extra {
+		width: 100%;
+		float: left;
+		padding: 5px 0;
+		margin-bottom: 10px;
+	}
+	
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+	.catalog-product-view {
+		.fotorama {
+			overflow: visible;
+		}
+	}
+}

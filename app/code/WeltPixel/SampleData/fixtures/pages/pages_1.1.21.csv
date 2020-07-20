@@ -1,0 +1,255 @@
+title,page_layout,meta_keywords,meta_description,identifier,content_heading,content,is_active,sort_order,layout_update_xml,custom_theme,custom_root_template,custom_layout_update_xml,custom_theme_from,custom_theme_to,css_global,css_phone_small,css_phone,css_tablet_small,css_tablet,css_desktop,css_desktop_large,custom_js
+"About Us V1",1column,,,weltpixel-about-us-v1,"","
+<div class=""about-us-v1""><img class=""top-image"" src=""{{media url=""wysiwyg/pearl_theme/About-1-blur.jpg""}}""
+    alt="""" />
+    <div class=""gf-container""
+         style=""background-image: url({{media url=""wysiwyg/pearl_theme/background-05.jpg""}});"">
+        <div class=""col-md-7 col-md-offset-5 col-lg-6 col-lg-offset-6 mf-left-sec"">
+            <div class=""wpb_wrapper_cont"">
+                <div class=""wpb_wrapper"">
+                    <h1 class=""mg-title"">Style is a way to say who you are without having to speak</h1>
+                    <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+                        consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur erit qui in ea
+                        voluptate verit qui in ea voluptate vele quam nihil molestiae consequatur, vel illum qui dolorem
+                        eum fugiat</p>
+                </div>
+                <div class=""btn-container text-left""><a class=""btn btn-black btn-link btn-link-md"" title=""Shop""
+                                                        href=""http://pearl.weltpixel.com"" target=""_blank"">learn
+                    more.</a></div>
+            </div>
+        </div>
+    </div>
+    <div class=""wpx text-center"">
+        <div class=""col-sm-4 col-md-4"">
+            <div class=""wpb_wrapper_icon"">
+                <div class=""ib-shape-inner""><a class=""gsf-link"" href=""#""> <i class=""icon-gift""></i> </a></div>
+            </div>
+            <div class=""ib-content"">
+                <h3 class=""iconbox-title""><a class=""gsf-link"" title=""Free Shipping"" href=""#""> <span>Free Shipping</span>
+                </a></h3>
+                <p>ALL ORDER OVER $59</p>
+            </div>
+        </div>
+        <div class=""col-sm-4 col-md-4"">
+            <div class=""wpb_wrapper_icon"">
+                <div class=""ib-shape-inner""><a class=""gsf-link"" href=""#""> <i class=""icon-line2-earphones-alt""></i> </a></div>
+            </div>
+            <div class=""ib-content"">
+                <h3 class=""iconbox-title""><a class=""gsf-link"" title=""Free Shipping"" href=""#"">
+                    <span>Support Customer</span> </a></h3>
+                <p>SUPPORT 24/7</p>
+            </div>
+        </div>
+        <div class=""col-sm-4 col-md-4"">
+            <div class=""wpb_wrapper_icon"">
+                <div class=""ib-shape-inner""><a class=""gsf-link"" href=""#""> <i class=""icon-lock""></i> </a></div>
+            </div>
+            <div class=""ib-content"">
+                <h3 class=""iconbox-title""><a class=""gsf-link"" title=""Free Shipping"" href=""#"">
+                    <span>Secure Payments</span> </a></h3>
+                <p>SUPPORT 24/7</p>
+            </div>
+        </div>
+    </div>
+    <div class=""wpx-gray"">
+        <div class=""bg-white""></div>
+        <div class=""child-cont"">
+            <div class=""gf-heading-inner"">
+                <h2 class=""flw-insta"">Follow Us On Instagram</h2>
+                <h2 class=""heading-title-wpx"">#pearl.theme</h2>
+            </div>
+            <div class=""parent"">
+                <div class=""child"">
+                    <img src=""{{media url=""wysiwyg/pearl_theme/homepage-v15/171002_bgw_us_8_1.jpg""}}"" />
+                </div>
+            </div>
+        </div>
+        <div class=""test-cont"">
+            <ul class=""testimonials-grid grid-3 clearfix"">
+                <li>
+                    <div class=""testimonial"">
+                        <div class=""testi-image""><a href=""#""><i class=""i-plain i-xlarge icon-user""></i></a></div>
+                        <div class=""testi-content"">
+                            <p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum
+                                libero illo rerum repellendus!</p>
+                            <div class=""testi-meta"">John Doe <span>XYZ Inc.</span></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class=""testimonial"">
+                        <div class=""testi-image""><a href=""#""><i class=""i-plain i-xlarge icon-user""></i></a></div>
+                        <div class=""testi-content"">
+                            <p>Natus voluptatum enim quod necessitatibus quis expedita harum provident eos obcaecati id
+                                culpa corporis molestias.</p>
+                            <div class=""testi-meta"">Collis Ta'eed <span>Envato Inc.</span></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class=""testimonial"">
+                        <div class=""testi-image""><a href=""#""><i class=""i-plain i-xlarge icon-user""></i></a></div>
+                        <div class=""testi-content"">
+                            <p>Fugit officia dolor sed harum excepturi ex iusto magnam asperiores molestiae qui natus
+                                obcaecati facere sint amet.</p>
+                            <div class=""testi-meta"">Mary Jane <span>Google Inc.</span></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class=""about-us-v2"">
+        <div class=""cont-about-v2"">
+            <div class=""brands-cont"">
+                <a href=""https://www.weltpixel.com"" target=""_blank""> <img src=""{{media url=""wysiwyg/pearl_theme/q1.png""}}"" alt="""" /> </a>
+                <a href=""https://www.weltpixel.com"" target=""_blank""> <img src=""{{media url=""wysiwyg/pearl_theme/q2.png""}}"" alt="""" /> </a>
+                <a href=""https://www.weltpixel.com"" target=""_blank""> <img src=""{{media url=""wysiwyg/pearl_theme/q3.png""}}"" alt="""" /> </a>
+                <a href=""https://www.weltpixel.com"" target=""_blank""> <img src=""{{media url=""wysiwyg/pearl_theme/q4.png""}}"" alt="""" /> </a>
+                <a href=""https://www.weltpixel.com"" target=""_blank""> <img src=""{{media url=""wysiwyg/pearl_theme/q5.png""}}"" alt="""" /> </a>
+                <a href=""https://www.weltpixel.com"" target=""_blank""> <img src=""{{media url=""wysiwyg/pearl_theme/q6.png""}}"" alt="""" /> </a>
+            </div>
+        </div>
+    </div>
+</div>
+",1,,,,,,,,"
+.page-main, #maincontent .columns {
+    max-width: 100% !important;
+    padding: 0px !important;
+}
+.columns .column.main{
+    padding: 0px !important;
+}
+.breadcrumbs{
+   display:none;
+}",,,,,,,
+"About Us V2",1column,,,weltpixel-about-us-v2,"","
+<div class=""about-us-v2""><img class=""top-image"" src=""{{media url=""wysiwyg/pearl_theme/About-2-blur.jpg""}}"" alt="""" />
+    <div class=""cont-about-v2"">
+        <div class=""cont-title"">
+            <p>Style is a way to say who you are without having to speak</p>
+        </div>
+    </div>
+    <div class=""cont-about-v2 mg-btm"">
+        <div class=""col-sm-6 col-md-6""><img src=""{{media url=""wysiwyg/pearl_theme/banner-06.jpg""}}"" alt="""" />
+            <div class=""contact-cont"">
+                <div class=""contact-info firs-c""><span class=""contact-title"">Address</span> <span class=""contact-add"">1800 Lorem Ipsum Blvd. E Venice</span></div>
+                <div class=""contact-info""><span class=""contact-title"">Phone</span> <span class=""contact-add span-block"">Mobile: (+88) – 1897 – 9999</span> <span class=""contact-add span-block"">Hotline: 2222 – 9999</span></div>
+                <div class=""contact-info""><span class=""contact-title"">Email</span> <span class=""contact-add"">contact@weltpixel.com</span></div>
+                <div class=""social-cont""><i class=""icon-facebook""></i> <i class=""icon-twitter""></i> <i class=""icon-google-plus""></i> <i class=""icon-pinterest""></i></div>
+            </div>
+        </div>
+        <div class=""col-sm-6 col-md-6 mg-mob"">
+            <div class=""text-cont"">
+                <h2 class=""heading-title text-left"">Our Story</h2>
+                <p class=""text-left"">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur erit qui in ea voluptate verit qui in ea voluptate vele quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur erit qui in ea voluptate verit qui in ea voluptate vele quam</p>
+            </div>
+            <div class=""text-left""><img src=""{{media url=""wysiwyg/pearl_theme/banner-07.jpg""}}"" alt="""" /></div>
+        </div>
+    </div>
+    <div class=""bg-gray"">
+        <div class=""cont-about-v2 pd-gray"">
+            <h2 class=""heading-title-wpx"">#pearl.theme</h2>
+            <div class=""col-sm-6 col-md-3 mg-team mg-width"">
+                <div class=""cont-hover"">
+                    <div class=""child-v2-none""><img src=""{{media url=""wysiwyg/pearl_theme/ourteam-01-405x435.jpg""}}"" alt="""" /></div>
+                    <div class=""ourteam-content"">
+                        <h5 class=""ourteam-name"">John Anderson</h5>
+                        <span class=""ourteam-position"">DESIGNER</span>
+                        <div class=""ourteam-socials"">
+                            <a title=""Facebook"" href=""#"">
+                                <span class=""social-title"">Facebook</span>
+                            </a>
+                            <a class=""mg-link"" title=""Twitter"" href=""#"">
+                                <span class=""social-title"">Twitter</span>
+                            </a>
+                            <a class=""mg-link"" title=""Google"" href=""#"">
+                                <span class=""social-title"">Google</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=""col-sm-6 col-md-3 mg-team mg-width"">
+                <div class=""cont-hover"">
+                    <div class=""child-v2-none""><img src=""{{media url=""wysiwyg/pearl_theme/ourteam-03-405x435.jpg""}}"" alt="""" /></div>
+                    <div class=""ourteam-content"">
+                        <h5 class=""ourteam-name"">Fabian Hellgardt</h5>
+                        <span class=""ourteam-position"">Photography</span>
+                        <div class=""ourteam-socials"">
+                            <a title=""Facebook"" href=""#"">
+                                <span class=""social-title"">Facebook</span>
+                            </a>
+                            <a class=""mg-link"" title=""Twitter"" href=""#"">
+                                <span class=""social-title"">Twitter</span>
+                            </a>
+                            <a class=""mg-link"" title=""Google"" href=""#"">
+                                <span class=""social-title"">Google</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=""col-sm-6 col-md-3 mg-width"">
+                <div class=""cont-hover"">
+                    <div class=""child-v2-none""><img src=""{{media url=""wysiwyg/pearl_theme/ourteam-02-405x435.jpg""}}"" alt="""" /></div>
+                    <div class=""ourteam-content"">
+                        <h5 class=""ourteam-name"">Maria Kielhlmeier</h5>
+                        <span class=""ourteam-position"">Seller</span>
+                        <div class=""ourteam-socials"">
+                            <a title=""Facebook"" href=""#"">
+                                <span class=""social-title"">Facebook</span>
+                            </a>
+                            <a class=""mg-link"" title=""Twitter"" href=""#"">
+                                <span class=""social-title"">Twitter</span>
+                            </a>
+                            <a class=""mg-link"" title=""Google"" href=""#"">
+                                <span class=""social-title"">Google</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=""col-sm-6 col-md-3 mg-width"">
+                <div class=""cont-hover"">
+                    <div class=""child-v2-none""><img src=""{{media url=""wysiwyg/pearl_theme/ourteam-04-405x435.jpg""}}"" alt="""" /></div>
+                    <div class=""ourteam-content"">
+                        <h5 class=""ourteam-name"">Viviane Grigull</h5>
+                        <span class=""ourteam-position"">CEO</span>
+                        <div class=""ourteam-socials"">
+                            <a title=""Facebook"" href=""#"">
+                                <span class=""social-title"">Facebook</span>
+                            </a>
+                            <a class=""mg-link"" title=""Twitter"" href=""#"">
+                                <span class=""social-title"">Twitter</span>
+                            </a>
+                            <a class=""mg-link"" title=""Google"" href=""#"">
+                                <span class=""social-title"">Google</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=""cont-about-v2"">
+        <div class=""brands-cont"">
+            <a href=""https://www.weltpixel.com"" target=""_blank""> <img src=""{{media url=""wysiwyg/pearl_theme/q1.png""}}"" alt="""" /> </a>
+            <a href=""https://www.weltpixel.com"" target=""_blank""> <img src=""{{media url=""wysiwyg/pearl_theme/q2.png""}}"" alt="""" /> </a>
+            <a href=""https://www.weltpixel.com"" target=""_blank""> <img src=""{{media url=""wysiwyg/pearl_theme/q3.png""}}"" alt="""" /> </a>
+            <a href=""https://www.weltpixel.com"" target=""_blank""> <img src=""{{media url=""wysiwyg/pearl_theme/q4.png""}}"" alt="""" /> </a>
+            <a href=""https://www.weltpixel.com"" target=""_blank""> <img src=""{{media url=""wysiwyg/pearl_theme/q5.png""}}"" alt="""" /> </a>
+            <a href=""https://www.weltpixel.com"" target=""_blank""> <img src=""{{media url=""wysiwyg/pearl_theme/q6.png""}}"" alt="""" /> </a>
+        </div>
+    </div>
+</div>
+",1,,,,,,,,".page-main, #maincontent .columns {
+    max-width: 100% !important;
+    padding: 0px !important;
+}
+.columns .column.main{
+    padding: 0px !important;
+}
+.breadcrumbs{
+   display:none;
+}",,,,,,,

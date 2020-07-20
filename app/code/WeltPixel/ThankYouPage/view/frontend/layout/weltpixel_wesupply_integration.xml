@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<body>
+    <move element="wesupply.notification" destination="checkout.content.wrapper" />
+</body>

@@ -1,0 +1,144 @@
+<?php
+    $rma = $block->getRma();
+    $packageOpened = $block->getPackage();
+    $rmaStatus = $block->getRmaStatus();
+    $reasons = $block->getReason();
+    $returnItems = $block->getReturnItems($rma->getData('order_id'));
+?>
+<div class="block block-dashboard-info">
+    <div class="block-title"><strong><?php echo __('Initialized Date: '); ?><?php echo $rma->getData('created_at'); ?></strong></div>
+    <div class="block-content">
+        <div class="box box-rma-info">
+            <strong class="box-title">
+                <span><?php echo __('Returns Info');?></span>
+            </strong>
+            <div class="box-content">
+                <div class="form-group">
+                    <div class="col-md-12 label-container">
+                        <label for="name">
+                            <?php echo __('STATUS: '); ?>
+                        </label>
+                        <span><strong><?php echo $rma->getData('status_name'); ?></strong></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12 label-container">
+                        <label for="name">
+                            <?php echo __('TYPE: '); ?>
+                        </label>
+                        <span><strong><?php echo $rma->getData('type_name'); ?></strong></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12 label-container">
+                        <label for="name">
+                            <?php echo __('REASON: '); ?>
+                        </label>
+                        <span><strong><?php echo $rma->getData('reason_name'); ?></strong></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12 label-container">
+                        <label for="name">
+                            <?php echo __('ORDER '); ?>
+                        </label>
+                        <span><strong><?php echo $rma->getData('increment_id'); ?></strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box box-rma-additional-info">
+            <strong class="box-title">
+                <span><?php echo __('Additional Information: '); ?></span>
+            </strong>
+            <div class="box-content">
+                <div class="form-group">
+                    <div class="col-md-12 label-container">
+                        <span><?php echo $rma->getData('additional_info'); ?></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="block block-rma-items">
+    <div class="block-title order">
+        <strong><?php echo __('ITEMS'); ?></strong>
+    </div>
+    <div class="block-content">
+        <div class="table-wrapper orders-recent">
+            <table class="data table table-order-items recent">
+                <thead>
+                <tr>
+                    <th scope="col" class="col product-name"><?php /* @escapeNotVerified */ echo __('Product') ?></th>
+                    <th scope="col" class="col sku"><?php /* @escapeNotVerified */ echo __('Sku') ?></th>
+                    <th scope="col" class="col price"><?php /* @escapeNotVerified */ echo __('Price') ?></th>
+                    <th scope="col" class="col qty"><?php /* @escapeNotVerified */ echo __('Qty') ?></th>
+                    <th scope="col" class="col subtotal"><?php /* @escapeNotVerified */ echo __('Subtotal') ?></th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($returnItems as $item): ?>
+                    <tr>
+                        <td data-th="<?php echo $block->escapeHtml(__('Product')) ?>"
+                            class="col product-name"><?php /* @escapeNotVerified */ echo $item['original']->getName(); ?></td>
+                        <td data-th="<?php echo $block->escapeHtml(__('Sku')) ?>"
+                            class="col sku"><?php /* @escapeNotVerified */ echo $item['original']->getSku(); ?></td>
+                        <td data-th="<?php echo $block->escapeHtml(__('Price')) ?>"
+                            class="col sku"><?php /* @escapeNotVerified */ echo round($item['original']->getPrice(), 2); ?></td>
+                        <td data-th="<?php echo $block->escapeHtml(__('Qty')) ?>"
+                            class="col qty">
+                            <?php /* @escapeNotVerified */ echo $item['return']->getData('return_qty'); ?>
+                        </td>
+                        <td data-th="<?php echo $block->escapeHtml(__('Subtotal')) ?>"
+                            class="col subtotal">
+                            <?php /* @escapeNotVerified */ echo round($item['original']->getPrice()*$item['return']->getData('return_qty'), 2); ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="block block-comments">
+    <div class="block-title"><strong><?php echo __('COMMENTS');?></strong></div>
+    <div class="block-content">
+        <div class="box box-rma-info">
+            <div class="box-content">
+                <div class="form-group">
+                    <div class="col-md-12 label-container">
+                        <?php $notes = $block->getNotes($rma->getData('id')); ?>
+                        <?php if (count($notes) > 0) : ?>
+                            <?php foreach ($notes as $note) : ?>
+                                <div class="box-content">
+                                    <div class="form-group">
+                                        <div class="col-md-12 label-container">
+                                            <span><strong><?php echo ($note->getData('created_at'))?></strong></span> - <span><?php echo ($note->getData('note'))?></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php else:?>
+                            <span><?php echo __('There is no comment yet.');?></span>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="actions-toolbar">
+    <div class="secondary">
+        <a href="<?php echo $block->escapeUrl($block->getBackUrl()) ?>"
+           class="action secondary"
+           title="<?php /* @escapeNotVerified */ echo __('Go back') ?>">
+            <span>
+                <?php /* @escapeNotVerified */ echo __('Go back') ?>
+            </span>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<script>
+    require(["jquery", 'underscore', 'Magento_Ui/js/modal/modal'], function ($, _) {
+        $(document).ready(function() {
+
+            var lastHeight = 0, curHeight = 0;
+            var parentBody = window.parent.document.body;
+            var intervalOption = null;
+            $('.mfp-preloader', parentBody).css('display', 'none');
+            $('.mfp-close', parentBody).css('display', 'block');
+
+            $('.mfp-iframe-holder .mfp-content', parentBody).css('width', '100%');
+            $('.mfp-iframe-holder .mfp-content', parentBody).css('height', '100%');
+            $('.mfp-iframe-holder', parentBody).addClass('fadeInFromRight');
+            $('.mfp-iframe-scaler iframe', parentBody).css({'opacity': 1});
+            $('body').addClass('weltpixel-quickview-slideIn');
+
+
+            $('.reviews-actions a').attr('target', '_parent');
+            $('.product-social-links a').attr('target', '_parent');
+
+            function recalculateHeight(animateDelay) {
+                var windowWidth = $(window.parent.window).width();
+                if ((windowWidth < 768) && (intervalOption != 'mobile') ) {
+                    $('.mfp-wrap', parentBody).removeClass('mfp-popup-fadeInRight');
+                    curHeight = $('.page-wrapper').outerHeight(true);
+                    documentHeight = curHeight + "px";
+                    if (curHeight != lastHeight) {
+                        $('.mfp-iframe-holder .mfp-content', parentBody).animate({
+                            'height': documentHeight
+                        }, animateDelay);
+                        lastHeight = curHeight;
+                    }
+                    intervalOption = 'mobile';
+                } else if ((windowWidth >= 768) && (intervalOption != 'desktop')) {
+                    $('.mfp-wrap', parentBody).addClass('mfp-popup-fadeInRight');
+                    intervalOption = 'desktop';
+                }
+            }
+
+            recalculateHeight(0);
+
+            setInterval(function(){
+                recalculateHeight(500);
+            }, 1000);
+
+            $(window).resize(_.debounce(function () {
+                var windowWidth = $(window.parent.window).width();
+                if ((windowWidth < 768) && (intervalOption == 'mobile') ) {
+                    intervalOption = null;
+                }
+            }, 500));
+
+        });
+    });
+</script>

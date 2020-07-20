@@ -1,0 +1,61 @@
+title,page_layout,meta_keywords,meta_description,identifier,content_heading,content,is_active,sort_order,layout_update_xml,custom_theme,custom_root_template,custom_layout_update_xml,custom_theme_from,custom_theme_to,css_global,css_tablet,css_desktop
+"Home Page V8",1column,,,home-page-v8,"","
+<div class=""container-fluid content-v8 nopadding"">
+<div class=""wrapper-top-slider "">
+<div class=""row"">{{widget type=""WeltPixel\OwlCarouselSlider\Block\Slider\Products"" products_type=""new_products"" type_name=""WeltPixel - Products Carousel Widget""}}</div>
+</div>
+<div class=""slider-custom-1 "">{{widget_nr_1}}</div>
+<!--
+""Featured product category can be changed by inserting another widget: Insert Widget -> Catalog Product List -> (Weltpixel Homepage V8 Product Grid) / Conditions - Category is [number] where 'number' is the id of the category you want to advertise on homepage.""
+-->
+<h3 class=""title-v8"">Latest Products</h3>
+<div class=""catalog-product-v8"">{{widget type=""Magento\CatalogWidget\Block\Product\ProductsList"" products_count=""8"" template=""product/widget/content/grid_v8.phtml"" type_name=""Catalog Products List"" conditions_encoded=""{{widget_condition_1}}""}}</div>
+<div class=""row brands-slider"">{{widget_nr_2}}</div>
+<div class=""grey-background"">
+<div class=""row"">
+<div class=""col-xs-10 col-xs-offset-1 col-md-offset-0 col-md-6 col-sm-offset-3 col-sm-6"">
+<div class=""flip-box"">
+<div class=""flip-box-before"">free shipping</div>
+<div class=""flip-box-after"">on all orders over $100</div>
+</div>
+</div>
+<div class=""col-xs-10 col-xs-offset-1 col-md-offset-0 col-md-6 col-sm-offset-3 col-sm-6"">
+<div class=""flip-box"">
+<div class=""flip-box-before"">free return</div>
+<div class=""flip-box-after"">free 90 days return</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+",1,,,,,,,,"
+.theme-pearl .page-wrapper .columns, .page.messages {width: 100% !important; max-width: 100% !important}
+.theme-pearl .page-wrapper .page-main {padding: 0px;width: 100% !important; max-width: 100% !important;}
+.page-wrapper .breadcrumbs {display: none;}
+
+#maincontent .column.main {
+  padding-bottom: 0px;
+}
+.page-footer{
+      margin-top:0px;
+}","
+.catalog-product-v8 .products-grid  .product-item:nth-child(2n +1),
+.catalog-product-v8 .products-grid  .product-item:first-child{
+       margin-left: 0px !important;
+}
+
+.catalog-product-v8 .products-grid  .product-item {
+    width: 49% !important;
+    margin-left: 7px !important;
+}
+","
+.catalog-product-v8 .products-grid  .product-item,
+.catalog-product-v8 .products-grid .product-items.widget-product-grid  .product-item:nth-child(2n +1) {
+         width: 23.7% !important;
+         margin-left: 7px !important;
+}
+.catalog-product-v8 .products-grid .product-items.widget-product-grid  .product-item:nth-child(5n),
+.catalog-product-v8 .products-grid .product-items.widget-product-grid  .product-item:first-child{
+       margin-left: 0px !important;
+}
+"

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Cminds SupplierRedirection
+ *
+ * @category Cminds
+ * @package  Cminds_SupplierRedirection
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="supplierfrontendproductuploader_navbar_init">
+        <observer name="cminds_supplierredirection_supplierfrontendproductuploader_navbar_init"
+                  instance="Cminds\SupplierRedirection\Observer\Supplierfrontendproductuploader\Navbar\Init"/>
+    </event>
+</config>

@@ -1,0 +1,15 @@
+<div id="quickview-dynamic-message" class="quickview-dynamic-message"></div>
+<script>
+    requirejs(['jquery'],
+        function   ($) {
+            $(document).ready(function() {
+                var requestUrl = '<?php echo $this->getUrl("weltpixel_quickview/custommessages/product/product_id/" . $this->getProduct()->getId()); ?>';
+                $.get({
+                    url: requestUrl,
+                    cache: false
+                }, function(responseData) {
+                    $('.quickview-dynamic-message').html(responseData.html);
+                });
+            });
+        });
+</script>

@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="weltpixel_multistore" translate="label" type="text" sortOrder="155" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Multi Store</label>
+            <tab>weltpixel</tab>
+            <resource>WeltPixel_Multistore::MultistoreSettings</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="is_pearl" translate="label" type="hidden" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>WeltPixel\Multistore\Block\Adminhtml\System\Config\Form\IsPearl</frontend_model>
+                </field>
+                <label>Multi Store General Settings</label>
+                <field id="enable" translate="label" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Multi Store</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable Multi Store. All settings should be made per storeview. See tooltip.</comment>
+                    <tooltip>Make sure you have multiple storeviews created in order for the brand/language images to show up in your header.</tooltip>
+                </field>
+                <field id="redirect_to_home_page" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Redirect to Home Page on store switch</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>When set to Yes, the customer is redirected to the Homepage on store switch.</comment>
+                    <tooltip>Redirect to Home Page on store switch allows you to chose if you want to be redirected to
+                        the homepage when the store / language is activated, or remain on the current page and only
+                        change the language; This option can be used when you have different products on each store
+                        and you want to redirect the end user to homepage when changing the brand.</tooltip>
+                </field>
+                <field id="store_image" translate="label comment" type="image" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Active Store Image</label>
+                    <backend_model>WeltPixel\Multistore\Model\Config\Backend\Svg</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">weltpixel/multistore/logo</upload_dir>
+                    <base_url type="media" scope_info="1">weltpixel/multistore/logo</base_url>
+                    <comment><![CDATA[ Select image displayed when store is active. <br/> Only 'jpg', 'jpeg', 'gif', 'png', 'svg' is allowed.<br/>
+                        Set Active Store Image in order to know which store / language option is active; should
+                        be a different image than the inactive image, in order to highlight that this shop is not
+                        Selected and Active.
+                        ]]>
+                    </comment>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="store_image_inactive" translate="label comment" type="image" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Inactive Store Image</label>
+                    <backend_model>WeltPixel\Multistore\Model\Config\Backend\Svg</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">weltpixel/multistore/logo_inactive</upload_dir>
+                    <base_url type="media" scope_info="1">weltpixel/multistore/logo_inactive</base_url>
+                    <comment><![CDATA[Select image displayed when store is inactive. <br/>  Only 'jpg', 'jpeg', 'gif', 'png', 'svg' is allowed.<br/>
+                        Set Inactive Store Image this image will be displayed as logo when another store /language
+                        is selected; should be a different image than the active image, in order to highlight that this
+                        shop is not active, you can use inverted colors or transparency to achieve this.
+                        ]]>
+                    </comment>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="one_row" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display in one row</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If set to Yes, it displays the store views at the top, in a single row.</comment>
+                    <tooltip>The Display in one row setting displays the store view at the top in a single row; If this option
+                        is Enabled, all the brands or language flags will be displayed in a single row on top of the
+                        header. If this option is Disabled the imges will show in the header instead of the Store-View selector.</tooltip>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="bar_bg_color" translate="label" type="text" sortOrder="33" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Row background color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set the background color for the store view row. Example: #000000</comment>
+                    <depends>
+                        <field id="enable">1</field>
+                        <field id="one_row">1</field>
+                    </depends>
+                </field>
+                <field id="bar_width" translate="label comment" type="text" sortOrder="35" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Row width</label>
+                    <validate>validate-css-length</validate>
+                    <comment>Set the store view row width. Example: 1280px</comment>
+                    <depends>
+                        <field id="enable">1</field>
+                        <field id="one_row">1</field>
+                        <field id="is_pearl">0</field>
+                    </depends>
+                </field>
+
+                <field id="visibility" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label> Visibile on storefront</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Select if current storeview is visible on the other storeviews, on frontend. </comment>
+                    <tooltip>Allows you to set the visibility on storefront; If this option is Disabled, the selected store-view image will not show up on the rest of the storeviews, allowing you to have an isolated store that will not show up in the Brand/Language images.</tooltip>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="img_height" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Logo Height</label>
+                    <validate>required</validate>
+                    <comment>Set Logo Height in the menu or top bar. You can fill only in the Height area in px, and
+                        the width will autoscale. Example: 40px
+                    </comment>
+                    <tooltip>Logo Height and Width allows you to set the dimensions of the logo in the menu or top bar.
+                        You can only fill in the Height area in px, and the width will autoscale.
+                    </tooltip>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+
+                </field>
+                <field id="img_width" translate="label comment" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Logo Width</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                    <comment>Set Logo Width in the menu or top bar. You can fill only in the Height area in px, and
+                        the width will autoscale. Example: 80px
+                    </comment>
+                    <tooltip>Logo Height and Width allows you to set the dimensions of the logo in the menu or top bar.
+                        You can only fill in the Height area in px, and the width will autoscale.
+                    </tooltip>
+                </field>
+                <field id="exclude_stores" translate="label comment" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Exclude stores</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                    <comment>Insert here the store codes that should be excluded from the listing on frontend,
+                        separate them by a comma. Example: default, german, french</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

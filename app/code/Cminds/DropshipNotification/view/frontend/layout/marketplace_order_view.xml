@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="order_view_additional_tabs">
+            <arguments>
+                <argument name="tabs" xsi:type="array">
+                    <item name="drop_ship_tab" xsi:type="array">
+                        <item name="id" xsi:type="string">dropship</item>
+                        <item name="label" xsi:type="string">Drop Ship</item>
+                        <item name="block" xsi:type="object">Cminds\DropshipNotification\Block\Tab\DropShip</item>
+                        <item name="template" xsi:type="string">Cminds_DropshipNotification::tab/dropship.phtml</item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+
+        <referenceBlock name="order_view_additional_nav_tabs">
+            <arguments>
+                <argument name="tabs" xsi:type="array">
+                    <item name="drop_ship_tab" xsi:type="array">
+                        <item name="id" xsi:type="string">dropship</item>
+                        <item name="label" xsi:type="string">Drop Ship</item>
+                        <item name="block" xsi:type="object">Cminds\DropshipNotification\Block\Tab\DropShip</item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

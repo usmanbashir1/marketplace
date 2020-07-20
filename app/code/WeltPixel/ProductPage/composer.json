@@ -1,0 +1,25 @@
+{
+    "name": "weltpixel/m2-weltpixel-product-page",
+    "description": "WeltPixel ProductPage Module",
+    "require": {
+        "weltpixel/m2-weltpixel-backend": "*",
+        "weltpixel/m2-weltpixel-frontend-options": "*",
+        "magento/module-catalog": "*",
+        "magento/module-checkout": "*"
+    },
+    "type": "magento2-module",
+    "version": "1.9.7",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "WeltPixel\\ProductPage\\": ""
+        }
+    }
+}
+

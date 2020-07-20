@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Cminds DropshipNotification module config.
+ *
+ * @category Cminds
+ * @package  Cminds_DropshipNotification
+ * @author   Piotr Pierzak <piotr@cminds.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Cminds_DropshipNotification" setup_version="1.1.1">
+        <sequence>
+            <module name="Cminds_Marketplace"/>
+        </sequence>
+    </module>
+</config>

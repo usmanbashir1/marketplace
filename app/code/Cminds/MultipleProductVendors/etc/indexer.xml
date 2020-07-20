@@ -1,0 +1,6 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Indexer/etc/indexer.xsd">
+    <indexer id="manufacturer_product" view_id="lowest_manufacturer_product" class="Cminds\MultipleProductVendors\Model\Indexer\Product\Manufacturer">
+        <title translate="true">Product Manufacturer</title>
+        <description translate="true">Find the cheapest product of particular manufacturer and replace min price value</description>
+    </indexer>
+</config>

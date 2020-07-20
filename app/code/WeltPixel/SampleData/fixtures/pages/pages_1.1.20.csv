@@ -1,0 +1,49 @@
+title,page_layout,meta_keywords,meta_description,identifier,content_heading,content,is_active,sort_order,layout_update_xml,custom_theme,custom_root_template,custom_layout_update_xml,custom_theme_from,custom_theme_to,css_global,css_phone_small,css_phone,css_tablet_small,css_tablet,css_desktop,css_desktop_large,custom_js
+"Brands Widget",1column,,,weltpixel-brands-widget,"","
+<div class=""row"">
+<div class=""fancy-title title-dotted-border title-center"">
+<h3>6 COLUMNS</h3>
+</div>
+{{widget_nr_1}}
+<div class=""divider""><i class=""icon-circle""></i></div>
+<div class=""fancy-title title-dotted-border title-center"">
+<h3>4 COLUMNS</h3>
+</div>
+{{widget_nr_2}}
+<div class=""divider""><i class=""icon-circle""></i></div>
+<div class=""fancy-title title-dotted-border title-center"">
+<h3>3 COLUMNS</h3>
+</div>
+{{widget_nr_3}}
+<div class=""divider""><i class=""icon-circle""></i></div>
+<div class=""col-md-8"">
+<div class=""fancy-title title-dotted-border title-center"">
+<h3>4 Column</h3>
+</div>
+{{widget_nr_6}}
+</div>
+<div class=""col-md-4"">
+<div class=""fancy-title title-dotted-border title-center"">
+<h3>2 Column</h3>
+</div>
+{{widget_nr_4}}
+</div>
+</div>
+<div class=""row"">
+<div class=""divider""><i class=""icon-circle""></i></div>
+<div id=""brands-carousel"" class=""fancy-title title-dotted-border title-center"">
+<h3>FAVORITE BRANDS - OWL CAROUSEL</h3>
+</div>
+{{widget_nr_5}}
+</div>
+",1,,,,,,,,"
+.breadcrumbs{
+    display:none;
+}
+.fancy-title{
+    margin-top: 30px;
+}
+.row{
+max-width:1400px !important;
+}
+",,,,,,,

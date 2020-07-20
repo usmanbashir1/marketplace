@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Cminds SupplierRedirection
+ *
+ * @category Cminds
+ * @package  Cminds_SupplierRedirection
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Cminds_SupplierRedirection" setup_version="1.0.6">
+        <sequence>
+            <module name="Cminds_Marketplace"/>
+            <module name="Cminds_Supplierfrontendproductuploader"/>
+        </sequence>
+    </module>
+</config>

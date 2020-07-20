@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">weltpixelproductlabels_productlabels_form.productlabels_form_data_source</item>
+            <item name="deps" xsi:type="string">weltpixelproductlabels_productlabels_form.productlabels_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Product Label Information</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">weltpixelproductlabels_productlabels_form</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+        <item name="buttons" xsi:type="array">
+            <item name="back" xsi:type="string">WeltPixel\ProductLabels\Block\Adminhtml\ProductLabels\Edit\BackButton</item>
+            <item name="delete" xsi:type="string">WeltPixel\ProductLabels\Block\Adminhtml\ProductLabels\Edit\DeleteButton</item>
+            <item name="reset" xsi:type="string">WeltPixel\ProductLabels\Block\Adminhtml\ProductLabels\Edit\ResetButton</item>
+            <item name="save" xsi:type="string">WeltPixel\ProductLabels\Block\Adminhtml\ProductLabels\Edit\SaveButton</item>
+            <item name="save_and_continue" xsi:type="string">WeltPixel\ProductLabels\Block\Adminhtml\ProductLabels\Edit\SaveAndContinueButton</item>
+        </item>
+    </argument>
+    <dataSource name="productlabels_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">WeltPixel\ProductLabels\Model\ProductLabels\DataProvider</argument>
+            <argument name="name" xsi:type="string">productlabels_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="submit_url" xsi:type="url" path="weltpixelproductlabels/productlabels/save"/>
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+    <fieldset name="general">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string">General</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="opened" xsi:type="boolean">true</item>
+                <item name="sortOrder" xsi:type="number">0</item>
+            </item>
+        </argument>
+        <field name="id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="visible" xsi:type="boolean">false</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="dataScope" xsi:type="string">id</item>
+                </item>
+            </argument>
+        </field>
+        <field name="title">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Title</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                    <item name="dataScope" xsi:type="string">title</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="notice" xsi:type="string" translate="true">Set current label title. Only for admin purposes, not displayed in frontend.</item>
+                </item>
+            </argument>
+        </field>
+        <field name="priority">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Priority</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="sortOrder" xsi:type="number">15</item>
+                    <item name="dataScope" xsi:type="string">priority</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                        <item name="validate-number" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="notice" xsi:type="string" translate="true">Use 0 for highest priority and bigger value for lowest priority.</item>
+                </item>
+            </argument>
+        </field>
+        <field name="status">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">WeltPixel\ProductLabels\Model\ProductLabels\Attribute\Source\Status</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">int</item>
+                    <item name="label" xsi:type="string" translate="true">Status</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                    <item name="dataScope" xsi:type="string">status</item>
+                    <item name="default" xsi:type="string">1</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="notice" xsi:type="string" translate="true">Set current label status.</item>
+                </item>
+            </argument>
+        </field>
+        <field name="valid_from">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="label" xsi:type="string" translate="true">Valid From</item>
+                    <item name="formElement" xsi:type="string">date</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="sortOrder" xsi:type="number">25</item>
+                    <item name="dataScope" xsi:type="string">valid_from</item>
+                    <item name="default" xsi:type="string"></item>
+                    <item name="options" xsi:type="array">
+                        <item name="showsTime" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="valid_to">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="label" xsi:type="string" translate="true">Valid To</item>
+                    <item name="formElement" xsi:type="string">date</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="sortOrder" xsi:type="number">26</item>
+                    <item name="dataScope" xsi:type="string">valid_to</item>
+                    <item name="default" xsi:type="string"></item>
+                    <item name="options" xsi:type="array">
+                        <item name="showsTime" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="storeviews">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">WeltPixel\ProductLabels\Model\ProductLabels\Attribute\Source\StoreViews</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">int</item>
+                    <item name="label" xsi:type="string" translate="true">Store View</item>
+                    <item name="formElement" xsi:type="string">multiselect</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="dataScope" xsi:type="string">store_id</item>
+                    <item name="sortOrder" xsi:type="number">30</item>
+                    <item name="default" xsi:type="string">0</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="customer_group">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Magento\Customer\Ui\Component\Listing\Column\Group\Options</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">int</item>
+                    <item name="label" xsi:type="string" translate="true">Customer Group</item>
+                    <item name="formElement" xsi:type="string">multiselect</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="dataScope" xsi:type="string">customer_group</item>
+                    <item name="sortOrder" xsi:type="number">40</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+    <fieldset name="product_page">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string">Product Page</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="opened" xsi:type="boolean">true</item>
+                <item name="sortOrder" xsi:type="number">20</item>
+            </item>
+        </argument>
+        <field name="product_text">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Label Text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                    <item name="dataScope" xsi:type="string">product_text</item>
+                    <item name="notice" xsi:type="string" translate="true">Insert text for label.</item>
+                </item>
+            </argument>
+        </field>
+        <field name="product_text_font_color">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Text Font Color</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                    <item name="dataScope" xsi:type="string">product_text_font_color</item>
+                    <item name="elementTmpl" xsi:type="string">WeltPixel_ProductLabels/form/element/colorinput</item>
+                    <item name="notice" xsi:type="string" translate="true">Select color for Label text.</item>
+                </item>
+            </argument>
+        </field>
+        <field name="product_text_bg_color">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Text Background Color</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="sortOrder" xsi:type="number">30</item>
+                    <item name="dataScope" xsi:type="string">product_text_bg_color</item>
+                    <item name="elementTmpl" xsi:type="string">WeltPixel_ProductLabels/form/element/colorinput</item>
+                    <item name="notice" xsi:type="string" translate="true">Select color for label background.</item>
+                </item>
+            </argument>
+        </field>
+        <field name="product_text_font_size">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Text Font Size</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="sortOrder" xsi:type="number">40</item>
+                    <item name="dataScope" xsi:type="string">product_text_font_size</item>
+                    <item name="notice" xsi:type="string"  translate="true">Insert font size for label's text. e.g.: 12px</item>
+                </item>
+            </argument>
+        </field>
+        <field name="product_text_padding">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Text Padding</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="sortOrder" xsi:type="number">50</item>
+                    <item name="dataScope" xsi:type="string">product_text_padding</item>
+                    <item name="notice" xsi:type="string"  translate="true">Insert pandding values. e.g. 10px 20px 10px 20px </item>
+                </item>
+            </argument>
+        </field>
+        <field name="product_text_preview">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Preview</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="sortOrder" xsi:type="number">60</item>
+                    <item name="dataScope" xsi:type="string">product_text_preview</item>
+                    <item name="component" xsi:type="string">WeltPixel_ProductLabels/js/components/preview-component</item>
+                    <item name="imports" xsi:type="array">
+                        <item name="textLabel" xsi:type="string">${ $.provider }:data.product_text</item>
+                        <item name="textColor" xsi:type="string">${ $.provider }:data.product_text_font_color</item>
+                        <item name="textBgColor" xsi:type="string">${ $.provider }:data.product_text_bg_color</item>
+                        <item name="textFontSize" xsi:type="string">${ $.provider }:data.product_text_font_size</item>
+                        <item name="textPadding" xsi:type="string">${ $.provider }:data.product_text_padding</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="product_css">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Custom Css</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="sortOrder" xsi:type="number">70</item>
+                    <item name="dataScope" xsi:type="string">product_css</item>
+                    <item name="notice" xsi:type="string"  translate="true">Customize product label and text styles with CSS parameters. e.g.: transform:rotate(320deg); border-radius:30px; margin-top: 12px;</item>
+                </item>
+            </argument>
+        </field>
+        <field name="product_image">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Image</item>
+                    <item name="sortOrder" xsi:type="number">80</item>
+                    <item name="dataScope" xsi:type="string">product_image</item>
+                    <item name="formElement" xsi:type="string">fileUploader</item>
+                    <item name="component" xsi:type="string">WeltPixel_ProductLabels/js/components/fileUploader-component</item>
+                    <item name="allowedExtensions" xsi:type="string">jpg jpeg gif png</item>
+                    <item name="uploaderConfig" xsi:type="array">
+                        <item name="url" xsi:type="string">weltpixelproductlabels/productlabels/saveimage</item>
+                    </item>
+                    <item name="notice" xsi:type="string"  translate="true">
+                        <![CDATA[Upload image for Product Label. If image is uploaded, text is no longer visible. <br/> For sample Product Label Images and how to customize your Product Labels click <a href="https://support.weltpixel.com/hc/en-us/articles/360010853553-How-to-customize-product-labels-like-New-Sale-20-OFF-etc-" target="_blank" >here</a>.]]>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="product_page_position">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">WeltPixel\ProductLabels\Model\ProductLabels\Attribute\Source\PagePosition</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">int</item>
+                    <item name="label" xsi:type="string" translate="true">Label Position</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="sortOrder" xsi:type="number">85</item>
+                    <item name="component" xsi:type="string">WeltPixel_ProductLabels/js/components/pagepositionselect-component</item>
+                    <item name="elementTmpl" xsi:type="string">WeltPixel_ProductLabels/form/element/pagepositionselect</item>
+                    <item name="dataScope" xsi:type="string">product_page_position</item>
+                    <item name="default" xsi:type="string">1</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                    <item name="notice" xsi:type="string" translate="true">Set current label position in the product page.</item>
+                </item>
+            </argument>
+        </field>
+        <field name="product_position">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">WeltPixel\ProductLabels\Model\ProductLabels\Attribute\Source\Positions</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">int</item>
+                    <item name="label" xsi:type="string" translate="true">Position on Image</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="component" xsi:type="string">WeltPixel_ProductLabels/js/components/positionselect-component</item>
+                    <item name="elementTmpl" xsi:type="string">WeltPixel_ProductLabels/form/element/positionselect</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="dataScope" xsi:type="string">product_position</item>
+                    <item name="sortOrder" xsi:type="number">90</item>
+                    <item name="default" xsi:type="string">0</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+    <fieldset name="category_page">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string">Category Page</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="opened" xsi:type="boolean">true</item>
+                <item name="sortOrder" xsi:type="number">40</item>
+            </item>
+        </argument>
+        <field name="category_text">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Label Text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                    <item name="dataScope" xsi:type="string">category_text</item>
+                    <item name="notice" xsi:type="string" translate="true">Insert text for label.</item>
+                </item>
+            </argument>
+        </field>
+        <field name="category_text_font_color">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Text Font Color</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                    <item name="dataScope" xsi:type="string">category_text_font_color</item>
+                    <item name="elementTmpl" xsi:type="string">WeltPixel_ProductLabels/form/element/colorinput</item>
+                    <item name="notice" xsi:type="string" translate="true">Select color for Label text.</item>
+                </item>
+            </argument>
+        </field>
+        <field name="category_text_bg_color">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Text Background Color</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="sortOrder" xsi:type="number">30</item>
+                    <item name="dataScope" xsi:type="string">category_text_bg_color</item>
+                    <item name="elementTmpl" xsi:type="string">WeltPixel_ProductLabels/form/element/colorinput</item>
+                    <item name="notice" xsi:type="string" translate="true">Select color for label background.</item>
+                </item>
+            </argument>
+        </field>
+        <field name="category_text_font_size">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Text Font Size</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="sortOrder" xsi:type="number">40</item>
+                    <item name="dataScope" xsi:type="string">category_text_font_size</item>
+                    <item name="notice" xsi:type="string" translate="true">Insert font size for label's text. e.g.: 12px</item>
+                </item>
+            </argument>
+        </field>
+        <field name="category_text_padding">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Text Padding</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="sortOrder" xsi:type="number">50</item>
+                    <item name="dataScope" xsi:type="string">category_text_padding</item>
+                    <item name="notice" xsi:type="string" translate="true">Insert pandding values. e.g. 10px 20px 10px 20px </item>
+                </item>
+            </argument>
+        </field>
+        <field name="category_text_preview">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Preview</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="sortOrder" xsi:type="number">60</item>
+                    <item name="dataScope" xsi:type="string">category_text_preview</item>
+                    <item name="component" xsi:type="string">WeltPixel_ProductLabels/js/components/preview-component</item>
+                    <item name="imports" xsi:type="array">
+                        <item name="textLabel" xsi:type="string">${ $.provider }:data.category_text</item>
+                        <item name="textColor" xsi:type="string">${ $.provider }:data.category_text_font_color</item>
+                        <item name="textBgColor" xsi:type="string">${ $.provider }:data.category_text_bg_color</item>
+                        <item name="textFontSize" xsi:type="string">${ $.provider }:data.category_text_font_size</item>
+                        <item name="textPadding" xsi:type="string">${ $.provider }:data.category_text_padding</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="category_css">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Custom Css</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="sortOrder" xsi:type="number">70</item>
+                    <item name="dataScope" xsi:type="string">category_css</item>
+                    <item name="notice" xsi:type="string" translate="true">Customize product label and text styles with CSS parameters. e.g.: transform:rotate(320deg); border-radius:30px; margin-top: 12px;</item>
+                </item>
+            </argument>
+        </field>
+        <field name="category_image">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Image</item>
+                    <item name="sortOrder" xsi:type="number">80</item>
+                    <item name="dataScope" xsi:type="string">category_image</item>
+                    <item name="formElement" xsi:type="string">fileUploader</item>
+                    <item name="component" xsi:type="string">WeltPixel_ProductLabels/js/components/fileUploader-component</item>
+                    <item name="allowedExtensions" xsi:type="string">jpg jpeg gif png</item>
+                    <item name="uploaderConfig" xsi:type="array">
+                        <item name="url" xsi:type="string">weltpixelproductlabels/productlabels/saveimage</item>
+                    </item>
+                    <item name="notice" xsi:type="string"  translate="true">
+                        <![CDATA[Upload image for Product Label. If image is uploaded, text is no longer visible. <br/> For sample Product Label Images and how to customize your Product Labels click <a href="https://support.weltpixel.com/hc/en-us/articles/360010853553-How-to-customize-product-labels-like-New-Sale-20-OFF-etc-" target="_blank" >here</a>.]]>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="category_position">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">WeltPixel\ProductLabels\Model\ProductLabels\Attribute\Source\Positions</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">int</item>
+                    <item name="label" xsi:type="string" translate="true">Position</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="component" xsi:type="string">WeltPixel_ProductLabels/js/components/positionselect-component</item>
+                    <item name="elementTmpl" xsi:type="string">WeltPixel_ProductLabels/form/element/positionselect</item>
+                    <item name="source" xsi:type="string">productlabels</item>
+                    <item name="dataScope" xsi:type="string">category_position</item>
+                    <item name="sortOrder" xsi:type="number">90</item>
+                    <item name="default" xsi:type="string">0</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+    <fieldset name="conditions">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Conditions</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="opened" xsi:type="boolean">true</item>
+                <item name="sortOrder" xsi:type="number">60</item>
+            </item>
+        </argument>
+        <container name="weltpixel_productlabels_edit_tab_conditions" >
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+            </argument>
+            <htmlContent name="weltpixel_productlabels_edit_tab_conditions">
+                <argument name="block" xsi:type="object">WeltPixel\ProductLabels\Block\Adminhtml\ProductLabels\Edit\Tab\Conditions</argument>
+                <argument name="name" xsi:type="string">weltpixel_productlabels_edit_tab</argument>
+            </htmlContent>
+        </container>
+    </fieldset>
+</form>

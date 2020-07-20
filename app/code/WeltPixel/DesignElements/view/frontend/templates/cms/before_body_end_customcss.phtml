@@ -1,0 +1,43 @@
+<?php
+    $page           = $this->getPage();
+    $smallMobileBkp = $this->getSmallMobileBreakpoint();
+    $mobileBkp      = $this->getMobileBreakpoint();
+    $smallTabletBkp = $this->getSmallTabletBreakpoint();
+    $tabletBkp      = $this->getTabletBreakpoint();
+    $deskBkp        = $this->getDeskBreakpoint();
+    $largeDeskBkp   = $this->getLargeDeskBreakpoint();
+?>
+<style>
+    <?php if($globalCss = trim($page->getCssGlobal())):?>
+        <?php echo $globalCss ;?>
+    <?php endif;?>
+    
+    <?php if($smallPhoneCss = trim($page->getCssPhoneSmall())):?>
+        @media screen and (min-width: <?php echo $smallMobileBkp;?>) {<?php echo $smallPhoneCss;?>}
+    <?php endif;?>
+
+    <?php if($phoneCss = trim($page->getCssPhone())):?>
+        @media (min-width: <?php echo $mobileBkp;?>) {<?php echo $phoneCss;?>}
+    <?php endif;?>
+
+    <?php if($smallTabletCss = trim($page->getCssTabletSmall())):?>
+        @media (min-width: <?php echo $smallTabletBkp;?>) {<?php echo $smallTabletCss;?>}
+    <?php endif;?>
+
+    <?php if($tabletCss = trim($page->getCssTablet())):?>
+        @media (min-width: <?php echo $tabletBkp;?>) {<?php echo $tabletCss;?>}
+    <?php endif;?>
+
+    <?php if($deskCss = trim($page->getCssDesktop())):?>
+        @media (min-width: <?php echo $deskBkp;?>) {<?php echo $deskCss;?>}
+    <?php endif;?>
+
+    <?php if($largeDeskCss = trim($page->getCssDesktopLarge())):?>
+        @media (min-width: <?php echo $largeDeskBkp;?>) {<?php echo $largeDeskCss;?>}
+    <?php endif;?>
+</style>
+<?php if($js = $page->getCustomJs()):?>
+    <script>
+        <?php echo $js; ?>
+    </script>
+<?php endif;?>

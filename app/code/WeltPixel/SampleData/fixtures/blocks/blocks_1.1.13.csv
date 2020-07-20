@@ -1,0 +1,174 @@
+title,identifier,content,is_active
+"Size Chart Smart Block Woman",smartproducttabs_sizechart_woman,"
+<div class=""accordion clearfix"">
+    <div class=""acctitle acctitlec"">
+        <i class=""acc-closed icon-ok-circle""></i>
+        <i class=""acc-open icon-remove-circle""></i>INCHES
+    </div>
+    <div class=""acc_content clearfix"" style=""display: block;"">
+        <table class=""table table-bordered"">
+            <thead>
+                <tr bgcolor=""#A5A5A5"">
+                    <th colspan=""2"" style=""width: 32.2%;""> <font color=""#fff"">SIZES</th>
+                    <th style=""width: 22.6%;""><font color=""#fff"">BUST</th>
+                    <th style=""width: 22.6%;""><font color=""#fff"">WAIST</th>
+                    <th style=""width: 22.6%;""><font color=""#fff"">HIPS</font></th>
+                </tr>
+                </tr>
+            </thead>
+            <tbody>
+                <tr bgcolor=""#FFFFFF"">
+                    <td style=""width: 12.5%;"">XXS</td>
+                    <td style=""width: 12.5%;"">0</td>
+                    <td style=""width: 20%;"">31&frac34;""</td>
+                    <td style=""width: 20%;"">25""</td>
+                    <td style=""width: 20%;"">35&frac12;""</td>
+                </tr>
+                <tr bgcolor=""#EDEDED"">
+                    <td>XS</td>
+                    <td>1/2</td>
+                    <td>32&frac34;""</td>
+                    <td>26""</td>
+                    <td>36&frac12;""</td>
+                </tr>
+                <tr bgcolor=""#FFFFFF"">
+                    <td rowspan=""2"" style=""vertical-align:middle;"">S</td>
+                    <td>3/4</td>
+                    <td>33&frac34;""</td>
+                    <td>27""</td>
+                    <td>37&frac12;""</td>
+                </tr>
+                <tr bgcolor=""#FFFFFF"">
+                    <td>5/6</td>
+                    <td>34&frac34;""</td>
+                    <td>28""</td>
+                    <td>38&frac12;""</td>
+                </tr>
+                <tr bgcolor=""#EDEDED"">
+                    <td rowspan=""2"" style=""vertical-align:middle;"">M</td>
+                    <td>7/8</td>
+                    <td>35&frac34;""</td>
+                    <td>29""</td>
+                    <td>39&frac12;""</td>
+                </tr>
+                <tr bgcolor=""#EDEDED"">
+                    <td>9/10</td>
+                    <td>36&frac34;""</td>
+                    <td>30""</td>
+                    <td>40&frac12;""</td>
+                </tr>
+                <tr bgcolor=""#FFFFFF"">
+                    <td rowspan=""2"" style=""vertical-align:middle;"">L</td>
+                    <td>11/12</td>
+                    <td>38&frac14;""</td>
+                    <td>31&frac12;""</td>
+                    <td>42""</td>
+                </tr>
+                <tr bgcolor=""#FFFFFF"">
+                    <td>13/14</td>
+                    <td>39&frac34;""</td>
+                    <td>33""</td>
+                    <td>43&frac12;""</td>
+                </tr>
+                <tr bgcolor=""#EDEDED"">
+                    <td rowspan=""2"" style=""vertical-align:middle;"">XL</td>
+                    <td>15/16</td>
+                    <td>41&frac14;""</td>
+                    <td>34&frac12;""</td>
+                    <td>45""</td>
+                </tr>
+                <tr bgcolor=""#EDEDED"">
+                    <td>17/18</td>
+                    <td>42&frac34;""</td>
+                    <td>36""</td>
+                    <td>46&frac12;""</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class=""acctitle"">
+        <i class=""acc-closed icon-ok-circle""></i>
+        <i class=""acc-open icon-remove-circle""></i>CENTIMETERS
+    </div>
+    <div class=""acc_content clearfix"" style=""display: none;"">
+        <table class=""table table-bordered"">
+            <thead>
+                <tr bgcolor=""#A5A5A5"">
+                    <th colspan=""2"" style=""width: 32.2%;""> <font color=""#fff"">SIZES</th>
+                    <th style=""width: 22.6%;""><font color=""#fff"">BUST</th>
+                    <th style=""width: 22.6%;""><font color=""#fff"">WAIST</th>
+                    <th style=""width: 22.6%;""><font color=""#fff"">HIPS</font></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr bgcolor=""#FFFFFF"">
+                    <td style=""width: 12.5%;"">XXS</td>
+                    <td style=""width: 12.5%;"">0</td>
+                    <td style=""width: 20%;"">81</td>
+                    <td style=""width: 20%;"">64</td>
+                    <td style=""width: 20%;"">90</td>
+                </tr>
+                <tr bgcolor=""#EDEDED"">
+                    <td>XS</td>
+                    <td>1/2</td>
+                    <td>83.5</td>
+                    <td>66.5</td>
+                    <td>92.5</td>
+                </tr>
+                <tr bgcolor=""#FFFFFF"">
+                    <td rowspan=""2"" style=""vertical-align:middle;"">S</td>
+                    <td>3/4</td>
+                    <td>86</td>
+                    <td>69</td>
+                    <td>95</td>
+                </tr>
+                <tr bgcolor=""#FFFFFF"">
+                    <td>5/6</td>
+                    <td>88.5</td>
+                    <td>71.5</td>
+                    <td>97.5</td>
+                </tr>
+                <tr bgcolor=""#EDEDED"">
+                    <td rowspan=""2""style=""vertical-align:middle;"">M</td>
+                    <td>7/8</td>
+                    <td>91</td>
+                    <td>74</td>
+                    <td>100</td>
+                </tr>
+                <tr bgcolor=""#EDEDED"">
+                    <td>9/10</td>
+                    <td>93.5</td>
+                    <td>76.5</td>
+                    <td>102.5</td>
+                </tr>
+                <tr bgcolor=""#FFFFFF"">
+                    <td rowspan=""2"" style=""vertical-align:middle;"">L</td>
+                    <td>11/12</td>
+                    <td>97.5</td>
+                    <td>80.5</td>
+                    <td>106.5</td>
+                </tr>
+                <tr bgcolor=""#FFFFFF"">
+                    <td>13/14</td>
+                    <td>101.5</td>
+                    <td>84.5</td>
+                    <td>110.5</td>
+                </tr>
+                <tr bgcolor=""#EDEDED"">
+                    <td rowspan=""2"" style=""vertical-align:middle;"">XL</td>
+                    <td>15/16</td>
+                    <td>105.5</td>
+                    <td>88.5</td>
+                    <td>114.5</td>
+                </tr>
+                <tr bgcolor=""#EDEDED"">
+                    <td>17/18</td>
+                    <td>109.5</td>
+                    <td>95.5</td>
+                    <td>118.5</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+",1

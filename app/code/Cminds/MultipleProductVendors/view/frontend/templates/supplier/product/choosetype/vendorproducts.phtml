@@ -1,0 +1,98 @@
+<?php /* check if module enabled or there are vendor products */ ?>
+<?php if($block->showBlock()): ?>
+
+<div class="product-selector-container col-sm-4 col-sm-offset-4">
+<div class='separator' style='padding:15px;'><?php /* @escapeNotVerified */ echo __('Or select a vendor creatd product.'); ?><br/>
+(<?php /* @escapeNotVerified */ echo __('This list only includes products created by the admin'); ?>)</div>
+    <input id='product-filter' type="text" placeholder='<?= __('Filter Products By Name Or SKU') ?>' />
+    <div class='product-list list-group' style = 'max-height:600px; overflow-y: auto;'>
+    <?php
+        $productCollection = $block->getProductCollection();
+        foreach ($productCollection as $key => $product) {
+        ?><a href='#' data-item='<?= $key; ?>' class = 'text-left list-group-item list-group-item-action flex-column'>
+            <h4 class="mb-1"><?= $product->getName() ?></h4>
+            <div class='flex-sm-column'><?= __('SKU') ?>: <?= $product->getSku() ?></div>
+        </a><?php
+        }
+    ?>
+    </div>
+</div>
+<div class="additional-fields-container container main-container vendor-container" style='display:none;'>
+    <?= $this->getChildHtml('supplier.product.vendorproducts.from') ?>
+</div>
+
+<script type="text/javascript">
+//< ![CDATA[
+require(['jquery'], function($) {
+    $(document).ready(function() {
+        var oldTitle = '';
+        var targetUrl = '<?= $block->getCreateLink() ?>';
+
+        $('.product-selector-container').appendTo('.main-container.vendor-container');
+        $("#product-filter").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $(".product-list > a").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+        <?php // show product creation form ?>
+        $('.product-selector-container').on('click', '.product-list > a', function(event){
+            event.preventDefault();
+            $('.product-selector-container, #choose_type_form').hide();
+            $('#prototype').val($(this).data('item'));
+            $('.additional-fields-container').show();
+            oldTitle = $('.main-container h1').first().text();
+            $('.main-container h1').first().text('<?= __('Create Product'); ?>');
+        });
+
+        $('.additional-fields-container').on('click', '#product_create_form .submit-data', function(event){
+            <?php // validate form ?>
+            if ($('#product_create_form').valid()) {
+                $("#product_create_form .submit-data, #product_create_form .cancel").attr("disabled", true);
+
+                <?php // send ajax request ?>
+                $.ajax({
+                    url: targetUrl,
+                    type: "POST",
+                    data : $('#product_create_form').serialize(),
+                    showLoader: true, // enable loader
+                    context: '.additional-fields-container'
+                }).done(function (data) {
+                    if(true === data.success){
+                        cancelCreationFrom();
+                    }
+                    // $(tergetId).html(data);
+                    return true;
+                }).fail(function() {
+                    console.log('an error occured');
+                })
+                .always(function() {
+                    $('#product_create_form .submit-data, #product_create_form .cancel').removeAttr("disabled");
+                });;
+            }
+        });
+
+        <?php // cancel prodcut selection ?>
+        $('.additional-fields-container').on('click', '#product_create_form  .cancel', function(event){
+            cancelCreationFrom();
+        });
+
+        function cancelCreationFrom(){
+            $('.additional-fields-container').hide();
+            $('.product-selector-container, #choose_type_form').show();
+            $('#product_create_form input, #product_create_form textarea').val('');
+            $('.main-container h1').first().text(oldTitle);
+        }
+
+    });
+});
+//]]>
+</script>
+<script type="text/x-magento-init">
+    {
+        "#product_create_form": {
+            "validation": {}
+        }
+    }
+</script>
+<?php endif; ?>

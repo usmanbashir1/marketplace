@@ -1,0 +1,11 @@
+<script>
+require(['jquery', 'toggles_accordions_tabs'],
+function   ($, SEMICOLONTABS) {
+    $(document).ready( SEMICOLONTABS.widget.init() );
+    $(window).on( 'resize', function() {
+        var t = setTimeout( function(){
+                SEMICOLONTABS.widget.tabsJustify();
+            }, 500 );
+        });
+});
+</script>

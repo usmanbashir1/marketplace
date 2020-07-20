@@ -1,0 +1,152 @@
+<?php
+$collection = $block->getQaCollection();
+$collectionSize = $collection->getSize();
+$i = 0;
+?>
+<?php if ($block->getHelper()->qaVisibleOnFrontend()) : ?>
+    <?php if ($collectionSize > 0) : ?>
+        <div class="block review-list">
+            <div class="block-title">
+                <strong><?php /* @escapeNotVerified */ echo __('Questions and Answers'); ?></strong>
+            </div>
+            <div class="block-content">
+                <ol class="items review-items">
+                    <?php foreach ($collection as $question) : ?>
+                        <li class="item review-item">
+                            <div class="review-title">
+                                <?php echo $question->getQuestion();?>
+                            </div>
+
+                            <?php if ($question->getAnswer() !== null) : ?>
+                                <div class="review-content">
+                                    <?php echo $question->getAnswer(); ?>
+                                </div>
+                            <?php endif;?>
+
+                            <div class="review-details">
+                                <p class="review-author">
+                                    <span class="review-details-label">
+                                        <?php /* @escapeNotVerified */ echo __('Question by'); ?>
+                                    </span>
+                                    <strong class="review-details-value">
+                                        <?php echo $question->getData('customer_name'); ?>
+                                    </strong>
+                                </p>
+                                <p class="review-date">
+                                    <?php $date = new \DateTime($question->getData('created_at')); ?>
+                                    <span class="review-details-label"><?php /* @escapeNotVerified */ echo __('Posted on'); ?></span>
+                                    <time class="review-details-value"><?php echo $date->format('D, F d H:i'); ?></time>
+                                </p>
+                            </div>
+                        </li>
+                        <?php $i++; ?>
+                        <?php if ($i === $collectionSize) : ?>
+                            <div class="toolbar review-toolbar"></div>
+                        <?php endif; ?>
+                    <?php endforeach;?>
+                </ol>
+            </div>
+        </div>
+    <?php else : ?>
+        <div class="block review-list"
+             style="margin-top: 15px;">
+            <div class="block-title">
+                <strong><?php /* @escapeNotVerified */ echo __('There are no questions to display.'); ?></strong>
+            </div>
+        </div>
+    <?php endif;?>
+<?php endif;?>
+
+<?php  if ($block->canDisplayForm()) : ?>
+    <div data-role="product-review">
+        <div class="block review-list" >
+            <div class="block-title">
+                <strong><?php /* @escapeNotVerified */ echo __('Ask Question'); ?></strong>
+            </div>
+            <div class="block-content">
+                <ol class="items review-items">
+                    <li class="item review-item"
+                        itemscope=""
+                        itemprop="review"
+                        itemtype="http://schema.org/Review">
+                        <form action="<?php echo $block->getUrl('marketplaceqa/questions/save/')?>"
+                              class="qa-form"
+                              method="post"
+                              id="qa-form"
+                              data-role="product-review-form"
+                              data-bind="scope: 'review-form'"
+                              novalidate="novalidate">
+                            <?php echo $block->getBlockHtml('formkey'); ?>
+                            <input type="hidden"
+                                   name="supplier_id"
+                                   value="<?php echo $block->getProduct()->getCreatorId();?>" >
+                            <input type="hidden"
+                                   name="product_id"
+                                   value="<?php echo $block->getProduct()->getId();?>" >
+                            <input type="hidden"
+                                   name="customer_id"
+                                   value="<?php echo $block->getCustomer()->getId();?>" >
+                            <div class="block review-list">
+                                <fieldset class="fieldset review-fieldset"
+                                          data-hasrequired="">
+                                    <div class="field review-field-name required">
+                                        <label for="name_field"
+                                               class="label">
+                                            <span><?php /* @escapeNotVerified */ echo __('Name'); ?></span>
+                                        </label>
+                                        <div class="control">
+                                            <input type="text"
+                                                   name="customer_name"
+                                                   id="name_field"
+                                                   class="input-text"
+                                                   data-validate="{required:true}"
+                                                   value="<?php echo $block->getCustomer()->getName();?>"
+                                                   aria-required="true">
+                                        </div>
+                                    </div>
+                                    <div class="field review-field-summary required">
+                                        <label for="summary_field"
+                                               class="label">
+                                            <span><?php /* @escapeNotVerified */ echo __('Email'); ?></span>
+                                        </label>
+                                        <div class="control">
+                                            <input type="text"
+                                                   name="customer_email"
+                                                   id="summary_field"
+                                                   class="input-text"
+                                                   data-validate="{required:true}"
+                                                   value="<?php echo $block->getCustomer()->getEmail();?>"
+                                                   aria-required="true">
+                                        </div>
+                                    </div>
+                                    <div class="field review-field-text required">
+                                        <label for="question_field"
+                                               class="label">
+                                            <span><?php /* @escapeNotVerified */ echo __('Question'); ?></span>
+                                        </label>
+                                        <div class="control">
+                                    <textarea name="question"
+                                              id="question_field"
+                                              cols="5" rows="3"
+                                              data-validate="{required:true}"
+                                              data-bind="value: review().detail"
+                                              aria-required="true"></textarea>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="actions-toolbar review-form-actions">
+                                <div class="primary actions-primary">
+                                    <button type="submit"
+                                            class="action submit primary">
+                                        <span><?php /* @escapeNotVerified */ echo __('Submit Question'); ?></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>

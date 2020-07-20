@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<referenceBlock name="product.info.details">
+			<block ifconfig="weltpixel_smartproducttabs/general/enable_smartproducttabs" class="WeltPixel\SmartProductTabs\Block\SmartProductTabs" name="smartproducttabs.tab_1" before="-" template="WeltPixel_SmartProductTabs::smartproducttabs_tab_1.phtml" group="detailed_info" >
+				<arguments>
+					<argument name="title" xsi:type="helper" helper="WeltPixel\SmartProductTabs\Helper\Data::getTabNameA"/>
+				</arguments>
+			</block>
+			<block ifconfig="weltpixel_smartproducttabs/general/enable_smartproducttabs" class="WeltPixel\SmartProductTabs\Block\SmartProductTabs" name="smartproducttabs.tab_2" after="smartproducttabs.tab_2" template="WeltPixel_SmartProductTabs::smartproducttabs_tab_2.phtml" group="detailed_info" >
+				<arguments>
+					<argument name="title" xsi:type="helper" helper="WeltPixel\SmartProductTabs\Helper\Data::getTabNameB"/>
+				</arguments>
+			</block>
+			<block ifconfig="weltpixel_smartproducttabs/general/enable_smartproducttabs" class="WeltPixel\SmartProductTabs\Block\SmartProductTabs" name="smartproducttabs.tab_3" after="smartproducttabs.tab_3" template="WeltPixel_SmartProductTabs::smartproducttabs_tab_3.phtml" group="detailed_info" >
+				<arguments>
+					<argument name="title" xsi:type="helper" helper="WeltPixel\SmartProductTabs\Helper\Data::getTabNameC"/>
+				</arguments>
+			</block>
+		</referenceBlock>
+	</body>
+</page>

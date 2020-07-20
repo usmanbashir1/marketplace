@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Cminds DropshipNotification adminhtml routes config.
+ *
+ * @category Cminds
+ * @package  Cminds_DropshipNotification
+ * @author   Piotr Pierzak <piotr@cminds.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin">
+        <route id="dropshipnotification" frontName="dropshipnotification">
+            <module name="Cminds_DropshipNotification"/>
+        </route>
+    </router>
+</config>

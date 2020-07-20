@@ -1,0 +1,50 @@
+<?php
+// @codingStandardsIgnoreFile
+?>
+<?php $_helper = $this->helper('WeltPixel\Multistore\Helper\Data'); ?>
+<?php $_utilityHelper = $this->helper('WeltPixel\Backend\Helper\Utility'); ?>
+<?php if (count($block->getStores())>1): ?>
+    <?php $id = $block->getIdModifier() ? '-' . $block->getIdModifier() : ''?>
+<?php $bgColorStyle = $_helper->getBarBgColor() ? "style='background-color: ".$_helper->getBarBgColor() ."'" : ''?>
+<div class="multistore-switcher switcher language switcher-language" id="switcher-language<?php /* @escapeNotVerified */ echo $id?>" <?=$bgColorStyle?>>
+    <div class="actions dropdown options switcher-options">
+        <ul class="weltpixel_multistore">
+            <?php foreach ($block->getStores() as $_lang): ?>
+                <?php if (!$_helper->canStoreBeDisplayed($_lang->getId(), $_lang->getCode())) continue; ?>
+                <?php $image = $_helper->getImageUrl($_lang->getId()); ?>
+                <?php $inactiveImage = $_helper->getInactiveImageUrl($_lang->getId()); ?>
+
+                <li class="view-<?php echo $block->escapeHtml($_lang->getCode()); ?> <?php if ($_lang->getId() == $block->getCurrentStoreId()): echo 'active'; endif; ?> switcher-option">
+                    <?php if ($_lang->getId() == $block->getCurrentStoreId()): ?>
+                        <img src="<?php echo $image ?>" alt="<?php echo $block->escapeHtml($_lang->getName()) ?>" />
+                    <?php else: ?>
+                        <a href="#" data-post='<?php /* @escapeNotVerified */ echo $block->getTargetStorePostData($_lang); ?>'>
+                            <img src="<?php echo $inactiveImage ?>" alt="<?php echo $block->escapeHtml($_lang->getName()) ?>" />
+                        </a>
+                    <?php endif; ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>
+    <style>
+        <?php
+        $imgHeight = $_helper->getImageHeight();
+        $imgWidth = $_helper->getImageWidth();
+        $barWidth = $_helper->getBarWidth();
+        ?>
+        ul.weltpixel_multistore li img {
+            height: <?php echo $imgHeight; ?>;
+            <?php if ($imgWidth) : ?>
+            width: <?php echo $imgWidth; ?>;
+            <?php endif; ?>
+        }
+        <?php if(!$_utilityHelper->isPearlThemeUsed() && $barWidth):?>
+        @media screen and (min-width: 768px) {
+            .weltpixel_multistore {
+                max-width: <?php echo $barWidth;?>
+            }
+        }
+        <?php endif;?>
+    </style>
+<?php endif; ?>

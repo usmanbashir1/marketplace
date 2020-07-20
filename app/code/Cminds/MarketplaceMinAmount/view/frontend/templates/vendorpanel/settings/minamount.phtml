@@ -1,0 +1,92 @@
+<?php
+$minAmount = $block->getMinOrderAmount();
+$currencyCode = $block->getCurrentCurrencyCode();
+
+$minOrderAmount = $minAmount['supplier_min_order_amount'];
+$minOrderQty = $minAmount['supplier_min_order_qty'];
+$minOrderAmountPer = $minAmount['supplier_min_order_amount_per'];
+if ($minOrderAmount != '') {
+    $minOrderAmount = number_format($minOrderAmount,2);
+}
+if ($minOrderQty) {
+    $minOrderQty = $block->convertMinOrderQty($minOrderQty);
+}
+$options = $block->getMinAmountOptions();
+?>
+<div class="container main-container vendor-container">
+    <h1><?php echo __('Order Restrictions for Supplier'); ?></h1>
+    <div class="row">
+        <div class="col-md-12 container form-container">
+            <form name="settings_shipping_methods"
+                id="settings_shipping_methods"
+                action="<?php echo $block->getUrl('*/*/savePost') ?>"
+                method="post">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="supplier_min_order_amount" class="col-lg-6 control-label">
+                                <?php echo $block->escapeHtml(__('Minimum Order Amount')); ?>
+                            </label>
+                            <div class="col-sm-8 input-container">
+                                <input type="text"
+                                       id="supplier_min_order_amount"
+                                       name="supplier_min_order_amount"
+                                       class="input-text form-control validate-number"
+                                       value="<?php echo $minOrderAmount; ?>"
+                                />
+                                <div class="info-message"><?php echo __('in %1 (base store currency). Empty or 0 means no restriction.', $currencyCode) ?></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="supplier_min_order_qty" class="col-lg-6 control-label">
+                                <?php echo $block->escapeHtml(__('Minimum Order Qty')); ?>
+                            </label>
+                            <div class="col-sm-8 input-container">
+                                <input type="text"
+                                       id="supplier_min_order_qty"
+                                       name="supplier_min_order_qty"
+                                       class="input-text form-control validate-number"
+                                       value="<?php echo $minOrderQty; ?>"
+                                />
+                                <div class="info-message"><?php echo __('Empty or 0 means no restriction.') ?></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="supplier_min_order_amount_per" class="col-lg-6 control-label">
+                                <?php echo $block->escapeHtml(__('Restrictions Per')); ?>
+                            </label>
+                            <div class="col-sm-8 controls">
+                                <select class="" name="supplier_min_order_amount_per" id="tysupplier_min_order_amount_per">
+                                    <?php foreach ($options as $option) : ?>
+                                        <option value="<?php echo $option['value']; ?>"
+                                            <?php if($minOrderAmountPer == $option['value']) echo "selected"; ?>
+                                        >
+                                            <?php echo __($option['label']) ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+
+                <div class="col-md-2 row">
+                    <input type="submit"
+                           name="submit"
+                           class="btn btn-primary"
+                           value="<?php echo __('Save Settings') ?>"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

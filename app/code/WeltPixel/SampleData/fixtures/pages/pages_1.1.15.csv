@@ -1,0 +1,99 @@
+title,page_layout,meta_keywords,meta_description,identifier,content_heading,content,is_active,sort_order,layout_update_xml,custom_theme,custom_root_template,custom_layout_update_xml,custom_theme_from,custom_theme_to,css_global,css_phone_small,css_phone,css_tablet_small,css_tablet,css_desktop,css_desktop_large,custom_js
+"Home Page V12",1column,,,home-page-v12,"","
+<div class=""container-v12 slider-v1-cat"">
+    {{widget type=""WeltPixel\OwlCarouselSlider\Block\Slider\Category"" category=""category/24"" type_name=""WeltPixel - Custom Category Product Carousel""}}
+</div>
+<div class=""container-v12"">
+    {{widget_nr_1}}
+</div>
+<div class=""container-v12 slider-v2-cat"">
+    {{widget type=""WeltPixel\OwlCarouselSlider\Block\Slider\Category"" category=""category/24"" type_name=""WeltPixel - Custom Category Product Carousel""}}
+</div>
+<div class=""container-v12"">
+    <div class=""scaled-text-base"">
+        <a href=""/v12/glasses.html"" class=""img-cont"">
+            <img class=""lazy"" src=""{{media url=""wysiwyg/pearl_theme/Loader.gif""}}"" data-original=""{{media url=""wysiwyg/pearl_theme/beatnik_slider1_2048x.jpg""}}"" alt="""" />
+            <div class=""overlay-text overlay-left"">
+                <div class=""inner"">
+                    <div class=""text"">
+                        <div class=""scaled-text"">
+                            <div class=""seasonal"">Seasonal colors</div>
+                            <div class=""second-line"">Starting at $95, including prescription lenses</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class=""container-v12"">
+    <div class=""scaled-text-base"">
+        <img class=""lazy"" src=""{{media url=""wysiwyg/pearl_theme/Loader.gif""}}"" data-original=""{{media url=""wysiwyg/pearl_theme/beatnik_slider3_47681487-2c70-4a24-b317-e8098a153c16_2048x.jpg""}}"" alt="""" />
+    </div>
+</div>
+<div class=""container-v12"">
+    <div class=""row nomarginleft"">
+        <div class=""text-center title-article"">
+            <h3 class=""text-initial"">News from the optometrists</h3>
+        </div>
+        <div class=""col_one_third nobottommargin"">
+            <div class=""feature-box center media-box fbox-bg"">
+                <div class=""fbox-media"">
+                    <a href=""#""><img class=""image_fade lazy"" src=""{{media url=""wysiwyg/pearl_theme/Loader.gif""}}"" data-original=""{{media url=""wysiwyg/pearl_theme/blog_beatnik2_900x.jpg""}}"" alt=""Featured Box Image"" /></a>
+                </div>
+                <div class=""fbox-desc"">
+                    <h3>One woman's vision<span class=""subtitle"">This is a demo-store store for Pearl Theme.
+Use this flexible solution and grow your business.</span></h3>
+                    <p><a href=""#"" class=""btn btn-default"">Read More</a></p>
+                </div>
+            </div>
+        </div>
+        <div class=""col_one_third nobottommargin"">
+            <div class=""feature-box center media-box fbox-bg"">
+                <div class=""fbox-media"">
+                    <a href=""#""><img class=""image_fade lazy"" src=""{{media url=""wysiwyg/pearl_theme/Loader.gif""}}"" data-original=""{{media url=""wysiwyg/pearl_theme/blog_beatnik1_900x.jpg""}}"" alt=""Featured Box Image"" /></a>
+                </div>
+                <div class=""fbox-desc"">
+                    <h3>Why we see differently<span class=""subtitle"">This is a demo-store store for Pearl Theme.
+Use this flexible solution and grow your business.</span></h3>
+                    <p><a href=""#"" class=""btn btn-default"">Read More</a></p>
+                </div>
+            </div>
+        </div>
+        <div class=""col_one_third col_last nobottommargin"">
+            <div class=""feature-box center media-box fbox-bg"">
+                <div class=""fbox-media"">
+                    <a href=""#""><img class=""image_fade lazy"" src=""{{media url=""wysiwyg/pearl_theme/Loader.gif""}}"" data-original=""{{media url=""wysiwyg/pearl_theme/blog_beatnik3_900x.jpg""}}"" alt=""Featured Box Image"" {{media url=""wysiwyg/pearl_theme/Loader.gif""}}/></a>
+                </div>
+                <div class=""fbox-desc"">
+                    <h3>The eyes have it<span class=""subtitle"">This is a demo-store store for Pearl Theme.
+Use this flexible solution and grow your business.</span></h3>
+                    <p><a href=""#"" class=""btn btn-default"">Read More</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=""container-v12"">
+    <div class=""row-instagram-v12 nomarginleft"">
+        {{widget type=""WeltPixel\InstagramWidget\Block\Widget\Instagram"" instagram_client_id=""e21514b30c9d44d4b48c52bade4b56ed"" instagram_access_token=""6199620633.e21514b.092dd49e04644ff588ea1e0d78c8e09a"" title=""#PEARL GLASSES ON INSTAGRAM"" description=""Pearl Theme. We would love to meet you.""  images_per_row=""col-6""  limit=""6""  sort_by=""none"" resolution=""standard_resolution"" feed_type=""user"" user_id=""6199620633""}}
+    </div>
+</div>
+",1,,,,,,,,"
+.theme-pearl .page-main {
+    padding: 0px;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+.page-wrapper .breadcrumbs {display: none;}
+.columns .column.main{
+   padding-bottom:0px;
+}
+.owl-item .banner-item{
+    margin:0px !important;
+}
+
+.nav-sections {
+    margin-bottom: 0px !important;
+}
+",,,,,,,

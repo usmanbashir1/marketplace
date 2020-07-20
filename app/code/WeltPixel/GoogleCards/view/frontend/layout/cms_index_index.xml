@@ -1,0 +1,20 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="weltpixel.googlecards.breadcrumb" remove="true"/>
+        <referenceBlock name="head.additional">
+            <block ifconfig="weltpixel_google_cards/rich_snippet_search/enable_search" before="-"
+                   class="WeltPixel\GoogleCards\Block\RichSnippet" name="weltpixel.richsnippet.search"
+                   template="WeltPixel_GoogleCards::rich_snippet_search.phtml"/>
+            <block ifconfig="weltpixel_google_cards/rich_snippet_logo/enable_logo" before="-"
+                   class="WeltPixel\GoogleCards\Block\RichSnippet" name="weltpixel.richsnippet.logo"
+                   template="WeltPixel_GoogleCards::rich_snippet_logo.phtml"/>
+            <block ifconfig="weltpixel_google_cards/rich_snippet_contact/enable_contact" before="-"
+                   class="WeltPixel\GoogleCards\Block\RichSnippet" name="weltpixel.richsnippet.contact"
+                   template="WeltPixel_GoogleCards::rich_snippet_contact.phtml"/>
+            <block ifconfig="weltpixel_google_cards/rich_snippet_social_profile/enable_social_profile" before="-"
+                   class="WeltPixel\GoogleCards\Block\GoogleCards" name="weltpixel.markup.social.profile"
+                   template="WeltPixel_GoogleCards::social_profile_markup.phtml"/>
+        </referenceBlock>
+    </body>
+</page>

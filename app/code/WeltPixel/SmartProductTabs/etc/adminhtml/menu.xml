@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add
+				id="WeltPixel_SmartProductTabs::SmartProductTabs_Label"
+				title="Smart Product Tabs"
+				module="WeltPixel_SmartProductTabs"
+				sortOrder="60"
+				parent="WeltPixel_Backend::WeltPixel"
+				resource="WeltPixel_SmartProductTabs::SmartProductTabs_Label"
+		/>
+		<add
+				id="WeltPixel_SmartProductTabs::SmartProductTabs"
+				title="Smart Product Tabs Settings"
+				module="WeltPixel_SmartProductTabs"
+				action="adminhtml/system_config/edit/section/weltpixel_smartproducttabs/"
+				sortOrder="10"
+				parent="WeltPixel_SmartProductTabs::SmartProductTabs_Label"
+				resource="WeltPixel_SmartProductTabs::SmartProductTabs"
+		/>
+	</menu>
+</config>

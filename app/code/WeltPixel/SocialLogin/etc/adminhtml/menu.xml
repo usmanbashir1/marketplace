@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+                id="WeltPixel_SocialLogin::SocialLogin_Customer_Label"
+                title="WeltPixel Social Login"
+                module="WeltPixel_SocialLogin"
+                sortOrder="60"
+                parent="Magento_Customer::customer"
+                resource="WeltPixel_SocialLogin::SocialLogin_Customer_Label"
+        />
+        <add
+                id="WeltPixel_SocialLogin::socialaccounts"
+                title="Social Login Accounts"
+                module="WeltPixel_SocialLogin"
+                action="sociallogin/socialaccounts"
+                sortOrder="160"
+                parent="WeltPixel_SocialLogin::SocialLogin_Customer_Label"
+                resource="WeltPixel_SocialLogin::SocialLogin_Accounts"
+        />
+        <add
+                id="WeltPixel_SocialLogin::SocialLogin_Label"
+                title="Social Login"
+                module="WeltPixel_SocialLogin"
+                sortOrder="395"
+                parent="WeltPixel_Backend::WeltPixel"
+                resource="WeltPixel_SocialLogin::SocialLogin_Label"
+        />
+        <add
+                id="WeltPixel_SocialLogin::SocialLogin_General"
+                title="Social Login Settings"
+                module="WeltPixel_SocialLogin"
+                action="adminhtml/system_config/edit/section/weltpixel_sociallogin/"
+                sortOrder="10"
+                parent="WeltPixel_SocialLogin::SocialLogin_Label"
+                resource="WeltPixel_SocialLogin::SocialLogin_General"
+        />
+    </menu>
+</config>

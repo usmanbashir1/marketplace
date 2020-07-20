@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="WeltPixel_NavigationLinks::css/navigation_mobile.css" media="screen and (max-width: 767px)"/>
+        <css src="WeltPixel_NavigationLinks::css/navigation_desktop.css" media="screen and (min-width: 768px)"/>
+    </head>
+    <body>
+        <referenceContainer name="before.body.end">
+            <block ifconfig="weltpixel_megamenu/megamenu/enable" class="WeltPixel\NavigationLinks\Block\Html\Topmenu" name="navigation.js" template="WeltPixel_NavigationLinks::navigation_js.phtml" />
+        </referenceContainer>
+    </body>
+</page>

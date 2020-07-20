@@ -1,0 +1,533 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<section id="weltpixel_product_page" translate="label" type="text" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+			<label>Product Page</label>
+			<tab>weltpixel</tab>
+			<resource>WeltPixel_ProductPage::ProductPageSettings</resource>
+			<group id="notification" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Important / Recommended:</label>
+				<fieldset_css>weltpixel-recommended-header active</fieldset_css>
+				<field id="notification_msg" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<frontend_model>WeltPixel\Backend\Block\Adminhtml\System\Config\Notification</frontend_model>
+				</field>
+			</group>
+			<group id="version" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Product View Version</label>
+				<field id="version" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Version</label>
+					<source_model>WeltPixel\ProductPage\Model\Config\Source\Version</source_model>
+					<comment><![CDATA[<b>Please select a store view to be able to save / preload different setups for each version.</b>]]></comment>
+				</field>
+				<field id="version_prepopulation" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+					<frontend_model>WeltPixel\ProductPage\Block\System\Config\Version</frontend_model>
+				</field>
+			</group>
+			<group id="general" translate="label" type="text" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>General settings</label>
+				<field id="image_area_width" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Image area width</label>
+					<comment>Set width for image section [ in % ], For example you can set it to 60% of the width of the website.</comment>
+					<tooltip>Note: The sum of Image area width and Move Description and Tabs under infoProduct info area width, should not exceed 100%.
+						This settings is applied only on desktop, on mobile devices the columns will automatically
+						take advantage of the responsive design.</tooltip>
+				</field>
+				<field id="product_info_area_width" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Product info area width</label>
+					<comment>Set width for product info area [ in %], for example you can set it to 40% of the width of the website</comment>
+					<tooltip>Note: The sum of Image area width and Product info area width, should not exceed 100%.
+						This settings is applied only on desktop, on mobile devices the columns will automatically
+						take advantage of the responsive design.</tooltip>
+				</field>
+				<field id="move_description_tabs_under_info_area" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Move Description and Tabs under info area</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Select Yes to move Description tab, More information tab and Reviews tab on the right section/side.</comment>
+				</field>
+				<field id="position_product_info" translate="label" type="select" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Position for Product Info</label>
+					<source_model>WeltPixel\ProductPage\Model\Config\Source\PositionProductInfo</source_model>
+					<comment>Select Position for Product Info</comment>
+					<depends>
+						<field id="weltpixel_product_page/version/version" separator="|">2|4</field>
+					</depends>
+				</field>
+
+				<field id="remove_wishlist" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Remove wishlist</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Select Yes to remove wishlist button from the product page.</comment>
+				</field>
+				<field id="remove_compare" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Remove compare</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Select Yes to remove compare button from the product page.</comment>
+				</field>
+				<field id="remove_email" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Remove email</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Select Yes to remove email button from the product page.</comment>
+				</field>
+				<field id="remove_qty_box" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Remove qty box</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Select Yes to remove quantity box from the product page.</comment>
+				</field>
+				<field id="remove_sku" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Remove sku</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Select Yes to remove SKU info from product page.</comment>
+				</field>
+				<field id="remove_stock_availability" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Remove stock availability</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Select Yes to remove stock availability info from product page.</comment>
+				</field>
+				<field id="remove_breadcrumbs" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Remove Breadcrumbs</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Select Yes to remove Breadcrumbs section from product page.</comment>
+				</field>
+				<field id="tabs_layout" translate="label" type="select" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Information Layout on Desktop</label>
+					<comment>Select information layout for desktop view. Show information as tabs, accordion or list.</comment>
+					<source_model>WeltPixel\ProductPage\Model\Config\Source\TabsLayout</source_model>
+				</field>
+				<field id="tabs_version" translate="label" type="select" sortOrder="124" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Tabs Version</label>
+					<comment>Select tabs version. Also you can control tab padding from product page CSS options: Product Page -> Other CSS Options -> Tab Container Padding.</comment>
+					<source_model>WeltPixel\ProductPage\Model\Config\Source\TabsVersion</source_model>
+					<depends>
+						<field id="tabs_layout">tab</field>
+					</depends>
+				</field>
+				<field id="accordion_version" translate="label" type="select" sortOrder="125" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Accordion Version</label>
+					<comment>Select accordion version.</comment>
+					<source_model>WeltPixel\ProductPage\Model\Config\Source\AccordionVersion</source_model>
+					<depends>
+						<field id="tabs_layout">accordion</field>
+					</depends>
+				</field>
+				<field id="accordion_collapsible" translate="label" type="select" sortOrder="127" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Accordion Collapsible</label>
+					<comment>Select accordion collapsible to be able to close all panels.</comment>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<depends>
+						<field id="tabs_layout">accordion</field>
+						<field id="accordion_version">0</field>
+					</depends>
+				</field>
+				<field id="qty_type" translate="label" type="select" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Quantity Input Type</label>
+					<comment>Select Input type for quantity field.</comment>
+					<source_model>WeltPixel\ProductPage\Model\Config\Source\QtyType</source_model>
+				</field>
+				<field id="qty_select_maxvalue" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Quantity Dropdown Max Value</label>
+					<comment>Insert max value for quantity field when is set in dropdown. Example: 10</comment>
+					<validate>number</validate>
+					<depends>
+						<field id="qty_type">select</field>
+					</depends>
+				</field>
+				<field id="display_swatch_tooltip" translate="label" type="select" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Display Swatch Tooltip</label>
+					<comment>Select Yes to display the tooltip on hover over swatches on product page.
+						For tooltip to be displayed make sure to have the Display Swatch Tooltip enabled on Category Page settings also.</comment>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+			</group>
+			<group id="images" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Images</label>
+				<field id="main_image_width" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Main Image Width</label>
+					<comment>Insert width for main image [in px]. Example: 564</comment>
+					<validate>number</validate>
+				</field>
+				<field id="main_image_height" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Main Image Height</label>
+					<comment>Insert height for main image [in px]. Example: 700</comment>
+					<validate>number</validate>
+				</field>
+				<field id="thumb_image_width" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Thumb Image Width</label>
+					<comment>Insert gallery thumb image width [in px]. Example: 80</comment>
+					<validate>number</validate>
+					<depends>
+						<field id="version">1</field>
+					</depends>
+				</field>
+				<field id="thumb_image_height" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Thumb Image Height</label>
+					<comment>Insert gallery thumb image height [in px]. Example: 80</comment>
+					<validate>number</validate>
+					<depends>
+						<field id="version">1</field>
+					</depends>
+				</field>
+			</group>
+			<group id="gallery" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Gallery</label>
+				<field id="no_content_msg" translate="label" type="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>No options available in this Product Page Version.</label>
+					<comment><![CDATA[
+					<script>requirejs(['jquery'],function($) {
+					$(document).ready(function() {
+						$('#row_weltpixel_product_page_gallery_no_content_msg span').attr('data-config-scope', '');
+						$('#weltpixel_product_page_version_version').change(function() {
+							var curValue = $(this).val();
+							if (curValue == 2 || curValue == 4) {
+								$('#row_weltpixel_product_page_gallery_no_content_msg').nextAll('tr').addClass("hidden");
+							} else {
+								$('#row_weltpixel_product_page_gallery_no_content_msg').nextAll('tr').removeClass("hidden");
+							}
+						});
+					});});</script>]]></comment>
+					<depends>
+						<field id="weltpixel_product_page/version/version" separator="|">2|4</field>
+					</depends>
+				</field>
+				<field id="nav" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Gallery navigation style</label>
+					<comment>Select style for image gallery on product page.</comment>
+					<source_model>WeltPixel\ProductPage\Model\Config\Source\Gallery\NavStyle</source_model>
+					<depends>
+						<field id="weltpixel_product_page/version/version" separator="|">1|3</field>
+					</depends>
+				</field>
+				<field id="loop" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Gallery navigation loop</label>
+					<comment>Enable/Disable loop for image gallery navigation. Select True to enable loop.</comment>
+					<source_model>WeltPixel\ProductPage\Model\Config\Source\TrueFalse</source_model>
+					<depends>
+						<field id="weltpixel_product_page/version/version" separator="|">1|3</field>
+					</depends>
+				</field>
+				<field id="keyboard" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Turn on/off keyboard arrows navigation</label>
+					<comment>Select True to enable keyboard arrows navigation for image gallery on product page.</comment>
+					<source_model>WeltPixel\ProductPage\Model\Config\Source\TrueFalse</source_model>
+					<depends>
+						<field id="weltpixel_product_page/version/version" separator="|">1|3</field>
+					</depends>
+				</field>
+				<field id="arrows" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Turn on/off arrows on the sides preview</label>
+					<comment>Display/Hide arrows on the side of image on product page. Select True to display arrows.</comment>
+					<source_model>WeltPixel\ProductPage\Model\Config\Source\TrueFalse</source_model>
+					<depends>
+						<field id="weltpixel_product_page/version/version" separator="|">1|3</field>
+					</depends>
+				</field>
+				<field id="arrows_bg" translate="label" type="text" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Background color arrows</label>
+					<comment>Select background color for arrows. Example: #FFFFFF</comment>
+					<depends>
+						<field id="arrows">true</field>
+						<field id="weltpixel_product_page/version/version" separator="|">1|3</field>
+					</depends>
+					<validate>color {required:false, hash:true}</validate>
+				</field>
+				<field id="caption" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Display Alt Text on image. </label>
+					<comment>Display/Hide Alt text in main image on product page. Make sure you have filed in Alt Text for your product images.</comment>
+					<source_model>WeltPixel\ProductPage\Model\Config\Source\TrueFalse</source_model>
+					<depends>
+						<field id="weltpixel_product_page/version/version" separator="|">1|3</field>
+					</depends>
+				</field>
+				<field id="navdir" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Sliding direction of thumbnails</label>
+					<comment>Select direction of thumbnails. Select Horizontal to display thumbnails below main image,
+						and Vertical to display thumbnails on left side of main image.</comment>
+					<source_model>WeltPixel\ProductPage\Model\Config\Source\Gallery\SlidingDirection</source_model>
+					<depends>
+						<field id="weltpixel_product_page/version/version" separator="|">1|3</field>
+					</depends>
+				</field>
+				<field id="navarrows" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Turn on/off on the thumbs navigation sides</label>
+					<comment>Set True to enable the thumbs navigation sides.</comment>
+					<source_model>WeltPixel\ProductPage\Model\Config\Source\TrueFalse</source_model>
+					<depends>
+						<field id="weltpixel_product_page/version/version" separator="|">1|3</field>
+					</depends>
+				</field>
+				<field id="navtype" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Sliding type of thumbnails</label>
+					<comment>Select sliding type of thumbnails.</comment>
+					<source_model>WeltPixel\ProductPage\Model\Config\Source\Gallery\NavType</source_model>
+					<depends>
+						<field id="weltpixel_product_page/version/version" separator="|">1|3</field>
+					</depends>
+				</field>
+				<field id="transition_effect" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Sets transition effect for slides changing</label>
+					<comment>Select the transition effect for images.</comment>
+					<source_model>WeltPixel\ProductPage\Model\Config\Source\Gallery\TransitionEffect</source_model>
+					<depends>
+						<field id="weltpixel_product_page/version/version" separator="|">1|3</field>
+					</depends>
+				</field>
+				<field id="transition_duration" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Sets transition duration in ms</label>
+					<comment>Insert transition duration [in ms]. Example: 500</comment>
+					<validate>validate-number</validate>
+					<depends>
+						<field id="weltpixel_product_page/version/version" separator="|">1|3</field>
+					</depends>
+				</field>
+			</group>
+			<group id="fullscreen" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Gallery Fullscreen</label>
+				<field id="no_content_msg" translate="label" type="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>No options available in this Product Page Version.</label>
+					<comment><![CDATA[
+					<script>requirejs(['jquery'],function($) {
+					$(document).ready(function() {
+						$('#row_weltpixel_product_page_fullscreen_no_content_msg span').attr('data-config-scope', '');
+						$('#weltpixel_product_page_version_version').change(function() {
+							var curValue = $(this).val();
+							if (curValue == 2 || curValue == 4) {
+								$('#row_weltpixel_product_page_fullscreen_no_content_msg').nextAll('tr').addClass("hidden");
+							} else {
+								$('#row_weltpixel_product_page_fullscreen_no_content_msg').nextAll('tr').removeClass("hidden");
+							}
+						});
+					});});</script>]]></comment>
+					<depends>
+						<field id="weltpixel_product_page/version/version" separator="|">2|4</field>
+					</depends>
+				</field>
+				<field id="allowfullscreen" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enable Fulscreen Image Zoom</label>
+					<comment>Set True to enable the Fullscreen Image Zoom functionality, when clicked on product page image.</comment>
+					<source_model>WeltPixel\ProductPage\Model\Config\Source\TrueFalse</source_model>
+					<depends>
+						<field id="weltpixel_product_page/version/version" separator="|">1|3</field>
+					</depends>
+				</field>
+				<field id="nav" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Fullscreen navigation style</label>
+					<comment>Select style for fullscreen image gallery.</comment>
+					<source_model>WeltPixel\ProductPage\Model\Config\Source\Gallery\NavStyle</source_model>
+					<depends>
+						<field id="allowfullscreen">true</field>
+					</depends>
+				</field>
+				<field id="loop" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Fullscreen navigation loop</label>
+					<comment>Enable/Disable loop for fullscreen image gallery navigation. Select True to enable loop.</comment>
+					<source_model>WeltPixel\ProductPage\Model\Config\Source\TrueFalse</source_model>
+					<depends>
+						<field id="allowfullscreen">true</field>
+					</depends>
+				</field>
+				<field id="arrows" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Turn on/off arrows on the sides preview</label>
+					<comment>Display/Hide arrows on the side of image when in fullscreen. Select True to display arrows.</comment>
+					<source_model>WeltPixel\ProductPage\Model\Config\Source\TrueFalse</source_model>
+					<depends>
+						<field id="allowfullscreen">true</field>
+					</depends>
+				</field>
+				<field id="caption" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Display alt text as image title</label>
+					<comment>Display/Hide Alt text  of image when in fullscreen. Make sure you have filed in Alt Text for your product images.</comment>
+					<source_model>WeltPixel\ProductPage\Model\Config\Source\TrueFalse</source_model>
+					<depends>
+						<field id="allowfullscreen">true</field>
+					</depends>
+				</field>
+				<field id="navdir" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Sliding direction of thumbnails in full screen</label>
+					<comment>Select direction of thumbnails when in fullscreen. Select Horizontal to display thumbnails below main image,
+						and Vertical to display thumbnails on left side of main image.</comment>
+					<source_model>WeltPixel\ProductPage\Model\Config\Source\Gallery\SlidingDirection</source_model>
+					<depends>
+						<field id="allowfullscreen">true</field>
+					</depends>
+				</field>
+				<field id="transition_effect" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Sets transition effect for slides changing</label>
+					<comment>Select the transition effect for images in fullscreen.</comment>
+					<source_model>WeltPixel\ProductPage\Model\Config\Source\Gallery\TransitionEffect</source_model>
+					<depends>
+						<field id="allowfullscreen">true</field>
+					</depends>
+				</field>
+				<field id="transition_duration" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Sets transition duration in ms</label>
+					<comment>Insert transition duration [in ms]. Example: 500</comment>
+					<validate>validate-number</validate>
+					<depends>
+						<field id="allowfullscreen">true</field>
+					</depends>
+				</field>
+			</group>
+			<group id="magnifier" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Magnifier Options</label>
+				<field id="no_content_msg" translate="label" type="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>No options available in this Product Page Version.</label>
+					<comment><![CDATA[
+					<script>requirejs(['jquery'],function($) {
+					$(document).ready(function() {
+						$('#row_weltpixel_product_page_magnifier_no_content_msg span').attr('data-config-scope', '');
+						$('#weltpixel_product_page_version_version').change(function() {
+							var curValue = $(this).val();
+							if (curValue == 2 || curValue == 4) {
+								$('#row_weltpixel_product_page_magnifier_no_content_msg').nextAll('tr').addClass("hidden");
+							} else {
+								$('#row_weltpixel_product_page_magnifier_no_content_msg').nextAll('tr').removeClass("hidden");
+							}
+						});
+					});});</script>]]></comment>
+					<depends>
+						<field id="weltpixel_product_page/version/version" separator="|">2|4</field>
+					</depends>
+				</field>
+				<field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enable Magnifier</label>
+					<comment>Enable/Disable Magnifier. Select the action that activates magnifier from below.</comment>
+					<source_model>WeltPixel\ProductPage\Model\Config\Source\TrueFalse</source_model>
+					<depends>
+						<field id="weltpixel_product_page/version/version" separator="|">1|3</field>
+					</depends>
+				</field>
+				<field id="fullscreenzoom" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Zoom of fullscreen</label>
+					<comment>Zoom step in percents for the fullscreen view. Example: 20 </comment>
+					<validate>validate-number</validate>
+					<depends>
+						<field id="enabled">true</field>
+					</depends>
+				</field>
+				<field id="top" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Top position of magnifier</label>
+					<comment>Insert Top position of magnifier. Leave blank for default.</comment>
+					<depends>
+						<field id="enabled">true</field>
+					</depends>
+				</field>
+				<field id="left" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Left position of magnifier</label>
+					<comment>Insert Left position of magnifier. Leave blank for default.</comment>
+					<depends>
+						<field id="enabled">true</field>
+					</depends>
+				</field>
+				<field id="width" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Width of magnifier block</label>
+					<comment>Insert Width of magnifier. Leave blank for default.</comment>
+					<depends>
+						<field id="enabled">true</field>
+					</depends>
+				</field>
+				<field id="height" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Height of magnifier block</label>
+					<comment>Insert Height of magnifier. Leave blank for default.</comment>
+					<depends>
+						<field id="enabled">true</field>
+					</depends>
+				</field>
+				<field id="eventtype" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Action that activates zoom</label>
+					<comment>Select the action that triggers the zoom/magnifier.</comment>
+					<source_model>WeltPixel\ProductPage\Model\Config\Source\Gallery\EventType</source_model>
+					<depends>
+						<field id="enabled">true</field>
+					</depends>
+				</field>
+			</group>
+			<group id="swatch" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Swatch Options</label>
+				<field id="radius" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Radius</label>
+					<comment>Set Radius of the swatches corners on product page. Example: 25px</comment>
+					<validate>required</validate>
+				</field>
+				<field id="width" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Width</label>
+					<comment>Set Width of the swatches on product page. Example: 30px</comment>
+					<validate>required</validate>
+				</field>
+				<field id="height" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Height</label>
+					<comment>Set Height of the swatches on product page. Example: 30px</comment>
+					<validate>required</validate>
+				</field>
+				<field id="line_height" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Line Height</label>
+					<comment>Set Line height for text on swatches on product page. Example: 29px</comment>
+					<validate>required</validate>
+				</field>
+				<field id="font_size" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Font Size</label>
+					<comment>Set Font Size of text on swatches on product page. Example: 10px</comment>
+					<validate>required</validate>
+				</field>
+			</group>
+			<group id="css" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Other CSS Options</label>
+				<field id="thumbnail_border" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Thumbnail Image Border</label>
+					<comment>Select color for Thumbnail images border. Example: #CCCCCC</comment>
+					<validate>required color {required:false, hash:true}</validate>
+				</field>
+				<field id="tab_active_background" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Tab Active Background</label>
+					<comment>Select color for background of active Tab. Example: #FFFFFF</comment>
+					<validate>required color {required:false, hash:true}</validate>
+				</field>
+				<field id="tab_background" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Tab Background</label>
+					<comment>Select color for background of Tabs. Example: #FFFFFF</comment>
+					<validate>required color {required:false, hash:true}</validate>
+				</field>
+				<field id="tab_text_active_color" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Tab Text Active Color</label>
+					<comment>Select color of text from Active tab. Example: #000000</comment>
+					<validate>required color {required:false, hash:true}</validate>
+				</field>
+				<field id="tab_text_color" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Tab Text Color</label>
+					<comment>Select color for text of Inactive tab. Example: #000000</comment>
+					<validate>required color {required:false, hash:true}</validate>
+				</field>
+				<field id="tab_container_padding" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Tab Container Padding</label>
+					<comment>Insert padding for tab text container. Example: 25px 50px 25px 50px (top, right, bottom, left)</comment>
+					<validate>required</validate>
+					<depends>
+						<field id="weltpixel_product_page/version/version" separator="|">1|3</field>
+					</depends>
+				</field>
+				<field id="page_background_color" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Page Background Color</label>
+					<comment>Select background color of Product page. Example: #FFFFFF</comment>
+					<depends>
+						<field id="weltpixel_product_page/version/version">2</field>
+					</depends>
+					<validate>color {required:false, hash:true}</validate>
+				</field>
+				<field id="page_background_color_top_v3" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Page Top Background Color</label>
+					<comment>Select background color for top of page. Example: #FFFFFF</comment>
+					<depends>
+						<field id="weltpixel_product_page/version/version" separator="|">3|4</field>
+					</depends>
+					<validate>color {required:false, hash:true}</validate>
+				</field>
+				<field id="page_background_color_bottom_v3" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Page Bottom Background Color</label>
+					<comment>Select background color for bottom of page (tabs area). Example: #FFFFFF</comment>
+					<depends>
+						<field id="weltpixel_product_page/version/version" separator="|">3|4</field>
+					</depends>
+					<validate>color {required:false, hash:true}</validate>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

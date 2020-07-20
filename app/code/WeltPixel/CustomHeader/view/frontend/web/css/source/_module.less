@@ -1,0 +1,37 @@
+& when (@media-common = true) {
+	.page-header {
+		.header-global-promo {
+			.global-notification-wrapper {
+				display: none;
+				position: relative;
+				top: 0px;
+				width: 100%;
+				padding: 10px;
+				text-align: center;
+				z-index: 99999;
+				a.close-global-notification {
+					display: block;
+					width: 9px;
+					height: 9px;
+					opacity: 1;
+					margin-top: 3px;
+					float: right;
+					font-size: 12px;
+					line-height: 1;
+					position: absolute;
+					top: 10px;
+					right: 20px;
+					color: #000;
+				}
+			}
+			.notice-inner {
+				margin: 0 auto;
+				padding: 0px;
+				width: 90%;
+				* {
+					text-transform: none !important;
+				}
+			}
+		}
+	}
+}

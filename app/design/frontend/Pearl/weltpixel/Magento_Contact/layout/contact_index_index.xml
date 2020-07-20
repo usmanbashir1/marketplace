@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="contactForm">
+            <block class="Magento\Cms\Block\Block" name="weltpixelContactPage">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">weltpixel_contact_page</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

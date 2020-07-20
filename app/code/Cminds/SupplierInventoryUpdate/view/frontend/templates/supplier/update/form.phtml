@@ -1,0 +1,162 @@
+<?php
+$supplier = $block->getSupplier();
+$updateCollection = $block->getUpdateCollection($supplier->getId());
+?>
+<style>
+    .glyphicon.glyphicon-question-sign.text-primary {
+        display:inline-block !important;
+    }
+</style>
+<div class="container main-container vendor-container">
+    <h1 class="text-left"><?php echo __('Inventory Updater Configuration'); ?></h1>
+    <p style="margin-top:10px;" class="lead">
+        <?php echo __('Inventory Updater allows to configure automatic remote update of inventory for existing products in the catalog.'); ?><br/>
+        <?php echo __('The CSV file will be pulled on a daily basis and update the qty, stock status or price of the products that are available in the a store.'); ?><br/>
+    </p>
+    <form name="productinventory-info-form"
+          id="productinventory-info-form"
+          action="<?php echo $block->getUrl("supplier_inventory/inventory/save");?>"
+          method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="form-group">
+                <div class="cont">
+                    <div class="col-md-3 label-container">
+                        <label for="updater_csv_link" >
+                            <?php echo __('CSV Link'); ?>
+                            <i class="glyphicon glyphicon-question-sign text-primary" data-toggle="tooltip" data-placement="right" title="<?php echo __('Enter here the link to your CSV file'); ?>"></i>
+                        </label>
+                    </div>
+                    <div class="col-md-5 input-container">
+                        <input type="text" id="updater_csv_link"
+                               name="updater_csv_link"
+                               class="input-text form-control validate-length validate-url"
+                               value="<?php echo !empty($updateCollection['updater_csv_link']) ? $updateCollection['updater_csv_link'] : '' ?>"
+                        />
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="cont">
+                    <div class="col-md-3 label-container">
+                        <label for="updater_csv_column" >
+                            <?php echo __('CSV delimiter'); ?>
+                        </label>
+                    </div>
+                    <div class="col-md-5 input-container">
+                        <input type="text"
+                               id="updater_csv_delimiter"
+                               name="updater_csv_delimiter"
+                               class="input-text form-control validate-length maximum-length-60"
+                               value="<?php echo !empty($updateCollection['updater_csv_delimeter']) ? $updateCollection['updater_csv_delimeter'] : ',' ?>"
+                        />
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-6 row">
+                    <div class="cont col-md-6 row">
+                        <div class="col-md-12 label-container">
+                            <label for="updater_csv_column" >
+                                <?php echo __('Matching Csv Column'); ?>
+                                <i class="glyphicon glyphicon-question-sign text-primary" data-toggle="tooltip" data-placement="right" title="<?php echo __('Enter here the header of the matching column'); ?>"></i>
+
+                            </label>
+                        </div>
+                        <div class="col-md-12 input-container">
+                            <input type="text" id="updater_csv_column"
+                                   name="updater_csv_column"
+                                   class="input-text form-control validate-length maximum-length-60"
+                                   value="<?php echo !empty($updateCollection['updater_csv_column']) ? $updateCollection['updater_csv_column'] : '' ?>"
+                            />
+                        </div>
+                    </div>
+                    <div class="cont col-md-6 row">
+                        <div class="col-md-12 label-container">
+                            <label for="updater_csv_column" >
+                                <?php echo __('Matching Product Attribute'); ?>
+                                <i class="glyphicon glyphicon-question-sign text-primary" data-toggle="tooltip" data-placement="right" title="<?php echo __('Select here the attribute of the product to match to the csv column'); ?>"></i>
+                            </label>
+                        </div>
+                        <div class="col-md-12 input-container">
+                            <select name="updater_csv_attribute">
+                                <?php foreach ($block->getAllAvailableAttributes() as $option):?>
+                                    <option value="<?php echo $option['code']?>"<?php if ($updateCollection['updater_csv_attribute']==$option['code']) echo 'selected = "selected"'; ?>><?php echo $option['label']?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="cont">
+                    <div class="col-md-3 label-container">
+                        <label for="updater_qty_column" >
+                            <?php echo __('Matching Qty Column'); ?>
+                            <i class="glyphicon glyphicon-question-sign text-primary"
+                               data-toggle="tooltip"
+                               data-placement="right"
+                               title="<?php echo __('Enter header of qty column name from your csv file'); ?>">
+                            </i>
+                        </label>
+                    </div>
+                    <div class="col-md-5 input-container">
+                        <input type="text"
+                               id="updater_qty_column"
+                               name="updater_qty_column"
+                               class="input-text form-control validate-length maximum-length-60"
+                               value="<?php echo !empty($updateCollection['updater_qty_column']) ? $updateCollection['updater_qty_column'] : '' ?>"
+                        />
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="cont">
+                    <div class="col-md-3 label-container">
+                        <label for="updater_csv_action" >
+                            <?php echo __('If Product is not in the Feed'); ?>
+                        </label>
+                    </div>
+                    <div class="col-md-5 input-container">
+                        <select name="updater_csv_action"
+                                id="updater_csv_action">
+                            <?php foreach ($block->getActionOptions() as $option):?>
+                                <?php $selected = !empty($updateCollection['updater_csv_action']) && $option['value'] == $updateCollection['updater_csv_action'] ? 'selected="selected"' : '' ?>
+                                <option value="<?php echo $option['value']?>" <?php echo $selected ?>><?php echo $option['label']?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="cont">
+                    <div class="col-md-3 label-container">
+                        <label for="updater_cost_column" >
+                            <?php echo __('Matching Cost Column'); ?>
+                            <i class="glyphicon glyphicon-question-sign text-primary"
+                               data-toggle="tooltip"
+                               data-placement="right"
+                               title="<?php echo __('Enter header of cost column name from your csv file'); ?>">
+                            </i>
+                        </label>
+                    </div>
+                    <div class="col-md-5 input-container">
+                        <input type="text"
+                               id="updater_cost_column"
+                               name="updater_cost_column"
+                               class="input-text form-control validate-length maximum-length-60"
+                               value="<?php echo !empty($updateCollection['updater_cost_column']) ? $updateCollection['updater_cost_column'] : '' ?>"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-2 row">
+            <input type="submit" name="submit" class="btn btn-primary" value="<?php echo __('Save') ?>"/>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    //< ![CDATA[
+    var customForm = new VarienForm('productinventory-info-form');
+    //]]>
+
+    jQuery(document).ready(function(){
+        jQuery('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

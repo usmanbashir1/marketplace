@@ -1,0 +1,19 @@
+<!--@subject {{trans "Your supplier account was approved"}}  @-->
+
+{{template config_path="design/email/header_template"}}
+
+<table>
+    <tr class="email-intro">
+        <td>
+            <p class="greeting">{{trans "Hello, "}}{{var supplier_name}}</p>
+            <p>
+                {{trans "Your Supplier account was approved."}}
+            </p>
+            <p>
+                {{trans 'You can login by the following <a href="%link">link.</a>' link=$account_link | raw}}
+            </p>
+        </td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer_template"}}

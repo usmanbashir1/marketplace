@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Sitemap\Model\ResourceModel\Catalog\Category" type="WeltPixel\Sitemap\Model\ResourceModel\Catalog\Category"/>
+    <preference for="Magento\Sitemap\Model\ResourceModel\Catalog\Product" type="WeltPixel\Sitemap\Model\ResourceModel\Catalog\Product"/>
+    <preference for="Magento\Sitemap\Model\ResourceModel\Cms\Page" type="WeltPixel\Sitemap\Model\ResourceModel\Cms\Page"/>
+    <type name="Magento\Sitemap\Model\Sitemap">
+        <plugin name="weltpixel-sitemap-model-sitemap"
+                type="WeltPixel\Sitemap\Plugin\Sitemap" sortOrder="1"/>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="weltpixelsitemap_sitemap_listing_data_source" xsi:type="string">WeltPixel\Sitemap\Model\ResourceModel\Sitemap\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="WeltPixel\Sitemap\Model\ResourceModel\Sitemap\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">weltpixel_sitemap</argument>
+            <argument name="eventPrefix" xsi:type="string">weltpixel_sitemap_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">sitemap_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">WeltPixel\Sitemap\Model\ResourceModel\Sitemap</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Catalog\Model\Category\DataProvider">
+        <plugin name="weltpixel-sitemap-category-dataprovider" type="WeltPixel\Sitemap\Plugin\Category\DataProvider" sortOrder="1" />
+    </type>
+</config>

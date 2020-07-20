@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Cminds\Supplierfrontendproductuploader\Controller\Product\Create">
+        <plugin name="cmindsSupplierSubscriptionProductCreate"
+                type="\Cminds\SupplierSubscription\Controller\Plugin\Supplierfrontendproductuploader\Product\Create\Plugin"
+                sortOrder="10"/>
+    </type>
+    <type name="Cminds\Supplierfrontendproductuploader\Controller\Product\Choosetype">
+        <plugin name="cmindsSupplierSubscriptionProductChooseType"
+                type="\Cminds\SupplierSubscription\Controller\Plugin\Supplierfrontendproductuploader\Product\Create\Plugin"
+                sortOrder="10"/>
+    </type>
+    <type name="Cminds\Supplierfrontendproductuploader\Controller\Product\Save">
+        <plugin name="cmindsSupplierSubscriptionProductSave"
+                type="\Cminds\SupplierSubscription\Controller\Plugin\Supplierfrontendproductuploader\Product\Save\Plugin"
+                sortOrder="10"/>
+    </type>
+</config>

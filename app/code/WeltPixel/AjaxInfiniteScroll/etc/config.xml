@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <weltpixel_infinite_scroll>
+            <general>
+                <ajax_catalog>1</ajax_catalog>
+                <ajax_catalog_mode>infinite_scroll</ajax_catalog_mode>
+                <ajax_catalog_category>1</ajax_catalog_category>
+                <ajax_catalog_search>1</ajax_catalog_search>
+                <ajax_catalog_advanced>1</ajax_catalog_advanced>
+            </general>
+            <advanced>
+                <text_loading>Loading more products, please wait...</text_loading>
+                <load_more>2</load_more>
+                <text_loadnext>Load next items</text_loadnext>
+                <text_loadprevious>Load previous items</text_loadprevious>
+                <text_nomore>No more items to load</text_nomore>
+                <loading_early>0</loading_early>
+                <negative_margin>150</negative_margin>
+                <prev_next>0</prev_next>
+            </advanced>
+        </weltpixel_infinite_scroll>
+    </default>
+</config>

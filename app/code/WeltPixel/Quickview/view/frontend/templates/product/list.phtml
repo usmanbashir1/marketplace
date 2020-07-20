@@ -1,0 +1,7 @@
+<?php
+/** @var \WeltPixel\Quickview\Block\ListedProducts $block */
+?>
+<script>
+    window.quickviewProductIds = <?= /* @noEscape */ $this->helper(\Magento\Framework\Json\Helper\Data::class)
+        ->jsonEncode($block->getProductIds()); ?>;
+</script>

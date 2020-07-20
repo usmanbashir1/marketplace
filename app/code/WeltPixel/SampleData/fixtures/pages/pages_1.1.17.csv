@@ -1,0 +1,117 @@
+title,page_layout,meta_keywords,meta_description,identifier,content_heading,content,is_active,sort_order,layout_update_xml,custom_theme,custom_root_template,custom_layout_update_xml,custom_theme_from,custom_theme_to,css_global,css_phone_small,css_phone,css_tablet_small,css_tablet,css_desktop,css_desktop_large,custom_js
+"Home Page V15",1column,,,home-page-v15,"","
+<div class=""container-v15"">
+	<div class=""row c-live"">
+		<div class=""mg-top-80 mg-top-50-mob"">
+			<div class=""col-xs-12 col-sm-6 nopaddingleft"">
+				<a href=""#"">
+					<img src=""{{media url=""wysiwyg/pearl_theme/homepage-v15/wk3_us_bgw_1.jpg""}}"" alt="""" />
+				</a>
+			</div>
+			<div class=""col-xs-12 col-sm-6 nopaddingright mg-top-20-mob"">
+				<a href=""#"">
+					<img src=""{{media url=""wysiwyg/pearl_theme/homepage-v15/wk4_us_bgw_2.jpg""}}"" alt="""" />
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class=""container-v15"">
+	<div class=""row c-live"">
+		<div class=""mg-top-80 mg-bottom-45"">
+			<div class=""col-sm-4 nopaddingleft mg-top-20-mob"">
+				<div class=""c-live-text__outer"">
+					<a href=""#"">
+					 	<img src=""{{media url=""wysiwyg/pearl_theme/homepage-v15/wk3_us_bgw_5.jpg""}}"" alt="""" />
+					</a>
+                                        <div class=""c-live-text"">
+						<button class=""action tocart primary"" onclick=""location.href='#'"">SHOP MAKEUP</button>
+					</div>
+				</div>
+			</div>
+			<div class=""col-sm-4 custompadding"">
+				<div class=""c-live-text__outer mg-top-20-mob"">
+					<a href=""#"">
+						<img src=""{{media url=""wysiwyg/pearl_theme/homepage-v15/171002_bgw_us_4.jpg""}}"" alt="""" />
+					</a>
+					<div class=""c-live-text"">
+						<button class=""action tocart primary"" onclick=""location.href='#'"">SHOP VERB</button>
+					</div>
+				</div>
+			</div>
+			<div class=""col-sm-4 nopaddingright"">
+				<div class=""c-live-text__outer mg-top-20-mob"">
+					<a href=""#"">
+						<img src=""{{media url=""wysiwyg/pearl_theme/homepage-v15/wk3_us_bgw_4.jpg""}}"" alt="""" />
+					</a>
+					<div class=""c-live-text"">
+						<button class=""action tocart primary text-uppercase"" onclick=""location.href='#'"">SHOP LIP</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class=""container-v15"">
+	<div class=""row c-product-tray"">
+
+{{widget type=""Magento\CatalogWidget\Block\Product\ProductsList"" title=""NEW ARRIVALS"" products_count=""6"" template=""product/widget/content/grid_v16.phtml"" conditions_encoded=""{{widget_condition_1}}""  type_name=""Catalog Products List""}}
+
+	</div>
+	<div class=""row c-product-tray"">
+
+{{widget type=""Magento\CatalogWidget\Block\Product\ProductsList"" title=""Beauty Problems Solved!"" products_count=""6"" template=""product/widget/content/grid_v16.phtml"" conditions_encoded=""{{widget_condition_2}}"" type_name=""Catalog Products List""}}
+
+	</div>
+</div>
+<div class=""container-v15"">
+	<div class=""row c-live"">
+		<div class=""mg-top-30 mg-bottom-45"">
+			<div class=""col-sm-6 nopaddingleft"">
+				<div class=""c-live-text__outer"">
+					<a href=""#"">
+						<img src=""{{media url=""wysiwyg/pearl_theme/homepage-v15/171002_bgw_us_7.jpg""}}"" alt="""" />
+					</a>
+					<div class=""c-live-text"">
+						<button class=""action tocart primary text-uppercase"" onclick=""location.href='#'"">SHOP LIP</button>
+					</div>
+				</div>
+			</div>
+			<div class=""col-sm-6 nopaddingright"">
+				<div class=""c-live-text__outer mg-top-20-mob"">
+					<a href=""#"">
+						<img src=""{{media url=""wysiwyg/pearl_theme/homepage-v15/171002_bgw_us_6.jpg""}}"" alt="""" />
+					</a>
+					<div class=""c-live-text"">
+						<button class=""action tocart primary text-uppercase"" onclick=""location.href='#'"">SHOP LIP</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class=""container-v15"">
+         <div class=""row c-product-tray"">
+{{widget type=""Magento\CatalogWidget\Block\Product\ProductsList"" title=""Mario Badescu"" products_count=""6"" template=""product/widget/content/grid_v16.phtml"" conditions_encoded=""{{widget_condition_3}}"" type_name=""Catalog Products List""}}
+	</div>
+</div>
+<div class=""container-v15"">
+	<div class=""row c-live"">
+		<div class=""mg-top-30 mg-bottom-80"">
+			<a href=""#"">
+				<img src=""{{media url=""wysiwyg/pearl_theme/homepage-v15/171002_bgw_us_8_1.jpg""}}"" alt="""" />
+			</a>
+		</div>
+	</div>
+</div>
+",1,,,,,,,,"
+.theme-pearl .page-main {
+    padding: 0px;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+.page-wrapper .breadcrumbs {display: none;}
+.columns .column.main{
+   padding-bottom:0px;
+}
+",,,,,,,

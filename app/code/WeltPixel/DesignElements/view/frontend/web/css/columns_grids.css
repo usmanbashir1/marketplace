@@ -1,0 +1,100 @@
+/* ----------------------------------------------------------------
+        Columns & Grids
+-----------------------------------------------------------------*/
+.col_full { width: 100%; }
+.col_half { width: 48%; }
+.col_one_third { width: 30.63%; }
+.col_two_third { width: 65.33%; }
+.col_one_fourth { width: 22%; }
+.col_three_fourth { width: 74%; }
+.col_one_fifth { width: 16.8%; }
+.col_two_fifth { width: 37.6%; }
+.col_three_fifth { width: 58.4%; }
+.col_four_fifth { width: 79.2%; }
+.col_one_sixth { width: 13.33%; }
+.col_five_sixth { width: 82.67%; }
+body.stretched .container-fullwidth {
+    position: relative;
+    padding: 0 60px;
+    width: 100%;
+}
+
+.col_full,
+.col_half,
+.col_one_third,
+.col_two_third,
+.col_three_fourth,
+.col_one_fourth,
+.col_one_fifth,
+.col_two_fifth,
+.col_three_fifth,
+.col_four_fifth,
+.col_one_sixth,
+.col_five_sixth {
+    display: block;
+    position: relative;
+    margin-right: 4%;
+    margin-bottom: 50px;
+    float: left;
+}
+
+.col_full {
+    clear: both;
+    float: none;
+    margin-right: 0;
+}
+
+.col_last {
+    margin-right: 0 !important;
+    clear: right;
+}
+
+form .col_full,
+form .col_half,
+form .col_one_third,
+form .col_two_third,
+form .col_three_fourth,
+form .col_one_fourth,
+form .col_one_fifth,
+form .col_two_fifth,
+form .col_three_fifth,
+form .col_four_fifth,
+form .col_one_sixth,
+form .col_five_sixth { margin-bottom: 25px; }
+
+@media (max-width: 767px) {
+    .sidebar,
+    .col_full,
+    .col_half,
+    .col_one_third,
+    .col_two_third,
+    .col_three_fourth,
+    .col_one_fourth,
+    .col_one_fifth,
+    .col_two_fifth,
+    .col_three_fifth,
+    .col_four_fifth,
+    .col_one_sixth,
+    .col_five_sixth {
+        width: 100%;
+        margin-right: 0;
+        float: none;
+        margin-bottom: 50px !important;
+    }
+
+    .sidebar.col_last { margin-bottom: 0 !important; }
+
+    form .col_full,
+    form .col_half,
+    form .col_one_third,
+    form .col_two_third,
+    form .col_three_fourth,
+    form .col_one_fourth,
+    form .col_one_fifth,
+    form .col_two_fifth,
+    form .col_three_fifth,
+    form .col_four_fifth,
+    form .col_one_sixth,
+    form .col_five_sixth { margin-bottom: 25px !important; }
+
+}

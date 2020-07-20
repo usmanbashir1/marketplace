@@ -1,0 +1,9 @@
+<script>
+    requirejs(['jquery', 'WeltPixel_ProductPage/js/productPageVersion' ],
+        function   ($, productPageVersion) {
+            $(document).ready(function() {
+                productPageVersion.action();
+            });
+        });
+    window.weltpixel_productPageVersionAdminUrl = '<?php /* @escapeNotVerified */ echo $this->getAdminUrl(); ?>';
+</script>

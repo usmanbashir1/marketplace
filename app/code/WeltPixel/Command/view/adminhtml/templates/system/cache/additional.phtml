@@ -1,0 +1,51 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+?>
+<h2>
+    <span><?php /* @escapeNotVerified */ echo __('WeltPixel Cache Management') ?></span>
+</h2>
+<p>
+    <h4><?php echo __('Please select the desired store view, where the css will be regenerated (it works only with the Pearl theme, or it\'s subthemes.) :'); ?></h4>
+</p>
+<p>
+    <form id="generate-css" action="<?php /* @escapeNotVerified */ echo $block->getCssGenerationUrl() ?>" method="POST" >
+    <input type="hidden" value="<?php echo $block->getFormKey(); ?>" name="form_key" id="form_key" />
+
+    <?php echo __('Select Store View') ?>:
+    <select name="storeview" id="cssgenerate_storeview">
+    <?php $storeViews = $block->getStoreViews(); ?>
+    <?php  foreach ($storeViews as $key =>$store) : ?>
+        <option value="<?php echo $store['value']; ?>" <?php if (!$key) { echo 'SELECTED="SELECTED"'; } ?> > <?php echo $store['label'] ?></option>
+    <?php endforeach;  ?>
+    </select>
+    <br/><br/>
+        <button id="generate-css-button" type="submit">
+            <?php /* @escapeNotVerified */ echo __('Regenerate Pearl Theme LESS/CSS files') ?>
+        </button>
+        <span><?php /* @escapeNotVerified */ echo __('Regenerate the LESS and CSS files ( styles-m, styles-l and Pearl module specific css files ) in order to display theme option changes in store front. It might take a couple of seconds.') ?></span>
+    </form>
+</p>
+
+<script>
+    require(['jquery', 'Magento_Ui/js/modal/alert', 'mage/translate'],
+        function ($, alert) {
+            $( document ).ready(function() {
+               $('#generate-css-button').click('bind', function () {
+                    var storeviewVal = $('#cssgenerate_storeview').val();
+                   if (storeviewVal != 0) {
+                        $(this).attr('disabled','disabled');
+                       $('#generate-css').submit();
+                        return true;
+                   } else {
+                        alert({content: $.mage.__('Please Select a store view!')});
+                        return false;
+                   }
+               });
+            });
+        });
+</script>

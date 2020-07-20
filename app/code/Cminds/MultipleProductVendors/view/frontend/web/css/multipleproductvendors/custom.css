@@ -1,0 +1,7 @@
+.vendor-items-container{
+    clear:both;
+    padding: 20px 0 35px;
+}
+.vendor-items-container .odd {
+    background-color: #fbfbfb;
+}

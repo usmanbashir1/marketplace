@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Cminds DropshipNotification config.
+ *
+ * @category Cminds
+ * @package  Cminds_DropshipNotification
+ * @author   Piotr Pierzak <piotr@cminds.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <cminds_dropshipnotification>
+            <general>
+                <enable>0</enable>
+            </general>
+            <dropship_notification>
+                <send_email>1</send_email>
+                <change_order_status>0</change_order_status>
+                <new_order_status/>
+            </dropship_notification>
+        </cminds_dropshipnotification>
+    </default>
+</config>

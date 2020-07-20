@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="supplierfrontendproductuploader_navbar_init">
+        <observer name="cminds_marketplacerma_supplier_navbar_init"
+                  instance="Cminds\MarketplaceRma\Observer\Supplier\Navbar\Init"/>
+    </event>
+</config>

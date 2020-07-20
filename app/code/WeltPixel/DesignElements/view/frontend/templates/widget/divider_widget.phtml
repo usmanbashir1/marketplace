@@ -1,0 +1,16 @@
+<?php
+$style = $this->getData('style');
+$icon = $this->getData('icon');
+$customClass = trim($this->getData('custom_class'));
+$customCss = trim($this->getData('custom_css'));
+//TODO: for later use like icon size, padding, etc.
+$customStyle = '';
+?>
+
+<?php if ($customCss) : ?>
+    <style> <?php echo $customCss; ?></style>
+<?php endif; ?>
+
+<div class="divider <?php echo $style . ' ' . $customClass; ?>">
+    <i style="<?php echo $customStyle; ?>" class="<?php echo $icon; ?>"></i>
+</div>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="store.settings.language" remove="true" />
+        <referenceContainer name="header.container">
+            <container before="header.panel.wrapper" name="header-multistore" label="Page Header Multistore" as="header-wrapper-multistore" htmlTag="div" htmlClass="header-multistore">
+                <block class="Magento\Store\Block\Switcher" name="store_language_multistore" as="store_language_multistore" template="WeltPixel_Multistore::switch/languages_mobile.phtml" />
+            </container>
+        </referenceContainer>
+    </body>
+</page>

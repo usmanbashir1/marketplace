@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Cminds SupplierRedirection
+ *
+ * @category Cminds
+ * @package  Cminds_SupplierRedirection
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="adminhtml_customer_save_after">
+        <observer name="cminds_supplierredirection_adminhtml_customer_save_after"
+                  instance="Cminds\SupplierRedirection\Observer\Customer\Adminhtml\Save"/>
+    </event>
+</config>

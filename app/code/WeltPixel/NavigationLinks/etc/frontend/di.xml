@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Observer\MenuCategoryData">
+        <plugin name="weltpixel-navigationlinks-catalog-observer-menucategorydata"
+                type="WeltPixel\NavigationLinks\Plugin\CatalogObserverMenuCategoryData" sortOrder="1"/>
+    </type>
+<!--     <preference for="Magento\Theme\Block\Html\Topmenu" type="WeltPixel\NavigationLinks\Block\Html\Topmenu" /> -->
+    <preference for="Magento\Catalog\Plugin\Block\Topmenu" type="WeltPixel\NavigationLinks\Plugin\Block\Topmenu" />
+    <type name="Magento\Framework\View\Page\Config\Structure">
+        <plugin name="weltpixel-navigationlinks-page-config-structure"
+                type="WeltPixel\NavigationLinks\Plugin\PageConfigStructure" sortOrder="5"/>
+    </type>
+</config>

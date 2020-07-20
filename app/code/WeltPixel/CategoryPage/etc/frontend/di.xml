@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Page\Config\Reader\Head">
+        <plugin name="weltpixel-categorypage-head"
+                type="WeltPixel\CategoryPage\Plugin\Head" sortOrder="1"/>
+    </type>
+    <type name="Magento\Swatches\Helper\Media">
+        <plugin name="weltpixel-categorypage-swatches-media"
+                type="WeltPixel\CategoryPage\Plugin\SwatchesMedia" sortOrder="10"/>
+    </type>
+    <preference for="Magento\Catalog\Block\Product\ImageFactory" type="WeltPixel\CategoryPage\Block\Product\ImageFactory" />
+</config>

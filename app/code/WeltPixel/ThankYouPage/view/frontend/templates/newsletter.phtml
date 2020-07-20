@@ -1,0 +1,61 @@
+<div class="newsletter-checkout-wrapper content block newsletter">
+    <div class="icon_thank_you_03"></div>
+    <div class="newsletter-description"><?= $block->escapeHtml($block->getDescription()) ?></div>
+    <form class="form subscribe"
+          novalidate
+          action="#"
+          method="post"
+          data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+          id="newsletter-checkout-validate-detail">
+        <div class="field newsletter">
+            <label class="label" for="newsletter"><span><?= $block->escapeHtml(__('Sign Up for Our Newsletter:')) ?></span></label>
+            <div class="control">
+                <input name="email" type="email" id="newsletter-checkout"
+                       value="<?= $block->getEmailAddress() ?>"
+                       placeholder="<?= $block->escapeHtml(__('Enter your email address')) ?>"
+                       data-validate="{required:true, 'validate-email':true}"/>
+            </div>
+        </div>
+        <div class="actions">
+            <button class="action subscribe primary" title="<?= $block->escapeHtml(__('Subscribe')) ?>" type="submit">
+                <span><?= $block->escapeHtml(__('Subscribe')) ?></span>
+            </button>
+        </div>
+    </form>
+</div>
+<div class="message block newsletter newsletter-message-container">
+    <div class="newsletter-message"></div>
+</div>
+<script>
+    requirejs(['jquery', 'Magento_Ui/js/model/messageList' ],
+        function   ($, messageList) {
+            $(document).ready(function() {
+                var newsLetterAction = '<?= $block->escapeUrl($block->getFormActionUrl()) ?>';
+                var newsLetterform = $('#newsletter-checkout-validate-detail');
+                var newsletterMessageContainer = $('.newsletter-message-container');
+                var newsletterContainer = $('.newsletter-checkout-wrapper');
+                newsLetterform.submit(function(e) {
+                    if (newsLetterform.validation('isValid')) {
+                        e.preventDefault();
+                        $.post(newsLetterAction, newsLetterform.serialize())
+                        .done(
+                            function (response) {
+                                $('.newsletter-message-container .newsletter-message').html(response.message);
+
+                                if (response.errors == false) {
+                                    newsletterMessageContainer.removeClass('error');
+                                    newsletterMessageContainer.addClass('success');
+                                    newsletterContainer.hide();
+                                    newsletterMessageContainer.show();
+
+                                } else {
+                                    newsletterMessageContainer.removeClass('success');
+                                    newsletterMessageContainer.addClass('error');
+                                }
+                            }
+                        )
+                    }
+                });
+            });
+        });
+</script>

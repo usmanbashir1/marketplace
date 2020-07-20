@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="weltpixel_designelement_icon" class="WeltPixel\DesignElements\Block\Widget\Icon" is_email_compatible="true" placeholder_image="WeltPixel_DesignElements::images/widget_icon.png">
+        <label translate="true">WeltPixel Icon</label>
+        <description>Adds an Icon</description>
+        <parameters>
+            <parameter name="icon" xsi:type="select" source_model="WeltPixel\DesignElements\Model\Config\Source\Icons" visible="true" sort_order="10" required="true">
+                <label translate="true">Select Icon</label>
+                <description><![CDATA[Icons -> <a target="_blank" href="http://pearl.weltpixel.com/weltpixel-icons">http://pearl.weltpixel.com/weltpixel-icons</a>]]></description>
+            </parameter>
+            <parameter name="icon_size" xsi:type="text"  visible="true" sort_order="20" >
+                <label translate="true">Icon Size</label>
+                <description>Example: 24px</description>
+                <value>24px</value>
+            </parameter>
+            <parameter name="padding" xsi:type="text"  visible="true" sort_order="30" >
+                <label translate="true">Padding</label>
+                <description>Example: 5px 5px 5px 5px</description>
+            </parameter>
+            <parameter name="custom_class" xsi:type="text"  visible="true" sort_order="40" >
+                <label translate="true">Custom class</label>
+                <description>Example: my-class</description>
+            </parameter>
+            <parameter name="custom_css" xsi:type="block"  visible="true" sort_order="50" >
+                <label translate="true">Custom CSS</label>
+                <description>Example: .my-class{ color: green; } </description>
+                <block class="WeltPixel\DesignElements\Block\Adminhtml\Widget\TextArea"/>
+            </parameter>
+        </parameters>
+    </widget>
+    <widget id="weltpixel_designelement_divider" class="WeltPixel\DesignElements\Block\Widget\Divider" is_email_compatible="true" placeholder_image="WeltPixel_DesignElements::images/widget_divider.png">
+        <label translate="true">WeltPixel Divider</label>
+        <description>Adds a divider</description>
+        <parameters>
+            <parameter name="style" xsi:type="select" source_model="WeltPixel\DesignElements\Model\Config\Source\Dividers" visible="true" sort_order="10" required="true">
+                <label translate="true">Select Style</label>
+                <description><![CDATA[Dividers -> <a target="_blank" href="http://pearl.weltpixel.com/weltpixel-dividers">http://pearl.weltpixel.com/weltpixel-dividers</a>]]></description>
+            </parameter>
+            <parameter name="icon" xsi:type="select" source_model="WeltPixel\DesignElements\Model\Config\Source\Icons" visible="true" sort_order="10" required="true">
+                <label translate="true">Select Icon</label>
+                <description><![CDATA[Icons -> <a target="_blank" href="http://pearl.weltpixel.com/weltpixel-icons">http://pearl.weltpixel.com/weltpixel-icons</a>]]></description>
+            </parameter>
+            <parameter name="custom_class" xsi:type="text"  visible="true" sort_order="40" >
+                <label translate="true">Custom class</label>
+                <description>Example: my-class</description>
+            </parameter>
+            <parameter name="custom_css" xsi:type="block"  visible="true" sort_order="50" >
+                <label translate="true">Custom CSS</label>
+                <description>Example: .my-class i { color: green; } </description>
+                <block class="WeltPixel\DesignElements\Block\Adminhtml\Widget\TextArea"/>
+            </parameter>
+        </parameters>
+    </widget>
+    <widget id="weltpixel_designelement_heading" class="WeltPixel\DesignElements\Block\Widget\Heading" is_email_compatible="true" placeholder_image="WeltPixel_DesignElements::images/widget_headings.png">
+        <label translate="true">WeltPixel Heading</label>
+        <description>Adds a heading</description>
+        <parameters>
+            <parameter name="style" xsi:type="select" source_model="WeltPixel\DesignElements\Model\Config\Source\Headings" visible="true" sort_order="10" required="true">
+                <label translate="true">Select Style</label>
+                <description><![CDATA[Headings -> <a target="_blank" href="http://pearl.weltpixel.com/weltpixel-headings">http://pearl.weltpixel.com/weltpixel-headings</a>]]></description>
+            </parameter>
+            <parameter name="title" xsi:type="text"  visible="true" sort_order="20" required="true">
+                <label translate="true">Title</label>
+                <description>For text-rotator style -> Example: This is a $# super|mega|cool #$ text rotator heading.</description>
+            </parameter>
+            <parameter name="subtitle" xsi:type="block"  visible="true" sort_order="30" >
+                <label translate="true">Subtitle</label>
+                <block class="WeltPixel\DesignElements\Block\Adminhtml\Widget\TextArea"/>
+            </parameter>
+            <parameter name="color" xsi:type="block"  visible="true" sort_order="40" >
+                <label translate="true">Title Color</label>
+                <block class="WeltPixel\DesignElements\Block\Adminhtml\Widget\ColorPicker"/>
+            </parameter>
+            <parameter name="custom_css" xsi:type="block"  visible="true" sort_order="50" >
+                <label translate="true">Custom CSS</label>
+                <description>Example: .my-class { color: green; } </description>
+                <block class="WeltPixel\DesignElements\Block\Adminhtml\Widget\TextArea"/>
+            </parameter>
+        </parameters>
+    </widget>
+    <widget id="weltpixel_designelement_brand" class="WeltPixel\DesignElements\Block\Widget\Brand" is_email_compatible="true" placeholder_image="WeltPixel_DesignElements::images/widget_brands.png">
+        <label translate="true">WeltPixel Brands</label>
+        <description>Brands Block</description>
+        <parameters>
+            <parameter name="style" xsi:type="select" source_model="WeltPixel\DesignElements\Model\Config\Source\Brands" visible="true" sort_order="10" required="true">
+                <label translate="true">Select Style</label>
+                <description><![CDATA[Brands -> <a target="_blank" href="http://pearl.weltpixel.com/brands-widget">http://pearl.weltpixel.com/brands-widget</a>]]></description>
+            </parameter>
+            <parameter name="block_id" xsi:type="block" visible="true" required="true" sort_order="20">
+                <label translate="true">Block</label>
+                <description>Select the static block that contains the brands images</description>
+                <block class="Magento\Cms\Block\Adminhtml\Block\Widget\Chooser">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string" translate="true">Select Block...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+        </parameters>
+    </widget>
+    <widget id="weltpixel_designelement_toggle" class="WeltPixel\DesignElements\Block\Widget\Toggle" is_email_compatible="true" placeholder_image="WeltPixel_DesignElements::images/widget_toggles.png">
+        <label translate="true">WeltPixel Toggle</label>
+        <description>Adds a toggle</description>
+        <parameters>
+            <parameter name="style" xsi:type="select" source_model="WeltPixel\DesignElements\Model\Config\Source\Toggles" visible="true" sort_order="10" required="true">
+                <label translate="true">Select Style</label>
+                <description><![CDATA[Toggles -> <a target="_blank" href="http://pearl.weltpixel.com/weltpixel-accordion">http://pearl.weltpixel.com/weltpixel-accordion</a>]]></description>
+            </parameter>
+
+            <parameter name="bkg_color" xsi:type="block"  visible="true" sort_order="11" >
+                <label translate="true">Background Color</label>
+                <description>For toggles with background</description>
+                <block class="WeltPixel\DesignElements\Block\Adminhtml\Widget\ColorPicker"/>
+            </parameter>
+            <parameter name="border_color" xsi:type="block"  visible="true" sort_order="12" >
+                <label translate="true">Border Color</label>
+                <description>For toggles with borders</description>
+                <block class="WeltPixel\DesignElements\Block\Adminhtml\Widget\ColorPicker"/>
+            </parameter>
+
+            <parameter name="open_icon" xsi:type="text"  visible="true" sort_order="13" >
+                <label translate="true">Open Icon</label>
+                <description>Example: icon-ok-circle</description>
+                <value>icon-ok-circle</value>
+            </parameter>
+
+            <parameter name="close_icon" xsi:type="text"  visible="true" sort_order="14" >
+                <label translate="true">Close Icon</label>
+                <description>Example: icon-remove-circle</description>
+                <value>icon-remove-circle</value>
+            </parameter>
+
+            <parameter name="title" xsi:type="text"  visible="true" sort_order="20" required="true">
+                <label translate="true">Title</label>
+            </parameter>
+
+            <parameter name="block_id" xsi:type="block" visible="true" required="true" sort_order="21">
+                <label translate="true">Block</label>
+                <description>Select the static block with toggle content</description>
+                <block class="Magento\Cms\Block\Adminhtml\Block\Widget\Chooser">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string" translate="true">Select Block...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+        </parameters>
+    </widget>
+
+    <widget id="weltpixel_designelement_accordion" class="WeltPixel\DesignElements\Block\Widget\Accordion" is_email_compatible="true" placeholder_image="WeltPixel_DesignElements::images/widget_accordions.png">
+        <label translate="true">WeltPixel Accordion</label>
+        <description>Adds an accordion</description>
+        <parameters>
+            <parameter name="style" xsi:type="select" source_model="WeltPixel\DesignElements\Model\Config\Source\Accordions" visible="true" sort_order="10" required="true">
+                <label translate="true">Select Style</label>
+                <description><![CDATA[Accordions -> <a target="_blank" href="http://pearl.weltpixel.com/weltpixel-accordion">http://pearl.weltpixel.com/weltpixel-accordion</a>]]></description>
+            </parameter>
+
+            <parameter name="bkg_color" xsi:type="block"  visible="true" sort_order="11" >
+                <label translate="true">Background Color</label>
+                <description>For accordions with background</description>
+                <block class="WeltPixel\DesignElements\Block\Adminhtml\Widget\ColorPicker"/>
+            </parameter>
+            <parameter name="border_color" xsi:type="block"  visible="true" sort_order="12" >
+                <label translate="true">Border Color</label>
+                <description>For accordions with borders</description>
+                <block class="WeltPixel\DesignElements\Block\Adminhtml\Widget\ColorPicker"/>
+            </parameter>
+
+            <parameter name="block_id" xsi:type="block" visible="true" required="true" sort_order="21">
+                <label translate="true">Block</label>
+                <description>Select the static block with accordions content</description>
+                <block class="Magento\Cms\Block\Adminhtml\Block\Widget\Chooser">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string" translate="true">Select Block...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

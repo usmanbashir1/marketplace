@@ -1,0 +1,129 @@
+title,page_layout,meta_keywords,meta_description,identifier,content_heading,content,is_active,sort_order,layout_update_xml,custom_theme,custom_root_template,custom_layout_update_xml,custom_theme_from,custom_theme_to,css_global,css_phone_small,css_phone,css_tablet_small,css_tablet,css_desktop,css_desktop_large,custom_js
+"Home Page V10",1column,,,home-page-v10,"","
+<div class=""content-v10"">{{widget_nr_1}}</div>
+<div class=""content-v10"">
+    <div class=""pd-mob"">
+        <div class=""row feature-row equal-v10"">
+            <div class=""column text-feature"">
+                <h2>Leather accessories</h2>
+                <div class=""featured-row__subtext"">
+                    <p>We are very excited to introduce the Man Overboard kit: essentials for life on the go. Our goal was to create a beautiful set of leather goods that will be functional, simple and last a lifetime. We are making the whole kit available at a great price for purchase, along with each piece sold separately.</p>
+                    <p>Made to last, we built our carry kit to be able to handle all of the strain inherent in constant transport and handling. The strength and durability of vegetable tanned leather, paired with solid brass hardware and YKK zippers make sure that our products not only look good, but will last a lifetime.</p>
+                </div>
+            </div>
+            <div class=""column feature-row__item""><img class=""feature-row__image"" src=""{{media url=""wysiwyg/pearl_theme/Accesories.jpg""}}"" alt="""" /></div>
+        </div>
+    </div>
+</div>
+<div class=""content-v10"">
+    <div class=""pd-mob"">
+        <div class=""row feature-row"">
+            <div class=""column-product""><img class=""feature-row__image"" src=""{{media url=""wysiwyg/pearl_theme/ClassicLeatherWallet2.jpg""}}"" alt="""" /></div>
+            <div class=""column-product descr-prod"">
+                <h1 class=""product-single_title"">CLASSIC LEATHER WALLET</h1>
+                <p class=""product-single-price""><span class=""old-price"">$74.95</span> <span class=""regular-price"">$49.95 Sale</span></p>
+                <div class=""equal-v10"">
+                    <div class=""btn-quickview"">
+                        <a class=""weltpixel-quickview action tocart primary"" href=""javascript: void(0);"" data-quickview-url=""{{store url=""weltpixel_quickview/catalog_product/view/id/1""}}"">Buy Now</a>
+                    </div>
+                    <div class=""short-descr-v10"">
+                        <p class=""p1""><em>This is a demonstration store.</em></p>
+                        <p class=""p1"">A modern update to the classic bi-fold. It discreetly holds a full iPhone 7 charge for an emergency or minimalist travelers. Made from minimally treated, vegetable-tanned leather from one of America's oldest tanneries. This wallet is designed to beautifully patina with time, creating a handsome, rich leather wallet with a look that is uniquely yours.</p>
+                        <p class=""p1"">Using full grain leather means that each of our pieces will be naturally unique. Rather than wearing out, it will develop a patina over time. Our leather will wear beautifully and only gets better with age.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=""content-v10"">
+    <div class=""pd-mob"">
+        <div class=""row feature-row"">
+            <div class=""section-header"">
+                <h2>Testimonials</h2>
+            </div>
+            <ul class=""testimonials-grid grid-3 clearfix"">
+                <li>
+                    <div class=""testimonial"">
+                        <div class=""testi-content"">
+                            <p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero!</p>
+                            <div class=""testi-meta"">John Doe</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class=""testimonial"">
+                        <div class=""testi-content"">
+                            <p>Natus voluptatum enim quod necessitatibus quis expedita harum provident eos obcaecati id culpa.</p>
+                            <div class=""testi-meta"">Collis Ta'eed</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class=""testimonial"">
+                        <div class=""testi-content"">
+                            <p>Fugit officia dolor sed harum excepturi ex iusto magnam asperiores molestiae qui natus obcaecati facere sint amet.</p>
+                            <div class=""testi-meta"">Mary Jane</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class=""content-v10"">
+    <div class=""pd-mob"">
+        <div class=""col-xs-6 col-sm-6 nopadding"">
+            <div class=""img-bar"">
+                <div class=""image-bar__content""><img class=""bg-img"" src=""{{media url=""wysiwyg/pearl_theme/tools.gif""}}"" alt="""" /></div>
+            </div>
+        </div>
+        <div class=""col-xs-6 col-sm-6 nopadding"">
+            <div class=""img-bar"">
+                <div class=""image-bar__content""><img class=""bg-img"" src=""{{media url=""wysiwyg/pearl_theme/charger.gif""}}"" alt="""" /></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=""content-v10 nopaddbottom"">
+    <div class=""row"">
+        <div class=""section-header"">
+            <h2>Shop Now</h2>
+        </div>
+        {{widget type=""Magento\CatalogWidget\Block\Product\ProductsList"" products_count=""4"" template=""product/widget/content/grid_v10.phtml"" conditions_encoded=""{{widget_condition_1}}"" type_name=""Catalog Products List""}}</div>
+</div>
+",1,,,,,,,,"
+.theme-pearl .page-main{
+       padding:0px !important;
+}
+.page-wrapper .breadcrumbs {display: none;}
+.theme-pearl .owl-item .banner-item{
+    margin:0px !important;
+}
+.columns .column.main{
+    padding-bottom: 0px;
+}
+.page-footer{
+    margin-top: 0px;
+}.columns .column.main{
+    padding-bottom: 0px;
+}
+.page-footer{
+    margin-top: 0px;
+}
+",,,,,,,"
+require(['jquery'], function($){
+    /* Get src attribute from img */
+    $("".bg-img"").each(function() {
+        var urlImg = $(this).attr('src'),
+        parent = $(this).closest( '.img-bar' )
+        $(this).remove();
+        parent.css(
+        {
+            'background':'url(""'+urlImg+'"") no-repeat ',
+            'background-size': 'cover',
+            'background-position': 'center'
+        });
+    });
+});
+"

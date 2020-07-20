@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="before.body.end">
+            <block
+                    ifconfig="weltpixel_productlabels/general/enable_product_page"
+                    class="Magento\Catalog\Block\Product\View"
+                    name="productlables-init"
+                    template="WeltPixel_ProductLabels::product/view/productlabelsinit.phtml"
+            />
+        </referenceContainer>
+    </body>
+</page>

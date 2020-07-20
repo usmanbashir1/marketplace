@@ -1,0 +1,25 @@
+<?php
+$product = $block->getProduct();
+$productId = $product->getId();
+?>
+
+<script>
+    require(["jquery"], function ($) {
+        $(document).ready(function() {
+            var productId = "<?= $productId ?>";
+            var listedProductIds = window.parent.window.quickviewProductIds;
+            var url = window.weltpixel_quickview.baseUrl + 'weltpixel_quickview/catalog_product/view/id/';
+
+            if (listedProductIds) {
+                var currentProductPosition = listedProductIds.indexOf(productId);
+                var productListLength = listedProductIds.length;
+                if (currentProductPosition - 1 >= 0) {
+                    $('.wp-prev-link').show().attr('href', url + listedProductIds[currentProductPosition - 1]).show();
+                }
+                if (currentProductPosition + 1 < productListLength) {
+                    $('.wp-next-link').show().attr('href', url + listedProductIds[currentProductPosition + 1]).show();
+                }
+            }
+        });
+    });
+</script>

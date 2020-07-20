@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Cminds_MarketplaceRma::config" title="Cminds MarketplaceRma Config" sortOrder="50"/>
+                        </resource>
+                    </resource>
+                </resource>
+                <resource id="Cminds_MarketplaceRma::rma_content" title="Cminds MarketplaceRma Admin">
+                    <resource id="Cminds_MarketplaceRma::rma_list" title="Cminds MarketplaceRma Returns list"/>
+                    <resource id="Cminds_MarketplaceRma::rma_manage_status" title="Cminds MarketplaceRma Returns manage status"/>
+                    <resource id="Cminds_MarketplaceRma::rma_manage_type" title="Cminds MarketplaceRma Returns manage type"/>
+                    <resource id="Cminds_MarketplaceRma::rma_manage_reasons" title="Cminds MarketplaceRma Returns manage reasons"/>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

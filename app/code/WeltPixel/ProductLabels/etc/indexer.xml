@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Indexer/etc/indexer.xsd">
+    <indexer id="weltpixel_productlabels_rule" view_id="weltpixel_productlabels_rule" class="WeltPixel\ProductLabels\Model\Indexer\Rule\RuleProductIndexer">
+        <title translate="true">WeltPixel ProductLabels Rule Product</title>
+        <description translate="true">Indexed productlabels rule/product association</description>
+    </indexer>
+    <indexer id="weltpixel_productlabels_product" view_id="weltpixel_productlabels_product" class="WeltPixel\ProductLabels\Model\Indexer\Product\ProductRuleIndexer">
+        <title translate="true">WeltPixel ProductLabels Product Rule</title>
+        <description translate="true">Indexed productlabels product/rule association</description>
+    </indexer>
+</config>

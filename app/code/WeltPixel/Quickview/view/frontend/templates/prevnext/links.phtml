@@ -1,0 +1,22 @@
+<?php
+/** @var \WeltPixel\Quickview\Helper\Data $_helper */
+$_helper = $this->helper('WeltPixel\Quickview\Helper\Data');
+?>
+<div class="<?php if (!$_helper->isCustomMessageEnabled()) echo 'morepadding' ?>">
+    <a class="wp-next-link" href="javascript:void(0);"></a>
+</div>
+<div>
+    <a class="wp-prev-link" href="javascript:void(0);"></a>
+</div>
+<script>
+    require(["jquery"], function ($) {
+        $(document).ready(function() {
+            var parentBody = window.parent.document.body;
+            $('.wp-prev-link,.wp-next-link').bind('click', function() {
+                $('.mfp-preloader', parentBody).css('display', 'block');
+                $('.mfp-content', parentBody).css('overflow', 'inherit');
+                $('body').html('').css('background-color','transparent');
+            });
+        });
+    });
+</script>

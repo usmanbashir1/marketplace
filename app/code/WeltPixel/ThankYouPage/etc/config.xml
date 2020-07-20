@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <weltpixel_thankyoupage>
+            <general>
+                <enable>0</enable>
+            </general>
+            <order_details>
+                <enable>1</enable>
+                <title><![CDATA[Thank you for your purchase]]></title>
+                <subtitle><![CDATA[Your order number is: %1.]]></subtitle>
+                <description><![CDATA[We'll email you an order confirmation with details and tracking info]]></description>
+                <continue_shopping>1</continue_shopping>
+                <sort_order>1</sort_order>
+            </order_details>
+            <google_map>
+                <enable>0</enable>
+                <map_dragging>1</map_dragging>
+                <map_zoom>10</map_zoom>
+                <map_width>100%</map_width>
+                <map_height>320px</map_height>
+                <sort_order>2</sort_order>
+            </google_map>
+            <wesupply_integration>
+                <enable>0</enable>
+                <sort_order>3</sort_order>
+            </wesupply_integration>
+            <order_info>
+                <enable>1</enable>
+                <customer_info>1</customer_info>
+                <product_info>1</product_info>
+                <sort_order>4</sort_order>
+            </order_info>
+            <create_account>
+                <enable>1</enable>
+                <description><![CDATA[You can track your order status by creating an account.]]></description>
+                <email_label><![CDATA[Email Address]]></email_label>
+                <after_creation_message><![CDATA[A letter with further instructions will be sent to your email.]]></after_creation_message>
+                <sort_order>5</sort_order>
+            </create_account>
+            <newsletter_subscribe>
+                <enable>1</enable>
+                <description><![CDATA[Subscribe to receive Important Product Updates and occasional discounts]]></description>
+                <sort_order>6</sort_order>
+            </newsletter_subscribe>
+            <custom_block>
+                <enable>0</enable>
+                <sort_order>7</sort_order>
+            </custom_block>
+        </weltpixel_thankyoupage>
+    </default>
+</config>

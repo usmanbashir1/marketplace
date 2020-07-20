@@ -1,0 +1,24 @@
+<?php
+/**
+ * Hotspot widget template
+ *
+ * @var $block \WeltPixel\Quickview\Block\Widget\Hotspot
+ */
+?>
+<?php
+$productId = $block->getProductId();
+$addNoFollow = $block->getData('no_follow');
+$quickviewUrl = $block->getUrl('weltpixel_quickview/catalog_product/view', array('id' => $productId, '_secure' => true));
+$noFollowAttr = '';
+if ($addNoFollow) :
+    $noFollowAttr = ' rel="nofollow"';
+endif;
+$uniqueId = uniqid('hotspot_');
+$styleCss = $this->getStyleForHotspot('#' . $uniqueId);
+?>
+<?php echo $styleCss; ?>
+<ul class="wp-hotspot" id="<?php echo $uniqueId ?>">
+    <li class="cd-single-point">
+        <a <?php echo $noFollowAttr ?> href="javascript: void(0);" data-quickview-url="<?php echo $quickviewUrl ?>" class="weltpixel-quickview cd-img-replace">&nbsp;</a>
+    </li>
+</ul>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="WeltPixel_SpeedOptimization::SpeedOptimizationSettings" title="WeltPixel Speed Optimization" sortOrder="20" />
+                        </resource>
+                    </resource>
+                </resource>
+                <resource id="WeltPixel_Backend::WeltPixel" >
+                    <resource id="WeltPixel_SpeedOptimization::SpeedOptimization_Label" sortOrder="70" title="Speed Optimization" >
+                        <resource id="WeltPixel_SpeedOptimization::SpeedOptimization" sortOrder="10" title="Speed Optimization Settings" />
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

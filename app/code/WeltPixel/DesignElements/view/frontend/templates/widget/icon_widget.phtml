@@ -1,0 +1,17 @@
+<?php
+$icon = $this->getData('icon');
+$iconSize = $this->getData('icon_size');
+$padding = $this->getData('padding');
+$customClass = trim($this->getData('custom_class'));
+$customCss = trim($this->getData('custom_css'));
+$customStyle = '';
+if ($padding) {$customStyle .= ' padding: ' . $padding . ';';}
+if ($iconSize) {$customStyle .= ' font-size: ' . $iconSize . ';';}
+?>
+
+<?php if ($customCss) : ?>
+<style>
+    <?php echo $customCss; ?>
+</style>
+<?php endif; ?>
+<i style="<?php echo $customStyle ?>" class="<?php echo $icon . ' ' . $customClass ?>"></i>

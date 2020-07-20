@@ -1,0 +1,8 @@
+<?php
+$product = $block->getProduct();
+if($product->getData('manufacturer_code')){
+    echo $this->getChildHtml('supplier.product.choosetype.vendorproducts');
+} else {
+    echo $this->getChildHtml('supplier.default.edit.block');
+}
+?>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<attribute name="class" value="product-page-v3"/>
+
+		<referenceContainer name="content">
+			<container name="product.top.main" htmlTag="div" htmlClass="product-top-main product_v3" before="-"/>
+		</referenceContainer>
+
+		<move element="product.info.main" destination="product.top.main" after="product.info.media"/>
+		<move element="product.info.media" destination="product.top.main" before="-"/>
+
+	</body>
+</page>

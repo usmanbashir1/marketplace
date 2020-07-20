@@ -1,0 +1,35 @@
+<div class="container main-container vendor-container">
+    <h1><?php echo __('Paypal Settings'); ?></h1>
+    <div class="row">
+        <div class="col-md-12 container form-container">
+            <form name="settings_shipping_methods"
+                  id="settings_shipping_methods"
+                  action="<?php echo $block->getUrl('*/*/savePost') ?>"
+                  method="post">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="supplier_paypal_email" class="required col-lg-3 control-label">
+                                <?php echo $block->escapeHtml(__('Paypal Email')); ?> <em>*</em>
+                            </label>
+                            <div class="col-sm-8 input-container">
+                                <input type="email"
+                                       id="supplier_paypal_email"
+                                       name="supplier_paypal_email"
+                                       class="input-text required-entry form-control validate-length maximum-length-60"
+                                       value="<?php echo $block->escapeHtml($block->getSupplierPaypalEmail()); ?>"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 row">
+                    <input type="submit"
+                           name="submit"
+                           class="btn btn-primary"
+                           value="<?php echo __('Save Settings') ?>"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

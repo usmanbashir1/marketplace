@@ -1,0 +1,19 @@
+"Order Restrictions for Supplier","Order Restrictions for Supplier"
+"Minimum Order Amount","Minimum Order Amount"
+"Minimum Order Qty","Minimum Order Qty"
+"in %1 (base store currency). Empty or 0 means no restriction.","in %1 (base store currency). Empty or 0 means no restriction."
+"Empty or 0 means no restriction.","Empty or 0 means no restriction."
+"Restrictions Per","Restrictions Per"
+"Save Settings","Save Settings"
+"Order restrictions have been saved.","Order restrictions have been saved."
+"There was an error during save order restrictions.","There was an error during save order restrictions."
+"None","None"
+"Order","Order"
+"Day","Day"
+"Minimum Order Amount for %1 products should be %2. Currently, you reached %3 in your Cart.","Minimum Order Amount for %1 products should be %2. Currently, you reached %3 in your Cart."
+"Minimum Order Qty for %1 products should be %2. Currently, you reached %3 in your Cart.","Minimum Order Qty for %1 products should be %2. Currently, you reached %3 in your Cart."
+"Minimum Order Amount for %1 products should be %2 and the minimum Order Qty should be %3. Currently, you reached %4 in the Amount and %5 in the Qty in your Cart.","Minimum Order Amount for %1 products should be %2 and the minimum Order Qty should be %3. Currently, you reached %4 in the Amount and %5 in the Qty in your Cart."
+"You can't create an order because the suppliers have set restrictions.","You can't create an order because the suppliers have set restrictions."
+
+
+

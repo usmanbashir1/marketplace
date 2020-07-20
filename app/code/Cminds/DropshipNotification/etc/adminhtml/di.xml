@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Cminds DropshipNotification adminhtml di config.
+ *
+ * @category Cminds
+ * @package  Cminds_DropshipNotification
+ * @author   Piotr Pierzak <piotr@cminds.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Backend\Block\Widget\Button\Toolbar">
+        <plugin name="addDropshipButton"
+                type="\Cminds\DropshipNotification\Plugin\Block\Widget\Button\Toolbar\Plugin"
+                sortOrder="10"/>
+    </type>
+</config>

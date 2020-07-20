@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="catalog_product_save_before">
+        <observer name="checkManufacturerSave" instance="Cminds\MultipleProductVendors\Observer\Product\SaveBefore\CheckManufacturer" />
+        <observer name="mainProduct" instance="Cminds\MultipleProductVendors\Observer\Product\SaveBefore\MainProduct" />
+    </event>
+    <event name="catalog_product_save_after">
+        <observer name="runManufacturerRowIndexer" instance="Cminds\MultipleProductVendors\Observer\Product\SaveAfter\RunIndexer" />
+    </event>
+    <event name="catalog_product_delete_before">
+        <observer name="checkManufacturerDelete" instance="Cminds\MultipleProductVendors\Observer\Product\DeleteAfter\CheckManufacturer" />
+    </event>
+</config>

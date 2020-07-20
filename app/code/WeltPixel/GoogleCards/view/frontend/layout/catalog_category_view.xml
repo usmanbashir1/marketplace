@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="head.additional">
+            <block ifconfig="weltpixel_google_cards/general/enable" class="WeltPixel\GoogleCards\Block\Breadcrumbs"
+                   name="weltpixel.googlecards.breadcrumb" template="WeltPixel_GoogleCards::breadcrumb.phtml"/>
+        </referenceBlock>
+    </body>
+</page>

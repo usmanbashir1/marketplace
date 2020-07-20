@@ -1,0 +1,142 @@
+<?php
+
+// @codingStandardsIgnoreFile
+
+$uniqueid = 'instagram-widget-'.uniqid();
+$instagramClientId = $this->getData('instagram_client_id');
+$instagramAccessToken = $this->getData('instagram_access_token');
+$imagesPerRow = $this->getData('images_per_row');
+$openImagesInNewTab = ($this->getData('images_in_new_tab'))  ? 'target="_blank"' : '';
+$imagesHavePadding = ($this->getData('images_have_padding'))  ? 'use-padding' : '';
+$imagesAltTag = $this->getData('images_alt_text');
+$imagesAltLabel = '';
+switch ($imagesAltTag) {
+    case '2':
+        $imagesAltLabel = ' alt="' .  $block->escapeHtml(trim($this->getData('custom_alt_text')))  . '" ';
+        break;
+    case '1':
+        $imagesAltLabel = ' alt="{{caption}}" ';
+        break;
+    case '0':
+    default:
+    $imagesAltLabel = '';
+    break;
+}
+$useImageShuffle = ($this->getData('optimize_image_layout'))  ? true : false;
+$description = trim($this->getData('description'));
+$backgroundColor = trim($this->getData('background_color'));
+$title = trim($this->getData('title'));
+$limit = intval($this->getData('limit'));
+$sortBy = $this->getData('sort_by');
+$resolution = $this->getData('resolution');
+$feedType = $this->getData('feed_type');
+$userId = $this->getData('user_id');
+$tagName = $this->getData('tag_name');
+$locationId = $this->getData('location_id');
+$imagesTemplate = '<a '. $openImagesInNewTab . ' href="{{link}}"><img class="' . $imagesHavePadding . '"'  .  $imagesAltLabel . ' src="{{image}}" /></a>';
+?>
+<div class="instagram-widget-container " <?php if ($backgroundColor) : ?> style="background-color: <?php echo $backgroundColor; ?>" <?php endif; ?>>
+    <div class="instagram-heading-title center">
+        <?php if ($title) :  ?>
+            <h3><?php /* @escapeNotVerified */ echo $title ?></h3>
+        <?php endif; ?>
+        <?php if ($description) :  ?>
+            <span class="center"><?php /* @escapeNotVerified */ echo $description ?></span>
+        <?php endif; ?>
+    </div>
+    <div id="<?php echo $uniqueid; ?>" class="instagram-photos <?php /* @escapeNotVerified */ echo $imagesPerRow ?>" ></div>
+</div>
+<div class="clear" >&nbsp;</div>
+<script>
+    require(['jquery', 'Instafeed', 'shufflejs'],
+        function ($, Instafeed, Shuffle) {
+            var c_accessToken = '<?php  echo $instagramAccessToken; ?>';
+            var c_clientID = '<?php echo $instagramClientId; ?>';
+            var $instagramPhotosEl = $('#<?php echo $uniqueid; ?>');
+            if( $instagramPhotosEl.length > 0 ){
+
+                $instagramPhotosEl.each(function() {
+                    var element = $(this),
+                        instaGramTarget = element.attr('id'),
+                        instaGramUserId = '<?php echo $userId ?>',
+                        instaGramTag = '<?php echo $tagName ?>',
+                        instaGramLocation = '<?php echo $locationId ?>',
+                        instaGramCount = <?php echo $limit ?>,
+                        instaGramType = '<?php echo $feedType ?>',
+                        instaGramSortBy = '<?php echo $sortBy ?>',
+                        instaGramRes = '<?php echo $resolution ?>',
+                        useImageShuffle = '<?php echo $useImageShuffle ?>',
+                        intaGramImagesTemplate = '<?php echo $imagesTemplate ?>';
+
+
+                    if( !instaGramCount ) { instaGramCount = 9; }
+                    if( !instaGramSortBy ) { instaGramSortBy = 'none'; }
+                    if( !instaGramRes ) { instaGramRes = 'standard_resolution'; }
+
+                    if( instaGramType == 'user' ) {
+
+                        var feed = new Instafeed({
+                            target: instaGramTarget,
+                            get: instaGramType,
+                            userId: Number(instaGramUserId),
+                            limit: Number(instaGramCount),
+                            sortBy: instaGramSortBy,
+                            resolution: instaGramRes,
+                            accessToken: c_accessToken,
+                            clientId: c_clientID,
+                            template: intaGramImagesTemplate,
+                            after: function() {
+                                if (useImageShuffle) {
+                                    var widgetId = this.options.target;
+                                    new Shuffle(document.getElementById(widgetId));
+                                }
+                            }
+                        });
+
+                    } else if( instaGramType == 'tagged' ) {
+
+                        var feed = new Instafeed({
+                            target: instaGramTarget,
+                            get: instaGramType,
+                            tagName: instaGramTag,
+                            limit: Number(instaGramCount),
+                            sortBy: instaGramSortBy,
+                            resolution: instaGramRes,
+                            accessToken: c_accessToken,
+                            clientId: c_accessToken,
+                            template: intaGramImagesTemplate,
+                            after: function() {
+                                if (useImageShuffle) {
+                                    var widgetId = this.options.target;
+                                    new Shuffle(document.getElementById(widgetId));
+                                }
+                            }
+                        });
+
+                    } else if( instaGramType == 'location' ) {
+
+                        var feed = new Instafeed({
+                            target: instaGramTarget,
+                            get: instaGramType,
+                            locationId: Number(instaGramLocation),
+                            limit: Number(instaGramCount),
+                            sortBy: instaGramSortBy,
+                            resolution: instaGramRes,
+                            accessToken: c_accessToken,
+                            clientId: c_accessToken,
+                            template: intaGramImagesTemplate,
+                            after: function() {
+                                if (useImageShuffle) {
+                                    var widgetId = this.options.target;
+                                    new Shuffle(document.getElementById(widgetId));
+                                }
+                            }
+                        });
+
+                    }
+
+                    feed.run();
+                });
+            }
+        });
+</script>

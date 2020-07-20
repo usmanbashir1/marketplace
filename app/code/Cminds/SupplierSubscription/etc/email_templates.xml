@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="subscriptions_configuration_notification_email_template"
+              label="Notification Plan soon to be Expired"
+              file="notification_plan_to_expire.html"
+              type="html"
+              module="Cminds_SupplierSubscription"
+              area="frontend"/>
+</config>

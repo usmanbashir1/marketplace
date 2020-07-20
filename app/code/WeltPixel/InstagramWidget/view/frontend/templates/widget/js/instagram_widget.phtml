@@ -1,0 +1,125 @@
+<?php
+
+// @codingStandardsIgnoreFile
+
+$uniqueid = 'instagram-widget-'.uniqid();
+$imagesPerRow = $this->getData('images_per_row');
+$openImagesInNewTab = ($this->getData('images_in_new_tab'))  ? 'target="_blank"' : '';
+$imagesHavePadding = ($this->getData('images_have_padding'))  ? 'use-padding' : '';
+$useImageShuffle = ($this->getData('optimize_image_layout'))  ? true : false;
+$useImageLazyLoad = ($this->isLazyLoadEnabled() && $this->getData('enable_lazyload'));
+$description = trim($this->getData('description'));
+$backgroundColor = trim($this->getData('background_color'));
+$title = trim($this->getData('title'));
+$limit = intval($this->getData('limit'));
+$resolution = $this->getData('resolution_jsparser');
+$feedType = $this->getData('feed_type_jsparser');
+$userName = $this->getData('user_name');
+$tagName = $this->getData('tag_name');
+$imagesAltTag = $this->getData('images_alt_text') ?? '0';
+$imagesAltLabel = '';
+$lazyloadPlaceholderWidth = $this->getLazyLoadPlaceholderWidth() ?? '100%';
+switch ($imagesAltTag) {
+    case '2':
+        $imagesAltLabel = $block->escapeHtml(trim($this->getData('custom_alt_text')));
+        break;
+    case '0':
+    default:
+        $imagesAltLabel = '';
+        break;
+}
+?>
+<div class="instagram-widget-container " <?php if ($backgroundColor) : ?> style="background-color: <?php echo $backgroundColor; ?>" <?php endif; ?>>
+    <div class="instagram-heading-title center">
+        <?php if ($title) :  ?>
+            <h3><?php /* @escapeNotVerified */ echo $title ?></h3>
+        <?php endif; ?>
+        <?php if ($description) :  ?>
+            <span class="center"><?php /* @escapeNotVerified */ echo $description ?></span>
+        <?php endif; ?>
+    </div>
+    <div id="<?php echo $uniqueid; ?>" class="instagram-photos <?php /* @escapeNotVerified */ echo $imagesPerRow ?>" ></div>
+</div>
+<div class="clear" >&nbsp;</div>
+<script>
+    require(['jquery', 'instagramFeed', 'shufflejs', 'underscore'],
+        function ($, instagramFeed, Shuffle, _) {
+            var $instagramPhotosEl = $('#<?php echo $uniqueid; ?>');
+            if( $instagramPhotosEl.length > 0 ){
+
+                $instagramPhotosEl.each(function() {
+                    var instaGramTarget ='#<?php echo $uniqueid; ?>',
+                        instaGramUserId = '<?php echo $userName ?>',
+                        instaGramTag = '<?php echo $tagName ?>',
+                        instaGramCount = <?php echo $limit ?>,
+                        instaGramType = '<?php echo $feedType ?>',
+                        instaGramRes = '<?php echo $resolution ?>',
+                        instaImageNewTab = '<?php  echo $openImagesInNewTab ?>',
+                        instaImagePadding = '<?php  echo $imagesHavePadding ?>',
+                        useImageShuffle = '<?php echo $useImageShuffle ?>',
+                        useImageLazyLoad = '<?php echo $useImageLazyLoad ?>',
+                        lazyLoadPlaceholderWidth = '<?php echo $lazyloadPlaceholderWidth ?>',
+                        instaImageAltTag = <?php echo $imagesAltTag ?>,
+                        instaImageAltLabel = '<?php echo $imagesAltLabel ?>';
+
+
+                    if( !instaGramCount ) { instaGramCount = 6; }
+                    if( !instaGramRes ) { instaGramRes = '640'; }
+
+                    if( instaGramType == 'user' ) {
+
+                        $.instagramFeed({
+                            'username': instaGramUserId,
+                            'container': instaGramTarget,
+                            'image_size': instaGramRes,
+                            'items': instaGramCount,
+                            'image_new_tab' : instaImageNewTab,
+                            'image_padding' : instaImagePadding,
+                            'image_alt_tag': instaImageAltTag,
+                            'image_alt_label': instaImageAltLabel,
+                            'image_lazy_load' : useImageLazyLoad,
+                            'lazy_load_placeholder_width' : lazyLoadPlaceholderWidth,
+                            'after': function() {
+                                if (useImageShuffle) {
+                                    new Shuffle($instagramPhotosEl);
+                                    if (useImageLazyLoad) {
+                                        $(window).scroll(_.debounce(function () {
+                                            var evt = window.document.createEvent('UIEvents');
+                                            evt.initUIEvent('resize', true, false, window, 0);
+                                            window.dispatchEvent(evt);
+                                        }, 350));
+                                    }
+                                }
+                            }
+                        });
+
+                    } else if( instaGramType == 'tagged' ) {
+                        $.instagramFeed({
+                            'tag': instaGramTag,
+                            'container': instaGramTarget,
+                            'image_size': instaGramRes,
+                            'items': instaGramCount,
+                            'image_new_tab' : instaImageNewTab,
+                            'image_padding' : instaImagePadding,
+                            'image_alt_tag': instaImageAltTag,
+                            'image_alt_label': instaImageAltLabel,
+                            'image_lazy_load' : useImageLazyLoad,
+                            'lazy_load_placeholder_width' : lazyLoadPlaceholderWidth,
+                            'after': function() {
+                                if (useImageShuffle) {
+                                    new Shuffle($instagramPhotosEl);
+                                    if (useImageLazyLoad) {
+                                        $(window).scroll(_.debounce(function () {
+                                            var evt = window.document.createEvent('UIEvents');
+                                            evt.initUIEvent('resize', true, false, window, 0);
+                                            window.dispatchEvent(evt);
+                                        }, 350));
+                                    }
+                                }
+                            }
+                        });
+                    }
+                });
+            }
+        });
+</script>

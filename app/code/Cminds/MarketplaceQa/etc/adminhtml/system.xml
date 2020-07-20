@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="configuration_marketplace_qa"
+                 translate="label"
+                 type="text"
+                 sortOrder="1100"
+                 showInDefault="1"
+                 showInWebsite="1"
+                 showInStore="1">
+            <class>separator-top</class>
+            <label>Question and Answer Add-on</label>
+            <tab>supplierfrontend</tab>
+            <resource>Cminds_MarketplaceQa::configuration</resource>
+            <group id="configure"
+                   translate="label"
+                   type="text"
+                   sortOrder="1"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
+                <label>General</label>
+                <field id="enabled"
+                       translate="label comment"
+                       sortOrder="1"
+                       type="select"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="question_form_visible_on_product_page"
+                       translate="label comment"
+                       sortOrder="2"
+                       type="select"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Question Form Visible On Product Page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="question_and_answers_visible_on_product_page"
+                       translate="label comment"
+                       sortOrder="3"
+                       type="select"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Questions And Answers Visible On Product Page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="admin_approval_required"
+                       translate="label comment"
+                       sortOrder="3"
+                       type="select"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Admin Approval Required</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="max_question_per_product"
+                       translate="label comment"
+                       sortOrder="3"
+                       type="text"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Max Questions Per Product</label>
+                </field>
+                <field id="notify_customer_when_question_was_sent"
+                       translate="label comment"
+                       sortOrder="3"
+                       type="select"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Notify Customer When Question Was Sent</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="notify_customer_when_answer_was_placed"
+                       translate="label comment"
+                       sortOrder="3"
+                       type="select"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Notify Customer When Answer For His Question Was Placed</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="notify_supplier_about_new_question"
+                       translate="label comment"
+                       sortOrder="3"
+                       type="select"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Notify Supplier About New Question</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="notify_admin_about_new_question"
+                       translate="label comment"
+                       sortOrder="3"
+                       type="select"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Notify Admin About New Question</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

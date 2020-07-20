@@ -1,0 +1,837 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="weltpixel_frontend_options" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Frontend Options</label>
+            <tab>weltpixel</tab>
+            <resource>WeltPixel_FrontendOptions::FrontendOptionsSettings</resource>
+            <group id="notification" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Important / Recommended:</label>
+                <fieldset_css>weltpixel-recommended-header active</fieldset_css>
+                <field id="notification_msg" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>WeltPixel\FrontendOptions\Block\Adminhtml\System\Config\Notification</frontend_model>
+                </field>
+            </group>
+            <group id="breakpoints" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Breakpoints</label>
+                <field id="screen__xxs" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Screen xxs</label>
+                    <validate>required</validate>
+                    <comment>Insert breakpoint for XXS screen size. Default is 320px.</comment>
+                </field>
+                <field id="screen__xs" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Screen xs</label>
+                    <validate>required</validate>
+                    <comment>Insert breakpoint for XS screen size. Default is 480px.</comment>
+                </field>
+                <field id="screen__s" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Screen s</label>
+                    <validate>required</validate>
+                    <comment>Insert breakpoint for S screen size. Default is 640px.</comment>
+                </field>
+                <field id="screen__m" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Screen m</label>
+                    <validate>required</validate>
+                    <comment>Insert breakpoint for M screen size. This breakpoint switches between mobile and desktop views. Default is 768px.</comment>
+                </field>
+                <field id="screen__l" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Screen l</label>
+                    <validate>required</validate>
+                    <comment>Insert breakpoint for L screen size. Default is 1024px.</comment>
+                </field>
+                <field id="screen__xl" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Screen xl</label>
+                    <validate>required</validate>
+                    <comment>Insert breakpoint for XL screen size. Default is 1440px.</comment>
+                </field>
+            </group>
+            <group id="section_width" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Section Width</label>
+                <field id="page_main" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Page Main</label>
+                    <validate>required</validate>
+                    <comment>Set the width of the main page [in px or %].</comment>
+                    <tooltip>Set the width of the main page [in px or %] - This should be set to 100%, all below
+                        elements refer to this value. If you set it to a different value, keep in mind that all
+                        the values below, expressed in %, will refer to this value and not to 100%.</tooltip>
+                </field>
+                <field id="page_main_padding" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Page Main Padding</label>
+                    <validate>required</validate>
+                    <comment>Set custom padding around the main page [in px]. Example: 0 15px</comment>
+                    <tooltip>Set custom padding around the main page [in px] - You can set the padding for each side of the page (top, right, bottom, and left).</tooltip>
+                </field>
+                <field id="footer" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Footer</label>
+                    <validate>required</validate>
+                    <comment>Set the width of the footer [in px or %] - Example: 1400px, 90%, 100%. For full width use 100%</comment>
+                </field>
+                <field id="row" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Row</label>
+                    <validate>required</validate>
+                    <comment>Set the width of row [in px or %]. You can set the width of the '.row' class from this value. Example: 1440px </comment>
+                    <tooltip>set the width of row [in px or %]. You can set the width of the '.row' class from this value. When you use the '.row' class in any page in your store it will use the width defined here.</tooltip>
+                </field>
+                <field id="default_page" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Default Page</label>
+                    <validate>required</validate>
+                    <comment>Set width of the default page set [in px or %]. Default store pages are pages like: Checkout Page, Cart Page, Login Page, and other magento default pages. Example: 100%</comment>
+                    <tooltip>Set width of the default page set [in px or %] - default store pages are pages like: Checkout Page, Cart Page, Login Page, and other magento default pages. You can set a custom width for all default pages.</tooltip>
+                </field>
+                <field id="cms_page" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Cms Page</label>
+                    <validate>required</validate>
+                    <comment>Set width of the CMS pages [in px or %]. This sets width of CMS pages in your store, for example Homepage or other CMS pages. Example: 100% </comment>
+                    <tooltip>Set width of the CMS pages [in px or %]. This sets width of CMS pages in your store, for example Homepage or other CMS pages. For example you may want to use full width for your Homepage and 1400px for Category Page / Product Page.</tooltip>
+                </field>
+                <field id="category_page" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category Page</label>
+                    <validate>required</validate>
+                    <comment>Set width of the Category Page [in px or %] - Example: 1400px or 90%, for full width use 100%.</comment>
+                </field>
+                <field id="product_page" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product Page</label>
+                    <validate>required</validate>
+                    <comment>Set width of the Product Page [in px or %] - Example: 1400px or 90%, for full width use 100%.</comment>
+                </field>
+            </group>
+            <group id="google_font_options" translate="label comment" type="text" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Google Font Options</label>
+                <field id="asyn_webfont_load" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Load Google Fonts Asynchronously</label>
+                    <source_model>WeltPixel\Backend\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[ If set to yes, the Google fonts will be loaded Asynchronously which eliminates render blocking CSS and should speed up the loading of the page.]]></comment>
+                </field>
+            </group>
+            <group id="main_options" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Main Options</label>
+                <field id="primary__color" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Primary color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                </field>
+                <field id="secondary__color" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Secondary color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                </field>
+                <field id="page__background____color" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Page Background Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                </field>
+                <field id="active__color" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Active Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                </field>
+                <field id="error__color" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Error Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                </field>
+            </group>
+            <group id="h1" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>H1</label>
+                <field id="h1__font____color" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment> Set the text color for H1 heading. Example: #303030</comment>
+                </field>
+                <field id="h1__font____family" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Font Family</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\Googlefonts</source_model>
+                    <comment><![CDATA[ Set font family for H1 heading. Example: Questrial. Please check <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank" >this</a> for more details on google fonts]]>
+                    </comment>
+                </field>
+                <field id="h1__font____family_characterset" translate="label" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Font Character Set</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\Characterset</source_model>
+                    <comment><![CDATA[ Set character set for H1 heading. Example: Latin. <br/> Please check
+                    <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank">this</a>
+                    for more details on google fonts]]>
+                    </comment>
+                </field>
+                <field id="h1__font____weight" translate="label" type="select" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Weight</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\FontWeight</source_model>
+                    <comment><![CDATA[ Set font weight for H1 heading. Example: 900. <br/>Please check
+                    <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank" >this</a>
+                    for more details on google fonts.]]></comment>
+                    <tooltip>The font-weight property sets how thick or thin characters in text should be displayed.
+                        Can be defined from thin to thick characters. For example 400 is the same as normal,
+                        and 700 is the same as bold</tooltip>
+                </field>
+                <field id="h1__font____size" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Size</label>
+                    <comment> Set the font size for H1 heading. Example: 30px</comment>
+                </field>
+                <field id="h1__font____style" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Style</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\FontStyle</source_model>
+                    <comment>Set font style for H1 heading.</comment>
+                    <tooltip>The font-style property specifies the font style for a text like normal, italic. </tooltip>
+                </field>
+                <field id="h1__letter____spacing" translate="label" type="text" sortOrder="55" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Letter Spacing</label>
+                    <comment>Increase or decrease the space between characters in H1 heading. Range: -5.0 ... 50.0, value in pixels. Example: 0.7</comment>
+                    <validate>validate-number validate-no-empty validate-number-range number-range--5.0-50.0</validate>
+                </field>
+                <field id="h1__line____height" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Line Height</label>
+                    <comment>Set line height in pixels for H1 heading. Example: 60</comment>
+                </field>
+            </group>
+            <group id="h2" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>H2</label>
+                <field id="h2__font____color" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set the text color for H2 heading.</comment>
+                </field>
+                <field id="h2__font____family" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Font Family</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\Googlefonts</source_model>
+                    <comment><![CDATA[Set font family for H2 heading. Please check <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank" >this</a> for more details on google fonts]]>
+                    </comment>
+                </field>
+                <field id="h2__font____family_characterset" translate="label" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Font Character Set</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\Characterset</source_model>
+                    <comment><![CDATA[ Set character set for H2 heading. Please check <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank">this</a> for more details on google fonts]]>
+                    </comment>
+                </field>
+                <field id="h2__font____weight" translate="label" type="select" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Weight</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\FontWeight</source_model>
+                    <comment><![CDATA[ Set font weight for H1 heading. Example: 900. <br/>Please check
+                    <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank" >this</a>
+                    for more details on google fonts.]]></comment>
+                    <tooltip>The font-weight property sets how thick or thin characters in text should be displayed.
+                        Can be defined from thin to thick characters. For example 400 is the same as normal,
+                        and 700 is the same as bold</tooltip>
+                </field>
+                <field id="h2__font____size" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Size</label>
+                    <comment> Set the font size for H2 heading. Example: 30px</comment>
+                </field>
+                <field id="h2__font____style" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Style</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\FontStyle</source_model>
+                    <comment>Set font style for H1 heading.</comment>
+                    <tooltip>The font-style property specifies the font style for a text like normal, italic. </tooltip>
+                </field>
+                <field id="h2__letter____spacing" translate="label" type="text" sortOrder="55" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Letter Spacing</label>
+                    <comment>Increase or decrease the space between characters in H2 heading. Range: -5.0 ... 50.0, value in pixels. Example: 0.7</comment>
+                    <validate>validate-number validate-no-empty validate-number-range number-range--5.0-50.0</validate>
+                </field>
+                <field id="h2__line____height" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Line Height(px)</label>
+                    <comment>Set line height for H2 heading.</comment>
+                </field>
+            </group>
+            <group id="h3" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>H3</label>
+                <field id="h3__font____color" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment> Set the text color for H3 heading. Example: #303030</comment>
+                </field>
+                <field id="h3__font____family" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Font Family</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\Googlefonts</source_model>
+                    <comment><![CDATA[ Set font family for H3 heading. Example: Questrial.
+                    Please check <a href="https://developers.google.com/fonts/docs/getting_started"
+                    target="_blank" >this</a> for more details on google fonts]]>
+                    </comment>
+                </field>
+                <field id="h3__font____family_characterset" translate="label" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Font Character Set</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\Characterset</source_model>
+                    <comment><![CDATA[Set character set for H3 heading. Example: Latin. Please check <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank">this</a> for more details on google fonts]]>
+                    </comment>
+                </field>
+                <field id="h3__font____weight" translate="label" type="select" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Weight</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\FontWeight</source_model>
+                    <comment><![CDATA[ Set font weight for H1 heading. Example: 900. <br/>Please check
+                    <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank" >this</a>
+                    for more details on google fonts.]]></comment>
+                    <tooltip>The font-weight property sets how thick or thin characters in text should be displayed.
+                        Can be defined from thin to thick characters. For example 400 is the same as normal,
+                        and 700 is the same as bold</tooltip>
+                </field>
+                <field id="h3__font____size" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Size</label>
+                    <comment> Set the font size for H3 heading. </comment>
+                </field>
+                <field id="h3__font____style" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Style</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\FontStyle</source_model>
+                    <comment>Set font style for H1 heading.</comment>
+                    <tooltip>The font-style property specifies the font style for a text like normal, italic. </tooltip>
+                </field>
+                <field id="h3__letter____spacing" translate="label" type="text" sortOrder="55" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Letter Spacing</label>
+                    <comment>Increase or decrease the space between characters in H3 heading. Range: -5.0 ... 50.0, value in pixels. Example: 0.7</comment>
+                    <validate>validate-number validate-no-empty validate-number-range number-range--5.0-50.0</validate>
+                </field>
+                <field id="h3__line____height" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Line Height(px)</label>
+                    <comment>Set line height for H3 heading. </comment>
+                </field>
+            </group>
+            <group id="h4" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>H4</label>
+                <field id="h4__font____color" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment> Set the text color for H4 heading. Example: #303030</comment>
+                </field>
+                <field id="h4__font____family" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Font Family</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\Googlefonts</source_model>
+                    <comment><![CDATA[ Set font family for H4 heading. Example: Questrial. Please check <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank" >this</a> for more details on google fonts]]>
+                    </comment>
+                </field>
+                <field id="h4__font____family_characterset" translate="label" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Font Character Set</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\Characterset</source_model>
+                    <comment><![CDATA[ Set character set for H4 heading. Example: Latin. <br/> Please check
+                    <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank">this</a>
+                    for more details on google fonts]]></comment>
+                </field>
+                <field id="h4__font____weight" translate="label" type="select" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Weight</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\FontWeight</source_model>
+                    <comment><![CDATA[ Set font weight for H1 heading. Example: 900. <br/>Please check
+                    <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank" >this</a>
+                    for more details on google fonts.]]></comment>
+                    <tooltip>The font-weight property sets how thick or thin characters in text should be displayed.
+                        Can be defined from thin to thick characters. For example 400 is the same as normal,
+                        and 700 is the same as bold</tooltip>
+                </field>
+                <field id="h4__font____size" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Size</label>
+                    <comment> Set the font size for H4 heading.</comment>
+                </field>
+                <field id="h4__font____style" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Style</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\FontStyle</source_model>
+                    <comment>Set font style for H1 heading.</comment>
+                    <tooltip>The font-style property specifies the font style for a text like normal, italic. </tooltip>
+                </field>
+                <field id="h4__letter____spacing" translate="label" type="text" sortOrder="55" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Letter Spacing</label>
+                    <comment>Increase or decrease the space between characters in H4 heading. Range: -5.0 ... 50.0, value in pixels. Example: 0.7</comment>
+                    <validate>validate-number validate-no-empty validate-number-range number-range--5.0-50.0</validate>
+                </field>
+                <field id="h4__line____height" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Line Height(px)</label>
+                    <comment>Set line height for H4 heading.</comment>
+                </field>
+            </group>
+            <group id="h5" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>H5</label>
+                <field id="h5__font____color" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment> Set the text color for H5 heading. Example: #303030</comment>
+                </field>
+                <field id="h5__font____family" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Font Family</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\Googlefonts</source_model>
+                    <comment><![CDATA[ Set font family for H5 heading. Example: Questrial. Please check <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank" >this</a> for more details on google fonts]]>
+                    </comment>
+                </field>
+                <field id="h5__font____family_characterset" translate="label" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Font Character Set</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\Characterset</source_model>
+                    <comment><![CDATA[ Set character set for H5 heading. Example: Latin. <br/> Please check
+                    <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank">this</a>
+                    for more details on google fonts]]>
+                    </comment>
+                </field>
+                <field id="h5__font____weight" translate="label" type="select" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Weight</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\FontWeight</source_model>
+                    <comment><![CDATA[ Set font weight for H1 heading. Example: 900. <br/>Please check
+                    <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank" >this</a>
+                    for more details on google fonts.]]></comment>
+                    <tooltip>The font-weight property sets how thick or thin characters in text should be displayed.
+                        Can be defined from thin to thick characters. For example 400 is the same as normal,
+                        and 700 is the same as bold</tooltip>
+                </field>
+                <field id="h5__font____size" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Size</label>
+                    <comment> Set the font size for H5 heading.</comment>
+                </field>
+                <field id="h5__font____style" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Style</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\FontStyle</source_model>
+                    <comment>Set font style for H1 heading.</comment>
+                    <tooltip>The font-style property specifies the font style for a text like normal, italic. </tooltip>
+                </field>
+                <field id="h5__letter____spacing" translate="label" type="text" sortOrder="55" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Letter Spacing</label>
+                    <comment>Increase or decrease the space between characters in H5 heading. Range: -5.0 ... 50.0, value in pixels. Example: 0.7</comment>
+                    <validate>validate-number validate-no-empty validate-number-range number-range--5.0-50.0</validate>
+                </field>
+                <field id="h5__line____height" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Line Height(px)</label>
+                    <comment>Set line height for H5 heading.</comment>
+                </field>
+            </group>
+            <group id="h6" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>H6</label>
+                <field id="h6__font____color" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment> Set the text color for H6 heading. Example: #303030</comment>
+                </field>
+                <field id="h6__font____family" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Font Family</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\Googlefonts</source_model>
+                    <comment><![CDATA[ Set font family for H6 heading. Example: Questrial. Please check <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank" >this</a> for more details on google fonts]]>
+                    </comment>
+                </field>
+                <field id="h6__font____family_characterset" translate="label" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Font Character Set</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\Characterset</source_model>
+                    <comment><![CDATA[ Set character set for H6 heading. Example: Latin. <br/> Please check
+                    <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank">this</a>
+                    for more details on google fonts]]></comment>
+                </field>
+                <field id="h6__font____weight" translate="label" type="select" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Weight</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\FontWeight</source_model>
+                    <comment><![CDATA[ Set font weight for H1 heading. Example: 900. <br/>Please check
+                    <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank" >this</a>
+                    for more details on google fonts.]]></comment>
+                    <tooltip>The font-weight property sets how thick or thin characters in text should be displayed.
+                        Can be defined from thin to thick characters. For example 400 is the same as normal,
+                        and 700 is the same as bold</tooltip>
+                </field>
+                <field id="h6__font____size" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Size</label>
+                    <comment> Set the font size for H6 heading.</comment>
+                </field>
+                <field id="h6__font____style" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Style</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\FontStyle</source_model>
+                    <comment>Set font style for H1 heading.</comment>
+                    <tooltip>The font-style property specifies the font style for a text like normal, italic. </tooltip>
+                </field>
+                <field id="h6__letter____spacing" translate="label" type="text" sortOrder="55" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Letter Spacing</label>
+                    <comment>Increase or decrease the space between characters in H6 heading. Range: -5.0 ... 50.0, value in pixels. Example: 0.7</comment>
+                    <validate>validate-number validate-no-empty validate-number-range number-range--5.0-50.0</validate>
+                </field>
+                <field id="h6__line____height" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Line Height(px)</label>
+                    <comment>Set line height for H6 heading.</comment>
+                </field>
+            </group>
+            <group id="default" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Default</label>
+                <field id="text__color" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment> Set the text color for default paragraphs. Example: #303030</comment>
+                </field>
+                <field id="font____family__base" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Font Family</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\Googlefonts</source_model>
+                    <comment><![CDATA[ Set font family for default paragraphs. Example: Questrial. Please check <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank" >this</a> for more details on google fonts]]>
+                    </comment>
+                </field>
+                <field id="font____family__base_characterset" translate="label" type="multiselect" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Font Character Set</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\Characterset</source_model>
+                    <comment><![CDATA[ Set character set for default paragraphs. Example: Latin. <br/> Please check
+                    <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank">this</a>
+                    for more details on google fonts]]>
+                    </comment>
+                </field>
+                <field id="font____weight__regular" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Weight</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\FontWeight</source_model>
+                    <comment><![CDATA[ Set font weight for H1 heading. Example: 900. <br/>Please check
+                    <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank" >this</a>
+                    for more details on google fonts.]]></comment>
+                    <tooltip>The font-weight property sets how thick or thin characters in text should be displayed.
+                        Can be defined from thin to thick characters. For example 400 is the same as normal,
+                        and 700 is the same as bold</tooltip>
+                </field>
+                <field id="font____size__base" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Size</label>
+                    <comment> Set the font size for default paragraphs. If left blank, default font size is set to 14px.</comment>
+                </field>
+                <field id="font____style__base" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Style</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\FontStyle</source_model>
+                    <comment>Set font style for H1 heading.</comment>
+                    <tooltip>The font-style property specifies the font style for a text like normal, italic. </tooltip>
+                </field>
+                <field id="font__letter____spacing" translate="label" type="text" sortOrder="55" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Letter Spacing</label>
+                    <comment>Increase or decrease the space between characters in text. Range: -5.0 ... 50.0, value in pixels. Example: 0.7</comment>
+                    <validate>validate-number validate-no-empty validate-number-range number-range--5.0-50.0</validate>
+                </field>
+                <field id="line____height__computed" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Line Height(px)</label>
+                    <comment>Set line height for default paragraphs.</comment>
+                </field>
+            </group>
+            <group id="links" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Links</label>
+                <field id="link__color" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Link Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set color for links.</comment>
+                </field>
+                <field id="link__hover__color" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Link Hover Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set color for links on hover/when the user mouses over it.</comment>
+                </field>
+                <field id="link__text____decoration" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Decoration</label>
+                    <comment>Set Font Decoration for links. Example: none </comment>
+                    <tooltip>The text-decoration property is mostly used to remove underlines from links. Following values can be set: none|underline|overline|line-through|initial|inherit;</tooltip>
+                </field>
+                <field id="link__hover__text____decoration" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Decoration Hover</label>
+                    <comment>Set Font Decoration for links, on hover. Example: underline </comment>
+                    <tooltip>The text-decoration property is mostly used to remove underlines from links. Following values can be set: none|underline|overline|line-through|initial|inherit;</tooltip>
+                </field>
+            </group>
+            <group id="default_buttons" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Default Buttons</label>
+                <field id="button__color" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set text color for default buttons. Example: #FFFFFF.</comment>
+                    <tooltip>Default buttons are buttons other than call to action (CTA) buttons. Example:
+                        Submit review button, Update shopping cart in Shopping cart page, other buttons.</tooltip>
+                </field>
+                <field id="button__hover__color" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hover Text Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set text color on hover over default buttons. Example: #000000 </comment>
+                </field>
+                <field id="button__background" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set background color for default buttons. Example: #000000.</comment>
+                </field>
+                <field id="button__hover__background" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hover Background Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set background color on hover over default buttons. Example: #FFFFFF. </comment>
+                </field>
+                <field id="button__border" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Border Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set border color for default buttons. Example: #000000.</comment>
+                </field>
+                <field id="button__hover__border" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hover Border Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set border color on hover over default buttons. Example: #000000.</comment>
+                </field>
+                <field id="button__border____radius" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Border Radius</label>
+                    <comment> <![CDATA[ Set border radius for buttons. Example: 1px. <br/>
+                    <strong style="color:red;">Important:</strong>This setting is applied on all buttons, default and primary. ]]>
+                    </comment>
+                </field>
+                <field id="button__font____family" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Font Family</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\Googlefonts</source_model>
+                    <comment><![CDATA[ Set font family for buttons. Example: Source Sans Pro<br/>
+                    Please check <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank" >this</a> for more details on google fonts. <br/>
+                    <strong style="color:red;">Important:</strong>This setting is applied on all buttons, default and primary.]]>
+                    </comment>
+                </field>
+                <field id="button__font____family_characterset" translate="label" type="multiselect" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Font Character Set</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\Characterset</source_model>
+                    <comment><![CDATA[ Set font character set for buttons. Example: Latin<br/>
+                    Please check <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank" >this</a> for more details on google fonts. <br/>
+                    <strong style="color:red;">Important:</strong>This setting is applied on all buttons, default and primary.]]>
+                    </comment>
+                </field>
+                <field id="button__font____weight" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Weight</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\FontWeight</source_model>
+                    <comment><![CDATA[ Set font weight for H1 heading. Example: 900. <br/>Please check
+                    <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank" >this</a>
+                    for more details on google fonts.]]></comment>
+                    <tooltip>The font-weight property sets how thick or thin characters in text should be displayed.
+                        Can be defined from thin to thick characters. For example 400 is the same as normal,
+                        and 700 is the same as bold</tooltip>
+                </field>
+                <field id="button__font____size" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Size</label>
+                    <comment><![CDATA[ Set font size for buttons text. Example: 18px<br/>
+                    <strong style="color:red;">Important:</strong> This setting is applied on all buttons, default and primary. ]]>
+                    </comment>
+                </field>
+                <field id="button__line____height" translate="label" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Line Height(px)</label>
+                    <comment>Set the Line Height for the default buttons text. Example: 18px</comment>
+                </field>
+                <field id="button__letter____spacing" translate="label" type="text" sortOrder="135" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Letter Spacing</label>
+                    <comment>Increase or decrease the space between characters for the default buttons text. Range: -5.0 ... 50.0, value in pixels. Example: 0.7</comment>
+                    <validate>validate-number validate-no-empty validate-number-range number-range--5.0-50.0</validate>
+                </field>
+            </group>
+            <group id="primary_buttons" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Primary Buttons (Call To Action)</label>
+                <field id="button____primary__color" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set text color for primary (CTA) buttons. Example: #FFFFFF.</comment>
+                    <tooltip>Primary buttons are used anywhere a call to action (CTA) is needed. Example: Create an Account, Add to Cart, Proceed to Checkout, Place Order, and other CTA buttons</tooltip>
+                </field>
+                <field id="button____primary__hover__color" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hover Text Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set text color on hover over primary buttons. Example: #000000 </comment>
+                </field>
+                <field id="button____primary__background" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set background color for primary buttons. Example: #000000.</comment>
+                </field>
+                <field id="button____primary__hover__background" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hover Background Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set background color on hover over primary buttons. Example: #FFFFFF. </comment>
+                </field>
+                <field id="button____primary__border" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Border Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set border color for primary buttons. Example: #000000.</comment>
+                </field>
+                <field id="button____primary__hover__border" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hover Border Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set border color on hover over primary buttons. Example: #000000.</comment>
+                </field>
+                <field id="button____primary__line____height" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Line Height(px)</label>
+                    <comment>Set the Line Height for the primary buttons text. Example: 18px</comment>
+                </field>
+            </group>
+            <group id="ratings" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Ratings</label>
+                <field id="rating____icon__active__color" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Rating Active Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set color for active Rating. Example: #000000.</comment>
+                </field>
+                <field id="rating____icon__color" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Rating Inactive Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set color for inactive Rating. Example: #B3B3B3</comment>
+                </field>
+                <field id="rating____icon__font____size" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Rating Icon Size</label>
+                    <comment>Set Rating Icon size. Example: 12px.</comment>
+                </field>
+            </group>
+            <group id="form_inputs" translate="label" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Form Inputs [input-text|select|textarea|input-radio|input-checkbox]</label>
+                <field id="form____element____input__background" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Input Background</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set background color. Leave blank for default white.</comment>
+                    <tooltip>Set background color for [input-text|select|textarea|input-radio|input-checkbox] elements</tooltip>
+                </field>
+                <field id="form____element____input__border____color" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Input Border Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set border color.</comment>
+                </field>
+                <field id="form____element____input__border" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Input Border Thickness</label>
+                    <comment>Set border width and style. Example: 1px solid</comment>
+                    <tooltip>The border properties can be set using Border color ad Border Thickness. </tooltip>
+                </field>
+                <field id="form____element____input__border____radius" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Input Border Radius</label>
+                    <comment>Set border radius. Example: 1px</comment>
+                </field>
+                <field id="form____element____input__height" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Input Height</label>
+                    <comment>Set Input height. Example: 32px</comment>
+                </field>
+                <field id="form____element____input__font____size" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Input Font Size</label>
+                    <comment>Set Input Font Size. Example: 14px. If field blank, the font size from Default paragraph is used.</comment>
+                </field>
+                <field id="form____element____input__color" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Input Font Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set Input Font Color. </comment>
+                </field>
+                <field id="form____element____input__font____family" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Input Font Family</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\Googlefonts</source_model>
+                    <comment><![CDATA[ Set font family for Input text. Example: Questrial. Please check <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank" >this</a> for more details on google fonts]]>
+                    </comment>
+                </field>
+                <field id="form____element____input__font____family_characterset" translate="label" type="multiselect" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Input Font Character Set</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\Characterset</source_model>
+                    <comment><![CDATA[ Set character set for Input text. Example: Latin. <br/> Please check <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank">this</a> for more details on google fonts]]>
+                    </comment>
+                </field>
+                <field id="form____element____input__font____weight" translate="label" type="select" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Input Font Weight</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\FontWeight</source_model>
+                    <comment><![CDATA[ Set font weight for H1 heading. Example: 900. <br/>Please check
+                    <a href="https://developers.google.com/fonts/docs/getting_started" target="_blank" >this</a>
+                    for more details on google fonts.]]></comment>
+                    <tooltip>The font-weight property sets how thick or thin characters in text should be displayed.
+                        Can be defined from thin to thick characters. For example 400 is the same as normal,
+                        and 700 is the same as bold</tooltip>
+                </field>
+                <field id="form____element____input__line____height" translate="label" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Input Line Height</label>
+                    <comment>Set line height for Input text. If left blank, default value 1.42857143 is used. </comment>
+                </field>
+                <field id="form____element____input__font____style" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Input Font Style</label>
+                    <comment>Set font style for Input text. Example: normal</comment>
+                    <tooltip>The font-style property specifies the font style for a text like normal, italic. </tooltip>
+                </field>
+                <field id="form____element____input____placeholder__color" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Input Placeholder Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set the color of the Input placeholder. Example: #575757</comment>
+                </field>
+            </group>
+            <group id="dropdown" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Dropdown widgets</label>
+                <field id="dropdown____list__background" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dropdown Background</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set Background color for Dropdown dialog widgets. Example: #fff </comment>
+                </field>
+                <field id="dropdown____list__border" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dropdown Border style, width and color</label>
+                    <comment>Set Border style, width and color. Example: 1px solid #bbb.</comment>
+                </field>
+                <field id="dropdown____list__shadow" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dropdown Shadow</label>
+                    <comment>Set Shadow values for Dropdown dialog widgets. Example: 0 3px 3px rgba(0,0,0,0.15)</comment>
+                </field>
+                <field id="dropdown____list____pointer__border" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dropdown Pointer Border Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set Dropdown list pointer border color. Example: #bbb</comment>
+                    <tooltip>Drop-down list pointer border color is applied on the small border arrow, pointing towards the clicked element which opens the dropdown.</tooltip>
+                </field>
+                <field id="dropdown____list____item__hover" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dropdown List Item Hover</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set color on hover when Dropdown is a list. Example: #e8e8e8 </comment>
+                </field>
+            </group>
+            <group id="breadcrumbs" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Breadcrumbs</label>
+                <field id="breadcrumbs__font____size" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Breadcrumbs Font Size</label>
+                    <comment>Set Font Size for Breadcrumbs text. Example: 12px</comment>
+                </field>
+                <field id="breadcrumbs__font____style" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Breadcrumbs Font Style</label>
+                    <validate>required-entry</validate>
+                    <comment>Set Fonts Style for Breadcrumbs text. Example: normal</comment>
+                </field>
+                <field id="breadcrumbs__separator____color" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Breadcrumbs Separator Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set the color for Breadcrumbs Separators. Example: #505050</comment>
+                </field>
+                <field id="breadcrumbs____current__color" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Breadcrumbs Current Page Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set color for Breadcrumbs on Current page. Example: #000000</comment>
+                </field>
+                <field id="breadcrumbs____link__color" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Breadcrumbs Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set color for Breadcrumbs. Example: #505050</comment>
+                </field>
+                <field id="breadcrumbs____link__hover__text____decoration" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Breadcrumbs Color on Hover</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set color for Breadcrumbs, on hover. Example: #505050</comment>
+                </field>
+                <field id="breadcrumbs____background" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Breadcrumbs Background</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set background color for entire Breadcrumbs section. Example: #F9F7FC</comment>
+                </field>
+            </group>
+            <group id="icons" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Product page Add to Icons </label>
+                <field id="icon__font____size" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Icon Font Size</label>
+                    <validate>required</validate>
+                    <comment>Set Icon size. Applicable for Add to Wishlist, Add to Compare and Email icons from product page and category page. Example: 16px</comment>
+                </field>
+                <field id="icon_label__font____size" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Add to, Label Font Size</label>
+                    <validate>required</validate>
+                    <comment>Set Label Font Size. Applicable for Add to Wishlist, Add to Compare and Email icons from product page. Example: 13px</comment>
+                </field>
+            </group>
+            <group id="price" translate="label" type="text" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Price Options</label>
+                <field id="old_price__line____through" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Old Price Line Trough</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Display old price Strikethrough, if product has Special price set.</comment>
+                </field>
+            </group>
+            <group id="contact_options" translate="label" type="text" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Contact Options</label>
+                <field id="contact_version" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Contact Page Version</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\ContactFormVersions</source_model>
+                    <comment>Select Contact Page Version. Version 1 is default Magento, Version 2 is WeltPixel Contact Page</comment>
+                </field>
+                <field id="top_image" translate="label" type="image" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Upload Top Image</label>
+                    <validate>required-entry</validate>
+                    <comment>The image must be in .jpg, .png, or. gif format</comment>
+                    <backend_model>WeltPixel\FrontendOptions\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">weltpixel/frontend_options</upload_dir>
+                    <base_url type="media" scope_info="1">weltpixel/frontend_options</base_url>
+                    <depends>
+                        <field id="contact_version">v2</field>
+                    </depends>
+                </field>
+                <field id="enable_block" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Contact Block</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="contact_version">v2</field>
+                    </depends>
+                </field>
+                <field id="block_id" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Block</label>
+                    <source_model>WeltPixel\FrontendOptions\Model\Config\Source\BlockCollection</source_model>
+                    <comment><![CDATA[ Select block <strong style="color:red;">"Pearl Contact CMS block"</strong> to use contact page V2 sample data. Block will be added between the top image and contact form.  ]]></comment>
+                    <depends>
+                        <field id="enable_block">1</field>
+                        <field id="contact_version">v2</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="weltpixelproductlabels_productlabels_listing_data_source" xsi:type="string">WeltPixel\ProductLabels\Model\ResourceModel\ProductLabels\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="WeltPixel\ProductLabels\Model\ResourceModel\ProductLabels\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">weltpixel_productlabels</argument>
+            <argument name="eventPrefix" xsi:type="string">weltpixel_productlabels_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">productlabels_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">WeltPixel\ProductLabels\Model\ResourceModel\ProductLabels</argument>
+        </arguments>
+    </type>
+    <type name="WeltPixel\ProductLabels\Model\ProductLabels">
+        <plugin name="reindex_ruleid_products" type="WeltPixel\ProductLabels\Plugin\Indexer\ReindexRuleIdProducts" sortOrder="1" />
+    </type>
+</config>

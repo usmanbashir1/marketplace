@@ -1,0 +1,25 @@
+<script>
+    require(["jquery"], function ($) {
+        $(document).ready(function() {
+            var design = 'desktop';
+            /* desktop  */
+            if (!$('.nav-toggle').is(':visible')) {
+                design = 'desktop';
+            } else {
+                design = 'mobile';
+            }
+
+            jQuery(window).resize(function() {
+                /* desktop */
+                if (!$('.nav-toggle').is(':visible')) {
+                    design = 'desktop';
+                } else {
+                    if (design == 'desktop') {
+                        $('.page-header-v3').after(jQuery('.sections.nav-sections'));
+                    }
+                    design = 'mobile';
+                }
+            });
+        });
+    });
+</script>

@@ -1,0 +1,107 @@
+<?php /** @var $block \Cminds\SupplierSubscription\Block\Supplier\Plan\Upgrade */ ?>
+<?php $productCollection = $block->getProductPlanCollection(); ?>
+<?php $itemsCount = $productCollection->getSize(); ?>
+<?php $plansFeatures = $this->getPlansFeatures() ?>
+
+<div class="container main-container  vendor-container">
+    <h1 class="text-center"><?php /* @escapeNotVerified */ echo __('Please choose plan to upgrade') ?></h1>
+    <form action="<?php echo $block->escapeHtml($block->getFormActionUrl()); ?>" method="post">
+        <?php echo $block->getBlockHtml('formkey')?>
+        <div class="row">
+            <div class="col-md-12">
+                <div class='table-responsive'>
+                    <table class="table table-striped cm-upgrade-table">
+                        <thead>
+                        <th></th>
+                        <?php foreach ($productCollection as $product) : ?>
+                            <?php $isSelected = $block->isSelected($product->getPlan()->getId()); ?>
+                            <th class="text-center">
+                                <?php if ($isSelected) : ?>
+                                    <p><small><?php /* @escapeNotVerified */ echo __('Current plan') ?></small></p>
+                                <?php endif; ?>
+                                <?php echo $block->escapeHtml($product->getPlan()->getName()); ?>
+                            </th>
+                        <?php endforeach; ?>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th><?php /* @escapeNotVerified */ echo __('Select new plan') ?></th>
+                            <?php foreach ($productCollection as $product) : ?>
+                                <?php $error = $block->checkIsSaleable($product->getPlan()); ?>
+                                <?php $skuHash = $block->getHash($product->getSku()); ?>
+                                <?php $isSelected = $block->isSelected($product->getPlan()->getId()); ?>
+                                <td class="text-center plan-input plan-<?php echo $skuHash ?>"
+                                    data-plan="<?php echo $block->escapeHtml($skuHash); ?>">
+                                    <input name="product_id" type="radio"
+                                           value="<?php echo $block->escapeHtml($product->getId()); ?>"
+                                           class="cm-plan-radio"
+                                        <?php echo ($isSelected || $error !== false) ? ' disabled' : ''; ?>
+                                    />
+                                </td>
+                            <?php endforeach; ?>
+                        </tr>
+                        <tr>
+                            <th colspan="<?php echo $block->escapeHtml((int)$itemsCount + 1); ?>"
+                                style="padding-top: 30px;"
+                            >
+                                <?php /* @escapeNotVerified */ echo __('Plan details') ?>
+                            </th>
+                        </tr>
+                        <?php foreach ($plansFeatures as $planCode => $planLabel) : ?>
+                            <tr>
+                                <th><?php echo $planLabel ?></th>
+                                <?php foreach ($productCollection as $product) : ?>
+                                <td class="text-center">
+                                        <?php if ($planCode == 'price') : ?>
+                                            <?php $finalPrice = $block->getPriceFormat($product->getFinalPrice()); ?>
+                                            <?php echo $block->escapeHtml($finalPrice); ?>
+                                        <?php else : ?>
+                                            <?php echo $block->escapeHtml($product->getPlan()->getData($planCode)); ?>
+                                        <?php endif; ?>
+                                    </td>
+                                <?php endforeach; ?>
+                            </tr>
+                        <?php endforeach; ?>
+
+                        </tbody>
+                    </table>
+                    <input type="submit" name="submit" class="btn btn-primary"
+                           value="<?php /* @escapeNotVerified */ echo __('Check Out') ?>"/>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    //<![CDATA[
+    (function($){
+        /**
+         * Add col selection.
+         */
+        $('.cm-upgrade-table').on('mouseenter', 'td,th', function(){
+            var hoverClass = 'cm-cell-hover';
+            $('.cm-upgrade-table').find('td,th').removeClass(hoverClass);
+            $('.cm-upgrade-table').find('td,th').filter('.plan-' + $(this).attr('data-plan')).addClass(hoverClass);
+        });
+        /**
+         * Remove col selection.
+         */
+        $('.cm-upgrade-table .cm-cell-hover').on('mouseout', function(){
+            var hoverClass = 'cm-cell-hover';
+            $('.cm-upgrade-table').find('td,th').removeClass(hoverClass);
+        });
+        /**
+         * Add click event.
+         */
+        $('.cm-upgrade-table').on('click', 'td,th', function(){
+            var planCols = $('.cm-upgrade-table').find('td,th').filter('.plan-' + $(this).attr('data-plan'));
+            var planInputWrapper = planCols.filter('.plan-input');
+            if (planInputWrapper.length && !$(this).attr('class').match(/plan-input/g)) {
+                $('.cm-upgrade-table').find('td,th').removeClass('cm-plan-selected');
+                planInputWrapper.first().find('input.cm-plan-radio').click();
+                planCols.addClass('cm-plan-selected');
+            }
+        });
+    })(jQuery);
+    //]]>
+</script>

@@ -1,0 +1,94 @@
+<?php
+/**
+ * @var $block \WeltPixel\SearchAutoComplete\Block\SearchAutoComplete
+ */
+
+$helper = $this->helper('WeltPixel\SearchAutoComplete\Helper\Data');
+$isEnable = $helper->isEnabled();
+$isEnablePopularSuggestions = $helper->isEnablePopularSuggestions();
+$isEnableCategorySearch = $helper->isEnableCategorySearch();
+$isEnableAutoComplete = $helper->isEnableAutoComplete();
+$resultHeader = $helper->getSearchResultHeaderText();
+$minNumberOfCharacters = empty(trim($helper->getMinNumberOfCharacters())) ? 3 : (int)$helper->getMinNumberOfCharacters();
+$resultFooter = $helper->getSearchResultFooterText();
+$WidthOfResultsContainer = empty(trim($helper->getWidthOfResultsContainer())) ? 250 : (int)$helper->getWidthOfResultsContainer();
+$loaderAjax = $block->getViewFileUrl('WeltPixel_SearchAutoComplete::images/ajax-loader.gif');
+$containerBackgroundColor = $helper->getContainerBackgroundColor();
+$containerTextColor = $helper->getContainerTextColor();
+$titleBackgroundColor = $helper->getTitleBackgroundColor();
+$titleColor = $helper->getTitleColor();
+$searchVersion = $helper->getSearchVersion();
+$templateResultsContainer = $helper->getTemplateResultsContainer();
+$templateResultsContainer = !$templateResultsContainer ? 'vertically' : 'horizontally';
+?>
+<?php if ($isEnable) : ?>
+    <div id="searchautocomplete" class="searchautocomplete <?php echo $templateResultsContainer ?>" style="width: <?php echo $WidthOfResultsContainer; ?>px; background: <?php echo $containerBackgroundColor ?>; color: <?php echo $containerTextColor; ?>">
+        <?php if ($isEnablePopularSuggestions) : ?>
+            <div class="separator" style="background: <?php echo $titleBackgroundColor; ?>; color:<?php echo $titleColor; ?>"><?php echo __('Popular Suggestions') ?></div>
+            <div id="search_autocomplete" class="wpx-search-autocomplete"></div>
+        <?php else :?>
+            <div id="search_autocomplete" class="wpx-search-autocomplete-hidden"></div>
+        <?php endif; ?>
+
+        <?php if ($isEnableCategorySearch) : ?>
+            <div class="container-autocomplete cat-container"></div>
+        <?php endif; ?>
+
+        <?php if ($isEnableAutoComplete) : ?>
+            <?php if(!$searchVersion) : ?>
+                <div class="separator" style="background:<?php echo $titleBackgroundColor; ?>; color:<?php echo $titleColor; ?>"><?php echo __('Products') ?></div>
+            <?php endif; ?>
+            <div class="container-autocomplete">
+                <?php if (strlen($resultHeader) > 0) : ?>
+                    <div class="wpx-header"><?php echo htmlspecialchars_decode($resultHeader); ?></div>
+                <?php endif; ?>
+                <div class="prod-container"></div>
+                <div class="more-results">
+                    <a onclick="document.getElementById('search_mini_form').submit()" class="advanced_search"></a>
+                </div>
+                <?php if (strlen($resultFooter) > 0) : ?>
+                    <div class="wpx-footer"><?php echo htmlspecialchars_decode($resultFooter); ?></div>
+                <?php endif; ?>
+            </div>
+        <?php endif; ?>
+    </div>
+
+
+    <script>
+        requirejs(['jquery', 'underscore', 'weltpixel_searchautocomplete'],
+            function ($, _, searchAutoComplete) {
+                $(document).ready(function () {
+                    var isEnablePopularSuggestions = '<?php echo $isEnablePopularSuggestions; ?>',
+                        isEnableCategorySearch = '<?=$isEnableCategorySearch?>',
+                        isEnableAutoComplete = '<?php echo $isEnableAutoComplete; ?>',
+                        previousSearch = '';
+                    window.minNumberOfCharacters = '<?php echo $minNumberOfCharacters; ?>';
+                    window.baseURL = '<?php echo $this->getBaseUrl();?>';
+                    $('html').on('click', function(event){
+                        var targetClass = $(event.target).attr('class'),
+                            searchClass = 'searchautocomplete';
+                        if(targetClass != searchClass)
+                            $('#' + searchClass).hide();
+                    })
+                    if (isEnableAutoComplete || isEnablePopularSuggestions || isEnableCategorySearch) {
+                        $('.search-autocomplete').remove();
+
+                        $('#search').on('keyup', _.debounce(function () {
+                            var value = $(this).val();
+                            if (value == previousSearch && $('#search_autocomplete').is(':visible')) {
+                                return;
+                            }
+                            previousSearch = value;
+                            if (isEnableAutoComplete && value.length >= window.minNumberOfCharacters) {
+                                //Start processing, show the Progress!
+                                $(".search .control").addClass("loader-ajax");
+                                searchAutoComplete.ajaxSearch();
+                            }else{
+                                $('#searchautocomplete').hide();
+                            }
+                        }, 750));
+                    }
+                });
+            });
+    </script>
+<?php endif; ?>

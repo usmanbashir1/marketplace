@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+            id="WeltPixel_AdvanceCategorySorting::AdvanceCategorySorting_Label"
+            title="Category Sorting"
+            module="WeltPixel_AdvanceCategorySorting"
+            sortOrder="90"
+            parent="WeltPixel_Backend::WeltPixel"
+            resource="WeltPixel_AdvanceCategorySorting::AdvanceCategorySorting_Label"
+        />
+        <add
+            id="WeltPixel_AdvanceCategorySorting::AdvanceCategorySorting"
+            title="Category Sorting Settings"
+            module="WeltPixel_AdvanceCategorySorting"
+            action="adminhtml/system_config/edit/section/weltpixel_advance_category_sorting/"
+            sortOrder="20"
+            parent="WeltPixel_AdvanceCategorySorting::AdvanceCategorySorting_Label"
+            resource="WeltPixel_AdvanceCategorySorting::AdvanceCategorySorting"
+        />
+    </menu>
+</config>

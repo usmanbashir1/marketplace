@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="after.body.start">
+            <block ifconfig="weltpixel_sociallogin/general/show_on_cart"
+                   class="WeltPixel\SocialLogin\Block\SocialLogin"
+                   name="social-login"
+                   template="WeltPixel_SocialLogin::social-login.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="cart.summary">
+            <block class="WeltPixel\SocialLogin\Block\ButtonDataProvider"
+                   ifconfig="weltpixel_sociallogin/general/show_on_cart"
+                   name="sl-login-button"
+                   before="checkout.cart.summary.title"
+                   template="WeltPixel_SocialLogin::buttons.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

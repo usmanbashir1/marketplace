@@ -1,0 +1,55 @@
+<?php $questions = $block->getQaCollection();?>
+<div class="container-fluid main-container vendor-container">
+    <h1><?php echo $block->escapeHtml($block->getTitle()) ?></h1>
+    <div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th><?php /* @escapeNotVerified */ echo __('Id'); ?></th>
+                <th><?php /* @escapeNotVerified */ echo __('Product Id'); ?></th>
+                <th><?php /* @escapeNotVerified */ echo __('Author Name'); ?></th>
+                <th><?php /* @escapeNotVerified */ echo __('Question'); ?></th>
+                <th><?php /* @escapeNotVerified */ echo __('Answer'); ?></th>
+                <th><?php /* @escapeNotVerified */ echo __('Visible on Frontend'); ?></th>
+                <th><?php /* @escapeNotVerified */ echo __('Actions'); ?></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php if ($questions->getSize() > 0) : ?>
+                <?php foreach ($questions as $item) : ?>
+                    <?php
+                    $product = $block->getProduct()->load($item->getProductId());
+                    ?>
+                    <tr>
+                        <td><?php echo number_format($item->getId()); ?></td>
+                        <td><?php echo '<a href="'.$product->getProductUrl().'">'.$item->getProductId().'</a>'; ?></td>
+                        <td><?php echo $block->escapeHtml($item->getCustomerName()); ?></td>
+                        <td><?php echo $block->escapeHtml($item->getQuestion()); ?></td>
+                        <td><?php echo $block->escapeHtml($item->getAnswer()); ?></td>
+                        <td><?php /* @escapeNotVerified */ echo ($item->getVisibleOnFrontend() == 1) ? __('Yes') : __('No'); ?></td>
+                        <td>
+                            <a href="<?php echo $block->getUrl('marketplaceqa/questions/answer', array('id' => $item->getId())); ?>"
+                               class="btn btn-warning btn-sm"><?php /* @escapeNotVerified */ echo __('Edit Answer'); ?></a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+        <?php else : ?>
+            <tr>
+                <td colspan="4"><?php /* @escapeNotVerified */ echo __('No records found.'); ?></td>
+            </tr>
+        <?php endif; ?>
+        </tbody>
+        <tfoot>
+        <tr>
+            <th><?php /* @escapeNotVerified */ echo __('Id'); ?></th>
+            <th><?php /* @escapeNotVerified */ echo __('Product Id'); ?></th>
+            <th><?php /* @escapeNotVerified */ echo __('Author Name'); ?></th>
+            <th><?php /* @escapeNotVerified */ echo __('Question'); ?></th>
+            <th><?php /* @escapeNotVerified */ echo __('Answer'); ?></th>
+            <th><?php /* @escapeNotVerified */ echo __('Visible on Frontend'); ?></th>
+            <th><?php /* @escapeNotVerified */ echo __('Actions'); ?></th>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+</div>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Cminds_MarketplaceQa::marketplace_qa"
+             title="Product Questions"
+             module="Cminds_MarketplaceQa" sortOrder="20"
+             parent="Magento_Catalog::inventory"
+             action="marketplaceqa/questions/index"
+             resource="Cminds_MarketplaceQa::marketplace_qa"/>
+    </menu>
+</config>

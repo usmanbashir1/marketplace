@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Cminds MarketplacePaypal layout config.
+ *
+ * @category Cminds
+ * @package  Cminds_MarketplacePaypal
+ * @author   Piotr Pierzak <piotr@cminds.com>
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Cminds\MarketplacePaypal\Block\Adminhtml\Billing\Pay"
+                   name="billing_report_pay_paypal"
+                   cacheable="false"/>
+        </referenceContainer>
+    </body>
+</page>

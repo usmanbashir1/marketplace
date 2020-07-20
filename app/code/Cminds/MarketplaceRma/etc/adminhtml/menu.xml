@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Cminds_MarketplaceRma::rma_content" 
+             title="Rma"
+             module="Cminds_MarketplaceRma" 
+             sortOrder="50"
+             resource="Cminds_MarketplaceRma::rma_content"/>
+        <add id="Cminds_MarketplaceRma::rma_list" 
+             title="List"
+             module="Cminds_MarketplaceRma" 
+             sortOrder="60"
+             parent="Cminds_MarketplaceRma::rma_content"
+             action="marketplacerma/rma/index"
+             resource="Cminds_MarketplaceRma::rma_list"/>
+        <add id="Cminds_MarketplaceRma::rma_manage_status" 
+             title="Manage Statuses"
+             module="Cminds_MarketplaceRma" 
+             sortOrder="60"
+             parent="Cminds_MarketplaceRma::rma_content"
+             action="marketplacerma/status/index"
+             resource="Cminds_MarketplaceRma::rma_manage_status"/>
+        <add id="Cminds_MarketplaceRma::rma_manage_type" 
+             title="Manage Types"
+             module="Cminds_MarketplaceRma" 
+             sortOrder="60"
+             parent="Cminds_MarketplaceRma::rma_content"
+             action="marketplacerma/type/index"
+             resource="Cminds_MarketplaceRma::rma_manage_type"/>
+
+        <add id="Cminds_MarketplaceRma::rma_manage_reasons" 
+             title="Manage Reasons"
+             module="Cminds_MarketplaceRma" 
+             sortOrder="60"
+             parent="Cminds_MarketplaceRma::rma_content"
+             action="marketplacerma/reason/index"
+             resource="Cminds_MarketplaceRma::rma_manage_reasons"/>
+    </menu>
+</config>

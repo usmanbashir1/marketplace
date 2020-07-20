@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<weltpixel_searchautocomplete>
+			<general>
+				<enable>1</enable>
+			</general>
+			<productSearch>
+				<enableAutoComplete>1</enableAutoComplete>
+				<minimalChar>3</minimalChar>
+				<noResult>Sorry, no results were found.</noResult>
+				<maxItems>3</maxItems>
+				<showImg>1</showImg>
+				<widthImg>80</widthImg>
+				<showDescr>1</showDescr>
+				<maxWordsProdDescr>10</maxWordsProdDescr>
+				<showPrice>1</showPrice>
+				<resultHeader>&lt;div class=&quot;sale&quot;&gt; &lt;p&gt;&lt;b&gt;20% off&lt;/b&gt; for all dresses&lt;/p&gt; &lt;/div&gt; &lt;style&gt; .sale{ margin: 0 auto; background: #242424; color: white; padding: 10px; text-align: center; font-size: 13px; } &lt;/style&gt;</resultHeader>
+				<resultFooter>&lt;div class=&quot;free-returns&quot;&gt; &lt;div class=&quot;footer-img&quot;&gt;&lt;/div&gt; &lt;/div&gt; &lt;style&gt; .free-returns{ margin: 0 auto; background: #242424;padding:10px; } &lt;/style&gt;</resultFooter>
+			</productSearch>
+			<categorySearch>
+				<enableCategorySearch>1</enableCategorySearch>
+				<maxItems>3</maxItems>
+			</categorySearch>
+			<popularSuggestions>
+				<enablePopularSuggestions>1</enablePopularSuggestions>
+			</popularSuggestions>
+			<frontendSettings>
+				<widthResult>350</widthResult>
+				<templateResultsContainer>0</templateResultsContainer>
+				<enableProductDivider>1</enableProductDivider>
+				<colorProductDivider>#CCCCCC</colorProductDivider>
+				<containerBackgroundColor>#FFFFFF</containerBackgroundColor>
+				<containerTextColor>#000000</containerTextColor>
+				<titleBackgroundColor>#F0EFF0</titleBackgroundColor>
+				<titleColor>#000000</titleColor>
+			</frontendSettings>
+		</weltpixel_searchautocomplete>
+	</default>
+</config>

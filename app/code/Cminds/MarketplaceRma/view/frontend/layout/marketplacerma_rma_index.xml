@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_account"/>
+    <body>
+        <referenceContainer name="content">
+            <block class="Cminds\MarketplaceRma\Block\Rma\Index" 
+                   name="cminds.rma.index" 
+                   cacheable="false">
+                <block class="Cminds\MarketplaceRma\Block\Rma\Index\Container"
+                       name="cminds.rma.index.extra.container" 
+                       as="extra.container">
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

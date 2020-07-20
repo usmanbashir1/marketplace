@@ -1,0 +1,155 @@
+<?php
+/**
+ * Cminds Supplierfrontendproductuploader product list template.
+ *
+ * @category Cminds
+ * @package  Cminds_Supplierfrontendproductuploader
+ */
+?>
+<?php
+/**
+ * @var \Cminds\Supplierfrontendproductuploader\Block\Product\Productlist $block
+ */
+?>
+<?php $items = $block->getItems(); ?>
+<?php $status = $block->getItemStatus(); ?>
+<?php $canEditProducts = $block->getCmindsHelper()->canEditProducts(); ?>
+
+<div class="container-fluid main-container  vendor-container">
+    <h1 class="text-center"><?php /* @escapeNotVerified */ echo __('List of All Products') ?></h1>
+    <div class="jumbotron">
+        <div class="row">
+            <form name="report_filter" id="report_filter" action="" method="get" enctype="multipart/form-data">
+                <div class="col-sm-5">
+                    <input name="name"
+                           id="name"
+                           type="text"
+                           placeholder="<?php /* @escapeNotVerified */ echo __('Search by Name');?>"
+                           value="<?php echo $this->getRequest()->getParam('name'); ?>"
+                           class="form-control input-text">
+                </div>
+                <div class="col-sm-5">
+                    <select name="status" id="status">
+                        <option value=""><?php echo __('Search by Status'); ?></option>
+                        <option <?php if($this->getRequest()->getParam('status') == 'active') echo 'selected'; ?> value='active'><?php /* @escapeNotVerified */echo __('Active'); ?></option>
+                        <option <?php if($this->getRequest()->getParam('status') == 'pending') echo 'selected'; ?> value='pending'><?php /* @escapeNotVerified */ echo __('Pending'); ?></option>
+                        <option <?php if($this->getRequest()->getParam('status') == 'inactive') echo 'selected'; ?> value='inactive'><?php /* @escapeNotVerified */ echo __('Inactive'); ?></option>
+                        <option <?php if($this->getRequest()->getParam('status') == 'disapproved') echo 'selected'; ?> value='disapproved'><?php /* @escapeNotVerified */ echo __('Disapproved'); ?></option>
+                    </select>
+                </div>
+                <div class="col-sm-2">
+                    <input type="submit" name="submit" class="btn btn-primary btn-small" value="<?php echo __('Filter') ?>" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class='table-responsive'>
+                <table class="table table-striped">
+                    <thead>
+                    <th><?php /* @escapeNotVerified */echo __('ID') ?></th>
+                    <th><?php /* @escapeNotVerified */ echo __('Name') ?></th>
+                    <th><?php /* @escapeNotVerified */ echo __('Product Type') ?></th>
+                    <th><?php /* @escapeNotVerified */ echo __('SKU') ?></th>
+                    <th><?php /* @escapeNotVerified */ echo __('Product Price') ?></th>
+                    <th><?php /* @escapeNotVerified */ echo __('Qty Available') ?></th>
+                    <th><?php /* @escapeNotVerified */ echo __('Status') ?></th>
+                    <th colspan="<?php echo $canEditProducts ? '3' : '2' ?>"><?php /* @escapeNotVerified */ echo __('Actions') ?></th>
+                    </thead>
+                    <tbody>
+                    <?php if (!empty($items->getData())) : ?>
+                        <?php foreach ($items->getData() as $_item): ?>
+                            <?php $item = $block->getProductModel()->load($_item['entity_id']); ?>
+
+                            <tr class="item<?php echo ($item->isSalable() && $item->getSupplierActivedProduct() == 1 && $item->getFrontendproductProductStatus() == 1) ? ' success' : '' ?>">
+                                <td><?php echo $item->getId(); ?></td>
+                                <td><?php echo $item->getName(); ?><?php echo $item->getAdminProductNote() ? ' <span class="badge pull-right badge-important" data-toggle="tooltip" data-placement="top" title="' . $item->getAdminProductNote() . '">!</span>' : "" ?></td>
+                                <td><?php echo ucfirst($item->getTypeId()); ?></td>
+                                <td><?php echo $item->getSku(); ?></td>
+                                <td><?php echo $block->getCurrencyHelper()->currency($item->getData('price')); ?></td>
+                                <td><?php echo $block->getQty($item->getId()) ?></td>
+                                <td><?php echo $block->getStatusLabel($item->getData('frontendproduct_product_status')); ?></td>
+                                <td>
+                                    <a href="<?php echo $block->getUrl('supplier/product/preview', array('uenc' => base64_encode($item->getProductUrl()))); ?>"
+                                       class="btn btn-default btn-sm"
+                                       target="_blank"><?php echo __('Preview'); ?></a>
+                                </td>
+                                <td>
+                                    <button class="btn primary btn-sm btn-default dropdown-toggle" type="button"
+                                            data-toggle="dropdown"><?php /* @escapeNotVerified */ echo __('More Options'); ?>
+                                        <span class="caret"></span></button>
+
+                                    <ul class="dropdown-menu">
+                                        <?php if (!in_array($item->getData('frontendproduct_product_status'), array(\Cminds\Supplierfrontendproductuploader\Model\Product::STATUS_PENDING, \Cminds\Supplierfrontendproductuploader\Model\Product::STATUS_DISAPPROVED))) : ?>
+                                        <li>
+                                            <?php if ($item->getSupplierActivedProduct() == 0) : ?>
+                                                <a href="<?php echo $this->getUrl('supplier/product/active', array('id' => $item->getId(), 'type' => $item->getTypeId())); ?>"><?php /* @escapeNotVerified */ echo __('Activate'); ?></a>
+                                            <?php elseif ($item->getSupplierActivedProduct() == 1) : ?>
+                                                <a href="<?php echo $this->getUrl('supplier/product/deactive', array('id' => $item->getId(), 'type' => $item->getTypeId())); ?>"><?php /* @escapeNotVerified */ echo __('Deactivate'); ?></a>
+                                            <?php endif; ?>
+                                        </li>
+                                        <?php endif; ?>
+                                        <?php if ($canEditProducts) : ?>
+                                            <li>
+                                                <?php if ($item->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE) : ?>
+                                                    <a href="<?php echo $block->getUrl('supplier/product/editconfigurable', array('id' => $item->getId(), 'type' => $item->getTypeId())); ?>"><?php /* @escapeNotVerified */ echo __('Edit'); ?></a>
+                                                <?php elseif ($item->getTypeId() == 'grouped'): ?>
+                                                    <a href="<?php echo $block->getUrl('supplier/product/editgrouped', array('id' => $item->getId(), 'type' => $item->getTypeId())); ?>"><?php /* @escapeNotVerified */ echo __('Edit'); ?></a>
+                                                <?php else: ?>
+                                                    <a href="<?php echo $block->getUrl('supplier/product/edit', array('id' => $item->getId(), 'type' => $item->getTypeId())); ?>"><?php /* @escapeNotVerified */ echo __('Edit'); ?></a>
+                                                <?php endif; ?>
+                                            </li>
+                                            <?php if ($item->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE) : ?>
+                                                <li>
+                                                    <a href="<?php echo $block->getUrl('supplier/product/associatedproducts', array('id' => $item->getId())) ?>"><?php /* @escapeNotVerified */ echo __('Associated Products'); ?></a>
+                                                </li>
+                                            <?php endif; ?>
+                                            <li>
+                                                <?php if ($item->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE) : ?>
+                                                    <a href="<?php echo $block->getUrl('supplier/product/cloneconfigurable', array('id' => $item->getId(), 'type' => $item->getTypeId())); ?>"><?php /* @escapeNotVerified */ echo __('Clone'); ?></a>
+                                                <?php elseif ($item->getTypeId() == \Magento\GroupedProduct\Model\Product\Type\Grouped::TYPE_CODE): ?>
+                                                    <a href="<?php echo $block->getUrl('supplier/product/clonegrouped', array('id' => $item->getId(), 'type' => $item->getTypeId())); ?>"><?php /* @escapeNotVerified */ echo __('Clone'); ?></a>
+                                                <?php else : ?>
+                                                    <a href="<?php echo $block->getUrl('supplier/product/cloneproduct', array('id' => $item->getId(), 'type' => $item->getTypeId())); ?>"><?php /* @escapeNotVerified */ echo __('Clone'); ?></a>
+                                                <?php endif; ?>
+                                            </li>
+                                        <?php endif; ?>
+                                    </ul>
+                                </td>
+
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php else : ?>
+                        <td colspan="7"><?php /* @escapeNotVerified */ echo __('No results') ?></td>
+                    <?php endif; ?>
+                    </tbody>
+                    <tfoot>
+                    <th><?php /* @escapeNotVerified */ echo __('ID') ?></th>
+                    <th><?php /* @escapeNotVerified */ echo __('Name') ?></th>
+                    <th><?php /* @escapeNotVerified */ echo __('Product Type') ?></th>
+                    <th><?php /* @escapeNotVerified */ echo __('SKU') ?></th>
+                    <th><?php /* @escapeNotVerified */ echo __('Product Price') ?></th>
+                    <th><?php /* @escapeNotVerified */ echo __('Qty Available') ?></th>
+                    <th><?php /* @escapeNotVerified */ echo __('Status') ?></th>
+                    <th colspan="<?php echo $canEditProducts ? '3' : '2' ?>"><?php /* @escapeNotVerified */ echo __('Actions') ?></th>
+                    </tfoot>
+                </table>
+                <?php if ($block->getPagerHtml()): ?>
+                    <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+                <?php endif ?>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    jQuery(document).ready(function () {
+        if (jQuery("[data-toggle=tooltip]").length) {
+            jQuery("[data-toggle=tooltip]").tooltip().on('hidden.bs.popover', function () {
+                jQuery(this).show();
+            });
+        }
+    });
+</script>

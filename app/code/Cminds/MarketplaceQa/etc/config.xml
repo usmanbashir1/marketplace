@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <configuration_marketplace_qa>
+            <configure>
+                <enabled>0</enabled>
+                <question_form_visible_on_product_page>1</question_form_visible_on_product_page>
+                <question_and_answers_visible_on_product_page>1</question_and_answers_visible_on_product_page>
+                <admin_approval_required>1</admin_approval_required>
+                <max_question_per_product><![CDATA[Set to 0 for unlimited value]]></max_question_per_product>
+                <notify_customer_when_question_was_sent>1</notify_customer_when_question_was_sent>
+                <notify_customer_when_answer_was_placed>1</notify_customer_when_answer_was_placed>
+                <notify_supplier_about_new_question>1</notify_supplier_about_new_question>
+                <notify_admin_about_new_question>1</notify_admin_about_new_question>
+            </configure>
+        </configuration_marketplace_qa>
+    </default>
+</config>

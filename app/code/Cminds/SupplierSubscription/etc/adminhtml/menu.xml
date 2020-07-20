@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Cminds_SupplierSubscription::manage_subscriptions" title="Supplier Subscription"
+             module="Cminds_SupplierSubscription" sortOrder="60"
+             parent="Magento_Catalog::inventory"
+             action="supplier_subscription/manage/index"
+             resource="Cminds_SupplierSubscription::manage_subscriptions"/>
+    </menu>
+</config>

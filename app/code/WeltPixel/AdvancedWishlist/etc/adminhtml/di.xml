@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Sales\Block\Adminhtml\Order\Create\Sidebar\Wishlist">
+        <plugin name="weltpixel-advancedwishlist-adminhtml-order-wishlist"
+                type="WeltPixel\AdvancedWishlist\Plugin\Adminhtml\OrderWishlist" sortOrder="1"/>
+    </type>
+    <type name="Magento\Wishlist\Model\Wishlist">
+        <plugin name="weltpixel-advancedwishlist-adminhtml-wishlist"
+                type="WeltPixel\AdvancedWishlist\Plugin\Adminhtml\Wishlist" sortOrder="1"/>
+    </type>
+    <type name="Magento\Backend\App\AbstractAction">
+        <plugin name="weltpixel-advancedwishlist-utility" type="WeltPixel\AdvancedWishlist\Plugin\Utility" sortOrder="1000" />
+    </type>
+</config>

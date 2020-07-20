@@ -1,0 +1,32 @@
+<?php
+// @codingStandardsIgnoreFile
+/** @var $_helper WeltPixel\ThankYouPage\Helper\Data */
+$_helper = $this->helper('WeltPixel\ThankYouPage\Helper\Data');
+$pageSubtitle = $_helper->getPageSubTitle();
+$_order = $block->getLastOrder();
+?>
+<?php /** @var $block \Magento\Checkout\Block\Onepage\Success */ ?>
+<div class="checkout-page-title-wrapper thank-you-page">
+    <div class="icon_thank_you_01"></div>
+    <h1 class="page-title"><?= $_helper->getPageTitle() ?></h1>
+</div>
+<div class="checkout-success">
+    <?php if ($block->getOrderId()):?>
+        <?php if ($block->getCanViewOrder()) :?>
+            <p><?= __($pageSubtitle, sprintf('<a href="%s" class="order-number"><strong>%s</strong></a>', $block->escapeHtml($block->getViewOrderUrl()), $block->escapeHtml($block->getOrderId()))) ?></p>
+        <?php  else :?>
+            <p><?= __($pageSubtitle, sprintf('<strong>%s</strong>', $block->escapeHtml($block->getOrderId()))) ?></p>
+        <?php endif;?>
+            <p><?= $_helper->getOrderDescription() ?></p>
+    <?php endif;?>
+
+    <?= $block->getAdditionalInfoHtml() ?>
+
+    <?php if ($_helper->showContinueShopping()) : ?>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <a class="action primary continue" href="<?= /* @escapeNotVerified */ $block->getContinueUrl() ?>"><span><?= /* @escapeNotVerified */ __('Continue Shopping') ?></span></a>
+        </div>
+    </div>
+    <?php endif; ?>
+</div>

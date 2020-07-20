@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="weltpixel_design_elements" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Design Elements</label>
+            <tab>weltpixel</tab>
+            <resource>WeltPixel_DesignElements::DesignElementsSettings</resource>
+            <group id="notification" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Recommended:</label>
+                <fieldset_css>weltpixel-recommended-header active</fieldset_css>
+                <field id="notification_msg" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>WeltPixel\DesignElements\Block\Adminhtml\System\Config\Notification</frontend_model>
+                </field>
+            </group>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="bootstrap_grids" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Bootstrap Grid</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable the Bootstrap grid component.</comment>
+                </field>
+                <field id="icons" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Icons</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable the Icons component.</comment>
+                </field>
+                <field id="bootstrap_tables" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Tables</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable the Tables component.</comment>
+                </field>
+                <field id="toggles_accordions_tabs" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Toggle, Accordion and Tabs</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable the Toggle, Accordion and Tabs component.</comment>
+                </field>
+                <field id="pricing_boxes" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Pricing Boxes</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable the Pricing Boxes component.</comment>
+                </field>
+                <field id="headings_blockquotes" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Headings And Blockquotes</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable the Headings and Blockquotes component.</comment>
+                </field>
+                <field id="dividers" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Dividers</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable the Dividers component.</comment>
+                </field>
+                <field id="brand_lists" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Brand lists</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable the Brands list component.</comment>
+                </field>   
+                <field id="responsive_helpers" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Responsive And Helpers</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable the Responsive and Helpers component.</comment>
+                </field>
+                <field id="smooth_scrolling" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Smooth Scrolling</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable the Smooth Scrolling component.</comment>
+                </field>
+                <field id="icon_boxes" translate="label" type="select" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Icon boxes</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable the Icon boxes component.</comment>
+                </field>
+                <field id="alert_boxes" translate="label" type="select" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Alert boxes</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable the Alert boxes component.</comment>
+                </field>
+                <field id="testimonials" translate="label" type="select" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Testimonials</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable the Testimonials component.</comment>
+                </field>
+                <field id="flexslider" translate="label" type="select" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Flex Slider</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable the Flex Slider component.</comment>
+                </field>
+                <field id="buttons" translate="label" type="select" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Buttons</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable the Buttons component.</comment>
+                </field>
+                <field id="sections" translate="label" type="select" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sections/Parallax</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable the Sections/Parallax component.</comment>
+                </field>
+                <field id="animations" translate="label" type="select" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Animations</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable the Animations component.</comment>
+                </field>
+                <field id="aos_animation" translate="label comment" type="select" sortOrder="175" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>AOS Animation</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[ Enable/Disable the AOS Animation component. Check demos <a href="http://michalsnik.github.io/aos" target="_blank">here</a>]]></comment>
+                </field>
+                <field id="btt_button" translate="label" type="select" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Activate Back To Top Button</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable the Back To Top button.</comment>
+                </field>
+                <field id="btt_offset" translate="label" type="text" sortOrder="190" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show button after "x" pixels of scroll down</label>
+                    <comment> Set when the "Back To Top" button will appear: when the user scrolls down to the 300px mark. The default value: 300</comment>
+                    <depends>
+                        <field id="btt_button">1</field>
+                    </depends>
+                </field>
+                <field id="btt_offset_opacity" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Reduce the opacity of "Back To Top" button after "x" pixels of scroll down</label>
+                    <comment>Set number pixels after which the "Back To Top" button opacity is reduced. The default value is 1200.</comment>
+                    <depends>
+                        <field id="btt_button">1</field>
+                    </depends>
+                </field>
+                <field id="btt_duration" translate="label" type="text" sortOrder="210" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Duration of the top scrolling animation</label>
+                    <comment>Duration of the top scrolling animation in milliseconds. The default value is 700.</comment>
+                    <depends>
+                        <field id="btt_button">1</field>
+                    </depends>
+                </field>
+                <field id="collapsible_top_jump" translate="label" type="select" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Auto-jump to Top when click on Collapsible Widgets</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

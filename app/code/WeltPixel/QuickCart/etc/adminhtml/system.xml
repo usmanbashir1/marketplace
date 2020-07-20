@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="weltpixel_quick_cart" translate="label" type="text" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Quick Cart</label>
+            <tab>weltpixel</tab>
+            <resource>WeltPixel_QuickCart::QuickCartSettings</resource>
+            <group id="notification" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Important / Recommended:</label>
+                <fieldset_css>weltpixel-recommended-header active</fieldset_css>
+                <field id="notification_msg" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>WeltPixel\Backend\Block\Adminhtml\System\Config\Notification</frontend_model>
+                </field>
+            </group>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings for QuickCart</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <comment>Enable/Disable QuickCart.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <comment>
+                    <![CDATA[
+                        <script type="text/javascript">
+                            require(['jquery', 'domReady!'], function(){
+                                var groups = [
+                                    'weltpixel_quick_cart_header',
+                                    'weltpixel_quick_cart_footer',
+                                    'weltpixel_quick_cart_message',
+                                    'weltpixel_quick_cart_minicart_message',
+                                    'weltpixel_quick_cart_shoppingcart_message'
+                                ];
+
+                                if (jQuery('#weltpixel_quick_cart_general_enable').val() != 1){
+                                    for (var i = 0; i < groups.length; i++) {
+                                        jQuery('#' + groups[i]).closest('.section-config').hide();
+                                    }
+                                }
+
+                                jQuery('#weltpixel_quick_cart_general_enable').on('change', function(){
+                                    if (this.value != 1) {
+                                        for (var i = 0; i < groups.length; i++) {
+                                            jQuery('#' + groups[i]).closest('.section-config').hide();
+                                        }
+                                    } else {
+                                        for (var i = 0; i < groups.length; i++) {
+                                            jQuery('#' + groups[i]).closest('.section-config').show();
+                                        }
+                                    }
+                                })
+                            });
+                        </script>
+                    ]]>
+                </comment>
+                <field id="open_minicart" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Open minicart after item is added or removed</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>
+                        <![CDATA[
+                        If set to Yes, the Quick Cart opens each time an item is added to the cart or removed.<br/>
+                        <b>Note:</b> The option is ignored if the core magento setting Stores -> Configuration -> Sales
+                        -> Checkout -> Shopping Cart -> After Adding a Product Redirect to Shopping Cart is set to Yes.
+                        ]]>
+                    </comment>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="header" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Quick Cart Header</label>
+                <field id="header_height" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Height</label>
+                    <comment>Set the height of Quick Cart header [in px]. E.g. 40px</comment>
+                    <validate>required</validate>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                    </depends>
+                </field>
+                <field id="header_background" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background Color</label>
+                    <comment>Select background color for QuickCart Header. Example: #000000</comment>
+                    <validate>required color {required:false, hash:true}</validate>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                    </depends>
+                </field>
+                <field id="header_text_color" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Color</label>
+                    <comment>Select text color of QuickCart Header title. Example: #FFFFFF</comment>
+                    <validate>required color {required:false, hash:true}</validate>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="footer" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Quick Cart Footer</label>
+                <field id="subtotal_background" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Subtotal Background Color</label>
+                    <comment>Select background color for subtotal section from QuickCart footer. Example: #F6F6F6</comment>
+                    <validate>required color {required:false, hash:true}</validate>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                    </depends>
+                </field>
+                <field id="subtotal_text_color" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Subtotal Text Color</label>
+                    <comment>Select color for text in subtotal section from QuickCart footer. Example: #000000</comment>
+                    <validate>required color {required:false, hash:true}</validate>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="minicart_message" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Quick Cart Custom Message</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <comment>Enable/Disable Custom message.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                    </depends>
+                </field>
+                <field id="content" translate="label comment" type="textarea" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Message</label>
+                    <comment>
+                        {amount_needed} custom variable can be used if the Free Shipping Integration is used. It will return the needed amount for Free Shipping.
+                    </comment>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                        <field id="weltpixel_quick_cart/minicart_message/enable">1</field>
+                    </depends>
+                </field>
+                <field id="free_shipping_integration" translate="label" type="select" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Free Shipping Integration</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                        <field id="weltpixel_quick_cart/minicart_message/enable">1</field>
+                    </depends>
+                </field>
+                <field id="free_shipping_content" translate="label comment" type="textarea" sortOrder="17" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Message for Free Shipping </label>
+                    <comment>
+                        <![CDATA[
+                         Insert a custom message which is displayed whe the free shipping can be applied, based on the Minimum Order Amount value set in the Free Shipping settings.
+                        ]]>
+                    </comment>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                        <field id="weltpixel_quick_cart/minicart_message/enable">1</field>
+                        <field id="weltpixel_quick_cart/minicart_message/free_shipping_integration">1</field>
+                    </depends>
+                </field>
+                <field id="text_color" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Message Text Color</label>
+                    <validate>required color {required:false, hash:true}</validate>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                        <field id="weltpixel_quick_cart/minicart_message/enable">1</field>
+                    </depends>
+                </field>
+                <field id="font_size" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Message Text Font Size</label>
+                    <comment>Set the font size [in px]. E.g. 16px</comment>
+                    <validate>required</validate>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                        <field id="weltpixel_quick_cart/minicart_message/enable">1</field>
+                    </depends>
+                </field>
+                <field id="custom_css" translate="label" type="textarea" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Css</label>
+                    <comment>
+                        <![CDATA[
+                         #quickcart-custom-msg { <br/> /* Custom Css Here for the custom message*/  <br/> }  <br/><br/>
+                         #quickcart-amount-needed {  <br/> /* Custom Css Here for the {amount_needed} in the custom message */  <br/>}
+                        ]]>
+                    </comment>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                        <field id="weltpixel_quick_cart/minicart_message/enable">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="shoppingcart_message" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Shopping Cart Custom Message</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <comment>Enable/Disable Custom message.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                    </depends>
+                </field>
+                <field id="content" translate="label comment" type="textarea" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Message</label>
+                    <comment>
+                        {amount_needed} custom variable can be used if the Free Shipping Integration is used. It will return the needed amount for Free Shipping.
+                    </comment>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                        <field id="weltpixel_quick_cart/shoppingcart_message/enable">1</field>
+                    </depends>
+                </field>
+                <field id="free_shipping_integration" translate="label" type="select" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Free Shipping Integration</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                        <field id="weltpixel_quick_cart/shoppingcart_message/enable">1</field>
+                    </depends>
+                </field>
+                <field id="free_shipping_content" translate="label comment" type="textarea" sortOrder="17" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Message for Free Shipping </label>
+                    <comment>
+                        <![CDATA[
+                         Insert a custom message which is displayed whe the free shipping can be applied, based on the Minimum Order Amount value set in the Free Shipping settings.
+                        ]]>
+                    </comment>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                        <field id="weltpixel_quick_cart/shoppingcart_message/enable">1</field>
+                        <field id="weltpixel_quick_cart/shoppingcart_message/free_shipping_integration">1</field>
+                    </depends>
+                </field>
+                <field id="text_color" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Message Text Color</label>
+                    <validate>required color {required:false, hash:true}</validate>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                        <field id="weltpixel_quick_cart/shoppingcart_message/enable">1</field>
+                    </depends>
+                </field>
+                <field id="font_size" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Message Text Font Size</label>
+                    <comment>Set the font size [in px]. E.g. 30px</comment>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                        <field id="weltpixel_quick_cart/shoppingcart_message/enable">1</field>
+                    </depends>
+                </field>
+                <field id="custom_css" translate="label" type="textarea" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Css</label>
+                    <comment>
+                        <![CDATA[
+                         #shoppingcart-custom-msg { <br/> /* Custom Css Here for the custom message*/ <br/> }<br/><br/>
+                         #shoppingcart-amount-needed { <br/> /* Custom Css Here for the {amount_needed} placeholder in the custom message */ <br/> }
+                        ]]>
+                    </comment>
+                    <depends>
+                        <field id="weltpixel_quick_cart/general/enable">1</field>
+                        <field id="weltpixel_quick_cart/shoppingcart_message/enable">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="subscriptions_configuration"
+                 translate="label"
+                 type="text"
+                 sortOrder="1000"
+                 showInDefault="1"
+                 showInWebsite="1"
+                 showInStore="1">
+            <label>Supplier Subscription Add-on</label>
+            <tab>supplierfrontend</tab>
+            <resource>Cminds_SupplierSubscription::config</resource>
+            <group id="general"
+                   translate="label"
+                   type="text"
+                   sortOrder="10"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
+                <label>General</label>
+                <field id="module_enabled"
+                       translate="label comment"
+                       sortOrder="10"
+                       type="select"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="default_plan"
+                       translate="label comment"
+                       sortOrder="20"
+                       type="select"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Default Plan</label>
+                    <source_model>Cminds\SupplierSubscription\Model\Config\Source\General\DefaultPlan</source_model>
+                    <depends>
+                        <field id="*/*/module_enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="notification"
+                   translate="label"
+                   type="text"
+                   sortOrder="20"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
+                <label>Notification</label>
+                <field id="notification_enabled"
+                       translate="label comment"
+                       sortOrder="10"
+                       type="select"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="notification_days"
+                       translate="label comment"
+                       sortOrder="20"
+                       type="text"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Days before expiration to send notification</label>
+                    <validate>validate-number</validate>
+                    <comment><![CDATA[Days that vendor will be notified before plan expires.]]></comment>
+                    <depends>
+                        <field id="*/*/notification_enabled">1</field>
+                    </depends>
+                </field>
+                <field id="time"
+                       translate="label"
+                       type="time"
+                       sortOrder="30"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>When to send notification</label>
+                    <depends>
+                        <field id="*/*/notification_enabled">1</field>
+                    </depends>
+                </field>
+                <field id="email_template"
+                       translate="label"
+                       type="select"
+                       sortOrder="40"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Email Template</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                    <depends>
+                        <field id="*/*/notification_enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

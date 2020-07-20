@@ -1,0 +1,22 @@
+<!--@subject {{var subject}} @-->
+<!--@vars {
+"var this.getUrl($store, 'admin')":"Warehouse Account URL"
+} @-->
+
+{{template config_path="design/email/header_template"}}
+
+<table>
+    <tr class="email-intro">
+        <td>
+            <p>
+                Hello, {{var receiver_name}}
+            </p>
+            <p>
+                {{var message}}
+            </p>
+             
+        </td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer_template"}}

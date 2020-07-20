@@ -1,0 +1,30 @@
+<?php $crumbs = $this->getCrumbs(); ?>
+<?php $bcNo = count($crumbs); ?>
+<?php if ($bcNo): ?>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+        <?php if ($crumbs && is_array($crumbs)) : ?>
+            <?php $ctr = 1;
+            foreach ($crumbs as $k => $crumbData) : ?>
+                    {
+                        "@type": "ListItem",
+                        "position": <?= /* @escapeNotVerified */
+                $ctr; ?>,
+                        "item": {
+                          "@id": "<?= /* @escapeNotVerified */
+                $block->stripTags($crumbData['link']); ?>",
+                          "name": "<?= /* @escapeNotVerified */
+                $block->stripTags($crumbData['label']); ?>"
+                        }
+                      }
+                      <?php echo ($ctr < $bcNo) ? ',' : ''; ?>
+                <?php $ctr++; endforeach; ?>
+        <?php endif; ?>
+        ]
+}
+
+    </script>
+<?php endif; ?>

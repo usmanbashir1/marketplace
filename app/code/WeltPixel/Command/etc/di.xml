@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="generateLessCommand" xsi:type="object">WeltPixel\Command\Console\Command\GenerateLessCommand</item>
+                <item name="cleanupCommand" xsi:type="object">WeltPixel\Command\Console\Command\CleanupCommand</item>
+                <item name="exportConfigurationsCommand" xsi:type="object">WeltPixel\Command\Console\Command\ExportConfigurationsCommand</item>
+                <item name="exportModulesCommand" xsi:type="object">WeltPixel\Command\Console\Command\ExportModulesCommand</item>
+                <item name="importConfigurationsCommand" xsi:type="object">WeltPixel\Command\Console\Command\ImportConfigurationsCommand</item>
+                <item name="importDemoCommand" xsi:type="object">WeltPixel\Command\Console\Command\ImportDemoCommand</item>
+                <item name="themeConfiguratorCommand" xsi:type="object">WeltPixel\Command\Console\Command\ThemeConfiguratorCommand</item>
+                <item name="themeSetupCommand" xsi:type="object">WeltPixel\Command\Console\Command\ThemeSetupCommand</item>
+                <item name="activateThemeCommand" xsi:type="object">WeltPixel\Command\Console\Command\ActivateThemeCommand</item>
+                <item name="generateCssCommand" xsi:type="object">WeltPixel\Command\Console\Command\GenerateCssCommand</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="WeltPixel\Command\Console\Command\GenerateLessCommand">
+        <arguments>
+            <argument name="generationContainer" xsi:type="array" />
+        </arguments>
+    </type>
+    <type name="WeltPixel\Command\Console\Command\ExportConfigurationsCommand">
+        <arguments>
+            <argument name="sectionContainer" xsi:type="array" />
+        </arguments>
+    </type>
+</config>

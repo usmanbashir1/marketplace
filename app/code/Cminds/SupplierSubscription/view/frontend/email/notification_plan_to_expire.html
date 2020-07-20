@@ -1,0 +1,10 @@
+<!--@subject {{trans "Subscription Notification"}} @-->
+{{template config_path="design/email/header_template"}}
+
+{{if admin_version}}
+    Hello, vendor {{var customer.firstname}} ({{var customer.email}}) current subscription plan will expire on {{var expiry_date}}!
+{{else}}
+    Hello {{var customer.firstname}} your current subscription plan will expire on {{var expiry_date}}!
+{{/if}}
+
+{{template config_path="design/email/footer_template"}}

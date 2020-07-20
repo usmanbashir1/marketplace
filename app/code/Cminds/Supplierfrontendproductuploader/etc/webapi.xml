@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <!-- Get Attribute sets -->
+    <route url="/V1/cmproducts/attribute-sets/:token" method="GET">
+        <service class="Cminds\Supplierfrontendproductuploader\Api\SupplierProductInterface" method="getAttributeSetList"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/cmproducts/attribute-sets/:token/setId/:attributeSetId" method="GET">
+        <service class="Cminds\Supplierfrontendproductuploader\Api\SupplierProductInterface" method="getAttributesList"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <!-- Get Catgegories -->
+    <route url="/V1/cmproducts/categories/:token" method="GET">
+        <service class="Cminds\Supplierfrontendproductuploader\Api\SupplierProductInterface" method="getCategoryList"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <!-- Add Product -->
+    <route url="/V1/cmproducts/save/:token" method="POST">
+        <service class="Cminds\Supplierfrontendproductuploader\Api\SupplierProductInterface" method="saveProducts"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <!-- Delete Product -->
+    <route url="/V1/cmproducts/delete/:token" method="POST">
+        <service class="Cminds\Supplierfrontendproductuploader\Api\SupplierProductInterface" method="deleteProducts"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <!-- Create Variation -->
+    <route url="/V1/cmproducts/configuration/:token" method="POST">
+        <service class="Cminds\Supplierfrontendproductuploader\Api\SupplierProductInterface" method="createConfiguration"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+</routes>

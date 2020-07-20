@@ -1,0 +1,73 @@
+<?php
+/**
+ * @var $block \WeltPixel\AjaxInfiniteScroll\Block\AjaxInfiniteScroll
+ */
+?>
+
+<?php
+    $helper = $this->helper('WeltPixel\AjaxInfiniteScroll\Helper\Data');
+    $helperCategoryPage = $this->helper('WeltPixel\CategoryPage\Helper\Data');
+    $displaySwatchClass = $helperCategoryPage->displaySwatches() == 1 ? 'mg-top-msg' : '';
+    if ($helper->isAjaxCatalogEnabled()) {
+        $ajaxCatalogMode = $helper->getAjaxCatalogMode();
+        switch ($ajaxCatalogMode) {
+            case 'infinite_scroll':
+                ?>
+                <script>
+                    window.ajaxCatalog = 'infiniteScroll';
+                    window.LoadMore = '<?php echo $helper->getLoadMore() ? (int) trim($helper->getLoadMore()) : 0; ?>';
+                    window.negativeMargin = '<?php echo $helper->getLoadingEarly() ? (int) trim($helper->getNegativeMargin()) : '0'; ?>';
+                    window.textNext = '<?php echo $helper->getTextLoadNext(); ?>';
+                    window.textPrevious = '<?php echo $helper->getTextLoadPrevious(); ?>';
+                    window.textNoMore = '<?php echo $helper->getTextNoMore(); ?>';
+                </script>
+                <?php
+                break;
+            case 'next_page':
+                ?>
+                <script>
+                    window.ajaxCatalog = 'nextPage';
+                    window.currentCategory = '<?php echo $helper->getCurrentCategoryId(); ?>';
+                    window.ajaxReloadPaginationUrl = '<?php echo $helper->getAjaxReloadPaginationUrl(); ?>';
+                </script>
+                <?php
+                break;
+            default:
+                ?><script>window.ajaxCatalog = 'disabled';</script><?php
+                break;
+        }
+    }
+?>
+<?php if ($helper->isAjaxCatalogEnabled()): ?>
+<div class="ajax-infinite-scroll-js">
+    <script>
+        require(['jquery', 'ajaxinfinitescroll'], function($){
+            $(function($) {
+                window.loadingImage = '<?php echo $helper->getLoadingImage(); ?>';
+                window.textLoadingMore = '<?php echo $helper->getTextLoading() ?>';
+                window.showCanonical = '<?php echo $helper->isEnabledCanonicalPrevNext() ?>';
+                window.ajaxCanonicalRefresh = '<?php echo $helper->getAjaxRefreshCanonicalUrl() ?>';
+                window.displaySwatchClass = '<?php echo $displaySwatchClass; ?>';
+                if (window.ajaxCatalog == 'infiniteScroll') {
+                    ajaxInfiniteScroll.initInfiniteScroll();
+                } else if (window.ajaxCatalog == 'nextPage') {
+                    ajaxInfiniteScroll.initNextPage();
+                }
+
+                $('.product.photo.product-item-photo').on('click', function(e) {
+                    if(!e.metaKey) {
+                        var page = $(this).attr('data-item-page');
+                        var url = window.location.href;
+                        ajaxInfiniteScroll.resetIasPagination(page, url);
+                        var href = $(this).attr('href');
+                        window.location.href = href;
+                    }
+
+                })
+
+            });
+        });
+    </script>
+</div>
+
+<?php endif; ?>

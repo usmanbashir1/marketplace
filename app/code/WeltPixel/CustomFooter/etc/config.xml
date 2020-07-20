@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <weltpixel_custom_footer>
+            <prefooter>
+                <enable>0</enable>
+            </prefooter>
+            <footer>
+                <enable>1</enable>
+                <version>v1</version>
+            </footer>
+            <copyright>
+                <enable>1</enable>
+            </copyright>
+        </weltpixel_custom_footer>
+    </default>
+</config>

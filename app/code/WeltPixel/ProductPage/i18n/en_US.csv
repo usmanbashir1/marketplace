@@ -1,0 +1,95 @@
+Hover,Hover
+Click,Click
+Thumbs,Thumbs
+Dots,Dots
+None,None
+Slides,Slides
+Horizontal,Horizontal
+Vertical,Vertical
+Slide,Slide
+Crossfade,Crossfade
+Dissolve,Dissolve
+"Default Input","Default Input"
+Dropdown,Dropdown
+Tab,Tab
+Accordion,Accordion
+List,List
+True,True
+False,False
+"Version 1","Version 1"
+"Version 2","Version 2"
+"Version 3","Version 3"
+"Version 4","Version 4"
+"Please regenerate Pearl Theme LESS/CSS files from <a href=""%1"">Cache Management Section</a>","Please regenerate Pearl Theme LESS/CSS files from <a href=""%1"">Cache Management Section</a>"
+"Update Cart","Update Cart"
+Qty,Qty
+"Add to Wish List","Add to Wish List"
+"Add to Compare","Add to Compare"
+"Add to Cart","Add to Cart"
+"Product Page","Product Page"
+"Important / Recommended:","Important / Recommended:"
+"Product View Version","Product View Version"
+Version,Version
+General,General
+"Image area width","Image area width"
+"Product info area width","Product info area width"
+"Move Description and Tabs under info area","Move Description and Tabs under info area"
+"Remove wishlist","Remove wishlist"
+"Remove compare","Remove compare"
+"Remove email","Remove email"
+"Remove qty box","Remove qty box"
+"Remove sku","Remove sku"
+"Remove stock availability","Remove stock availability"
+"Remove Breadcrumbs","Remove Breadcrumbs"
+"Remove Tabs Border","Remove Tabs Border"
+"Information Layout on Desktop","Information Layout on Desktop"
+"Quantity Input Type","Quantity Input Type"
+"Quantity Dropdown Max Value","Quantity Dropdown Max Value"
+"Display Swatch Tooltip","Display Swatch Tooltip"
+Images,Images
+"Main Image Width","Main Image Width"
+"Main Image Height","Main Image Height"
+"Thumb Image Width","Thumb Image Width"
+"Thumb Image Height","Thumb Image Height"
+Gallery,Gallery
+"No options available in this Product Page Version.","No options available in this Product Page Version."
+"Gallery navigation style","Gallery navigation style"
+"Gallery navigation loop","Gallery navigation loop"
+"Turn on/off keyboard arrows navigation","Turn on/off keyboard arrows navigation"
+"Turn on/off arrows on the sides preview","Turn on/off arrows on the sides preview"
+"Background color arrows","Background color arrows"
+"Display alt text as image title","Display alt text as image title"
+"Sliding direction of thumbnails","Sliding direction of thumbnails"
+"Turn on/off on the thumbs navigation sides","Turn on/off on the thumbs navigation sides"
+"Sliding type of thumbnails","Sliding type of thumbnails"
+"Sets transition effect for slides changing","Sets transition effect for slides changing"
+"Sets transition duration in ms","Sets transition duration in ms"
+"Gallery Fullscreen","Gallery Fullscreen"
+"Enable Fulscreen Image Zoom","Enable Fulscreen Image Zoom"
+"Fullscreen navigation style","Fullscreen navigation style"
+"Fullscreen navigation loop","Fullscreen navigation loop"
+"Sliding direction of thumbnails in full screen","Sliding direction of thumbnails in full screen"
+"Magnifier Options","Magnifier Options"
+"Enable Magnifier","Enable Magnifier"
+"Zoom of fullscreen","Zoom of fullscreen"
+"Top position of magnifier","Top position of magnifier"
+"Left position of magnifier","Left position of magnifier"
+"Width of magnifier block","Width of magnifier block"
+"Height of magnifier block","Height of magnifier block"
+"Action that activates zoom","Action that activates zoom"
+"Swatch Options","Swatch Options"
+Radius,Radius
+Width,Width
+Height,Height
+"Line Height","Line Height"
+"Font Size","Font Size"
+"CSS Options","CSS Options"
+"Thumbnail Image Border","Thumbnail Image Border"
+"Tab Active Background","Tab Active Background"
+"Tab Background","Tab Background"
+"Tab Text Active Color","Tab Text Active Color"
+"Tab Text Color","Tab Text Color"
+"Tab Container Padding","Tab Container Padding"
+"Page Background Color","Page Background Color"
+"Page Top Background Color","Page Top Background Color"
+"Page Bottom Background Color","Page Bottom Background Color"

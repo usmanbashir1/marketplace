@@ -1,0 +1,51 @@
+<?php
+$uniqueid = 'owl-brand-'.uniqid();
+$style = $this->getData('style');
+$images = $this->getImages();
+?>
+<?php if(!empty($images)):?>
+    <?php if($style != 'carousel'):?>
+        <ul class="clients-grid <?php echo $style; ?> nobottommargin clearfix">
+        <?php foreach($images as $image):?>
+            <li><?php echo $image; ?></li>
+        <?php endforeach;?>
+        </ul>
+    <?php else: ?>
+        <div id="<?php echo $uniqueid;?>" class="owl-carousel brand-carousel">
+        <?php foreach($images as $image):?>
+            <div class="item"><?php echo $image; ?></div>
+        <?php endforeach;?>
+        </div>
+        <script>
+            require(['jquery', 'owl_carousel', 'owl_config' ],
+                function ($) {
+                    var carouselElement = $('#<?php echo $uniqueid;?>'),
+
+                        windowWidth = $(window).width(),
+                        carouselWidth = carouselElement.width(),
+                        carouselContainer = carouselWidth + 120;
+
+                    carouselElement.owlCarousel({
+                        nav                 :false,
+                        dots                :false,
+                        center              :true,
+                        items               :5,
+                        loop                :true,
+                        margin              :0,
+                        stagePadding        :0,
+                        lazyLoad            :true,
+                        autoplay            :false,
+                        autoplayTimeout     :3000,
+                        autoplayHoverPause  :true,
+                        autoHeight          :false,
+                        responsiveClass     :true,
+                        responsive:{
+                            0    :{ items           :1},
+                            600  :{ items           :3},
+                            1000 :{ items           :5}
+                        }
+                    });
+                });
+        </script>
+    <?php endif; ?>
+<?php endif; ?>

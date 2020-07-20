@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<referenceContainer name="footer">
+			<block ifconfig="weltpixel_custom_footer/prefooter/enable" class="Magento\Cms\Block\Block" name="weltpixel.prefooter">
+				<arguments>
+					<argument name="block_id" xsi:type="string">weltpixel_pre-footer</argument>
+				</arguments>
+			</block>
+			<block ifconfig="weltpixel_custom_footer/footer/enable" class="Magento\Cms\Block\Block" name="weltpixel.footer">
+				<arguments>
+					<argument name="block_id" xsi:type="helper" helper="WeltPixel\CustomFooter\Helper\Data::getFooterVersion"/>
+				</arguments>
+			</block>
+		</referenceContainer>
+	</body>
+</page>

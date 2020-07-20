@@ -1,0 +1,35 @@
+<?php $buttons = $this->getButtons()?>
+<?php $notLoginPage = $this->getCurrentPageRedirectUrl()?>
+<?php if(!empty($buttons) && !$this->isCustomerLoggedIn()):?>
+    <div class="sociallogin-wrapper block-customer-login login-container">
+        <div class="block sociallogin-block">
+            <div class="sociallogin-block-title block-title">
+                <strong role="heading" aria-level="2"><?= $block->escapeHtml(__('Login With Social Profile'))?></strong>
+            </div>
+            <div class="sociallogin-padding">
+                <?php foreach ($buttons as $type => $data):?>
+                    <div class="sociallogin-box">
+                        <a class="sociallogin-button"
+                           rel="nofollow"
+                           href="javascript:void(0);"
+                           data-href="<?=$data['endpoint']?>"
+                        >
+                            <span class="sociallogin-icon sl-<?=$type?>"></span>
+
+                        </a>
+                    </div>
+                <?php endforeach;?>
+            </div>
+        </div>
+    </div>
+    <script>
+        if (window.socialloginButtons) {
+            window.emailFormUrl = "<?=$this->getEmailFormUrl()?>";
+            require(['sociallogin'], function(){
+                sl.socialLoginClick();
+                sl.sendEmailClick();
+                sl.emailPopUp();
+            });
+        }
+    </script>
+<?php endif;?>

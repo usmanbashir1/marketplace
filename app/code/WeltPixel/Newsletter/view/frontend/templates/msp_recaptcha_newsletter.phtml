@@ -1,0 +1,31 @@
+<?php
+/** @var $block MSP\ReCaptcha\Block\Frontend\ReCaptcha */
+?>
+<?php
+/** @var  \WeltPixel\Backend\Helper\Data $_helper */
+$_helper = $this->helper('WeltPixel\Backend\Helper\Data');
+?>
+<?php if ($_helper->isRecaptchaAvailable()) : ?>
+    <div
+        class="field-recaptcha"
+        id="wpn-<?= /* @noEscape */ $block->getRecaptchaId() ?>-container"
+        data-bind="scope:'<?= /* @noEscape */ $block->getRecaptchaId() ?>'"
+    >
+        <!-- ko template: getTemplate() --><!-- /ko -->
+    </div>
+
+    <script type="text/javascript">
+        require(['jquery', 'domReady!'], function ($) {
+            $('#wpn-<?= /* @noEscape */ $block->getRecaptchaId() ?>-container')
+                .appendTo('#weltpixel_newsletter');
+        });
+    </script>
+
+    <script type="text/x-magento-init">
+        {
+            "#wpn-<?= /* @noEscape */ $block->getRecaptchaId() ?>-container": {
+                "Magento_Ui/js/core/app": <?= /* @noEscape */ $block->getJsLayout() ?>
+            }
+        }
+    </script>
+<?php endif; ?>

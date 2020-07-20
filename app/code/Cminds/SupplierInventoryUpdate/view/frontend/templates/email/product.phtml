@@ -1,0 +1,23 @@
+<?php $_items = $block->getItems() ?>
+<table class="email-items">
+    <thead>
+    <tr>
+        <th class="item-info">
+        </th>
+        <th class="item-qty">
+        </th>
+        <th class="item-price">
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($_items as $_item): ?>
+        <tr>
+            <td>Name: <?php echo $_item['name'];?></td>
+            <td>Old Cost: <?php echo $_item['old_value'];?></td>
+            <td>Cost: <?php echo $_item['value'];?></td>
+            <td>Sku: <?php echo $_item['sku'];?></td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>

@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Cminds DropshipNotification admin system config.
+ *
+ * @category Cminds
+ * @package  Cminds_DropshipNotification
+ * @author   Piotr Pierzak <piotr@cminds.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="cminds_dropshipnotification"
+                 translate="label"
+                 type="text"
+                 sortOrder="1000"
+                 showInDefault="1"
+                 showInWebsite="1"
+                 showInStore="1">
+            <label>Dropship Notification Add-on</label>
+            <tab>supplierfrontend</tab>
+            <resource>Cminds_DropshipNotification::configuration</resource>
+            <group id="general"
+                   translate="label"
+                   type="text"
+                   sortOrder="10"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
+                <label>General</label>
+                <field id="enable"
+                       sortOrder="10"
+                       type="select"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="dropship_notification"
+                   translate="label"
+                   type="text"
+                   sortOrder="10"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
+                <label>Dropship Notification</label>
+                <field id="send_email"
+                       translate="label"
+                       type="select"
+                       sortOrder="10"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Send Email Notification</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="email_template_id" translate="label" type="select" sortOrder="1"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Template</label>
+                    <source_model>Cminds\DropshipNotification\Model\Config\Source\EmailTemplate</source_model>
+                </field>
+                <field id="change_order_status"
+                       translate="label"
+                       type="select"
+                       sortOrder="20"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Should Change Order Status</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="new_order_status"
+                       translate="label"
+                       type="select"
+                       sortOrder="30"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>New Order Status</label>
+                    <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                    <depends>
+                        <field id="change_order_status">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

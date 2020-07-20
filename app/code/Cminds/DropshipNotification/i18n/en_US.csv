@@ -1,0 +1,36 @@
+Dropship,Dropship
+"Order History","Order History"
+SKU,SKU
+Name,Name
+Qty,Qty
+"Supplier Name","Supplier Name"
+Status,Status
+Method,Method
+Date,Date
+"Dropshipped Order Items","Dropshipped Order Items"
+"We couldn't find any records.","We couldn't find any records."
+"Please correct the column format and try again.","Please correct the column format and try again."
+"Pending Order Items","Pending Order Items"
+"Error occurred during emails sending.","Error occurred during emails sending."
+"Dropship notifications have been sent.","Dropship notifications have been sent."
+"Order status has been updated.","Order status has been updated."
+Email,Email
+Completed,Completed
+Incomplete,Incomplete
+"Dropship notification for store %store_name","Dropship notification for store %store_name"
+"%supplier_name,","%supplier_name,"
+"We would like to inform you that order is ready to be dropshipped.","We would like to inform you that order is ready to be dropshipped."
+"Please find order details below.","Please find order details below."
+"If you have questions about order, you can email us at <a href=""mailto:%store_email"">%store_email</a>","If you have questions about order, you can email us at <a href=""mailto:%store_email"">%store_email</a>"
+"or call us at <a href=""tel:%store_phone"">%store_phone</a>","or call us at <a href=""tel:%store_phone"">%store_phone</a>"
+"Our hours are <span class=""no-link"">%store_hours</span>.","Our hours are <span class=""no-link"">%store_hours</span>."
+"Order <span class=""no-link"">#%increment_id</span>","Order <span class=""no-link"">#%increment_id</span>"
+"Placed on <span class=""no-link"">%created_at</span>","Placed on <span class=""no-link"">%created_at</span>"
+"Shipping Info","Shipping Info"
+"Shipping Method","Shipping Method"
+"Dropship Notification Add-on","Dropship Notification Add-on"
+General,General
+"Dropship Notification","Dropship Notification"
+"Send Email Notification","Send Email Notification"
+"Should Change Order Status","Should Change Order Status"
+"New Order Status","New Order Status"

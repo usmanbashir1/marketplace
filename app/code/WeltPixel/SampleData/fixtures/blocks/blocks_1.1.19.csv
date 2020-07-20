@@ -1,0 +1,31 @@
+title,identifier,content,is_active
+"Brands Sample Block 1",brands_sample_block1,"
+ <a href=""http://www.weltpixel.com"" target=""_blank""><img src=""{{media url=""wysiwyg/pearl_theme/q1.png""}}"" /></a>
+ <a href=""http://www.weltpixel.com"" target=""_blank""><img src=""{{media url=""wysiwyg/pearl_theme/q2.png""}}"" /></a>
+ <a href=""http://www.weltpixel.com"" target=""_blank""><img src=""{{media url=""wysiwyg/pearl_theme/q3.png""}}"" /></a>
+ <a href=""http://www.weltpixel.com"" target=""_blank""><img src=""{{media url=""wysiwyg/pearl_theme/q4.png""}}"" /></a>
+ <a href=""http://www.weltpixel.com"" target=""_blank""><img src=""{{media url=""wysiwyg/pearl_theme/q5.png""}}"" /></a>
+ <a href=""http://www.weltpixel.com"" target=""_blank""><img src=""{{media url=""wysiwyg/pearl_theme/q6.png""}}"" /></a>
+ <a href=""http://www.weltpixel.com"" target=""_blank""><img src=""{{media url=""wysiwyg/pearl_theme/q7.png""}}"" /></a>
+ <a href=""http://www.weltpixel.com"" target=""_blank""><img src=""{{media url=""wysiwyg/pearl_theme/q8.png""}}"" /></a>
+ <a href=""http://www.weltpixel.com"" target=""_blank""><img src=""{{media url=""wysiwyg/pearl_theme/q9.png""}}"" /></a>
+ <a href=""http://www.weltpixel.com"" target=""_blank""><img src=""{{media url=""wysiwyg/pearl_theme/q10.png""}}"" /></a>
+ <a href=""http://www.weltpixel.com"" target=""_blank""><img src=""{{media url=""wysiwyg/pearl_theme/q11.png""}}"" /></a>
+ <a href=""http://www.weltpixel.com"" target=""_blank""><img src=""{{media url=""wysiwyg/pearl_theme/q12.png""}}"" /></a>
+",1
+"Brands Sample Block 2",brands_sample_block2,"
+ <a href=""http://www.weltpixel.com"" target=""_blank""><img src=""{{media url=""wysiwyg/pearl_theme/q1.png""}}"" /></a>
+ <a href=""http://www.weltpixel.com"" target=""_blank""><img src=""{{media url=""wysiwyg/pearl_theme/q2.png""}}"" /></a>
+ <a href=""http://www.weltpixel.com"" target=""_blank""><img src=""{{media url=""wysiwyg/pearl_theme/q3.png""}}"" /></a>
+ <a href=""http://www.weltpixel.com"" target=""_blank""><img src=""{{media url=""wysiwyg/pearl_theme/q4.png""}}"" /></a>
+ <a href=""http://www.weltpixel.com"" target=""_blank""><img src=""{{media url=""wysiwyg/pearl_theme/q5.png""}}"" /></a>
+ <a href=""http://www.weltpixel.com"" target=""_blank""><img src=""{{media url=""wysiwyg/pearl_theme/q6.png""}}"" /></a>
+",1
+"Brands Sample Block 3",brands_sample_block3,"
+ <a href=""http://www.weltpixel.com"" target=""_blank""><img src=""{{media url=""wysiwyg/pearl_theme/q7.png""}}"" /></a>
+ <a href=""http://www.weltpixel.com"" target=""_blank""><img src=""{{media url=""wysiwyg/pearl_theme/q8.png""}}"" /></a>
+ <a href=""http://www.weltpixel.com"" target=""_blank""><img src=""{{media url=""wysiwyg/pearl_theme/q9.png""}}"" /></a>
+ <a href=""http://www.weltpixel.com"" target=""_blank""><img src=""{{media url=""wysiwyg/pearl_theme/q10.png""}}"" /></a>
+ <a href=""http://www.weltpixel.com"" target=""_blank""><img src=""{{media url=""wysiwyg/pearl_theme/q11.png""}}"" /></a>
+ <a href=""http://www.weltpixel.com"" target=""_blank""><img src=""{{media url=""wysiwyg/pearl_theme/q12.png""}}"" /></a>
+",1

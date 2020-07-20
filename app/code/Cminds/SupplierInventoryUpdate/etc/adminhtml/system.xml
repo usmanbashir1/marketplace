@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="inventory_update"
+                 translate="label"
+                 type="text"
+                 sortOrder="1000"
+                 showInDefault="1"
+                 showInWebsite="1"
+                 showInStore="1">
+            <label>Inventory Update Add-on</label>
+            <tab>supplierfrontend</tab>
+            <resource>Cminds_SupplierInventoryUpdate::configuration</resource>
+            <group id="general"
+                   translate="label"
+                   type="text"
+                   sortOrder="10"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
+                <label>General</label>
+                <field id="enable"
+                       sortOrder="10"
+                       type="select"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <!--<field id="notify_customer"
+                       sortOrder="20"
+                       type="select"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Send a Notification When Supplier Uploads The Products</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>-->
+                <!--<field id="max_update"
+                       sortOrder="30"
+                       type="text"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>How Many Products Can Be Imported</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>
+                        <![CDATA[
+                        Set 0 or leave it blank for unlimited.
+                        ]]>
+                    </comment>
+                </field>-->
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add
+				id="WeltPixel_FullPageScroll::FullPageScroll_Label"
+				title="Full Page Scroll"
+				module="WeltPixel_FullPageScroll"
+				sortOrder="60"
+				parent="WeltPixel_Backend::WeltPixel"
+				resource="WeltPixel_FullPageScroll::FullPageScroll_Label"
+		/>
+		<add
+				id="WeltPixel_FullPageScroll::FullPageScroll"
+				title="Full Page Scroll Settings"
+				module="WeltPixel_FullPageScroll"
+				action="adminhtml/system_config/edit/section/weltpixel_fullpagescroll/"
+				sortOrder="60"
+				parent="WeltPixel_FullPageScroll::FullPageScroll_Label"
+				resource="WeltPixel_FullPageScroll::FullPageScroll"
+		/>
+	</menu>
+</config>

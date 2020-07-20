@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+                id="WeltPixel_Sitemap::Sitemap_Label"
+                title="Sitemap"
+                module="WeltPixel_Sitemap"
+                sortOrder="100"
+                parent="WeltPixel_Backend::WeltPixel"
+                resource="WeltPixel_Sitemap::Sitemap_Label"
+        />
+        <add
+                id="WeltPixel_Sitemap::Sitemap"
+                title="Sitemap Settings"
+                module="WeltPixel_Sitemap"
+                action="weltpixelsitemap/sitemap"
+                sortOrder="10"
+                parent="WeltPixel_Sitemap::Sitemap_Label"
+                resource="WeltPixel_Sitemap::Sitemap"
+        />
+    </menu>
+</config>

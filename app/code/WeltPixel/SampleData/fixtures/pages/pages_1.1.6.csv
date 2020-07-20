@@ -1,0 +1,197 @@
+title,page_layout,meta_keywords,meta_description,identifier,content_heading,content,is_active,sort_order,layout_update_xml,custom_theme,custom_root_template,custom_layout_update_xml,custom_theme_from,custom_theme_to,css_global,css_phone_small,css_phone,css_tablet_small,css_tablet,css_desktop,css_desktop_large,custom_js
+"Home Page V7",1column,,,home-page-v7,"","
+<div class=""hp-v7"">
+    <div class=""hp-v7-slider"">
+        {{widget_nr_1}}
+    </div>
+    <div class=""hp-v7-boxes container topmargin-desk"">
+
+        <div class=""row"">
+            <div id=""box-content-1"" class=""col-md-4 col-sm-12 col-xs-12 nopadding paddingright paddingbottom box-content valign-parent "">
+                <div data-target=""#box-1"" class=""hcaption"" cap-effect=""fade"" cap-overlay_bg=""rgba(0, 131, 192, 0.7)"">
+                    <div class=""image-wrapper"">
+                        <img src=""{{media url=""wysiwyg/pearl_theme/img-box-1.jpg""}}"" alt="""" />
+                    </div>
+                    <div class=""content-wrapper visible center valign-child"">
+                        <p>LIMITED EDITION</p>
+                        <h4>Cashmere</h4>
+                        <p class=""price"">Starting from $29.00</p>
+                    </div>
+                </div>
+                <div id=""box-1"" class=""caption-wrapper"">
+                    <div class=""center valign-child"">
+                        <a href=""{{store url=""men/tops-men/hoodies-and-sweatshirts-men.html""}}"" class=""button shop-now"">Men</a>
+                    <a href=""{{store url=""women/tops-women/hoodies-and-sweatshirts-women.html""}}"" class=""button shop-now"">Women</a>
+            </div>
+        </div>
+    </div>
+    <div id=""box-content-2"" class=""col-md-8 col-sm-12 col-xs-12 nopadding paddingleft paddingbottom paddingright box-content valign-parent"">
+        <div data-target=""#box-2"" class=""hcaption"" cap-effect=""fade""  cap-overlay_bg=""rgba(0, 131, 192, 0.7)"">
+            <div class=""image-wrapper"">
+                <img src=""{{media url=""wysiwyg/pearl_theme/img-box-3.jpg""}}"" alt="""" />
+            </div>
+            <div class=""content-wrapper visible center valign-child"">
+                <p>SOFT COLLECTION</p>
+                <h4>Organic Cotton</h4>
+                <p class=""price"">Tops from $49.00</p>
+            </div>
+        </div>
+        <div id=""box-2"" class=""caption-wrapper"">
+            <div class=""center valign-child"">
+                <a href=""{{store url=""men/tops-men/hoodies-and-sweatshirts-men.html""}}"" class=""button shop-now"">Men</a>
+            <a href=""{{store url=""women/tops-women/hoodies-and-sweatshirts-women.html""}}"" class=""button shop-now"">Women</a>
+    </div>
+</div>
+        </div>
+        </div>
+
+<div class=""row"">
+<div id=""box-content-3"" class=""col-md-4 col-sm-6 col-xs-12 nopadding paddingright paddingtop box-content valign-parent padding-btm-mob"">
+    <div data-target=""#box-3"" class=""hcaption"" cap-effect=""fade""  cap-overlay_bg=""rgba(0, 131, 192, 0.7)"">
+        <div class=""image-wrapper"">
+            <img src=""{{media url=""wysiwyg/pearl_theme/img-box-2.jpg""}}""  alt="""" />
+        </div>
+        <div class=""content-wrapper visible center valign-child"">
+            <p>FASCINATING COLORS</p>
+            <h4>Dresses</h4>
+            <p class=""price"">Starting from $39.00</p>
+        </div>
+    </div>
+    <div id=""box-3"" class=""caption-wrapper"">
+        <div class=""center valign-child"">
+            <a href=""{{store url=""men/tops-men/hoodies-and-sweatshirts-men.html""}}"" class=""button shop-now"">Men</a>
+        <a href=""{{store url=""women/tops-women/hoodies-and-sweatshirts-women.html""}}"" class=""button shop-now"">Women</a>
+</div>
+</div>
+        </div>
+<div class=""col-md-8 col-sm-6 col-xs-12 nopadding"">
+<div class=""row"">
+    <div id=""box-content-4"" class=""col-md-6 col-sm-12 col-xs-12 nopadding paddingtop paddingbottom paddingleft paddingright box-content"">
+        <a href=""{{store url=""women/tops-women/hoodies-and-sweatshirts-women.html""}}"" class=""center button-block"">WOMEN</a>
+    <a href=""{{store url=""men/tops-men/hoodies-and-sweatshirts-men.html""}}"" class=""center button-block"">MEN</a>
+<a href=""{{store url=""men/tops-men/hoodies-and-sweatshirts-men.html""}}"" class=""center button-block"">SALE 70% OFF</a>
+        </div>
+<div id=""box-content-5"" class=""col-md-6 col-sm-12 col-xs-12 nopadding paddingtop paddingbottom paddingleft paddingright box-content valign-parent"">
+<div data-target=""#box-5"" class=""hcaption"" cap-effect=""fade""  cap-overlay_bg=""rgba(0, 131, 192, 0.7)"">
+    <div class=""image-wrapper"">
+        <img src=""{{media url=""wysiwyg/pearl_theme/img-box-5.jpg""}}""  alt="""" />
+    </div>
+    <div class=""content-wrapper visible center valign-child"">
+        <p>LIGHTWEIGHT</p>
+        <h4>Basics</h4>
+        <p class=""price"">Starting from $19.00</p>
+    </div>
+</div>
+<div id=""box-5"" class=""caption-wrapper"">
+    <div class=""center valign-child"">
+        <a href=""{{store url=""men/tops-men/hoodies-and-sweatshirts-men.html""}}"" class=""button shop-now"">Men</a>
+    <a href=""{{store url=""women/tops-women/hoodies-and-sweatshirts-women.html""}}"" class=""button shop-now"">Women</a>
+</div>
+        </div>
+        </div>
+        </div>
+<div class=""row visible-md visible-lg"">
+<div id=""box-content-6"" class=""col-md-6 nopadding paddingtop paddingright paddingleft box-content valign-parent"">
+    <div data-target=""#box-6"" class=""hcaption"" cap-effect=""fade""  cap-overlay_bg=""rgba(0, 131, 192, 0.7)"">
+        <div class=""image-wrapper"">
+            <img src=""{{media url=""wysiwyg/pearl_theme/img-box-6.jpg""}}""  alt="""" />
+        </div>
+        <div class=""content-wrapper visible center valign-child"">
+            <p>PERSONAL TAILOR</p>
+            <h4>Perfect Fit</h4>
+            <p class=""price"">Starting from $99.00</p>
+        </div>
+    </div>
+    <div id=""box-6"" class=""caption-wrapper"">
+        <div class=""center valign-child"">
+            <a href=""{{store url=""men/tops-men/hoodies-and-sweatshirts-men.html""}}"" class=""button shop-now"">Men</a>
+        <a href=""{{store url=""women/tops-men/hoodies-and-sweatshirts-women.html""}}"" class=""button shop-now"">Women</a>
+</div>
+</div>
+        </div>
+<div id=""box-content-7"" class=""col-md-6 nopadding paddingtop paddingright paddingleft box-content valign-parent"">
+<div data-target=""#box-7"" class=""hcaption"" cap-effect=""fade""  cap-overlay_bg=""rgba(0, 131, 192, 0.7)"">
+    <div class=""image-wrapper"">
+        <img src=""{{media url=""wysiwyg/pearl_theme/img-box-7.jpg""}}""  alt="""" />
+    </div>
+    <div class=""content-wrapper visible center valign-child"">
+        <p>EVERLASTING ELEGANCE</p>
+        <h4>Shirts</h4>
+        <p class=""price"">Starting from $99.00</p>
+    </div>
+</div>
+<div id=""box-7"" class=""caption-wrapper"">
+    <div class=""center valign-child"">
+        <a href=""{{store url=""men/tops-men/hoodies-and-sweatshirts-men.html""}}"" class=""button shop-now"">Men</a>
+    <a href=""{{store url=""women/tops-women/hoodies-and-sweatshirts-women.html""}}"" class=""button shop-now"">Women</a>
+</div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+<div class=""row visible-sm visible-xs"">
+<!-- these two columns are duplicate of last two columns above -->
+<div id=""box-content-61"" class=""col-sm-6 col-xs-12 nopadding paddingtop paddingright paddingleft box-content valign-parent padding-btm-mob"">
+    <div data-target=""#box-61"" class=""hcaption"" cap-effect=""fade""  cap-overlay_bg=""rgba(0, 131, 192, 0.7)"">
+        <div class=""image-wrapper"">
+            <img src=""{{media url=""wysiwyg/pearl_theme/img-box-6.jpg""}}""  alt="""" />
+        </div>
+        <div class=""content-wrapper visible center valign-child"">
+            <p>NEW STYLES</p>
+            <h4>Cashmere</h4>
+            <p class=""price"">Tops from $99.00</p>
+        </div>
+    </div>
+    <div id=""box-61"" class=""caption-wrapper"">
+        <div class=""center valign-child"">
+            <a href=""{{store url=""men/tops-men/hoodies-and-sweatshirts-men.html""}}"" class=""button shop-now"">Men</a>
+        <a href=""{{store url=""women/tops-men/hoodies-and-sweatshirts-women.html""}}"" class=""button shop-now"">Women</a>
+</div>
+</div>
+        </div>
+<div id=""box-content-71"" class=""col-sm-6 col-xs-12 nopadding paddingtop paddingright paddingleft box-content valign-parent"">
+<div data-target=""#box-71"" class=""hcaption"" cap-effect=""fade""  cap-overlay_bg=""rgba(0, 131, 192, 0.7)"">
+    <div class=""image-wrapper"">
+        <img src=""{{media url=""wysiwyg/pearl_theme/img-box-7.jpg""}}""  alt="""" />
+    </div>
+    <div class=""content-wrapper visible center valign-child"">
+        <p>NEW STYLES</p>
+        <h4>Cashmere</h4>
+        <p class=""price"">Tops from $99.00</p>
+    </div>
+</div>
+<div id=""box-71"" class=""caption-wrapper"">
+    <div class=""center valign-child"">
+        <a href=""{{store url=""men/tops-men/hoodies-sweatshirts.html""}}"" class=""button shop-now"">Men</a>
+    <a href=""{{store url=""women/tops-men/hoodies-sweatshirts.html""}}"" class=""button shop-now"">Women</a>
+</div>
+</div>
+</div>
+</div>
+<div class=""mg-bottom-insta"">
+{{widget type=""WeltPixel\InstagramWidget\Block\Widget\Instagram"" instagram_client_id=""497c20a7240342e6b2d8ac79ff33ae46"" instagram_access_token=""10458561472.497c20a.b17db60d4d7149e5aae460a31caf8961"" title=""#PEARL ON INSTAGRAM"" description=""Instagram Fresh Styles, Designer Brands‎"" images_per_row=""col-4"" limit=""4"" sort_by=""none"" resolution=""standard_resolution"" feed_type=""user"" user_id=""10458561472"" type_name=""WeltPixel InstagramWidget""}}
+</div>
+</div>
+</div>
+",1,,,,,,,,"
+.breadcrumbs{display:none;}
+",,,,,,,"
+require(['jquery', 'WeltPixel_SampleData/js/caption'], function($) {
+    $('.hcaption').hcaptions({
+        onshow: hideContent,
+        onhide: showContent,
+    });
+
+    function hideContent()
+    {
+        var container = $(this.target).closest('.box-content');
+        container.find('.content-wrapper').removeClass('visible');
+    }
+    function showContent()
+    {
+        var container = $(this.target).closest('.box-content');
+        container.find('.content-wrapper').addClass('visible');
+    }
+});
+"

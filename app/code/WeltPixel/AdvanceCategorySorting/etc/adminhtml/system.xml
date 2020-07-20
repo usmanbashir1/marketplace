@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="weltpixel_advance_category_sorting" translate="label" type="text" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Category Sorting</label>
+            <tab>weltpixel</tab>
+            <resource>WeltPixel_AdvanceCategorySorting::AdvanceCategorySortingSettings</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable Category Sorting.</comment>
+                </field>
+                <comment>
+                    <![CDATA[
+                        <script type="text/javascript">
+                            require(['jquery', 'domReady!'], function(){
+                                var groups = [
+                                    'weltpixel_advance_category_sorting_position',
+                                    'weltpixel_advance_category_sorting_name',
+                                    'weltpixel_advance_category_sorting_price',
+                                    'weltpixel_advance_category_sorting_new_arrivals',
+                                    'weltpixel_advance_category_sorting_top_seller',
+                                    'weltpixel_advance_category_sorting_top_rated',
+                                    'weltpixel_advance_category_sorting_most_reviewed'
+                                ];
+
+                                if (jQuery('#weltpixel_advance_category_sorting_general_enable').val() != 1){
+                                    for (var i = 0; i < groups.length; i++) {
+                                        jQuery('#' + groups[i]).closest('.section-config').hide();
+                                    }
+                                }
+
+                                jQuery('#weltpixel_advance_category_sorting_general_enable').on('change', function(){
+                                    if (this.value != 1) {
+                                        for (var i = 0; i < groups.length; i++) {
+                                            jQuery('#' + groups[i]).closest('.section-config').hide();
+                                        }
+                                    } else {
+                                        for (var i = 0; i < groups.length; i++) {
+                                            jQuery('#' + groups[i]).closest('.section-config').show();
+                                        }
+                                    }
+                                })
+                            });
+                        </script>
+                    ]]>
+                </comment>
+            </group>
+
+            <group id="position" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Sort by Position</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Status</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <comment>Enable/Disable Sort by Position. Go to each category and set products positions.</comment>
+                    <depends>
+                        <field id="weltpixel_advance_category_sorting/general/enable">1</field>
+                    </depends>
+                </field>
+                <field id="name" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Name</label>
+                    <comment>Custom Name. Default is "Most Relevant".</comment>
+                    <depends>
+                        <field id="weltpixel_advance_category_sorting/general/enable">1</field>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <validate>validate-zero-or-greater validate-digits</validate>
+                    <comment>Sort order of option in drop-down. Make sure this value is not duplicated.</comment>
+                    <depends>
+                        <field id="weltpixel_advance_category_sorting/general/enable">1</field>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+
+            <group id="name" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Sort by Product Name</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Status</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <comment>Enable/Disable Sort by Product Name.</comment>
+                    <depends>
+                        <field id="weltpixel_advance_category_sorting/general/enable">1</field>
+                    </depends>
+                </field>
+                <field id="name" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Name</label>
+                    <comment>Custom Name. Default is "Alphabetically".</comment>
+                    <depends>
+                        <field id="weltpixel_advance_category_sorting/general/enable">1</field>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <validate>validate-zero-or-greater validate-digits</validate>
+                    <comment>Sort order of option in drop-down. Make sure this value is not duplicated.</comment>
+                    <depends>
+                        <field id="weltpixel_advance_category_sorting/general/enable">1</field>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+
+            <group id="price" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Sort by Price</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Status</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <comment>Enable/Disable Sort by Price.</comment>
+                    <depends>
+                        <field id="weltpixel_advance_category_sorting/general/enable">1</field>
+                    </depends>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <validate>validate-zero-or-greater validate-digits</validate>
+                    <comment>Sort order of option in drop-down. Make sure this value is not duplicated.</comment>
+                    <depends>
+                        <field id="weltpixel_advance_category_sorting/general/enable">1</field>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+
+            <group id="new_arrivals" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Sort by Newest Arrivals</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Status</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <comment>Enable/Disable Sort by Newest Arrivals. Products are ordered based on creation date.</comment>
+                </field>
+                <field id="name" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Name</label>
+                    <comment>Custom Name. Default is "Newest Arrivals".</comment>
+                    <depends>
+                        <field id="weltpixel_advance_category_sorting/general/enable">1</field>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <validate>validate-zero-or-greater validate-digits</validate>
+                    <comment>Sort order of option in drop-down. Make sure this value is not duplicated.</comment>
+                    <depends>
+                        <field id="weltpixel_advance_category_sorting/general/enable">1</field>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+
+            <group id="top_seller" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Sort by Best Selling</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Status</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <comment>Enable/Disable Sort by Best Selling. Make sure there are a few orders placed.</comment>
+                    <depends>
+                        <field id="weltpixel_advance_category_sorting/general/enable">1</field>
+                    </depends>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <validate>validate-zero-or-greater validate-digits</validate>
+                    <comment>Sort order of option in drop-down. Make sure this value is not duplicated.</comment>
+                    <depends>
+                        <field id="weltpixel_advance_category_sorting/general/enable">1</field>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+
+            <group id="top_rated" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Sort by Top Rated</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Status</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <comment>Enable/Disable Sort by Top Rated.</comment>
+                    <depends>
+                        <field id="weltpixel_advance_category_sorting/general/enable">1</field>
+                    </depends>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <validate>validate-zero-or-greater validate-digits</validate>
+                    <comment>Sort order of option in drop-down. Make sure this value is not duplicated.</comment>
+                    <depends>
+                        <field id="weltpixel_advance_category_sorting/general/enable">1</field>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+
+            <group id="most_reviewed" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Sort by Most Reviewed</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Status</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <comment>Enable/Disable Sort by Most Reviewed.</comment>
+                    <depends>
+                        <field id="weltpixel_advance_category_sorting/general/enable">1</field>
+                    </depends>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Position</label>
+                    <validate>validate-zero-or-greater validate-digits</validate>
+                    <comment>Sort order of option in drop-down. Make sure this value is not duplicated.</comment>
+                    <depends>
+                        <field id="weltpixel_advance_category_sorting/general/enable">1</field>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+
+        </section>
+    </system>
+</config>

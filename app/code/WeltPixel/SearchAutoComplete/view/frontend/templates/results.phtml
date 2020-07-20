@@ -1,0 +1,71 @@
+<?php /* @var $block \Magento\Catalog\Block\Product\AbstractProduct */ ?>
+
+<?php
+    $itemsCollection = $block->getData('collection');
+    $helper = $this->helper('WeltPixel\SearchAutoComplete\Helper\Data');
+    $storeId = $helper->getStoreId();
+    $sanitize = $helper->isEmptyCollection($itemsCollection);
+    $collectionSize = isset($itemsCollection) ? count($itemsCollection) - 1 : -1;
+    $helperPrice = $this->helper('Magento\Framework\Pricing\Helper\Data');
+    $isEnable = $helper->isEnabled();
+    $productDividerClass = $helper->isEnableProductDivider();
+    $resultHeader = $helper->getSearchResultHeaderText();
+    $maxItemsDisplayed = $helper->getMaxNumberItemsDisplayed($storeId);
+    $isShowImageThumbnail = $helper->isShowImageThumbnail();
+    $WidthOfTheImage = empty(trim($helper->getWidthOfTheImage())) ?  80 : (int) $helper->getWidthOfTheImage();
+    $isShowPrice = $helper->isShowPrice();
+    $getTextForNoSearchResult = $helper->getTextForNoSearchResult();
+    $isShowDescription = $helper->isShowDescription();
+    $MaxWordsProductDescription = empty(trim($helper->getMaxWordsProductDescription())) ?  10 : (int) $helper->getMaxWordsProductDescription() + 1;
+    $containerTextColor = $helper->getContainerTextColor() ;
+    $dividerColor = $helper->getDividerColor() ;
+    $searchVersion = $helper->getSearchVersion();
+    $displayResults = $helper->getTemplateResultsContainer();
+?>
+<?php if($isEnable) : ?>
+        <?php $i = 1; ?>
+        <?php if($collectionSize >= 1):?>
+            <?php if(!$searchVersion) : ?>
+                <div class="search-results-items"><?php echo __('Search result(s):')?><span> <?php echo $collectionSize; ?><?php echo __(' item(s)')?></span></div>
+            <?php endif; ?>
+
+            <ul class="product-list">
+                <?php foreach ($itemsCollection as $_product): ?>
+                    <?php if($i <= $maxItemsDisplayed && is_null($_product->getTitle())): ?>
+                        <?php $productImage = $_product->getImage();?>
+                        <li <?php if($productDividerClass && $displayResults != 1):  ?> style="border-bottom: 1px solid <?php echo $dividerColor; ?>" <?php endif;?>>
+                                <div class="block-flex">
+                                        <?php if($isShowImageThumbnail) : ?>
+                                            <div class="block-left">
+                                                <a href="<?php echo $_product->getUrl();?>">
+                                                    <img class="prod-img" src="<?php echo $productImage; ?>" width="<?php echo $WidthOfTheImage; ?>">
+                                                </a>
+                                            </div>
+                                        <?php endif; ?>
+                                    <div class="block-right">
+                                        <a href="<?php echo $_product->getUrl();?>" class="product-title" style="color: <?php echo $containerTextColor; ?>">
+                                           <?php echo $_product->getName(); ?>
+                                        </a>
+                                        <?php if($isShowPrice) : ?>
+                                            <span class="price"><?php echo $_product->getFinalPrice() ?></span>
+                                        <?php endif; ?>
+                                        <?php if($isShowDescription) : ?> <?php echo $helper->limitText($_product->getDescription(), $MaxWordsProductDescription)?><?php endif; ?>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                        </li>
+                        <?php   $i++;  ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </ul>
+            <?php if($collectionSize > $maxItemsDisplayed ): ?>
+        
+                    <div class="more-results">
+                        <a class="advanced_search" onclick="document.getElementById('search_mini_form').submit()" style="color:<?php echo $containerTextColor; ?>"><?php echo __('See all results')?></a>
+                    </div>
+              
+            <?php endif; ?>
+        <?php elseif($collectionSize != -1): ?>
+            <div class="text-no-result"><?php echo $getTextForNoSearchResult; ?></div>
+        <?php endif; ?>
+<?php endif; ?>

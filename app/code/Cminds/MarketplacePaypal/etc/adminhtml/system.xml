@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="cminds_marketplacepaypal"
+             translate="label"
+             sortOrder="1500"
+             class="cminds-icon">
+            <label>Cminds Marketplace Paypal</label>
+        </tab>
+        <section id="cminds_marketplacepaypal_configuration"
+                 translate="label"
+                 type="text"
+                 sortOrder="1300"
+                 showInDefault="1"
+                 showInWebsite="1"
+                 showInStore="1">
+            <class>separator-top</class>
+            <tab>supplierfrontend</tab>
+            <label>PayPal Vendor Payments Add-on</label>
+            <resource>Cminds_MarketplacePaypal::configuration</resource>
+            <group id="general"
+                   showInDefault="1">
+                <label>General</label>
+                <field id="enable"
+                       translate="label"
+                       type="select"
+                       sortOrder="10"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="transfer_type"
+                       translate="label"
+                       sortOrder="20"
+                       type="select"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Type</label>
+                    <source_model>Cminds\MarketplacePaypal\Model\Config\Source\Transfer\Type</source_model>
+                </field>
+                <field id="email_subject"
+                       translate="label"
+                       sortOrder="20"
+                       type="text"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Email Subject</label>
+                    <comment>Subject of letter about receipt from PayPal</comment>
+                </field>
+                <field id="currency"
+                       translate="label"
+                       sortOrder="20"
+                       type="text"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Currency</label>
+                    <comment>USD, RUB and etc. depends on PayPal app configuration</comment>
+                </field>
+            </group>
+            <group id="rest_api"
+                   showInDefault="1">
+                <label>Rest Api Settings</label>
+                <field id="payout_url"
+                       translate="label"
+                       type="text"
+                       sortOrder="10"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Payout Url</label>
+                    <comment>
+                        <![CDATA[
+                        https://api.sandbox.paypal.com/v1/payments/payouts
+                        ]]>
+                    </comment>
+                </field>
+                <field id="update_url"
+                       translate="label"
+                       type="text"
+                       sortOrder="12"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Update Payout Status Url</label>
+                    <comment>
+                        <![CDATA[
+                        https://api.sandbox.paypal.com/v1/payments/payouts/%s
+                        ]]>
+                    </comment>
+                </field>
+                <field id="client_id"
+                       translate="label"
+                       sortOrder="20"
+                       type="obscure"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <label>Client ID</label>
+                    <comment>
+                        <![CDATA[
+                        Create <a href="https://developer.paypal.com/docs/api/overview/">app</a> to get this configuration value
+                        ]]>
+                    </comment>
+                </field>
+                <field id="secret"
+                       translate="label"
+                       sortOrder="30"
+                       type="obscure"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Secret</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <comment>
+                        <![CDATA[
+                        Create <a href="https://developer.paypal.com/docs/api/overview/">app</a> to get this configuration value
+                        ]]>
+                    </comment>
+                </field>
+            </group>
+
+        </section>
+    </system>
+</config>

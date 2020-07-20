@@ -1,0 +1,68 @@
+<?php
+    $_helper = $this->helper('WeltPixel\ThankYouPage\Helper\Data');
+    // map settings
+    $mapSettings = $_helper->getGoogleMapSettings();
+    $mapStyle = 'width: ' . $mapSettings['map_width'] . '; height: ' . $mapSettings['map_height'];
+    $mapDragging = $mapSettings['map_dragging'];
+    $mapZoom = $mapSettings['map_zoom'];
+    // order details
+    $_order = $block->getLastOrder();
+    $shippingAddress = $_order->getShippingAddress() ? $block->addressToString($_order->getShippingAddress(), ['street', 'city', 'region', 'country_id', 'postcode']) : null;
+?>
+<?php if ($_helper->getGoogleApiKey() && $shippingAddress): ?>
+    <div class="google-map-wrapper">
+        <div class="google-map" id="map" style="<?= $mapStyle ?>"></div>
+        <script>
+            require([
+                "https://maps.googleapis.com/maps/api/js?key=<?= /* @escapeNotVerified */ $_helper->getGoogleApiKey() ?>"
+            ], function () {
+                var address = '<?= /* @escapeNotVerified */ $shippingAddress ?>',
+                    geoCoder = new google.maps.Geocoder(),
+                    map = new google.maps.Map(document.getElementById('map'),
+                        {
+                            zoom: <?= /* @escapeNotVerified */ $mapZoom ?>,
+                            draggable: <?= /* @escapeNotVerified */ $mapDragging ?>,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                        }
+                    );
+
+                geoCoder.geocode({address: address}, function(results, status){
+                    var resultLocations = [];
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        if (results) {
+                            for (var i = 0; i < results.length; i++) {
+                                var result = results[i];
+                                resultLocations.push({location:result.geometry.location});
+                            }
+
+                            var marker = new google.maps.Marker({
+                                position: resultLocations[0].location,
+                                map: map,
+                                animation: google.maps.Animation.DROP,
+                                title: '<?= /* @escapeNotVerified */ $shippingAddress ?>'
+                            });
+
+                            var contentString = '<div><p>Shipping Address</p><p><?= /* @escapeNotVerified */ $shippingAddress ?></p></div>',
+                                infowindow = new google.maps.InfoWindow({
+                                    content: contentString,
+                                    maxWidth: 200
+                                });
+
+                            setTimeout(function() {
+                                infowindow.open(map, marker);
+                            }, 1500);
+                            marker.addListener('click', function() {
+                                infowindow.open(map, marker);
+                            });
+
+                            map.panTo(resultLocations[0].location);
+                        }
+                    } else if (status == google.maps.GeocoderStatus.ZERO_RESULTS) {
+                        // address not found
+                        console.log('No valid coordinates');
+                    }
+                });
+            });
+        </script>
+    </div>
+<?php endif; ?>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="customer_login">
+        <observer name="sociallogin_login_observer" instance="WeltPixel\SocialLogin\Observer\LoginObserver" />
+    </event>
+    <event name="customer_register_success">
+        <observer name="sociallogin_register_observer" instance="WeltPixel\SocialLogin\Observer\RegistrationObserver" />
+    </event>
+</config>

@@ -1,0 +1,83 @@
+<?php
+$product = $block->getProduct();
+
+if( $product->getData('manufacturer_code')
+    && $block->isEnabled()
+):
+    $productCollection = $block->getProductCollection();
+    if( $productCollection->count() ){ ?>
+<div class = 'vendor-items-container'>
+<table class="table" >
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col"><?= __('Vendor name'); ?></th>
+            <th scope="col"><?= __('Comment'); ?></th>
+            <th scope="col"><?= __('Price'); ?></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody><?php 
+        $counter = 0;
+        foreach ($productCollection as $vendorProduct) {
+            $postParams = $block->getAddToCartPostParams($vendorProduct); 
+            $counter++;
+        ?>
+        <tr class='<?= ( $counter%2 === 1 ? 'odd' : 'even' ) ?>'>
+            <th scope="row"><?= $counter; ?></th>
+            <td><?php // output vendor page link + venodr name 
+                $supplierData = $block->getSupplierData($vendorProduct); 
+                if($supplierData){
+                    if($name = isset($supplierData['name'])?$supplierData['name']:false){
+                        $link = isset($supplierData['link']) ? $supplierData['link'] : false; 
+                        $html = $supplierData['name'];
+                        if($link){
+                            $html = "<a href='{$link}' target='_blank'>{$html}</a>";
+                        } 
+                        echo $html;
+                    }
+                }
+                ?>
+            </td>
+            <td>
+                <div class = 'vendor-description'><?= $vendorProduct->getData('vendor_description'); ?></div>
+            </td>
+            <td>
+                <div class = 'vendor-price'><?php echo $block->getProductPrice($vendorProduct); ?></div>
+            </td>
+            <td>
+                <div class = 'add-to-cart'>
+                    <form id='vendor-addtocart-<?= $postParams['data']['product'] ?>'
+                    action="<?= $postParams['action'] ?>" method="post">
+                    <?php echo $block->getBlockHtml('formkey'); ?>
+                    <input type="hidden" name="product" value="<?= $postParams['data']['product'] ?>">
+                    <input type="hidden" name="uenc" value="<?= $postParams['data']['uenc'] ?>">    
+                        <button type="submit" title="<?= __('Add to Cart');?>" class="action tocart primary">
+                            <span><?= __('Add to Cart');?></span>
+                        </button>
+                    </form>
+                </div>
+            </td>
+        </tr><?php
+        }
+        ?>
+    </tbody>
+</table>
+</div><?php
+    }
+    ?>
+    <script type="text/javascript">
+//< ![CDATA[
+require(['jquery'], function($) {
+    $(document).ready(function() {
+        // remove add to cart
+        if( $('.product-add-form, #product_addtocart_form').length ){
+            $('.product-add-form, #product_addtocart_form').remove();
+        } else {
+            $('#product-addtocart-button').closest('form').remove();
+        }
+    });
+});
+//]]>
+    </script>
+<?php endif; ?>

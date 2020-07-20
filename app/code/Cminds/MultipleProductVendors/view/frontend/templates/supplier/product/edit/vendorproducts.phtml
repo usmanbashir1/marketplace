@@ -1,0 +1,73 @@
+<?php /* check if module enabled */ ?>
+<?php if($block->isEnabled()): ?>
+<?php $product = $block->getProduct(); ?>
+<h1 class="text-center">
+    <?php /* @escapeNotVerified */ echo __('Edit Product'); ?> - <?php echo $product->getName(); ?>
+    <small>(<?php /* @escapeNotVerified */ echo __('SKU'); ?>: <?php echo $product->getSku(); ?>)</small>
+</h1>
+<div class="additional-fields-container container main-container vendor-container">
+    <?= $this->getChildHtml('supplier.product.vendorproducts.from') ?>
+</div>
+
+<script type="text/javascript">
+//< ![CDATA[
+require(['jquery'], function($) {
+    $(document).ready(function() {
+        var oldTitle = '';
+        var targetUrl = '<?= $block->getCreateLink() ?>';
+
+        $('.product-selector-container').appendTo('.main-container.vendor-container');
+        <?php // show product creation form ?>
+        $('#product_create_form .cancel').remove();
+
+        $('.additional-fields-container').on('click', '#product_create_form .submit-data', function(event){
+<?php       // validate form ?>
+            if ($('#product_create_form').valid()) {
+                $("#product_create_form .submit-data").attr("disabled", true);
+
+                <?php // send ajax request ?>
+
+                var data = $('#product_create_form').serialize()+'&'+$.param({ 'producteditpage': true });
+
+                $.ajax({
+                    url: targetUrl,
+                    type: "POST",
+                    data : data,
+                    showLoader: true, // enable loader
+                    context: '.additional-fields-container'
+                }).done(function (data) {
+                    console.log('done');
+                    console.log(data);
+                    console.log(data.success);
+
+                    if(true === data.success){
+
+                    }
+                    return true;
+                }).fail(function() {
+                    console.log('fail');
+
+                    console.log('an error occured');
+                })
+                .always(function() {
+                    $('#product_create_form .submit-data').removeAttr("disabled");
+                });;
+            }
+        });
+
+        <?php // cancel prodcut selection ?>
+        $('.additional-fields-container').on('click', '#product_create_form  .cancel', function(event){
+            cancelCreationFrom();
+        });
+    });
+});
+//]]>
+</script>
+<script type="text/x-magento-init">
+    {
+        "#product_create_form": {
+            "validation": {}
+        }
+    }
+</script>
+<?php endif; ?>

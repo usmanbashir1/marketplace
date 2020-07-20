@@ -1,0 +1,27 @@
+{
+    "name": "weltpixel/m2-weltpixel-category-page",
+    "description": "WeltPixel CategoryPage Module",
+    "require": {
+        "weltpixel/m2-weltpixel-backend": "*",
+        "weltpixel/m2-weltpixel-frontend-options": "*",
+        "weltpixel/m2-weltpixel-owl-carousel-slider": "*",
+        "weltpixel/m2-weltpixel-lazyload": "*",
+        "magento/module-catalog": "*",
+        "magento/module-catalog-search": "*",
+        "magento/module-swatches": "*"
+    },
+    "type": "magento2-module",
+    "version": "1.9.7",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "WeltPixel\\CategoryPage\\": ""
+        }
+    }
+}

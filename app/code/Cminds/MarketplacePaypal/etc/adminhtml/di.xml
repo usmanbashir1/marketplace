@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Cminds\Marketplace\Block\Adminhtml\Billing\Billinglist\Grid\Renderer\Action">
+        <plugin name="adminAddPayButtonBlock"
+                type="\Cminds\MarketplacePaypal\Block\Plugin\Adminhtml\Billing\Billinglist\Grid\Renderer\Action\Plugin"
+                sortOrder="10"/>
+    </type>
+</config>

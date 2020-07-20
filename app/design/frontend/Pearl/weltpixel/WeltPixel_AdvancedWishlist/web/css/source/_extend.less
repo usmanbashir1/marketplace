@@ -1,0 +1,31 @@
+& when (@media-common = true) {
+    .theme-pearl {
+        &.wishlist-index-index {
+            .products-grid.wishlist {
+                .product-item {
+                    .price-box {
+                        text-align: center;
+                    }
+                    .product-reviews-summary {
+                        text-align: center;
+                    }
+                }
+            }
+            .actions-toolbar {
+                padding-top: 50px;
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .theme-pearl {
+        &.wishlist-index-index {
+            .products-grid.wishlist {
+                .product-reviews-summary {
+                    margin-left: 100px;
+                }
+            }
+        }
+    }
+}

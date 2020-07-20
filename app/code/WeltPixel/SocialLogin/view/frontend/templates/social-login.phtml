@@ -1,0 +1,21 @@
+<?php $notLoginPage = $this->getCurrentPageRedirectUrl()?>
+
+<script>
+    window.skipModules = <?=$this->getSkipModules();?>;
+    window.queryParam = '<?=\WeltPixel\SocialLogin\Helper\Data::REFERER_STORE_PARAM_NAME ?>';
+    window.isSlGuestCheckoutEnabled = "<?=$this->helper('WeltPixel\SocialLogin\Helper\Data')->isGuestCheckoutEnabled(); ?>";
+    require(['slReferer']);
+</script>
+
+<form style="display:none;"
+      class="form"
+      action="<?php /* @escapeNotVerified */ echo $block->getUrl('sociallogin/account/loginPost', ['_secure' => true]) ?>"
+      method="post"
+      id="sociallogin-form"
+      data-mage-init='{"validation":{}}'
+>
+    <?= $block->getBlockHtml('formkey') ?>
+    <input id="sociallogin-referer" name="<?= \Magento\Customer\Model\Url::REFERER_QUERY_PARAM_NAME ?>" type="hidden" value="" />
+    <input name="sociallogin-checkout" type="hidden" value="<?=$notLoginPage?>" />
+    <input id="sociallogin-submit" type="submit" value="" />
+</form>

@@ -1,0 +1,93 @@
+<?php $question = $block->getQuestion();?>
+<div class="container main-container vendor-container">
+    <h1 class="text-center"><h1><?php echo $block->escapeHtml($block->getTitle()) ?></h1>
+    <div class="row">
+        <div class="col-md-12 form-container">
+            <form name="product_create_form" id="product_create_form"
+                  action="<?php /* @escapeNotVerified */ echo $block->getUrl('marketplaceqa/questions/save') ?>"
+                  method="post" >
+                  <input type="hidden" name="id" value="<?php echo $question->getId(); ?>">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <div class="col-md-12 label-container">
+                                <label for="customer_name">
+                                    <?php echo __('Author Name'); ?>
+                                    <span class="required">*</span>:
+                                </label>
+                            </div>
+                            <div class="col-md-12 input-container">
+                                <input type="text"
+                                       id="customer_name"
+                                       name="customer_name"
+                                       class="input-text form-control required-entry"
+                                       value="<?php /* @escapeNotVerified */ echo $question->getData('customer_name'); ?>"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12 label-container">
+                                <label for="question">
+                                    <?php echo __('Question'); ?>
+                                    <span class="required">*</span>:
+                                </label>
+                            </div>
+                            <div class="col-md-12 input-container">
+                                <textarea id="question"
+                                          name="question"
+                                          class="input-text form-control required-entry form-control wysiwyg"
+                                          rows="15"><?php /* @escapeNotVerified */ echo $question->getData('question'); ?></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-12 label-container">
+                                <label for="answer">
+                                    <?php echo __('Answer'); ?>
+                                    <span class="required">*</span>:
+                                </label>
+                            </div>
+                            <div class="col-md-12 input-container">
+                                <textarea id="answer"
+                                          name="answer"
+                                          class="input-text form-control required-entry wysiwyg"
+                                          rows="15"><?php /* @escapeNotVerified */ echo $question->getData('answer'); ?></textarea>
+                            </div>
+                        </div>
+ 
+
+                        <div class="form-group">
+                            <div class="col-md-12 input-container">
+                                <div class="checkbox">
+								  <label>
+								  	<input type="checkbox" 
+								  		   name="visible_on_frontend"
+								  		   <?php /* @escapeNotVerified */ echo $question->getData('visible_on_frontend') == 1 ? 'checked': '';?> ><?php echo __('Visibility On Frontend'); ?></label>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-5 col-sm-offset-1 col-md-offset-1 right sidebar">
+                        <div class="form-group">
+                        	&nbsp;
+                        </div>
+                    </div>
+                </div>
+
+                <span class="clearfix"></span>
+
+                <div class="row">
+                    <div class="col-md-2 col-sm-4 col-sm-offset-4 col-md-offset-5 btn-save-fix">
+                        <input type="submit"
+                               name="submit"
+                               id="submit"
+                               class="btn btn-primary"
+                               value="<?php /* @escapeNotVerified */ echo __('Save QA') ?>"
+                        />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

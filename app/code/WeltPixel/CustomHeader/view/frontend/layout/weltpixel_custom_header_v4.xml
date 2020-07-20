@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+
+		<referenceBlock name="navigation.sections">
+			<arguments>
+				<argument name="group_css" xsi:type="string">nav-sections-4 nav-sections</argument>
+			</arguments>
+		</referenceBlock>
+
+		<move element="minicart" destination="header.right" after="-"/>
+		<move element="currency" destination="header.panel" after="header.links"/>
+		<move element="store_language" destination="header.panel" after="currency"/>
+		<move element="header.right" destination="header.panel"/>
+		<move element="header.container" destination="header.container.v4"/>
+		<move element="compare-link-wrapper" destination="header.panel" before="-"/>
+
+		<referenceContainer name="header.container">
+			<referenceContainer name="header-wrapper">
+				<container name="header.right" as="header_right" label="Page Header Right" htmlTag="div" htmlClass="header_right" after="logo">
+					<block class="Magento\Framework\View\Element\Template" name="top.search" as="topSearch" after="-" template="Magento_Search::form.mini.phtml"/>
+				</container>
+			</referenceContainer>
+		</referenceContainer>
+
+
+		<referenceContainer name="page.wrapper">
+			<container name="header.container.v4" as="header_container_v4" label="Page Header Container V4" htmlTag="div" htmlClass="page-header page-header-v4" before="-"/>
+		</referenceContainer>
+
+		<referenceBlock name="top.search">
+			<action ifconfig="weltpixel_custom_header/search_options/version" method="setTemplate">
+				<argument  name="template" xsi:type="string">WeltPixel_CustomHeader::form.mini.phtml</argument>
+			</action>
+		</referenceBlock>
+
+		<referenceContainer name="before.body.end">
+			<!--<block class="Magento\Framework\View\Element\Template" name="welpixel.customheader.init-v4" template="WeltPixel_CustomHeader::init-v4.phtml" />-->
+		</referenceContainer>
+	</body>
+</page>

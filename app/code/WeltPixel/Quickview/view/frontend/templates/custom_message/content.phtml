@@ -1,0 +1,33 @@
+<?php
+/** @var \WeltPixel\Quickview\Helper\Data $_helper */
+$_helper = $this->helper('WeltPixel\Quickview\Helper\Data');
+$customMsg = $_helper->getCustomMessageContent();
+$customMsgBgColor = $_helper->getCustomMessageBgColor();
+$customMsgFontColor = $_helper->getCustomMessageFontColor();
+$customMsgFontSize = $_helper->getCustomMessageFontSize();
+$customMsgCustomCss = $_helper->getCustomMessageCustomCss();
+?>
+<style scoped>
+    .quickview-custom-message {
+        <?php if (strlen($customMsgBgColor)) : ?>
+        background-color: <?= $customMsgBgColor ?>;
+        <?php endif; ?>
+    }
+    .quickview-custom-message,
+    .quickview-custom-message p,
+    .quickview-custom-message span,
+    .quickview-custom-message a {
+        <?php if (strlen($customMsgFontColor)) : ?>
+        color: <?= $customMsgFontColor ?>;
+        <?php endif; ?>
+        <?php if (strlen($customMsgFontSize)) : ?>
+        font-size: <?= $customMsgFontSize ?>;
+        <?php endif; ?>
+    }
+
+    <?php if (strlen($customMsgCustomCss)): ?>
+    <?php echo $customMsgCustomCss; ?>
+    <?php endif; ?>
+
+</style>
+<div id="quickview-dynamic-message" class="quickview-dynamic-message"><?= $customMsg ?></div>

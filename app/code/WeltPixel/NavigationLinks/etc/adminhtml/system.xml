@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="weltpixel_megamenu" translate="label" type="text" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Mega Menu</label>
+            <tab>weltpixel</tab>
+            <resource>WeltPixel_NavigationLinks::MegamenuSettings</resource>
+            <group id="notification" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>WeltPixel Mega Menu Instructions</label>
+                <fieldset_css>weltpixel-recommended-header active</fieldset_css>
+                <field id="notification_msg" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>WeltPixel\NavigationLinks\Block\Adminhtml\System\Config\Notification</frontend_model>
+                </field>
+            </group>
+            <group id="megamenu" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="width_threshold" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Mobile Menu Breakpoint</label>
+                    <validate>validate-number validate-not-negative-number</validate>
+                    <depends>
+                        <field id="weltpixel_megamenu/megamenu/enable">1</field>
+                    </depends>
+                    <comment><![CDATA[Insert the breakpoint when navigation menu changes to mobile look and behavior (value in pixels). Ex. 1050<br/>Note for Pearl Theme users: this value should be
+                    greater than the value from<br/><b>Frontend Options -> Breakpoints -> Screen m</b> field.]]></comment>
+                    <tooltip>This option is useful when the length of navigation menu is longer than the width of the screen.</tooltip>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

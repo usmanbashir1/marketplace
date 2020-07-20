@@ -1,0 +1,58 @@
+<?php
+/** @var  \WeltPixel\Newsletter\Helper\Data $_helper */
+$_helper = $this->helper('WeltPixel\Newsletter\Helper\Data');
+?>
+<?php if (!$_helper->canShowPopup()) : ?>
+    <?php
+        $countPages = $_helper->canShowPopup(true);
+        if (!$countPages) :
+            return;
+        else :
+            $visitedPages = $_helper->getVisitedPages();
+            ?>
+            <span class="justCountPage" style="display: none"></span>
+            <script type="text/x-magento-init">
+                {
+                    ".justCountPage": {
+                        "WeltPixel_Newsletter/js/widget/newsletterpopup": {
+                            "justCountPages": true,
+                            "visitedPages": "<?php echo $visitedPages ?>"
+                        }
+                    }
+                }
+            </script>
+        <?php endif; ?>
+<?php else: ?>
+    <?php
+    $displayBlockId = $_helper->getDisplayBlock();
+    $cookieLifeTime = $_helper->getLifeTime();
+    $cookieName = $_helper->getCookieName();
+    $blockContent = $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId($displayBlockId)->toHtml();
+    $visitedPages = $_helper->getVisitedPages();
+    $secondsToDisplay = $_helper->getSecondsToDisplay();
+    $closeOption = $_helper->getCloseOption();
+    $isRequestAjax = $_helper->isRequestAjax();
+
+    $closeOnOverlayAlso = false;
+    if ($closeOption == 2) {
+        $closeOnOverlayAlso = true;
+    }
+    ?>
+    <div class="weltpixel_newsletter" style="display: none">
+        <?php echo $blockContent; ?>
+    </div>
+    <script type="text/x-magento-init">
+    {
+      ".weltpixel_newsletter": {
+        "WeltPixel_Newsletter/js/widget/newsletterpopup": {
+          "closeOnOverlayAlso": "<?php echo $closeOnOverlayAlso ?>",
+          "cookieName": "<?php echo $cookieName ?>",
+          "cookieLifetime": "<?php echo $cookieLifeTime ?>",
+          "visitedPages": "<?php echo $visitedPages ?>",
+          "secondsToDisplay": "<?php echo $secondsToDisplay ?>",
+          "isAjax": "<?php echo $isRequestAjax ?>"
+        }
+      }
+    }
+</script>
+<?php endif; ?>

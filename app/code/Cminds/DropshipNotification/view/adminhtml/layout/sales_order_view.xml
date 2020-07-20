@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Cminds DropshipNotification adminhtml layout update for sales_order_view route.
+ *
+ * @category Cminds
+ * @package  Cminds_DropshipNotification
+ * @author   Piotr Pierzak <piotr@cminds.com>
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="sales_order_tabs">
+            <action method="addTab">
+                <argument name="name" xsi:type="string">order_dropship</argument>
+                <argument name="block" xsi:type="string">Cminds\DropshipNotification\Block\Adminhtml\Order\View\Tab\Dropship</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>

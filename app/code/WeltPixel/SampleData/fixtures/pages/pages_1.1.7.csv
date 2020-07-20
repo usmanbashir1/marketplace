@@ -1,0 +1,133 @@
+title,page_layout,meta_keywords,meta_description,identifier,content_heading,content,is_active,sort_order,layout_update_xml,custom_theme,custom_root_template,custom_layout_update_xml,custom_theme_from,custom_theme_to,css_global,css_phone_small,css_phone,css_tablet_small,css_tablet,css_desktop,css_desktop_large,custom_js
+"Home Page V9",1column,,,home-page-v9,"","
+<div class=""container-fluid content-v8 content-v5 content-v9 nopadding"">
+    <div class=""wrapper-top-slider-v9"">{{widget_nr_1}}
+    </div>
+    <div class=""row equal equal_height equal_height_element margin-top-30-desktop flex-order margin-top-30-mobile"">
+        <div class=""col-md-9 col-xs-12 nopadding-mob"">
+            <div class=""single-image"">
+                <a href=""{{store url=""men/tops-men/hoodies-and-sweatshirts-men.html""}}""><img src=""{{media url=""wysiwyg/pearl_theme/chair.png""}}"" alt="""" /></a>
+            </div>
+        </div>
+        <div class=""col-md-3 col-xs-12 order-1 nopadding-mob"">
+            <div class=""bg-lightgreen fill"">
+                <div class=""feature-icon-content v9-table"">
+                    <div class=""v9-coll"">
+                        <div class=""features-box-icon"">
+                            <i class=""icon-line2-credit-card icon-v9""></i>
+                        </div>
+                        <h4 class=""features-box-title""><a href=""#"">Chair collection</a></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=""row equal equal_height equal_height_element margin-top-30-desktop flex-order"">
+        <div class=""col-md-3 col-xs-12 order-2 nopadding-mob"">
+            <div class=""bg-wheat fill "">
+                <div class=""feature-icon-content v9-table"">
+                    <div class=""v9-coll"">
+                        <div class=""features-box-icon"">
+                            <i class=""icon-cube icon-v9""></i>
+                        </div>
+                        <h4 class=""features-box-title""><a href=""#"">Sofas collection</a></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=""col-md-9 col-xs-12 order-1 nopadding-mob"">
+            <div class=""single-image"">
+                <a href=""{{store url=""men/tops-men/hoodies-and-sweatshirts-men.html""}}""><img src=""{{media url=""wysiwyg/pearl_theme/sofa.jpg""}}"" alt="""" /></a>
+            </div>
+        </div>
+    </div>
+    <div class=""row equal equal_height equal_height_element margin-top-30-desktop flex-order"">
+        <div class=""col-md-9 col-xs-12 nopadding-mob"">
+            <div class=""single-image"">
+                <a href=""{{store url=""men/tops-men/hoodies-and-sweatshirts-men.html""}}""><img src=""{{media url=""wysiwyg/pearl_theme/table.jpg""}}"" alt="""" /></a>
+           </div>
+        </div>
+        <div class=""col-md-3 col-xs-12 order-1 nopadding-mob"">
+            <div class=""bg-sky fill"">
+                <div class=""feature-icon-content v9-table"">
+                    <div class=""v9-coll"">
+                        <div class=""features-box-icon"">
+                            <i class=""icon-coffee2 icon-v9""></i>
+                        </div>
+                        <h4 class=""features-box-title""><a href=""#"">Table collection</a></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=""row equal equal_height equal_height_element margin-top-30-desktop flex-order"">
+        <div class=""col-md-3 col-xs-12 order-2 nopadding-mob"">
+            <div class=""bg-coral fill"">
+                <div class=""feature-icon-content v9-table"">
+                    <div class=""v9-coll"">
+                        <div class=""features-box-icon"">
+                            <i class=""icon-lightbulb icon-v9""></i>
+                        </div>
+                        <h4 class=""features-box-title""><a href=""#"">Lighting collection</a></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=""col-md-9 col-xs-12 order-1 nopadding-mob"">
+            <div class=""single-image"">
+                <a href=""{{store url=""men/tops-men/hoodies-and-sweatshirts-men.html""}}""><img src=""{{media url=""wysiwyg/pearl_theme/light.jpg""}}"" alt="""" /></a>
+            </div>
+        </div>
+    </div>
+
+    <div class=""row brands-slider"">{{widget_nr_2}}
+    </div>
+    <div class=""grey-background"">
+        <div class=""row"">
+            <div class=""col-xs-10 col-xs-offset-1 col-md-offset-0 col-md-6 col-sm-offset-3 col-sm-6"">
+                <div class=""flip-box"">
+                    <div class=""flip-box-before"">free shipping</div>
+                    <div class=""flip-box-after"">on all orders over $100</div>
+                </div>
+            </div>
+            <div class=""col-xs-10 col-xs-offset-1 col-md-offset-0 col-md-6 col-sm-offset-3 col-sm-6"">
+                <div class=""flip-box"">
+                    <div class=""flip-box-before"">free return</div>
+                    <div class=""flip-box-after"">free 90 days return</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+",1,,,,,,,,"
+.page-wrapper .breadcrumbs {display: none;}
+
+.theme-pearl .page-wrapper .page-main {
+    max-width: 100%;
+    width: 100%;
+    padding: 0px;
+}
+
+.theme-pearl .page-wrapper .page-main .columns, .theme-pearl .page-wrapper .page-main .page.messages {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+}
+
+#maincontent .column.main {
+    padding-bottom: 0px;
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .margin-top-30-mobile {
+        margin-top: 30px !important;
+    }
+
+    .content-v9 .v9-table .v9-coll {
+        height: auto;
+        padding: 30px;
+    }
+
+}
+",,,,,,,

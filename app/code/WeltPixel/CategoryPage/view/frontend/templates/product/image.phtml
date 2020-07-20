@@ -1,0 +1,48 @@
+<?php /** @var $block \Magento\Catalog\Block\Product\Image */ ?>
+<?php $lazyLoadHelper = $this->helper('WeltPixel\LazyLoading\Helper\Data');
+$pWidth = $lazyLoadHelper->getPlaceholderWidth() ?? '100%';
+$isRequestAjax = $lazyLoadHelper->isRequestAjax();
+$lazyLodImgSrc = $lazyLoadHelper->getImageLoader();
+$lazyLoadImgDataOriginal = $block->getImageUrl();
+if ($isRequestAjax) {
+    $pWidth = '100%';
+    $lazyLodImgSrc = $lazyLoadImgDataOriginal;
+}
+?>
+
+<?php
+$lazyLoadClass = '';
+if ($block->getLazyLoad()) {
+    $pWidth = '100%';
+    $lazyLoadClass = 'owl-lazy';
+} elseif ($lazyLoadHelper->startLoadingPlaceholder() && !$block->getOwlcarousel() ) {
+    $lazyLoadClass = 'lazy';
+}
+?>
+<img class="photo image <?php echo $lazyLoadClass; ?>"
+    <?php /* @escapeNotVerified */ echo $block->getCustomAttributes(); ?>
+    <?php if (!$block->getLazyLoad()): ?>
+        <?php if ($lazyLoadHelper->isEnabled() && $lazyLoadHelper->startLoadingPlaceholder() && !$block->getOwlcarousel()) : ?>
+            src="<?php /* @escapeNotVerified */ echo $lazyLodImgSrc; ?>"
+            data-original="<?php /* @escapeNotVerified */ echo $lazyLoadImgDataOriginal; ?>"
+            style="max-width:<?php echo $pWidth ?>"
+        <?php else:  ?>
+            src="<?php /* @escapeNotVerified */ echo $block->getImageUrl(); ?>"
+        <?php endif; ?>
+    <?php endif; ?>
+    <?php if ($block->getHoverImageUrl()) :  ?>
+        data-hoversrc="<?php /* @escapeNotVerified */ echo $block->getHoverImageUrl(); ?>"
+        data-origsrc="<?php /* @escapeNotVerified */ echo $lazyLoadImgDataOriginal; ?>"
+        onmouseover="this.setAttribute('data-tmp', this.src);this.src=this.getAttribute('data-hoversrc');"
+        onmouseout="this.src=this.getAttribute('data-tmp')"
+        onmousemove="if (this.getAttribute('data-hoversrc') != this.src) this.setAttribute('data-tmp', this.src)"
+    <?php endif; ?>
+     width="<?php /* @escapeNotVerified */ echo $block->getWidth(); ?>"
+     height="<?php /* @escapeNotVerified */ echo $block->getHeight(); ?>"
+     alt="<?php /* @escapeNotVerified */ echo $block->stripTags($block->getLabel(), null, true); ?>"
+    <?php if ($block->getLazyLoad()): ?>
+         data-src="<?php /* @escapeNotVerified */ echo $block->getImageUrl(); ?>"
+         data-src-retina="<?php /* @escapeNotVerified */ echo $block->getImageUrl(); ?>"
+         style="max-width:<?php echo $pWidth ?>"
+    <?php endif; ?>
+/>

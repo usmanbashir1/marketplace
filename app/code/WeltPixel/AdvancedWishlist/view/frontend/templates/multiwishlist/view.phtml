@@ -1,0 +1,104 @@
+<?php
+
+// @codingStandardsIgnoreFile
+
+/** @var \WeltPixel\AdvancedWishlist\Block\MultipleWishlist $block */
+$wishlists = $block->getMultipleWishlists();
+$imageBlock = $block->getLayout()->getBlock('customer.multiple.wishlist.item.image');
+$imagesLimit = 6;
+?>
+
+
+<a href="#" class="add-multiwishlist">
+    <span><?= __('Add New Wishlist') ?></span>
+</a>
+<div class="multiple-wishlist-container">
+
+<?php
+foreach ($wishlists as $wishlist) :
+    $wishlistName = $wishlist->getWishlistName();
+    $itemsNr = count($wishlist->getItemCollection());
+    $items = $wishlist->getItemCollection()->clear()->setPageSize($imagesLimit)->setCurPage(1)->setOrder('added_at');
+    $wishListImages = [];
+    foreach ($items as $item) {
+        $wishListImages[] =  $imageBlock->setItem($item)->toHtml();
+    }
+?>
+    <a class="multiple-wishlist-element" href="<?= $block->getUrl('wishlist/index/index', ['_secure' =>  true, 'wishlist_id' => $wishlist->getId()])?>">
+        <div class="multiple-wishlist-box-wrapper">
+            <?php for ($i = 0; $i< $imagesLimit; $i++) : ?>
+            <?php $image = isset($wishListImages[$i]) ? $wishListImages[$i] : '' ?>
+            <div class="box"><?= $image ?></div>
+        <?php endfor; ?>
+            <div class="box-bottom">
+                <div class="wishlist-title"><?= $wishlist->getWishlistName(); ?></div>
+                <div class="wishlist-items"><?= __('%1 items', $itemsNr); ?></div>
+                <span class="edit-multiwishlist"
+                      data-wishlist-id="<?= $wishlist->getWishlistId() ?>"
+                ></span>
+            </div>
+        </div>
+    </a>
+
+<?php endforeach; ?>
+</div>
+<div id="wishlist-popup-modal">
+    <form class="form form-wishlist-edit"
+          action="<?= $block->getUrl('wp_collection/multiwishlist/update', ['_secure' =>  true]) ?>"
+          method="post"
+          id="form-wishlist-edit"
+          data-mage-init='{"validation":{}}'>
+        <?php echo $block->getBlockHtml('formkey'); ?>
+        <input type="hidden" name="wishlist-id" id="wishlist-id" value="" />
+        <fieldset class="fieldset wishlist-edit" data-hasrequired="* Required Fields">
+            <div class="field wishlist-name required">
+                <label class="label" for="wishlist-name"><span><?= __('Wishlist Name'); ?></span></label>
+                <div class="control">
+                    <input name="wishlist-name" value="" placeholder="<?= __('Wishlist Name'); ?>" autocomplete="off" id="wishlist-name" type="text" class="input-text" title="<?= __('Wishlist Name'); ?>" data-validate="{required:true}">
+                </div>
+            </div>
+            <div class="wp-errors"></div>
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <button type="submit" class="action savewishlist primary" name="savewishlist" id="savewishlist">
+                        <span><?php echo __('Save'); ?></span>
+                    </button>
+                </div>
+                <div class="secondary">
+                    <button type="button" class="action deletewishlist secondary" name="deletewishlist" id="deletewishlist">
+                        <span><?php echo __('Delete'); ?></span>
+                    </button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+<script>
+    require(['jquery', 'WeltPixel_AdvancedWishlist/js/weltpixel_multiwishlist'],
+        function   ($, multiwishlist) {
+            $(document).ready(function() {
+                var wpErrorsContainer = $('.wp-errors');
+                multiwishlist.init({
+                    errorsContainer: wpErrorsContainer,
+                    deleteUrl: '<?= $block->getUrl('wp_collection/multiwishlist/delete', ['_secure' =>  true])  ?>'
+                });
+                $('.edit-multiwishlist').bind('click', function() {
+                    multiwishlist.editWishlist({
+                        wishlistId: $(this).attr('data-wishlist-id'),
+                        wishlistNameElm: $(this).parent().find('.wishlist-title')
+                    });
+                    return false;
+                });
+                $('.add-multiwishlist').bind('click', function() {
+                    multiwishlist.addWishlist();
+                    return false;
+                });
+                $('.form-wishlist-edit').submit(function(e) {
+                    var form = $(this);
+                    multiwishlist.submitWishlist(form);
+                    e.preventDefault();
+                });
+            });
+        });
+</script>

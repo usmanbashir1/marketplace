@@ -1,0 +1,15 @@
+title,page_layout,meta_keywords,meta_description,identifier,content_heading,content,is_active,sort_order,layout_update_xml,custom_theme,custom_root_template,custom_layout_update_xml,custom_theme_from,custom_theme_to,css_global,css_phone_small,css_phone,css_tablet_small,css_tablet,css_desktop,css_desktop_large,custom_js
+"404 Not Found",1column,,,weltpixel-no-route,"","
+<div class=""container-404 text-center"">
+<div class=""row"">
+<p class=""title-404"">404</p>
+<h1 class=""sub-title-404"">OOPS! THAT PAGE CAN'T BE FOUND.</h1>
+<p>This may be because of a mistyped URL, faulty referral or out-of-date search engine listing.</p>
+<p>You might want to check that URL again, or maybe do a search?</p>
+<p>{{block class=""Magento\Framework\View\Element\Template"" template=""WeltPixel_CustomHeader::form.mini.404.phtml""}}</p>
+</div>
+<p>Were you looking for something special?</p>
+<p>Here are some Suggestions that you might like...</p>
+<div class=""row"">{{widget type=""WeltPixel\OwlCarouselSlider\Block\Slider\Products"" products_type=""sell_products"" type_name=""WeltPixel - Products Carousel Widget""}}</div>
+</div>
+",1,,,,,,,,,,,,,,,

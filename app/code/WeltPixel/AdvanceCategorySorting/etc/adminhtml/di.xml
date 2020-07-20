@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Backend\App\AbstractAction">
+        <plugin
+            name="weltpixel-advance_category_sorting-utility"
+            type="WeltPixel\AdvanceCategorySorting\Plugin\Utility" sortOrder="1000" />
+    </type>
+    <type name="Magento\Catalog\Model\Config\Source\ListSort">
+        <plugin
+            name="weltpixel_advance_category_sorting_listsort"
+            type="WeltPixel\AdvanceCategorySorting\Plugin\Adminhtml\Model\Config\Source\ListSort" sortOrder="1" />
+    </type>
+    <type name="Magento\Catalog\Model\Category\Attribute\Source\Sortby">
+        <plugin
+            name="weltpixel_advance_category_sorting_sortby"
+            type="WeltPixel\AdvanceCategorySorting\Plugin\Adminhtml\Model\Category\Attribute\Source\Sortby" sortOrder="1" />
+    </type>
+</config>

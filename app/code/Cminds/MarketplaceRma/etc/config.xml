@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <cminds_marketplacerma>
+            <general>
+                <module_enabled>0</module_enabled>
+                <email_vendor_about_new_rma>0</email_vendor_about_new_rma>
+                <email_customer_about_approval>0</email_customer_about_approval>
+                <email_customer_about_status_change>0</email_customer_about_status_change>
+                <can_vendor_delete_rma>0</can_vendor_delete_rma>
+            </general>
+        </cminds_marketplacerma>
+    </default>
+</config>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Backend\App\AbstractAction">
+        <plugin name="weltpixel-productlabels-utility" type="WeltPixel\ProductLabels\Plugin\Utility" sortOrder="1000" />
+    </type>
+    <type name="Magento\Catalog\Model\ResourceModel\Product">
+        <plugin name="apply_productlabels_rules_after_product_save" type="WeltPixel\ProductLabels\Plugin\Indexer\Product\Save\ApplyRules"/>
+    </type>
+    <type name="Magento\Catalog\Model\Category">
+        <plugin name="apply_productlabels_after_products_assign" type="WeltPixel\ProductLabels\Plugin\Indexer\Category"/>
+    </type>
+</config>

@@ -1,0 +1,47 @@
+<?php $rmaOrders = $block->getRmaOrders(); ?>
+
+<?php if ($rmaOrders && count($rmaOrders)): ?>
+    <div class="table-wrapper orders-history">
+        <table class="data table table-order-items history" id="my-orders-table">
+            <caption class="table-caption"><?php /* @escapeNotVerified */ echo __('Orders') ?></caption>
+            <thead>
+                <tr>
+                    <th scope="col" class="col id"><?php /* @escapeNotVerified */ echo __('Returns #') ?></th>
+                    <th scope="col" class="col order"><?php /* @escapeNotVerified */ echo __('Order ID') ?></th>
+                    <th scope="col" class="col date"><?php /* @escapeNotVerified */ echo __('Date') ?></th>
+                    <th scope="col" class="col status"><?php /* @escapeNotVerified */ echo __('Status') ?></th>
+                    <th scope="col" class="col actions"><?php /* @escapeNotVerified */ echo __('Action') ?></th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($rmaOrders as $rmaOrder): ?>
+                    <tr>
+                        <td data-th="<?php echo $block->escapeHtml(__('Returns #')) ?>" class="col id"><?php /* @escapeNotVerified */ echo $rmaOrder->getData('id') ?></td>
+                        <td data-th="<?php echo $block->escapeHtml(__('Order ID')) ?>" class="col order"><?php /* @escapeNotVerified */ echo $rmaOrder->getData('increment_order_id') ?></td>
+                        <td data-th="<?php echo $block->escapeHtml(__('Date')) ?>" class="col date"><?php /* @escapeNotVerified */ echo $block->formatDate($rmaOrder->getCreatedAt()) ?></td>
+                        <td data-th="<?php echo $block->escapeHtml(__('Status')) ?>" class="col status"><?php /* @escapeNotVerified */ echo $rmaOrder->getData('status_name') ?></td>
+                        <td data-th="<?php echo $block->escapeHtml(__('Actions')) ?>" class="col actions">
+                            <a href="<?php /* @escapeNotVerified */ echo $block->getViewUrl($rmaOrder) ?>" class="action view">
+                                <span><?php /* @escapeNotVerified */ echo __('View') ?></span>
+                            </a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <?php if ($block->getPagerHtml()): ?>
+        <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+    <?php endif ?>
+<?php else: ?>
+    <div class="message info empty"><span><?php /* @escapeNotVerified */ echo __('You do not have any Returns related to your orders.'); ?></span></div>
+<?php endif ?>
+<div class="primary">
+    <a href="<?php echo $block->getCreateUrl();?>"
+       class="action save primary"
+       title="<?php /* @escapeNotVerified */ echo __('Create Returns') ?>">
+        <span>
+            <?php /* @escapeNotVerified */ echo __('Create Returns') ?>
+        </span>
+    </a>
+</div>

@@ -1,0 +1,551 @@
+@import 'source/_navigation_global.less';
+
+/** Custom Navigation style */
+.navigation {
+    position: unset !important;
+}
+.navigation > ul {
+    position: unset !important;
+}
+.navigation .megamenu {
+    position: unset;
+}
+.navigation .megamenu.disabled-link {
+    cursor: default !important;
+}
+.navigation .megamenu.disabled-link > a {
+    cursor: default !important;
+    text-decoration: none;
+}
+.navigation .megamenu.level0.has-active > .level-top,
+.navigation .megamenu.level0.active > .level-top {
+    border-bottom: 0 none;
+    color: #575757;
+}
+.navigation .megamenu.level0:hover > a {
+    color: #444444 !important;
+    text-shadow: 0 0 0 #000000;
+}
+.navigation .level0 .submenu .submenu-reverse {
+    left: 0 !important;
+}
+.navigation .megamenu.level0 .submenu .active > a,
+.navigation .megamenu.level0 .submenu .has-active > a {
+    border-bottom: 0 none;
+    color: #575757;
+}
+.navigation .megamenu a {
+    text-transform: uppercase;
+}
+.navigation .megamenu a.bold-menu,
+.navigation .megamenu a:hover {
+    color: #444444 !important;
+    text-shadow: 0 0 0 #000000;
+}
+.navigation .megamenu a.level-top {
+    padding: 0 10px;
+}
+.navigation .megamenu .submenu .level1 .submenu li {
+    margin-top: -5px !important;
+    padding: 0 10px 10px !important;
+}
+.navigation .megamenu.level-top-fullwidth .submenu,
+.navigation .megamenu.level-top-sectioned .submenu,
+.navigation .megamenu.level-top-boxed .submenu {
+    -webkit-box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.05);
+    -o-box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.05);
+    z-index: 5;
+}
+.navigation .megamenu.level-top-fullwidth .submenu .columns-group,
+.navigation .megamenu.level-top-sectioned .submenu .columns-group,
+.navigation .megamenu.level-top-boxed .submenu .columns-group {
+    padding: 0;
+}
+.navigation .megamenu.level-top-fullwidth .submenu .columns-group li,
+.navigation .megamenu.level-top-sectioned .submenu .columns-group li,
+.navigation .megamenu.level-top-boxed .submenu .columns-group li {
+    padding: 0 5px;
+}
+.navigation .megamenu.level-top-fullwidth .submenu .columns-group li > a,
+.navigation .megamenu.level-top-sectioned .submenu .columns-group li > a,
+.navigation .megamenu.level-top-boxed .submenu .columns-group li > a {
+    background-color: transparent;
+}
+.navigation .megamenu.level-top-fullwidth .submenu .columns-group li > a span,
+.navigation .megamenu.level-top-sectioned .submenu .columns-group li > a span,
+.navigation .megamenu.level-top-boxed .submenu .columns-group li > a span {
+    padding: 0 0 5px;
+    font-size: 1.4rem;
+}
+.navigation .megamenu.level-top-fullwidth .submenu .columns-group li > a:hover,
+.navigation .megamenu.level-top-sectioned .submenu .columns-group li > a:hover,
+.navigation .megamenu.level-top-boxed .submenu .columns-group li > a:hover {
+    background-color: transparent;
+}
+.navigation .megamenu.level-top-fullwidth .submenu .columns-group:first-child > li,
+.navigation .megamenu.level-top-sectioned .submenu .columns-group:first-child > li,
+.navigation .megamenu.level-top-boxed .submenu .columns-group:first-child > li {
+    padding-left: 0;
+}
+.navigation .megamenu.level-top-fullwidth .submenu .columns-group:last-child > li,
+.navigation .megamenu.level-top-sectioned .submenu .columns-group:last-child > li,
+.navigation .megamenu.level-top-boxed .submenu .columns-group:last-child > li {
+    padding-right: 0;
+}
+.navigation .megamenu.level-top-fullwidth .submenu .level1,
+.navigation .megamenu.level-top-sectioned .submenu .level1,
+.navigation .megamenu.level-top-boxed .submenu .level1 {
+    display: inline-block;
+    float: left;
+    margin-bottom: 0;
+    margin-top: 0;
+    width: auto;
+}
+.navigation .megamenu.level-top-boxed .submenu .level1 {
+    clear: both;
+}
+.navigation .megamenu.level-top-fullwidth .submenu .level1 .submenu,
+.navigation .megamenu.level-top-sectioned .submenu .level1 .submenu,
+.navigation .megamenu.level-top-boxed .submenu .level1 .submenu {
+    border: 0 none;
+    box-shadow: inherit;
+    display: contents !important;
+    position: relative;
+    left: 0 !important;
+}
+.navigation .megamenu.level-top-fullwidth .submenu .level1 .submenu li,
+.navigation .megamenu.level-top-sectioned .submenu .level1 .submenu li,
+.navigation .megamenu.level-top-boxed .submenu .level1 .submenu li {
+    cursor: pointer;
+    margin: 0;
+    padding: 0 10px 5px;
+    width: 100%;
+}
+.navigation .megamenu.level-top-fullwidth .submenu .level1 .submenu li > a,
+.navigation .megamenu.level-top-sectioned .submenu .level1 .submenu li > a,
+.navigation .megamenu.level-top-boxed .submenu .level1 .submenu li > a {
+    padding: 5px 10px;
+}
+.navigation .megamenu.level-top-fullwidth .submenu .level1 .submenu li > a:first-child,
+.navigation .megamenu.level-top-sectioned .submenu .level1 .submenu li > a:first-child,
+.navigation .megamenu.level-top-boxed .submenu .level1 .submenu li > a:first-child {
+    margin-top: 5px;
+}
+.navigation .megamenu.level-top-fullwidth .submenu [data-has-children],
+.navigation .megamenu.level-top-sectioned .submenu [data-has-children],
+.navigation .megamenu.level-top-boxed .submenu [data-has-children] {
+    margin-top: 0;
+}
+.navigation .megamenu.level-top-fullwidth .submenu [data-has-children] > a,
+.navigation .megamenu.level-top-sectioned .submenu [data-has-children] > a,
+.navigation .megamenu.level-top-boxed .submenu [data-has-children] > a {
+    font-size: 1.65rem;
+    line-height: 2;
+}
+.navigation .megamenu.level-top-fullwidth .submenu [data-has-children] > a span:last-child,
+.navigation .megamenu.level-top-sectioned .submenu [data-has-children] > a span:last-child,
+.navigation .megamenu.level-top-boxed .submenu [data-has-children] > a span:last-child {
+    border-bottom: 1px solid #cccccc;
+    font-size: 1.65rem;
+    padding: 0 0 5px;
+}
+.navigation .megamenu.level-top-fullwidth .submenu .level3 a span,
+.navigation .megamenu.level-top-sectioned .submenu .level3 a span,
+.navigation .megamenu.level-top-boxed .submenu .level3 a span {
+    text-transform: none;
+}
+.navigation .megamenu.level-top-fullwidth .submenu:not(:first-child) .active > a,
+.navigation .megamenu.level-top-sectioned .submenu:not(:first-child) .active > a,
+.navigation .megamenu.level-top-boxed .submenu:not(:first-child) .active > a {
+    border-left: 0 none;
+}
+
+.navigation .megamenu.level-top-default .submenu {
+    border: 0 none;
+    -webkit-box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.05);
+    -o-box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.05);
+}
+.navigation .megamenu.level-top-default .submenu li {
+    margin-bottom: 5px;
+}
+.navigation .megamenu.level-top-default .submenu li > a {
+    background-color: transparent;
+    padding-top: 8px;
+}
+.navigation .megamenu.level-top-default .submenu li > a:hover {
+    background-color: transparent;
+}
+.navigation .megamenu.level-top-default .submenu li > a:not(.parent) {
+    padding-top: 8px !important;
+    padding-bottom: 15px !important;
+}
+.navigation .megamenu.level-top-default .submenu li:first-child {
+    padding-top: 15px;
+    margin-bottom: 0 !important;
+}
+.navigation .megamenu.level-top-default .submenu li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 20px;
+}
+
+.navigation .megamenu.level-top-fullwidth {
+    position: unset;
+}
+.navigation .megamenu.level-top-fullwidth .level0.fullwidth {
+    position: absolute;
+    left: 0 !important;
+    background-color: transparent;
+    -webkit-box-shadow: 0 0 0 0 transparent;
+    -moz-box-shadow: 0 0 0 0 transparent;
+    -o-box-shadow: 0 0 0 0 transparent;
+    box-shadow: 0 0 0 0 transparent;
+}
+.navigation .megamenu.level-top-fullwidth .level0.fullwidth .fullwidth-wrapper {
+    background-color: #ffffff;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: absolute;
+    left: 0;
+    -webkit-box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.05);
+    -o-box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.05);
+}
+.navigation .megamenu.level-top-fullwidth .level0.fullwidth .fullwidth-wrapper .fullwidth-wrapper-inner {
+    margin: 0 auto;
+}
+.navigation .megamenu.level-top-fullwidth .level0.fullwidth .fullwidth-wrapper .fullwidth-wrapper-inner .columns-group {
+    padding-bottom: 5px;
+    padding-top: 10px;
+}
+.navigation .megamenu.level-top-fullwidth .level0.fullwidth .fullwidth-wrapper .fullwidth-wrapper-inner .columns-group > li.parent:last-child,
+.navigation .megamenu.level-top-fullwidth .level0.fullwidth .fullwidth-wrapper .fullwidth-wrapper-inner .columns-group > li:not(.parent):last-child {
+    padding-bottom: 20px;
+}
+
+.navigation .megamenu.level-top-sectioned .sectioned {
+    display: table;
+}
+.navigation .megamenu.level-top-sectioned .sectioned .columns-group {
+    display: table-cell !important;
+    float: none;
+    left: 0 !important;
+    top: 0 !important;
+    overflow: hidden;
+    padding-bottom: 25px;
+    vertical-align: top;
+    width: 100%;
+}
+.navigation .megamenu.level-top-sectioned .submenu .columns-group:last-child > li:not(.parent) {
+    padding-right: 20px;
+}
+.navigation .megamenu.level-top-sectioned .submenu .level1 {
+    clear: both;
+}
+.navigation .megamenu.level-top-sectioned .sectioned .columns-group li > a {
+    white-space: nowrap;
+}
+.navigation .megamenu.level-top-sectioned .sectioned .level1.submenu {
+    padding-top: 10px;
+}
+.navigation .megamenu.level-top-boxed .submenu .columns-group {
+    margin-top: 0;
+}
+.navigation .megamenu.level-top-boxed .boxed .submenu .columns-group {
+    right: inherit !important;
+    width: 100% !important;
+    padding-bottom: 0;
+}
+.navigation .megamenu.level-top-boxed .boxed .submenu .columns-group > li > a {
+    white-space: nowrap;
+}
+.navigation .megamenu.level-top-boxed .boxed .submenu .columns-group:last-child {
+    padding-bottom: 10px;
+}
+.navigation .megamenu.level-top-boxed .boxed .submenu .level1 {
+    margin-top: 0;
+}
+.navigation .megamenu.level-top-boxed .boxed.submenu .columns-group:first-child li:not(.parent) {
+    margin-top: 0 !important;
+}
+.navigation .megamenu.level-top-boxed .submenu .columns-group li {
+    padding-left: 0;
+}
+.navigation .megamenu.level-top-boxed .boxed.submenu .level1 .submenu li {
+    margin-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+.navigation .megamenu.level-top-boxed .boxed.submenu .level1 .submenu li > a:first-child {
+    margin-top: 0;
+    padding-top: 12px;
+    padding-bottom: 10px;
+}
+/** Pearl related styles */
+.theme-pearl .page-header-v3 .header.panel {
+    position: relative;
+}
+.theme-pearl .page-header-v3 .header.content {
+    position: relative;
+}
+.theme-pearl .page-header-v3 .header.content .sections,
+.theme-pearl .page-header-v3 .header.content .section-items,
+.theme-pearl .page-header-v3 .header.content .section-item-content,
+.theme-pearl .page-header-v3 .header.content .navigation,
+.theme-pearl .page-header-v3 .header.content .navigation > ul {
+    position: unset;
+}
+.theme-pearl .nav-sections {
+    z-index: 9 !important;
+}
+.theme-pearl .nav-sections .navigation .megamenu.level-top-fullwidth .submenu .columns-group li a,
+.theme-pearl .nav-sections .navigation .megamenu.level-top-fullwidth .submenu .columns-group li .level1.submenu > li,
+.theme-pearl .nav-sections .navigation .megamenu.level-top-fullwidth .submenu .columns-group li .level1.submenu >li a {
+    padding-left: 0 !important;
+}
+.theme-pearl .nav-sections .navigation .megamenu.level-top-fullwidth .submenu .columns-group {
+    padding: 5px 0 20px;
+}
+.theme-pearl .nav-sections .navigation .megamenu.level-top-fullwidth .submenu .level1 .submenu {
+    padding-top: 12px;
+    padding-bottom: 7px;
+}
+.theme-pearl .nav-sections .navigation .megamenu.level-top-boxed .submenu .columns-group {
+    margin: 0;
+    padding-bottom: 20px;
+    width: auto !important;
+}
+.theme-pearl .nav-sections .navigation .megamenu.level-top-boxed .submenu .columns-group li {
+    margin-top: 0;
+    padding-right: 0;
+    padding-left: 0;
+    width: auto !important;
+    float: left !important;
+    clear: both;
+}
+.theme-pearl .nav-sections .navigation .megamenu.level-top-boxed .submenu .columns-group:first-child {
+    padding-top: 10px;
+}
+.theme-pearl .nav-sections .navigation .megamenu.level-top-boxed .submenu .columns-group:first-child li:not(.parent) {
+    margin-top: 10px;
+}
+.theme-pearl .nav-sections.sticky-header-nav .navigation .megamenu.level-top-fullwidth .level0.fullwidth .fullwidth-wrapper {
+    top: 0 !important;
+}
+.theme-pearl .nav-sections.nav-sections .navigation .megamenu.level-top-fullwidth .level0.fullwidth .fullwidth-wrapper .fullwidth-wrapper-inner .columns-group:first-child {
+    margin-left: 0 !important;
+}
+.theme-pearl .nav-sections.nav-sections-2 .navigation .megamenu.level-top-fullwidth .level0.fullwidth .fullwidth-wrapper .fullwidth-wrapper-inner .columns-group:first-child {
+    /*margin-left: -20px;*/
+}
+
+/***********************
+*** Mega Menu Blocks ***
+************************/
+.navigation .megamenu .level0.submenu > li {
+    margin-bottom: 0;
+}
+.navigation .megamenu .level0.submenu .menu-block.block-container {
+    display: none;
+    overflow: hidden;
+}
+.navigation .megamenu .level0.submenu .menu-block.block-container p,
+.navigation .megamenu .level0.submenu .menu-block.block-container a,
+.navigation .megamenu .level0.submenu .menu-block.block-container ul,
+.navigation .megamenu .level0.submenu .menu-block.block-container ul li {
+    display: block !important;
+    padding: 5px 0 0;
+    margin: 0;
+    text-transform: none;
+}
+.navigation .megamenu .level0.submenu .menu-block.top-block {
+    clear: both;
+    padding: 0;
+    width: 100%;
+}
+.navigation .megamenu .level0.submenu .menu-block.right-block {
+    float: right;
+}
+.navigation .megamenu .level0.submenu .menu-block.bottom-block {
+    clear: both;
+    padding: 0;
+    width: 100%;
+}
+.navigation .megamenu .level0.submenu .menu-block.left-block {
+    float: left;
+}
+/*********************************************
+*** Mega Menu Blocks - specific menu types ***
+**********************************************/
+/* fullwidth megamenu */
+.navigation .megamenu.level-top-fullwidth .level0.submenu.fullwidth .fullwidth-wrapper .fullwidth-wrapper-inner .columns-group-block
+.navigation .megamenu.level-top-fullwidth .level0.submenu.fullwidth .fullwidth-wrapper .fullwidth-wrapper-inner .columns-group-block,
+.navigation .megamenu.level-top-fullwidth .level0.submenu.fullwidth .fullwidth-wrapper .fullwidth-wrapper-inner .columns-group-block .submenu-child {
+    padding: 0 !important;
+}
+.navigation .megamenu.level-top-fullwidth .level0.submenu.fullwidth .fullwidth-wrapper .fullwidth-wrapper-inner .columns-group-block.top-group {
+    clear: both;
+    width: 100%;
+}
+.navigation .megamenu.level-top-fullwidth .level0.submenu.fullwidth .fullwidth-wrapper .fullwidth-wrapper-inner .columns-group-block .top-block {
+    padding-top: 10px;
+}
+.navigation .megamenu.level-top-fullwidth .level0.submenu.fullwidth .fullwidth-wrapper .fullwidth-wrapper-inner .columns-group-block.bottom-group {
+    clear: both;
+    width: 100%;
+}
+.navigation .megamenu.level-top-fullwidth .level0.submenu.fullwidth .fullwidth-wrapper .fullwidth-wrapper-inner .columns-group-block .bottom-block {
+    padding-bottom: 10px;
+}
+.navigation .megamenu.level-top-fullwidth .level0.submenu.fullwidth .fullwidth-wrapper .fullwidth-wrapper-inner .columns-group-block .left-block {
+    padding: 18px 20px 20px 0;
+    width: 100%;
+}
+.navigation .megamenu.level-top-fullwidth .level0.submenu.fullwidth .fullwidth-wrapper .fullwidth-wrapper-inner .columns-group-block .right-block {
+    padding: 18px 0 20px 20px;
+    width: 100%;
+}
+/* sectioned megamenu */
+.navigation .megamenu.level-top-sectioned .level0.submenu.sectioned.has-menu-block .columns-group {
+    top: 0 !important;
+}
+.navigation .megamenu.level-top-sectioned .level0.submenu.sectioned.top-block-child .submenu-child:first-child {
+    padding: 10px 20px 0;
+}
+.navigation .megamenu.level-top-sectioned .level0.submenu.sectioned.bottom-block-child .submenu-child:last-child {
+    padding: 0 20px 15px;
+    width: 100%;
+}
+.navigation .megamenu.level-top-sectioned .level0.submenu.sectioned.left-block-child.top-block-child .submenu-child:nth-of-type(2) {
+    padding: 20px 0 20px 20px;
+}
+.navigation .megamenu.level-top-sectioned .level0.submenu.sectioned.left-block-child:not(.top-block-child) .submenu-child:nth-of-type(1) {
+    padding: 20px 0 15px 20px;
+}
+.navigation .megamenu.level-top-sectioned .level0.submenu.sectioned .right-block-child {
+    padding: 20px 20px 15px 0;
+    float: right;
+}
+.navigation .megamenu.level-top-sectioned .level0.submenu.sectioned.has-menu-block.left-block-child .submenu-child,
+.navigation .megamenu.level-top-sectioned .level0.submenu.sectioned.has-menu-block.right-block-child .submenu-child,
+.navigation .megamenu.level-top-sectioned .level0.submenu.sectioned.has-menu-block.right-block-child.top-block-child.bottom-block-child .submenu-child,
+.navigation .megamenu.level-top-sectioned .level0.submenu.sectioned.has-menu-block.left-block-child.top-block-child.bottom-block-child .submenu-child{
+    display: inline-block;
+    vertical-align: top;
+}
+.navigation .megamenu.level-top-sectioned .level0.submenu.sectioned.has-menu-block.right-block-child:not(.top-block-child) .submenu-child,
+.navigation .megamenu.level-top-sectioned .level0.submenu.sectioned.has-menu-block.right-block-child:not(.bottom-block-child) .submenu-child {
+    display: table-cell;
+}
+.navigation .megamenu.level-top-sectioned .level0.submenu.sectioned.has-menu-block.left-block-child.top-block-child.bottom-block-child .submenu-child:first-child,
+.navigation .megamenu.level-top-sectioned .level0.submenu.sectioned.has-menu-block.left-block-child.top-block-child.bottom-block-child .submenu-child:last-child,
+.navigation .megamenu.level-top-sectioned .level0.submenu.sectioned.has-menu-block.right-block-child.top-block-child.bottom-block-child .submenu-child:first-child,
+.navigation .megamenu.level-top-sectioned .level0.submenu.sectioned.has-menu-block.right-block-child.top-block-child.bottom-block-child .submenu-child:last-child,
+.navigation .megamenu.level-top-sectioned .level0.submenu.sectioned.has-menu-block.top-block-child.left-block-child .submenu-child:first-child,
+.navigation .megamenu.level-top-sectioned .level0.submenu.sectioned.has-menu-block.top-block-child.right-block-child .submenu-child:first-child,
+.navigation .megamenu.level-top-sectioned .level0.submenu.sectioned.has-menu-block.bottom-block-child.right-block-child .submenu-child:last-child,
+.navigation .megamenu.level-top-sectioned .level0.submenu.sectioned.has-menu-block.bottom-block-child.left-block-child .submenu-child:last-child{
+    display: block;
+}
+.navigation .megamenu.level-top-sectioned .level0.submenu.sectioned.has-menu-block.top-block-child.right-block-child .submenu-child:nth-of-type(3) {
+    float: right;
+}
+.navigation .megamenu.level-top-sectioned .level0.submenu.sectioned.has-menu-block.top-block-child.right-block-child.left-block-child .submenu-child:nth-of-type(3) {
+    float: none;
+}
+.navigation .megamenu.level-top-sectioned .level0.submenu.sectioned.has-menu-block.top-block-child.right-block-child.left-block-child .submenu-child:nth-of-type(4) {
+    float: right;
+}
+.navigation .megamenu.level-top-sectioned .level0.submenu.sectioned.bottom-block-child .submenu-child .columns-group {
+    padding-bottom: 0;
+}
+/* boxed megamenu */
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block .submenu-child,
+.navigation .megamenu.level-top-default .level0.submenu.default.has-menu-block .submenu-child {
+    display: block;
+    float: left;
+    clear: both;
+}
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child .submenu-child:first-child {
+    padding: 10px 20px 0;
+}
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.bottom-block-child .submenu-child:last-child {
+    padding: 0 20px 20px;
+}
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.left-block-child:not(.top-block-child) .submenu-child:nth-of-type(1),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.left-block-child.top-block-child .submenu-child:nth-of-type(2){
+    padding: 20px 0 10px 20px;
+}
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed .right-block-child {
+    padding: 20px 20px 15px 0;
+}
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.left-block-child:not(.top-block-child):not(.bottom-block-child):not(.right-block-child) .submenu-child:nth-of-type(1),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.right-block-child:not(.top-block-child):not(.bottom-block-child):not(.left-block-child) .submenu-child:nth-of-type(1),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.left-block-child:not(.right-block-child):not(.bottom-block-child) .submenu-child:nth-of-type(2),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.right-block-child:not(.left-block-child):not(.bottom-block-child) .submenu-child:nth-of-type(2),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.right-block-child.left-block-child:not(.bottom-block-child):not(.top-block-child) .submenu-child:nth-of-type(1),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.right-block-child.bottom-block-child:not(.left-block-child):not(.top-block-child) .submenu-child:nth-of-type(1),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.left-block-child.bottom-block-child:not(.right-block-child):not(.top-block-child) .submenu-child:nth-of-type(1),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.left-block-child.right-block-child:not(.bottom-block-child) .submenu-child:nth-of-type(2),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.bottom-block-child.right-block-child.left-block-child .submenu-child:nth-of-type(2),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.bottom-block-child.left-block-child:not(.right-block-child) .submenu-child:nth-of-type(2),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.left-block-child:not(.top-block-child):not(.bottom-block-child):not(.right-block-child) .submenu-child:nth-of-type(2),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.right-block-child:not(.top-block-child):not(.bottom-block-child):not(.left-block-child) .submenu-child:nth-of-type(2),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.right-block-child:not(.left-block-child):not(.bottom-block-child) .submenu-child:nth-of-type(3),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.right-block-child.left-block-child:not(.bottom-block-child):not(.top-block-child) .submenu-child:nth-of-type(3),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.right-block-child.bottom-block-child:not(.left-block-child):not(.top-block-child) .submenu-child:nth-of-type(2),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.left-block-child.right-block-child:not(.bottom-block-child) .submenu-child:nth-of-type(4),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.bottom-block-child.right-block-child:not(.left-block-child) .submenu-child:nth-of-type(3),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.bottom-block-child.right-block-child.left-block-child .submenu-child:nth-of-type(4),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.left-block-child:not(.right-block-child):not(.bottom-block-child) .submenu-child:nth-of-type(3),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.right-block-child.left-block-child:not(.bottom-block-child):not(.top-block-child) .submenu-child:nth-of-type(2),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.left-block-child.bottom-block-child:not(.right-block-child):not(.top-block-child) .submenu-child:nth-of-type(2),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.left-block-child.right-block-child:not(.bottom-block-child) .submenu-child:nth-of-type(3),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.bottom-block-child.left-block-child:not(.right-block-child) .submenu-child:nth-of-type(3),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.bottom-block-child.right-block-child.left-block-child .submenu-child:nth-of-type(3),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.bottom-block-child.right-block-child:not(.left-block-child) .submenu-child:nth-of-type(2){
+    display: inline-block;
+    vertical-align: top;
+}
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.left-block-child:not(.top-block-child):not(.bottom-block-child):not(.right-block-child) .submenu-child:nth-of-type(2),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.right-block-child:not(.top-block-child):not(.bottom-block-child):not(.left-block-child) .submenu-child:nth-of-type(2),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.right-block-child:not(.left-block-child):not(.bottom-block-child) .submenu-child:nth-of-type(3),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.right-block-child.left-block-child:not(.bottom-block-child):not(.top-block-child) .submenu-child:nth-of-type(3),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.right-block-child.bottom-block-child:not(.left-block-child):not(.top-block-child) .submenu-child:nth-of-type(2),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.left-block-child.right-block-child:not(.bottom-block-child) .submenu-child:nth-of-type(4),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.bottom-block-child.right-block-child:not(.left-block-child) .submenu-child:nth-of-type(3),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.bottom-block-child.right-block-child.left-block-child .submenu-child:nth-of-type(4),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.left-block-child:not(.right-block-child):not(.bottom-block-child) .submenu-child:nth-of-type(3),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.right-block-child.left-block-child:not(.bottom-block-child):not(.top-block-child) .submenu-child:nth-of-type(2),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.left-block-child.bottom-block-child:not(.right-block-child):not(.top-block-child) .submenu-child:nth-of-type(2),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.left-block-child.right-block-child:not(.bottom-block-child) .submenu-child:nth-of-type(3),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.bottom-block-child.left-block-child:not(.right-block-child) .submenu-child:nth-of-type(3),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.bottom-block-child.right-block-child.left-block-child .submenu-child:nth-of-type(3){
+    clear: none;
+}
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.left-block-child:not(.top-block-child):not(.bottom-block-child):not(.right-block-child) .submenu-child:nth-of-type(2),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.right-block-child:not(.top-block-child):not(.bottom-block-child):not(.left-block-child) .submenu-child:nth-of-type(2),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.right-block-child:not(.left-block-child):not(.bottom-block-child) .submenu-child:nth-of-type(3),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.right-block-child.left-block-child:not(.bottom-block-child):not(.top-block-child) .submenu-child:nth-of-type(3),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.right-block-child.bottom-block-child:not(.left-block-child):not(.top-block-child) .submenu-child:nth-of-type(2),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.left-block-child.right-block-child:not(.bottom-block-child) .submenu-child:nth-of-type(4),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.bottom-block-child.right-block-child:not(.left-block-child) .submenu-child:nth-of-type(3),
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.bottom-block-child.right-block-child.left-block-child .submenu-child:nth-of-type(4){
+    float: right;
+}
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.left-block-child:not(.top-block-child):not(.bottom-block-child):not(.right-block-child) .submenu-child:nth-of-type(2) .block-container,
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.right-block-child:not(.top-block-child):not(.bottom-block-child):not(.left-block-child) .submenu-child:nth-of-type(2) .block-container,
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.right-block-child:not(.left-block-child):not(.bottom-block-child) .submenu-child:nth-of-type(3) .block-container,
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.right-block-child.left-block-child:not(.bottom-block-child):not(.top-block-child) .submenu-child:nth-of-type(3) .block-container,
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.right-block-child.bottom-block-child:not(.left-block-child):not(.top-block-child) .submenu-child:nth-of-type(2) .block-container,
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.left-block-child.right-block-child:not(.bottom-block-child) .submenu-child:nth-of-type(4) .block-container,
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.bottom-block-child.right-block-child:not(.left-block-child) .submenu-child:nth-of-type(3) .block-container,
+.navigation .megamenu.level-top-boxed .level0.submenu.boxed.has-menu-block.top-block-child.bottom-block-child.right-block-child.left-block-child .submenu-child:nth-of-type(4) .block-container {
+    float: left;
+}
+.page-wrapper {
+    overflow: hidden;
+}

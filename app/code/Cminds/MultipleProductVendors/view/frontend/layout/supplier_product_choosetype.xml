@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Cminds\MultipleProductVendors\Block\Product\Create"
+                   name="supplier.product.choosetype.vendorproducts"
+                   template="Cminds_MultipleProductVendors::supplier/product/choosetype/vendorproducts.phtml"
+                   cacheable="false">
+                <block class="Cminds\MultipleProductVendors\Block\Product\Create"
+                    name='supplier.product.vendorproducts.from'
+                    template="Cminds_MultipleProductVendors::supplier/product/form.phtml" />
+            </block>
+        </referenceContainer>
+    </body>
+</page>

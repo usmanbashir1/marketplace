@@ -1,0 +1,45 @@
+/** NavigationLinks */
+& when (@media-common = true) {
+    @media only screen and (min-width: @screen__m) {
+        // desktop styles was moved separately in css/navigation_desktop.css
+    }
+    
+    @media only screen and (max-width: @screen__m) {
+        // mobile styles was moved separately in css/navigation_mobile.css
+    }
+    
+    @media screen and (max-width: 639px) {
+        .theme-pearl .page-wrapper .page-header.page-header-v1 .page-header .header.content .logo {
+            margin-bottom: 13px;
+            margin-top: 4px;
+        }
+        .theme-pearl.mobile-nav .page-header-v1 .page-header .header.content .block-search,
+        .theme-pearl.mobile-nav .page-header-v1 .page-header .header.content .minicart-wrapper {
+            margin-top: unset;
+        }
+        .theme-pearl.mobile-nav .page-header.page-header-v3 .page-header .block-search .control {
+            height: inherit;
+        }
+        .theme-pearl.mobile-nav .page-header.page-header-v2 .page-header .block-search {
+            position: absolute;
+            right: 0;
+            top: 90px;
+        }
+        .theme-pearl.mobile-nav .page-header.page-header-v2 .page-header .block-search .control {
+            height: initial;
+        }
+        .theme-pearl.mobile-nav .page-header.page-header-v2 .page-header .block-search #search {
+            position: relative;
+            top: 0;
+            left: -10px;
+        }
+    }
+    
+    @media only screen and (min-width: 1399px) and (max-width: 1439px) {
+        .nav-sections {
+            .section-item-content {
+                padding: 0 15px;
+            }
+        }
+    }
+}

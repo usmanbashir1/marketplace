@@ -1,0 +1,331 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="weltpixel_newsletter" translate="label" type="text" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Enhanced Newsletter Popup</label>
+            <tab>weltpixel</tab>
+            <resource>WeltPixel_Newsletter::NewsletterSettings</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Newsletter</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="version" translate="label comment" type="label" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Version</label>
+                    <comment><![CDATA[Choose one of the available design versions. Designs available can be viewed <a href="https://www.weltpixel.com/enhanced-newsletter-popup-magento-2.html" target="_blank">here.</a>]]></comment>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="overlay_color" translate="label comment" type="label" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Overlay Color</label>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                    <comment>Background color when popup is displayed. Specify a valid color code. Example: #000000</comment>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="overlay_opacity" translate="label comment" type="label" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Overlay Opacity</label>
+                    <comment>Choose how transparent/opaque you want the background to be when popup is displayed. Specify  avalue between 0 - 1.0. Example: 0.8</comment>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="display_mode" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Mode</label>
+                    <source_model>WeltPixel\Newsletter\Model\Config\Source\DisplayMode</source_model>
+                    <comment><![CDATA[ If this option is set to ‘Just Home Page’ - the popup will show up only on homepage after meeting the visibility conditions setup in the options below. <br/> If this option is set to ‘All pages’ - the popup will shop up on any page type once the visibility conditions are met.]]></comment>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="display_mobile" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display on mobile</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If this option is set to No, newsletter will only show up on desktop devices.</comment>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="mobile_version" translate="label comment" type="label" sortOrder="32" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Mobile Version</label>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                    <comment>Choose one of the available design options for mobile. Can be different from desktop version. </comment>
+                    <depends>
+                        <field id="enable">1</field>
+                        <field id="display_mobile">1</field>
+                    </depends>
+                </field>
+                <field id="display_after_pages" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display after visited pages</label>
+                    <validate>required-entry validate-number integer</validate>
+                    <comment> To show the newsletter popup on the landing page use 0 in this field. Popup will show up after the visited number of pages specified in this field.</comment>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="display_after_seconds" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Wait this amount of time to display(in seconds)</label>
+                    <comment>The popup will be displayed after this number of seconds on the page</comment>
+                    <validate>required-entry validate-number integer</validate>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="display_block" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Displayed Static Block</label>
+                    <comment>Please select the weltpixel_newsletter static block</comment>
+                    <source_model>WeltPixel\Newsletter\Model\Config\Source\DisplayBlock</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="popup_cookie_lifetime" translate="label comment" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Popup Lifetime</label>
+                    <comment>In days</comment>
+                    <validate>required-entry validate-greater-than-zero integer</validate>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="disable_popup" translate="label comment" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Disable newsletter pop-up</label>
+                    <source_model>WeltPixel\Newsletter\Model\Config\Source\DisplayDisableOptions</source_model>
+                    <comment>Based on this action, the popup is closed, disabled and not opened again until the Popup Lifetime period expires.</comment>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="terms_conditions_consent" translate="label comment" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable terms and condition consent</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Choose whether or not to display link to terms and conditons/privacy policy.</comment>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="terms_conditions_text" translate="label comment" type="textarea" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Terms and Condition text</label>
+                    <comment>Change text displayed when terms and conditions consent is enabled.</comment>
+                    <depends>
+                        <field id="enable">1</field>
+                        <field id="terms_conditions_consent">1</field>
+                    </depends>
+                </field>
+                <field id="terms_conditions_checkbox" translate="label comment" type="select" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Terms and Condition checkbox mandatory</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Choose whether or not to require the box to be checked before continuing.</comment>
+                    <depends>
+                        <field id="enable">1</field>
+                        <field id="terms_conditions_consent">1</field>
+                    </depends>
+                </field>
+                <field id="signup_steps" translate="label comment" type="label" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Signup Steps </label>
+                    <comment>When two steps is enabled, an additonal agreement step is required before the sign up button and email input field is available.</comment>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="signup_step_1_proceed_button_label" translate="label" type="label" sortOrder="125" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Step 1 - Proceed Button Label</label>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="signup_step_1_close_button" translate="label" type="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Step 1 - Enable No Thanks Button</label>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="signup_step_1_close_button_label" translate="label" type="label" sortOrder="135" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Step 1 - No Thanks Button Label</label>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="newsletter_submit_button_label" translate="label comment" type="label" sortOrder="145" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Newsletter Submit Button Label</label>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                    <comment>Change text displayed on sign up button</comment>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="newsletter_close_button" translate="label" type="label" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Newsletter No Thanks Button</label>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="newsletter_close_button_label" translate="label" type="label" sortOrder="155" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Newsletter Close Button Label</label>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="triggerbutton_separator" translate="button_label" type="text" sortOrder="158" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\SeparatorElement</frontend_model>
+                    <button_label>Trigger Button Options</button_label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="enable_trigger_button" translate="label comment" type="label" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Newsletter Popup Trigger Button</label>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                    <comment>Choose whether or not to display a button that manually brings up the popup. Stickied on the right side of the screen and visible on all pages. </comment>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="trigger_button_title" translate="label comment" type="label" sortOrder="162" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Trigger Button Title</label>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                    <comment>Text displayed on manual popup button.</comment>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="trigger_button_color" translate="label comment" type="label" sortOrder="165" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Trigger Button Text Color</label>
+                    <comment>Specify a valid color code; Example: #000000</comment>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="trigger_button_backgroundcolor" translate="label comment" type="label" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Trigger Button Background Color</label>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                    <comment>Specify a valid color code; Example: #000000</comment>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="popup_enable_gtm_tracking" translate="label comment" type="label" sortOrder="190" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Enable Google Tag Manager Tracking</label>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                    <comment><![CDATA[<b>Hint:</b> Requires Installation and Enable of <a href="https://www.weltpixel.com/google-analytics-enhanced-ecommerce-tag-manager-magento-2.html" target="_blank" >Google Analytics Enhanced Ecommerce PRO Extension</a>. This feature will allow you to track event impressions and event success signup. ]]></comment>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="exitintent" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Exit Intent</label>
+                <field id="enable_exitintent" translate="label comment" type="label" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Exit Intent</label>
+                    <comment>Displays newsletter popup only when user has the intent of navigating away from the page. Overrides amount of time selected in "Wait this amount of time to display".</comment>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                </field>
+                <field id="exitintent_disable_popup" translate="label comment" type="label" sortOrder="185" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Disable pop-up</label>
+                    <comment>Based on this action, the popup is closed, disabled and not opened again until the Popup Lifetime period expires.</comment>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                </field>
+                <field id="exitintent_display_user_subscribed" translate="label comment" type="label" sortOrder="190" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display if user already subscribed</label>
+                    <comment>If set to No, once a valid email address is used to subscribe, the popup will not display, regardless of whether or not the user signs in. </comment>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                </field>
+                <field id="exitintent_display_closed_popup" translate="label" type="label" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display if user closed popup</label>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                </field>
+                <field id="exitintent_version" translate="label comment" type="label" sortOrder="210" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Version</label>
+                    <comment><![CDATA[Choose one of the available design versions. Designs available can be viewed <a href="https://www.weltpixel.com/enhanced-newsletter-popup-magento-2.html" target="_blank">here.</a>]]></comment>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                </field>
+                <field id="exitintent_overlay_color" translate="label comment" type="label" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Overlay Color</label>
+                    <comment>Background color when popup is displayed. Specify a valid color code. Example: #000000</comment>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                </field>
+                <field id="exitintent_overlay_opacity" translate="label comment" type="label" sortOrder="230" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Overlay Opacity</label>
+                    <comment>Choose how transparent/opaque you want the background to be when popup is displayed. Specify  avalue between 0 - 1.0. Example: 0.8</comment>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                </field>
+                <field id="exitintent_terms_conditions_consent" translate="label comment" type="label" sortOrder="240" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable terms and condition consent</label>
+                    <comment>Choose whether or not to display link to terms and conditons/privacy policy.</comment>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                </field>
+                <field id="exitintent_terms_conditions_text" translate="label comment" type="label" sortOrder="250" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Terms and Condition text</label>
+                    <comment>Change text displayed when terms and conditions consent is enabled.</comment>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                </field>
+                <field id="exitintent_terms_conditions_checkbox" translate="label comment" type="label" sortOrder="260" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Terms and Condition checkbox mandatory</label>
+                    <comment>Choose whether or not to require the box to be checked before continuing.</comment>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                </field>
+                <field id="exitintent_signup_steps" translate="label comment" type="label" sortOrder="270" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Signup Steps</label>
+                    <comment>When two steps is enabled, an additonal agreement step is required before the sign up button and email input field is available.</comment>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                </field>
+                <field id="exitintent_signup_step_1_proceed_button_label" translate="label" type="label" sortOrder="280" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Step 1 - Proceed Button Label</label>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                </field>
+                <field id="exitintent_signup_step_1_close_button" translate="label" type="label" sortOrder="290" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Step 1 - Enable No Thanks Button</label>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                </field>
+                <field id="exitintent_signup_step_1_close_button_label" translate="label" type="label" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Step 1 - No Thanks Button Label</label>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                </field>
+                <field id="exitintent_newsletter_submit_button_label" translate="label comment" type="label" sortOrder="310" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Newsletter Submit Button Label</label>
+                    <comment>Change text displayed on sign up button</comment>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                </field>
+                <field id="exitintent_newsletter_close_button" translate="label" type="label" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Newsletter No Thanks Button</label>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                </field>
+                <field id="exitintent_newsletter_close_button_label" translate="label" type="label" sortOrder="330" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Newsletter Close Button Label</label>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                </field>
+                <field id="exitintent_enable_gtm_tracking" translate="label comment" type="label" sortOrder="350" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Enable Google Tag Manager Tracking</label>
+                    <comment><![CDATA[<b>Hint:</b> Requires Installation and Enable of <a href="https://www.weltpixel.com/google-analytics-enhanced-ecommerce-tag-manager-magento-2.html" target="_blank" >Google Analytics Enhanced Ecommerce PRO Extension</a>. This feature will allow you to track event impressions and event success signup. ]]></comment>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                </field>
+            </group>
+            <group id="sociallogin" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Social Media Login</label>
+                <comment>
+                    <![CDATA[<b>Hint:</b> Requires Installation and Enable of <a href="https://www.weltpixel.com/magento2-social-login.html" target="_blank" >Social Login PRO Extension</a>.]]>
+                </comment>
+                <field id="sociallogin_integration" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Social Login Integration</label>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                </field>
+                <field id="sociallogin_integration_applies_to" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Social Login Integration Applies To</label>
+                    <frontend_model>WeltPixel\Newsletter\Block\Adminhtml\System\Config\UpgradePro</frontend_model>
+                </field>
+
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="weltpixel_quickview_hotspot" class="WeltPixel\Quickview\Block\Widget\Hotspot" placeholder_image="WeltPixel_Quickview::images/widget_hotspot.png">
+        <label translate="true">WeltPixel - Quickview Hotspot</label>
+        <description>WeltPixel - Quickview Hotspot</description>
+        <parameters>
+            <parameter name="product" xsi:type="block" visible="true" required="true" sort_order="10">
+                <label translate="true">Product</label>
+                <block class="Magento\Catalog\Block\Adminhtml\Product\Widget\Chooser">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string" translate="true">Select Product...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+            <parameter name="no_follow" xsi:type="select" visible="true" required="true" sort_order="20"
+                       source_model="Magento\Config\Model\Config\Source\Yesno">
+                <label translate="true">Add no follow</label>
+                <description>rel="nofollow" will be added to the hotspot link</description>
+            </parameter>
+            <parameter name="position_top" xsi:type="text" visible="true" required="false" sort_order="30" >
+                <label translate="true">Top position</label>
+                <description>Sets the top edge position in % of containing element. Specify a number. For 10% from top, just enter 10 in the field.</description>
+            </parameter>
+            <parameter name="position_left" xsi:type="text" visible="true" required="false" sort_order="40" >
+                <label translate="true">Left position</label>
+                <description>Sets the left edge position in % of containing element. Specify a number. For 10% from left, just enter 10 in the field.</description>
+            </parameter>
+            <parameter name="color" xsi:type="block"  visible="true" sort_order="50" >
+                <label translate="true">Color</label>
+                <description>Hotspot color</description>
+                <block class="WeltPixel\Quickview\Block\Adminhtml\Widget\ColorPicker"/>
+            </parameter>
+            <parameter name="bg_color" xsi:type="block"  visible="true" sort_order="60" >
+                <label translate="true">Background Color</label>
+                <description>Hotspot background</description>
+                <block class="WeltPixel\Quickview\Block\Adminhtml\Widget\ColorPicker"/>
+            </parameter>
+            <parameter name="info_messsage"  xsi:type="block" visible="true" sort_order="80" >
+                <block class="WeltPixel\Quickview\Block\Adminhtml\Widget\InfoMessage" />
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

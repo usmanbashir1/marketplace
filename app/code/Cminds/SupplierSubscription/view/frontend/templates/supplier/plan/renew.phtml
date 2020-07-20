@@ -1,0 +1,114 @@
+<?php /* @var $block \Cminds\SupplierSubscription\Block\Supplier\Plan\Renew */ ?>
+<?php $currentPlan = $block->getCurrentPlan() ?>
+<?php $availableMonths = $block->getAvailableMonths() ?>
+<?php $currency = $block->getCurrentCurrencySymbol() ?>
+<?php $error = $block->checkIsSaleable($currentPlan); ?>
+<div class="container main-container vendor-container">
+<?php if ($error === false) : ?>
+    <?php $productPlan = $currentPlan->getProduct() ?>
+    <form action="<?php echo $block->escapeHtml($this->getFormActionUrl()); ?>" method="post">
+        <?php echo $block->getBlockHtml('formkey')?>
+        <div class="row">
+            <div class="col-md-8">
+                <p>
+                    <?php echo $block->escapeHtml(
+                        sprintf(
+                            __('You Are Currently in %s %s/Month'),
+                            $currentPlan->getName(),
+                            $block->getPriceFormat($currentPlan->getPrice())
+                        )
+                    ); ?>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <div class='table-responsive'>
+                    <table class="table table-striped cm-current-plan-table">
+                        <thead>
+                        <th><?php /* @escapeNotVerified */ echo __('Active Subscription') ?></th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><?php echo $block->escapeHtml($productPlan->getName()) ?></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <?php echo $block->escapeHtml(
+                                    sprintf(
+                                        __('Expiration Date: %s'),
+                                        date('M d, Y g:i:s A', strtotime($block->getCustomer()->getPlanToDate()))
+                                    )
+                                ); ?>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class='table-responsive'>
+                    <input name="product_id" type="hidden"
+                           value="<?php echo $block->escapeHtml($productPlan->getId()); ?>" id="cm-plan-id" />
+                    <input name="price" type="hidden"
+                           value="<?php echo $block->escapeHtml($currentPlan->getPrice()); ?>" id="cm-plan-price" />
+                    <table class="table table-striped cm-renew-table">
+                        <thead>
+                        <tr>
+                            <th><?php /* @escapeNotVerified */ echo __('Item') ?></th>
+                            <th><?php /* @escapeNotVerified */ echo __('Rate') ?></th>
+                            <th><?php /* @escapeNotVerified */ echo __('Number of Months') ?></th>
+                            <th><?php /* @escapeNotVerified */ echo __('Total') ?></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><?php echo $block->escapeHtml($productPlan->getName()); ?></td>
+                            <td><?php echo $block->escapeHtml($block->getPriceFormat($currentPlan->getPrice())); ?></td>
+                            <td id="cm-cell-qty">
+                                <select name="qty" id="qty">
+                                    <?php foreach ($availableMonths as $month) : ?>
+                                        <option value="<?php echo $block->escapeHtml($month); ?>">
+                                            <?php echo sprintf(__('%d month'), $month); ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </td>
+                            <td id="cm-row-total">
+                                <?php echo $block->escapeHtml($block->getPriceFormat($currentPlan->getPrice())) ?>
+                            </td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <th colspan="2"></th>
+                            <th><?php /* @escapeNotVerified */ echo __('Total') ?></th>
+                            <th id="cm-total">
+                                <?php echo $block->escapeHtml($block->getPriceFormat($currentPlan->getPrice())) ?>
+                            </th>
+                        </tr>
+                        </tfoot>
+                    </table>
+                    <input type="submit" name="submit" class="btn btn-primary"
+                           value="<?php /* @escapeNotVerified */ echo __('Check Out') ?>"/>
+
+                    <script>
+                        (function($){
+                            $('#qty').on('change', function(){
+                                var val = $(this).val(), price = $('#cm-plan-price').val();
+                                $('#cm-row-total, #cm-total').html(
+                                    '<?php echo $block->escapeHtml($currency); ?>' + Math.round((val*price)*100)/100
+                                );
+                            });
+                        })(jQuery);
+                    </script>
+                </div>
+            </div>
+        </div>
+    </form>
+<?php else : ?>
+    <h1 class="text-center">
+        <?php /* @escapeNotVerified */  echo $block->escapeHtml($error); ?>
+    </h1>
+<?php endif; ?>
+</div>

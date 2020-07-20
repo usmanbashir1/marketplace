@@ -1,0 +1,15 @@
+<!-- ko foreach: getRegion('messages') -->
+<!-- ko template: getTemplate() --><!-- /ko -->
+<!--/ko-->
+<div>
+    <!-- ko if: isFormVisible -->
+    <p data-bind="html: getDescription()"></p>
+    <p><span data-bind="text: getEmailLabel()"></span>: <span data-bind="text: getEmailAddress()"></span></p>
+    <form method="get" data-bind="attr: { action: getUrl() }">
+        <input type="submit" class="action primary" data-bind="value: $t('Create an Account'), disable: creationStarted" />
+    </form>
+    <!-- /ko -->
+    <!-- ko if: accountCreated -->
+    <p data-bind="html: getAfterCreationMessage()"></p>
+    <!-- /ko -->
+</div>

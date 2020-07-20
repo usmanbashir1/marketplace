@@ -1,0 +1,48 @@
+<?php /** @var $block \Cminds\SupplierSubscription\Block\Supplier\Dashboard\Sidebar */; ?>
+<?php if ($block->isEnabled()) : ?>
+    <?php $currentPlan = $block->getCurrentPlan(); ?>
+    <?php $isActive = $block->isPlanActive(); ?>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title text-center"><?php /* @escapeNotVerified */ echo __('Active Subscription'); ?></h3>
+        </div>
+        <div class="panel-body text-center">
+            <ul class="list-unstyled">
+                <li>
+                    <?php if (!is_null($currentPlan)) : ?>
+                        <?php echo $block->escapeHtml($currentPlan->getName()); ?>
+                    <?php else : ?>
+                        <?php /* @escapeNotVerified */ echo __('You don\'t have any plan yet.'); ?>
+                    <?php endif; ?>
+                </li>
+                <li <?php /* @escapeNotVerified */ echo (!$isActive) ? 'class="text-danger"' : '' ?>>
+                    <?php /* @escapeNotVerified */ echo date('M d, Y g:i:s A', strtotime($block->getCustomer()->getPlanToDate())) ?>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title text-center">
+                <?php /* @escapeNotVerified */ echo __('Shelf Space'); ?>
+            </h3>
+        </div>
+        <div class="panel-body text-center">
+            <?php $totalProducts = $currentPlan->getData('products_number'); ?>
+            <?php $vendorsProducts = $block->countVendorProducts(); ?>
+            <?php $remaining = (int) $totalProducts - $vendorsProducts; ?>
+            <p>
+                <?php /* @escapeNotVerified */ echo __('Total'); ?>:
+                <?php echo $block->escapeHtml($totalProducts); ?>
+            </p>
+            <p>
+                <?php /* @escapeNotVerified */ echo __('Used'); ?>:
+                <?php echo $block->escapeHtml($vendorsProducts); ?>
+            </p>
+            <p>
+                <?php /* @escapeNotVerified */ echo __('Remaining'); ?>:
+                <?php echo $block->escapeHtml($remaining); ?>
+            </p>
+        </div>
+    </div>
+<?php endif; ?>

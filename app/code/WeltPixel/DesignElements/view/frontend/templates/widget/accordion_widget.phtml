@@ -1,0 +1,23 @@
+<?php
+$uniqueid = 'accordion-'.uniqid();
+$style = $this->getData('style');
+$backgroundColor = $this->getData('bkg_color');
+$borderColor = $this->getData('border_color');
+
+if($borderColor){
+    $borderColor = 'border-color:'.$borderColor.';';
+}
+$text = trim($this->getContent());
+?>
+<?php if($backgroundColor):?>
+    <style>
+        .accordion.accordion-bg.<?php echo $uniqueid;?> .acctitle,
+        .accordion.accordion-bg.<?php echo $uniqueid;?> .acctitlec{
+            background-color:<?php echo $backgroundColor?>;
+        }
+    </style>
+<?php endif;?>
+
+<div class="accordion <?php echo $style.' '.$uniqueid;?> clearfix" style="<?php echo $borderColor;?>">
+    <?php echo $text;?>
+</div>

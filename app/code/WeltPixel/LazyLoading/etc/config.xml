@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <weltpixel_lazy_loading>
+            <general>
+                <enable>1</enable>
+            </general>
+            <advanced>
+                <loading_early>No</loading_early>
+                <negative_margin>300</negative_margin>
+                <effect_speed>1000</effect_speed>
+                <loading_placeholder>No</loading_placeholder>
+                <placeholder_width>50</placeholder_width>
+                <loading_icon></loading_icon>
+            </advanced>
+        </weltpixel_lazy_loading>
+    </default>
+</config>

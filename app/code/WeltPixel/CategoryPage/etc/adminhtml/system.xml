@@ -1,0 +1,470 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="weltpixel_category_page" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Category Page</label>
+            <tab>weltpixel</tab>
+            <resource>WeltPixel_CategoryPage::CategoryPageSettings</resource>
+            <group id="notification" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Important / Recommended:</label>
+                <fieldset_css>weltpixel-recommended-header active</fieldset_css>
+                <field id="notification_msg" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>WeltPixel\Backend\Block\Adminhtml\System\Config\Notification</frontend_model>
+                </field>
+            </group>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Category Page - General Settings</label>
+                <field id="display_wishlist" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Add To Wishlist</label>
+                    <source_model>WeltPixel\CategoryPage\Model\Config\Source\ShowWishlist</source_model>
+                    <comment>Select position of Add to Wislist icon on products from category page.</comment>
+                </field>
+                <field id="display_compare" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Add To Compare</label>
+                    <source_model>WeltPixel\CategoryPage\Model\Config\Source\ShowCompare</source_model>
+                    <comment>Select position of Add to Compare icon on products from category page.</comment>
+                </field>
+                <field id="display_swatches" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Swatches</label>
+                    <source_model>WeltPixel\CategoryPage\Model\Config\Source\DisplaySwatche</source_model>
+                    <comment><![CDATA[Select Swatches behavior. <br/>  Note: Make sure that Stores -> Settings -> Configuration -> Catalog -> Catalog -> Storefront -> Show Swatches in Product List is set to Yes]]></comment>
+                </field>
+                <field id="display_swatch_tooltip" translate="label comment" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Swatch Tooltip</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Select Swatches behavior when hover over them. <br/> Display tooltip on hover over the swatches from Layered Navigation and from the products on category page.]]></comment>
+                </field>
+                <field id="display_addtocart" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Add to Cart</label>
+                    <source_model>WeltPixel\CategoryPage\Model\Config\Source\ShowAddToCart</source_model>
+                    <comment>Select position of Add to Cart button.</comment>
+                </field>
+                <field id="addtocart_align" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Align Add to Cart Button</label>
+                    <source_model>WeltPixel\CategoryPage\Model\Config\Source\TextAlign</source_model>
+                    <comment>Select how to Align the Add to cart button.</comment>
+                    <depends>
+                        <field id="display_addtocart" separator=",">1,2,3,4,5</field>
+                    </depends>
+                </field>
+                <field id="products_per_line" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Products per line (Desktop view)</label>
+                    <source_model>WeltPixel\CategoryPage\Model\Config\Source\ProductsPerLine</source_model>
+                    <comment>Select numbers of items to be displayed in one row on category page. This settings is applied only on desktop size.</comment>
+                </field>
+                <field id="remove_breadcrumbs" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Remove Breadcrumbs</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Select Yes if you wish to remove the Breadcrumbs section.</comment>
+                </field>
+            </group>
+            <group id="item" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Item options</label>
+                <field id="box_shadow" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Item Box Shadow</label>
+                    <comment>Insert shadow values for the items on category page. Example: 0px 5px 30px 0px rgba(0,0,0,0.5)</comment>
+                </field>
+                <field id="border_width" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Item Border Width</label>
+                    <comment>Insert border width for items on category page. Example: 1px</comment>
+                </field>
+                <field id="border_color" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Item Border Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select color for item border. Example: #FFFFFF</comment>
+                </field>
+            </group>
+            <group id="image" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Item Image Options</label>
+                <field id="enable_hover_image" translate="label tooltip comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Hover Image</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <tooltip>You need to add or set an existing hover image for your products. For this, on the Admin menu select Catalog -> Products ->
+                        Edit a product -> Go to Images and Videos section -> add new images or set an
+                        existing image to be the hover image, by clicking the image and settings the Role of the image to be Listing Hover Image</tooltip>
+                    <comment>Enable/Disable hover image over items on category page. See tooltip for more details.</comment>
+                </field>
+                <field id="grid_width" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Grid View Image Width (In Px)</label>
+                    <validate>number</validate>
+                    <comment>Set Image Width when category page is displayed in Grid view mode. Example: 240</comment>
+                </field>
+                <field id="grid_height" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Grid View Image Height (In Px)</label>
+                    <validate>number</validate>
+                    <comment>Set Image Height when category page is displayed in Grid view mode. Example: 300</comment>
+                </field>
+                <field id="list_width" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>List View Image Width (In Px)</label>
+                    <validate>number</validate>
+                    <comment>Set Image Width when category page is displayed in List view mode. Example: 240</comment>
+                </field>
+                <field id="list_height" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>List View Image Height (In Px)</label>
+                    <validate>number</validate>
+                    <comment>Set Image Height when category page is displayed in List view mode. Example: 240</comment>
+                </field>
+            </group>
+            <group id="name" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Item Name Options</label>
+                <field id="name_align" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Align</label>
+                    <source_model>WeltPixel\CategoryPage\Model\Config\Source\TextAlign</source_model>
+                    <comment>Set position of the Product Name on the items in category page. Example: Center</comment>
+                </field>
+                <field id="font_size" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Size</label>
+                    <comment>Set font size for Product Names on the items in category page. Example: 18px</comment>
+                </field>
+                <field id="color" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set text color of Product Names on the items in category page. Example: #000000</comment>
+                </field>
+            </group>
+            <group id="review" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Item Review Options</label>
+                <field id="display_reviews" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Reviews</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable the display of reviews on items in category page.</comment>
+                </field>
+                <field id="review_align" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Align</label>
+                    <source_model>WeltPixel\CategoryPage\Model\Config\Source\TextAlign</source_model>
+                    <comment>Select position of reviews on items in category page.</comment>
+                </field>
+            </group>
+            <group id="price" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Item Price Options</label>
+                <field id="price_align" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Align</label>
+                    <source_model>WeltPixel\CategoryPage\Model\Config\Source\TextAlign</source_model>
+                    <comment>Select position of Price on items.</comment>
+                </field>
+                <field id="price_font_size" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Price Size</label>
+                    <comment>Set Price fonts size. Example: 16px</comment>
+                </field>
+                <field id="price_color" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Price Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Price color. Example: #000000</comment>
+                </field>
+                <field id="special_price_font_size" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Special Price Size</label>
+                    <comment>Set fonts size for Special Price. Example: 16px</comment>
+                </field>
+                <field id="special_price_color" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Special Price Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select color for Special Price. Example: #000000</comment>
+                </field>
+            </group>
+            <group id="swatch_productlisting" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1" >
+                <label>Item Swatch Options</label>
+                <field id="radius" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Radius</label>
+                    <validate>required</validate>
+                    <comment>Set Radius of the swatch's corners. Example: 25px</comment>
+                </field>
+                <field id="width" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Width</label>
+                    <validate>required</validate>
+                    <comment>Set Width of the swatch. Example: 25px</comment>
+                </field>
+                <field id="height" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Height</label>
+                    <validate>required</validate>
+                    <comment>Set Height of the swatch. Example: 25px</comment>
+                </field>
+                <field id="font_size" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Size</label>
+                    <validate>required</validate>
+                    <comment>Set Font Size for swatch's text. Example: 10px </comment>
+                </field>
+                <field id="swatch_align" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Swatch Align</label>
+                    <source_model>WeltPixel\CategoryPage\Model\Config\Source\TextAlign</source_model>
+                    <comment>Set swatch position.</comment>
+                </field>
+            </group>
+            <group id="toolbar" translate="label" type="text" sortOrder="80" showInDefault="1" showInStore="1" showInWebsite="1">
+                <label>Toolbar and Pagination Options</label>
+                <field id="background_color" translate="label" type="text" sortOrder="10" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Toolbar Background Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select color for Toolbar Background.</comment>
+                </field>
+                <field id="border_color" translate="label" type="text" sortOrder="20" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Toolbar Border Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select color for Toolbar Border.</comment>
+                </field>
+                <field id="padding" translate="label" type="text" sortOrder="30" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Toolbar Padding</label>
+                    <comment>Set padding for Toolbar. Example: 10px</comment>
+                </field>
+                <field id="label_font_size" translate="label" type="text" sortOrder="40" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Label Font Size</label>
+                    <comment>Set font size for Toolbar's text. Example: 12px</comment>
+                </field>
+                <field id="label_font_color" translate="label" type="text" sortOrder="50" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Label Font Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select font color for Toolbar's text. Example: #FFFFFF</comment>
+                </field>
+                <field id="grid_list_background_color" translate="label" type="text" sortOrder="60" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Grid / List Background Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Grid / List icon Background Color. Example: #FFFFFF</comment>
+                </field>
+                <field id="grid_list_background_hover_color" translate="label" type="text" sortOrder="70" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Grid / List Background Hover Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Grid / List icon Background Hover Color. Example: #FFFFFF</comment>
+                </field>
+                <field id="grid_list_background_active_color" translate="label" type="text" sortOrder="80" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Grid / List Background Active Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Grid / List icon Background Active Color. Example: #FFFFFF</comment>
+                </field>
+                <field id="grid_list_border_color" translate="label" type="text" sortOrder="90" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Grid / List Border Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Set Grid / List icon Border Color. Example: #FFFFFF</comment>
+                </field>
+                <field id="grid_list_border_hover_color" translate="label" type="text" sortOrder="100" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Grid / List Border Hover Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Grid / List icon Border Hover Color. Example: #FFFFFF</comment>
+                </field>
+                <field id="grid_list_border_active_color" translate="label" type="text" sortOrder="110" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Grid / List Border Active Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Grid / List icon Border Active Color. Example: #FFFFFF</comment>
+                </field>
+                <field id="grid_list_icon_size" translate="label" type="text" sortOrder="115" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Grid / List Icon Size</label>
+                    <comment>Set Grid / List icon Size. Example: 18px</comment>
+                </field>
+                <field id="grid_list_icon_color" translate="label" type="text" sortOrder="120" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Grid / List Icon Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Grid / List icon Color. Example: #BABABA</comment>
+                </field>
+                <field id="grid_list_icon_hover_color" translate="label" type="text" sortOrder="130" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Grid / List Icon Hover Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Grid / List icon Hover Color. Example: #2B2B2B </comment>
+                </field>
+                <field id="grid_list_icon_active_color" translate="label" type="text" sortOrder="140" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Grid / List Icon Active Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Grid / List icon Active Color.Example: #000000</comment>
+                </field>
+
+                <field id="select_background_color" translate="label" type="text" sortOrder="150" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Dropdown Background Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Dropdown Background Color. Example: #FFFFFF</comment>
+                </field>
+                <field id="select_background_focus_color" translate="label" type="text" sortOrder="160" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Dropdown Background Focus Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Dropdown Background Focus Color. Example: #FFFFFF</comment>
+                </field>
+                <field id="select_border_width" translate="label" type="text" sortOrder="165" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Field Border Width</label>
+                    <frontend_model>WeltPixel\CategoryPage\Table\Block\System\Config\Field\BorderWidth</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                    <comment>Set dropdown Field Border Width. Example: 0 0 1px 0</comment>
+                </field>
+                <field id="select_border_color" translate="label" type="text" sortOrder="170" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Dropdown Border Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Dropdown Border Color. Example: #CCCCCC</comment>
+                </field>
+                <field id="select_border_focus_color" translate="label" type="text" sortOrder="180" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Dropdown Border Focus Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Dropdown Border Focus Color. Example: #454545</comment>
+                </field>
+                <field id="select_border_radius" translate="label" type="text" sortOrder="185" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Dropdown Border Radius</label>
+                    <comment>Set Dropdown Border Radius. Example: 0px</comment>
+                </field>
+                <field id="select_font_size" translate="label" type="text" sortOrder="190" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Dropdown Font Size</label>
+                    <comment>Set Dropdown Font Size. Example: 12px</comment>
+                </field>
+                <field id="select_font_color" translate="label" type="text" sortOrder="200" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Dropdown Font Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Dropdown Font Color. Example: #454545</comment>
+                </field>
+                <field id="select_arrow_color" translate="label" type="text" sortOrder="210" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Dropdown Arrows Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Dropdown Arrows Color. Example: #454545</comment>
+                </field>
+                <field id="select_arrow_hover_color" translate="label" type="text" sortOrder="220" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Dropdown Arrows Hover Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Dropdown Arrows Hover Color. Example: #454545</comment>
+                </field>
+                <field id="select_option_font_color" translate="label" type="text" sortOrder="240" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Dropdown Option Font Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Option Font Color. Example: #454545</comment>
+                </field>
+                <field id="direction_font_size" translate="label" type="text" sortOrder="250" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Direction Font Size</label>
+                    <comment>Set Direction Font size. Example: 10px</comment>
+                </field>
+                <field id="direction_font_color" translate="label" type="text" sortOrder="260" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Direction Font Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                </field>
+                <field id="direction_font_hover_color" translate="label" type="text" sortOrder="270" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Direction Font Hover Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                </field>
+
+                <field id="pagination_font_size" translate="label" type="text" sortOrder="280" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Pagination Font Size</label>
+                </field>
+                <field id="pagination_font_color" translate="label" type="text" sortOrder="290" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Pagination Font Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Pagination Font Color. Example: #454545</comment>
+                </field>
+                <field id="pagination_font_hover_color" translate="label" type="text" sortOrder="300" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Pagination Font Hover Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Pagination Font Hover Color. Example: #A8A8A8</comment>
+                </field>
+                <field id="pagination_font_active_color" translate="label" type="text" sortOrder="310" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Pagination Font Active Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Pagination Font Active Color. Example: #000000</comment>
+                </field>
+                <field id="pagination_background_color" translate="label" type="text" sortOrder="320" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Pagination Background Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                </field>
+                <field id="pagination_background_hover_color" translate="label" type="text" sortOrder="330" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Pagination Background Hover Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                </field>
+                <field id="pagination_background_active_color" translate="label" type="text" sortOrder="340" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Pagination Background Active Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                </field>
+                <field id="pagination_border_color" translate="label" type="text" sortOrder="350" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Pagination Border Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                </field>
+                <field id="pagination_border_hover_color" translate="label" type="text" sortOrder="360" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Pagination Border Hover Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                </field>
+                <field id="pagination_border_active_color" translate="label" type="text" sortOrder="370" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Pagination Border Active Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Pagination Border Active Color. Example: #000000</comment>
+                </field>
+                <field id="pagination_border_radius" translate="label" type="text" sortOrder="375" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Pagination Border Radius</label>
+                    <comment>Set Pagination Border Radius. Example: 30px</comment>
+                </field>
+                <field id="pagination_next_prev_font_size" translate="label" type="text" sortOrder="380" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Pagination Next / Prev Font Size</label>
+                    <comment>Set Pagination Next / Prev Font Size. Example: 18px</comment>
+                </field>
+                <field id="pagination_next_prev_font_color" translate="label" type="text" sortOrder="390" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Pagination Next / Prev Font Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Pagination Next / Prev Font Color. Example: #000000</comment>
+                </field>
+                <field id="pagination_next_prev_font_hover_color" translate="label" type="text" sortOrder="400" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Pagination Next / Prev Font Hover Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Pagination Next / Prev Font Hover Color. Example: #FFFFFF</comment>
+                </field>
+                <field id="pagination_next_prev_background_color" translate="label" type="text" sortOrder="410" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Pagination Next / Prev Background Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Pagination Next / Prev Background Color. Example: #FFFFFF</comment>
+                </field>
+                <field id="pagination_next_prev_background_hover_color" translate="label" type="text" sortOrder="420" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Pagination Next / Prev Background Hover Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Pagination Next / Prev Background Hover Color. Example: #000000</comment>
+                </field>
+                <field id="pagination_next_prev_border_color" translate="label" type="text" sortOrder="430" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Pagination Next / Prev Border Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Pagination Next / Prev Border Color. Example: #FFFFFF</comment>
+                </field>
+                <field id="pagination_next_prev_border_hover_color" translate="label" type="text" sortOrder="440" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Pagination Next / Prev Border Hover Color</label>
+                    <validate>color {required:false, hash:true}</validate>
+                    <comment>Select Pagination Next / Prev Border Hover Color. Example: #000000</comment>
+                </field>
+            </group>
+            <group id="swatch_layerednavigation" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1" >
+                <label>LayeredNavigation Swatch Options</label>
+                <field id="radius" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Radius</label>
+                    <validate>required</validate>
+                    <comment>Set radius for swatches from Layered Navigation. Example: 25px</comment>
+                </field>
+                <field id="width" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Width</label>
+                    <validate>required</validate>
+                    <comment>Set width for swatches from Layered Navigation. Example: 25px</comment>
+                </field>
+                <field id="height" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Height</label>
+                    <validate>required</validate>
+                    <comment>Set height for swatches from Layered Navigation. Example: 25px</comment>
+                </field>
+                <field id="font_size" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Font Size</label>
+                    <validate>required</validate>
+                    <comment>Set fonts size for text in swatches from Layered Navigation. Example: 12px</comment>
+                </field>
+                <field id="swatch_align" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Swatch Align</label>
+                    <source_model>WeltPixel\CategoryPage\Model\Config\Source\TextAlign</source_model>
+                    <comment>Select swatch position in Layered Navigation.</comment>
+                </field>
+            </group>
+            <group id="description" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Description Options</label>
+                <field id="enable_show_more" translate="label tooltip comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show More/Less</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable show more/less trigger for category description, useful for long paragraphs.</comment>
+                </field>
+                <field id="show_more_lines" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Number of Lines</label>
+                    <validate>required-entry validate-number validate-zero-or-greater</validate>
+                    <comment>Insert the number of initially visible paragraph lines. Ex. 3, for first three lines of text. This value is multiplied with the value of WeltPixel > Frontend Options > Default > Line Height setting.</comment>
+                    <depends>
+                        <field id="enable_show_more">1</field>
+                    </depends>
+                </field>
+                <field id="animation_speed" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Animation Speed</label>
+                    <validate>required-entry validate-number validate-zero-or-greater</validate>
+                    <comment>Show more/less animation speed in milliseconds. Ex. 300</comment>
+                    <depends>
+                        <field id="enable_show_more">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

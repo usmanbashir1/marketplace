@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">    
+    <body>
+        <container name="wp.speedoptimization.before.body.end" as="wp_speedoptimization_before_body_end" label="Speed Optimization Before Body End" after="before.body.end">
+            <block class="Magento\Framework\View\Element\Template" template="WeltPixel_SpeedOptimization::before_body_js.phtml" name="before_body_js"/>
+        </container>
+    </body>
+</page>

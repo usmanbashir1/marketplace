@@ -1,0 +1,12 @@
+<?php $_helper = $this->helper('WeltPixel\QuickCart\Helper\Data'); ?>
+<?php if ($_helper->quicartIsEnabled()): ?>
+    <script>
+        window.openMinicart = '<?php /* @escapeNotVerified */ echo $_helper->openMinicart(); ?>';
+        window.shouldOpenMinicart = '1';
+        requirejs(['jquery', 'weltpixel_quickcart' ], function($, quickcart) {
+            $(document).ready(function() {
+                quickcart.initialize();
+            });
+        });
+    </script>
+<?php endif; ?>

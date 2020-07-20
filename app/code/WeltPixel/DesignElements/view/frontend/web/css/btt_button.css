@@ -1,0 +1,54 @@
+.btt-button {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    /* image replacement properties */
+    overflow: hidden;
+    text-align:center;
+    white-space: nowrap;
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+    -moz-transition: opacity .3s 0s, visibility 0s .3s;
+    transition: opacity .3s 0s, visibility 0s .3s;
+    z-index:100;
+}
+.btt-button:after {
+    font-family: 'luma-icons';
+    content: '\e621';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.btt-button .icon-chevron-up{
+    align-content: center;
+    vertical-align: middle;
+    text-align: center;
+    color: #000;
+    font-size: 20px;
+    line-height: 38px;
+}
+.btt-button.cd-is-visible, .btt-button.cd-fade-out, .no-touch .btt-button:hover {
+    -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+    -moz-transition: opacity .3s 0s, visibility 0s 0s;
+    transition: opacity .3s 0s, visibility 0s 0s;
+}
+.btt-button.cd-is-visible {
+    /* the button becomes visible */
+    visibility: visible;
+    opacity: 1;
+    z-index: 0;
+}
+.btt-button.cd-fade-out {
+    /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+    opacity: .5;
+}
+.no-touch .btt-button:hover {
+    background-color: #000;
+    opacity: 1;
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- impressions merge with ProductPage -->
+        <referenceBlock name="category.products.list" >
+            <action method="setTemplate" ifconfig="weltpixel_googletagmanager/general/product_click_tracking">
+                <argument name='template' xsi:type='string'>WeltPixel_CategoryPage::product/list.phtml</argument>
+            </action>
+        </referenceBlock>
+        <referenceBlock name="search_result_list" >
+            <action method="setTemplate" ifconfig="weltpixel_googletagmanager/general/product_click_tracking">
+                <argument name='template' xsi:type='string'>WeltPixel_CategoryPage::product/list.phtml</argument>
+            </action>
+        </referenceBlock>
+        <!-- impressions -->
+
+        <!-- product clicks for cross, related, upsell merge with OwlCarouselSlider module -->
+        <referenceBlock name="checkout.cart.crosssell" >
+            <action method="setTemplate">
+                <argument name="template" xsi:type="helper" helper="WeltPixel\CategoryPage\Helper\Data::getCrossellProductListItemsTemplate"/>
+            </action>
+        </referenceBlock>
+        <referenceBlock name="product.info.upsell" >
+            <action method="setTemplate">
+                <argument name="template" xsi:type="helper" helper="WeltPixel\CategoryPage\Helper\Data::getUpsellProductListItemsTemplate"/>
+            </action>
+        </referenceBlock>
+        <referenceBlock name="catalog.product.related" >
+            <action method="setTemplate">
+                <argument name="template" xsi:type="helper" helper="WeltPixel\CategoryPage\Helper\Data::getRelatedProductListItemsTemplate"/>
+            </action>
+        </referenceBlock>
+        <!-- product clicks for cross, related, upsell merge with OwlCarouselSlider module -->
+    </body>
+</page>

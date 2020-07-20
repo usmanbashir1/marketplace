@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <configuration_marketplacepaypal>
+            <configure>
+                <enabled>0</enabled>
+            	<transfer_type>3</transfer_type>
+            	<payment_mode>1</payment_mode>
+            </configure>
+        </configuration_marketplacepaypal>
+        <cminds_marketplacepaypal_configuration>
+            <general>
+                <currency>USD</currency>
+            </general>
+            <rest_api>
+                <payout_url>https://api.sandbox.paypal.com/v1/payments/payouts</payout_url>
+                <update_url>https://api.sandbox.paypal.com/v1/payments/payouts/%s</update_url>
+                <client_id backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+                <secret backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+            </rest_api>
+        </cminds_marketplacepaypal_configuration>
+    </default>
+</config>

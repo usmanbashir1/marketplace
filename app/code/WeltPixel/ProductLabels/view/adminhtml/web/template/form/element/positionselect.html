@@ -1,0 +1,21 @@
+<select style="display:none" class="admin__control-select" data-bind="
+    attr: {
+        name: inputName,
+        id: uid,
+        disabled: disabled,
+        'aria-describedby': noticeId
+    },
+    hasFocus: focused,
+    optgroup: options,
+    value: value,
+    optionsCaption: caption,
+    optionsValue: 'value',
+    optionsText: 'label'"
+/>
+<table class="positions-container" data-bind="afterRender: isDisabled($parent)">
+    <tbody data-bind="foreach: positions">
+        <tr data-bind="css: { 'break-row' :  ($index() == 3 || $index() == 6) } ">
+            <td data-bind="click: $parent.updatePosition.bind($parent), css: cssClass"></td>
+        </tr>
+    </tbody>
+</table>

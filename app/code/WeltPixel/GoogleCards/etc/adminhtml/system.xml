@@ -1,0 +1,448 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="weltpixel_google_cards" translate="label" type="text" sortOrder="190" showInDefault="1"
+                 showInWebsite="1" showInStore="1">
+            <label>Rich Snippets &amp; Cards Pro</label>
+            <tab>weltpixel</tab>
+            <resource>WeltPixel_GoogleCards::GoogleCardsSettings</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>General Settings</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="description" translate="label" type="select" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <source_model>WeltPixel\GoogleCards\Model\Config\Source\Description</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="price" translate="label comment" type="select" sortOrder="25" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Price</label>
+                    <source_model>WeltPixel\GoogleCards\Model\Config\Source\Price</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                    <comment>In case price is listed with Tax and without Tax select which price should be used.
+                    </comment>
+                </field>
+
+                <field id="condition" translate="label comment" type="select" sortOrder="27" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Item Condition</label>
+                    <!--<source_model>WeltPixel\GoogleCards\Model\Config\Source\ItemCondition</source_model>-->
+                    <source_model>WeltPixel\GoogleCards\Model\Config\Source\Brand</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                    <comment><![CDATA[Select attribute used for product condition ( Attribute should have the following options: DamagedCondition / UsedCondition / NewCondition / RefurbishedCondition according to <a href="https://schema.org/OfferItemCondition" target="_blank">schema.org</a>)]]></comment>
+                </field>
+
+                <field id="brand" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Brand</label>
+                    <source_model>WeltPixel\GoogleCards\Model\Config\Source\Brand</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="sku" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>SKU</label>
+                    <source_model>WeltPixel\GoogleCards\Model\Config\Source\Brand</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="gtin" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>GTIN</label>
+                    <source_model>WeltPixel\GoogleCards\Model\Config\Source\Brand</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="mpn" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>MPN</label>
+                    <source_model>WeltPixel\GoogleCards\Model\Config\Source\Brand</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="reviews_format" translate="label" type="select" sortOrder="70" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Review Markup Format</label>
+                    <source_model>WeltPixel\GoogleCards\Model\Config\Source\Reviews</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                    <comment>Aggregate ratings: An aggregate evaluation of an item by many people. Reviews: item review details (Author, message, review name, date, rating).</comment>
+                </field>
+                <field id="reviews_count" translate="label" type="text" sortOrder="77" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Number of reviews</label>
+                    <validate>validate-digits</validate>
+                    <depends>
+                        <field id="enable">1</field>
+                        <field id="reviews_format" >2</field>
+                    </depends>
+                    <comment>Numbers of reviews to be displayed.</comment>
+                </field>
+                <field id="breadcrumbs" translate="label" type="select" sortOrder="80" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Use Breadcrumb Snippet</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                    <comment>A breadcrumb trail on a page indicates the page's position in the site hierarchy. A user
+                        can navigate all the way up in the site hierarchy, one level at a time, by starting from the
+                        last breadcrumb in the breadcrumb trail.
+                    </comment>
+                </field>
+            </group>
+
+            <group id="rich_snippet_search" translate="label" type="text" sortOrder="30" showInDefault="1"
+                   showInWebsite="1" showInStore="1">
+                <label>Sitelinks Searchbox</label>
+                <comment>Google Search can expose a search box scoped to your website when it appears as a search
+                    result. This search box is powered by Google Search. However, if you wish to power this search box
+                    with your own search engine, or if you want search results also to include an associated mobile app,
+                    you can do so using structured data embedded on your website.
+                </comment>
+                <field id="enable_search" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Enable Searchbox</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="rich_snippet_logo" translate="label" type="text" sortOrder="40" showInDefault="1"
+                   showInWebsite="1" showInStore="1">
+                <label>Rich Snippets &amp; Cards - Logo</label>
+                <comment>Specify the image Google Search uses for your organization's logo in Search results and in the
+                    Knowledge Graph. Google Search uses the markup in the use case example to recognize the image to use
+                    as the organization’s logo. This ensures that, when possible, the image appears in search results
+                    about the company. Markup like this is a strong signal to Google Search algorithms to show this
+                    image in Knowledge Graph displays.
+                </comment>
+                <field id="enable_logo" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Enable Rich Snippet for Logo and Corporate</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment></comment>
+                </field>
+                <field id="mage_logo" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Use Store Logo</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If 'Yes' - the Logo snippet will use the store default logo. The image must be in .jpg, .png, or. gif format </comment>
+                    <depends>
+                        <field id="enable_logo">1</field>
+                    </depends>
+                </field>
+                <field id="google_logo" translate="label" type="image" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Upload custom logo</label>
+                    <validate>required-entry</validate>
+                    <comment>The image must be in .jpg, .png, or. gif format</comment>
+                    <backend_model>WeltPixel\GoogleCards\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">weltpixel/google_logo</upload_dir>
+                    <base_url type="media" scope_info="1">weltpixel/google_logo</base_url>
+                    <depends>
+                        <field id="mage_logo">0</field>
+                        <field id="enable_logo">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="rich_snippet_contact" translate="label" type="text" sortOrder="50" showInDefault="1"
+                   showInWebsite="1" showInStore="1">
+                <label>Rich Snippets &amp; Cards - Corporate Contact</label>
+                <comment>Use corporate contact markup on your official website to add your company's contact information
+                    to the Google Knowledge panel in some searches, for example when a user enters your company’s name
+                    into the Search bar.
+                </comment>
+                <field id="enable_contact" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Enable Rich Snippet for Corporate Contact</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="contact_telephone" translate="label" type="text" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Contact Telephone</label>
+                    <validate>required-entry</validate>
+                    <comment>An internationalized version of the phone number, starting with the "+" symbol and country
+                        code (+1 in the US and Canada).
+                        Examples: "+1-800-555-1212", "+44-2078225951"
+                    </comment>
+                    <depends>
+                        <field id="enable_contact">1</field>
+                    </depends>
+                </field>
+                <field id="contact_type" translate="label" type="select" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Contact Type</label>
+                    <source_model>WeltPixel\GoogleCards\Model\Config\Source\ContactType</source_model>
+                    <comment>One of the following values, not case sensitive. (Additional contact types may be supported
+                        later.)
+                        Examples: "customer support", "technical support", "billing support", "bill payment", "sales",
+                        "reservations", "credit card support", "emergency", "baggage tracking", "roadside assistance",
+                        "package tracking"
+                    </comment>
+                    <depends>
+                        <field id="enable_contact">1</field>
+                    </depends>
+                </field>
+                <field id="contact_area" translate="label" type="text" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Contact Area Served</label>
+                    <comment>The geographical region served by the number, specified as a AdministrativeArea. Countries
+                        may be specified concisely using just their standard ISO-3166 two-letter code, as in the
+                        examples below. If omitted, the number is assumed to be global.
+                        Examples: "US", "GB", ["US","CA","MX"]
+                    </comment>
+                    <depends>
+                        <field id="enable_contact">1</field>
+                    </depends>
+                </field>
+                <field id="contact_option" translate="label" type="select" sortOrder="50" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Contact Option</label>
+                    <source_model>WeltPixel\GoogleCards\Model\Config\Source\ContactOption</source_model>
+                    <comment>Details about the phone number. Currently only these are supported: "TollFree" and
+                        "HearingImpairedSupported"
+                    </comment>
+                    <depends>
+                        <field id="enable_contact">1</field>
+                    </depends>
+                </field>
+                <field id="contact_language" translate="label" type="text" sortOrder="60" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Contact Language</label>
+                    <comment>Details about the language spoken. Languages may be specified by their common English name.
+                        If omitted, the language defaults to English.
+                        Examples: "English", "Spanish", ["French","English"]
+                    </comment>
+                    <depends>
+                        <field id="enable_contact">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="rich_snippet_social_profile" translate="label" type="text" sortOrder="60" showInDefault="1"
+                   showInWebsite="1" showInStore="1">
+                <label>Rich Snippets &amp; Cards - Social Profile(s)</label>
+                <comment>Use markup on your official website to add your social profile information to a Google
+                    Knowledge panel. Knowledge panels prominently display your social profile information in some Google
+                    Search results.
+                </comment>
+                <field id="enable_social_profile" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Enable Social Profile</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="facebook_url" translate="label" type="text" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Facebook Url</label>
+                    <comment></comment>
+                    <depends>
+                        <field id="enable_social_profile">1</field>
+                    </depends>
+                </field>
+                <field id="twitter_url" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Twitter Url</label>
+                    <comment></comment>
+                    <depends>
+                        <field id="enable_social_profile">1</field>
+                    </depends>
+                </field>
+                <field id="instagram_url" translate="label" type="text" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Instagram Url</label>
+                    <comment></comment>
+                    <depends>
+                        <field id="enable_social_profile">1</field>
+                    </depends>
+                </field>
+                <field id="google_plus_url" translate="label" type="text" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Google+ Url</label>
+                    <comment></comment>
+                    <depends>
+                        <field id="enable_social_profile">1</field>
+                    </depends>
+                </field>
+                <field id="youtube_url" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Youtube Url</label>
+                    <comment></comment>
+                    <depends>
+                        <field id="enable_social_profile">1</field>
+                    </depends>
+                </field>
+                <field id="linkedin_url" translate="label" type="text" sortOrder="60" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>LinkedIn Url</label>
+                    <comment></comment>
+                    <depends>
+                        <field id="enable_social_profile">1</field>
+                    </depends>
+                </field>
+                <field id="pinterest_url" translate="label" type="text" sortOrder="60" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Pinterest Url</label>
+                    <comment></comment>
+                    <depends>
+                        <field id="enable_social_profile">1</field>
+                    </depends>
+                </field>
+                <field id="myspace_url" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Myspace Url</label>
+                    <comment></comment>
+                    <depends>
+                        <field id="enable_social_profile">1</field>
+                    </depends>
+                </field>
+                <field id="soundcloud_url" translate="label" type="text" sortOrder="80" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>SoundCloud Url</label>
+                    <comment></comment>
+                    <depends>
+                        <field id="enable_social_profile">1</field>
+                    </depends>
+                </field>
+                <field id="tumblr_url" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Tumblr Url</label>
+                    <comment></comment>
+                    <depends>
+                        <field id="enable_social_profile">1</field>
+                    </depends>
+                </field>
+            </group>
+
+            <group id="twitter_cards" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Twitter Cards Settings</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="card_type" translate="label" type="select" sortOrder="15" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Card Type</label>
+                    <source_model>WeltPixel\GoogleCards\Model\Config\Source\CardType</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="description" translate="label" type="select" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <source_model>WeltPixel\GoogleCards\Model\Config\Source\Description</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="price" translate="label comment" type="select" sortOrder="25" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Price</label>
+                    <source_model>WeltPixel\GoogleCards\Model\Config\Source\Price</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                    <comment>In case price is listed with Tax and without Tax select which price should be used.
+                    </comment>
+                </field>
+                <field id="site" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Twitter Site</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="creator" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Twitter Creator</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="facebook_opengraph" translate="label" type="text" sortOrder="80" showInDefault="1"
+                   showInWebsite="1" showInStore="1">
+                <label>Facebook Open Graph Settings</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="description" translate="label" type="select" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Description</label>
+                    <source_model>WeltPixel\GoogleCards\Model\Config\Source\Description</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="price" translate="label comment" type="select" sortOrder="25" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Price</label>
+                    <source_model>WeltPixel\GoogleCards\Model\Config\Source\Price</source_model>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                    <comment>In case price is listed with Tax and without Tax select which price should be used.
+                    </comment>
+                </field>
+                <field id="site_name" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Site Name</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="app_id" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>App Id</label>
+                    <comment>fb:app_id</comment>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="retailer_id" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Retailer's ID for the item</label>
+                    <source_model>WeltPixel\GoogleCards\Model\Config\Source\Id</source_model>
+                    <comment>product:retailer_item_id</comment>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="pinterest_rich_pins" translate="label" type="text" sortOrder="90" showInDefault="1"
+                   showInWebsite="1" showInStore="1">
+                <label>Pinterest Rich Pins Settings</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>it uses same tags as Facebook Open graph, make sure Facebook Open Graph is enabled as
+                        well
+                    </comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

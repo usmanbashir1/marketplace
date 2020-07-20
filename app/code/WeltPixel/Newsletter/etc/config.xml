@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <weltpixel_newsletter>
+            <general>
+                <enable>0</enable>
+                <display_mode>1</display_mode>
+                <display_mobile>1</display_mobile>
+                <display_after_pages>1</display_after_pages>
+                <display_after_seconds>1</display_after_seconds>
+                <display_block>weltpixel_newsletter</display_block>
+                <popup_cookie_lifetime>4</popup_cookie_lifetime>
+                <disable_popup>1</disable_popup>
+                <terms_conditions_consent>0</terms_conditions_consent>
+                <terms_conditions_text><![CDATA[<a href="https://pearl.weltpixel.com/privacy-policy-cookie-restriction-mode" target="_blank">I agree to the Privacy Policy. </a>]]></terms_conditions_text>
+            </general>
+        </weltpixel_newsletter>
+    </default>
+</config>

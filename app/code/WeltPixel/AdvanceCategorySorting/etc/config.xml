@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <weltpixel_advance_category_sorting>
+            <general>
+                <enable>1</enable>
+            </general>
+            <position>
+                <enable>1</enable>
+                <name>Most Relevant</name>
+                <both_direction>0</both_direction>
+                <sort_order>1</sort_order>
+            </position>
+            <name>
+                <enable>1</enable>
+                <name>Alphabetically</name>
+                <both_direction>1</both_direction>
+                <sort_order>2</sort_order>
+            </name>
+            <price>
+                <enable>1</enable>
+                <name>Price</name>
+                <both_direction>1</both_direction>
+                <sort_order>3</sort_order>
+            </price>
+            <new_arrivals>
+                <enable>1</enable>
+                <name>Newest Arrivals</name>
+                <both_direction>0</both_direction>
+                <sort_order>4</sort_order>
+            </new_arrivals>
+            <top_seller>
+                <enable>1</enable>
+                <name>Best Selling</name>
+                <both_direction>0</both_direction>
+                <sort_order>5</sort_order>
+            </top_seller>
+            <top_rated>
+                <enable>1</enable>
+                <name>Top Rated</name>
+                <both_direction>0</both_direction>
+                <sort_order>6</sort_order>
+            </top_rated>
+            <most_reviewed>
+                <enable>1</enable>
+                <name>Most Reviewed</name>
+                <both_direction>0</both_direction>
+                <sort_order>7</sort_order>
+            </most_reviewed>
+        </weltpixel_advance_category_sorting>
+    </default>
+</config>

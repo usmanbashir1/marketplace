@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="WeltPixel_CustomHeader::CustomHeader" title="Custom Header" module="WeltPixel_CustomHeader" action="adminhtml/system_config/edit/section/weltpixel_custom_header/" sortOrder="30" parent="WeltPixel_Backend::Pearl_Theme_Options" resource="WeltPixel_CustomHeader::CustomHeader"/>
+    </menu>
+</config>

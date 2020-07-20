@@ -1,0 +1,15 @@
+<?php $_productCollection = $block->getLoadedProductCollection();?>
+<?php $curPage = $_productCollection->getCurPage();?>
+<div class="list-product-js">
+    <script>
+        require(['jquery'], function($){
+            $(function($) {
+                $('.product-item-info a').each(function() {
+                    $(this).attr('data-item-page', <?=$curPage?>);
+                })
+            });
+        });
+
+    </script>
+</div>
+

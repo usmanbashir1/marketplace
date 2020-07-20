@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+    <body>
+        <move element="compare-link-wrapper" destination="header.right" after="store_language"/>
+        <move element="top.links" destination="customer"/>
+        <move element="authorization-link" destination="top.links" after="-"/>
+        <move element="minicart" destination="header.right" after="-"/>
+
+        <referenceBlock name="advanced-search-link" remove="true"/>
+
+        <referenceContainer name="header-wrapper">
+            <container name="header.right" as="header_right" label="Page Header Right"  htmlTag="div" htmlClass="header_right" after="logo">
+                <block class="Magento\Store\Block\Switcher" name="storeswitcher" as="storeswitcher" before="-" template="switch/stores.phtml" />
+                <block class="Magento\Directory\Block\Currency" name="currency" before="store_language" template="currency.phtml"/>
+                <block class="Magento\Store\Block\Switcher" name="store_language" as="store_language" template="Magento_Store::switch/languages.phtml">
+                    <arguments>
+                        <argument name="view_model" xsi:type="object">Magento\Store\ViewModel\SwitcherUrlProvider</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+
+        <referenceBlock name="top.search">
+            <action ifconfig="weltpixel_custom_header/search_options/version" method="setTemplate">
+                <argument  name="template" xsi:type="string">WeltPixel_CustomHeader::form.mini.phtml</argument>
+            </action>
+        </referenceBlock>
+        <referenceBlock name="navigation.sections">
+            <arguments>
+                <argument name="group_css" xsi:type="string">nav-sections-2 nav-sections</argument>
+            </arguments>
+        </referenceBlock>
+
+
+        <referenceContainer name="page.wrapper">
+            <container name="header.container.v2" as="header_container_v2" label="Page Header Container V2" htmlTag="div" htmlClass="page-header page-header-v2" before="-"/>
+        </referenceContainer>
+        <move element="header.container" destination="header.container.v2"/>
+
+        <referenceContainer name="before.body.end">
+            <block class="Magento\Framework\View\Element\Template" name="welpixel.header.js" template="WeltPixel_CustomHeader::header_js.phtml"/>
+        </referenceContainer>
+
+    </body>
+</page>

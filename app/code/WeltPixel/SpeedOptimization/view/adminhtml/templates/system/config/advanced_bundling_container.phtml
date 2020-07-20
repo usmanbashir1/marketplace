@@ -1,0 +1,59 @@
+<div class="advanced_bundling_main_container">
+    <input type="hidden" value="<?php echo $block->getFormKey(); ?>" name="api_form_key" id="api_form_key" />
+    <div class="ab-steps ab-step-1">
+        <div class="prev-step-result content-visible">
+            <p class="info-msg">- <?php echo __('Please Save config before pressing Start.') ?></p>
+            <p class="info-msg">- <?php echo __("Enable Production mode") ?></p>
+            <p class="info-msg-cmd">bin/magento deploy:mode:set production</p>
+            <p class="info-msg">- <?php echo __("Deploy Static Content for all locales/languages") ?></p>
+            <p class="info-msg-cmd">bin/magento setup:static-content:deploy [your_locale]</p>
+            <p class="info-msg">- <?php echo __("In case you are using CDN or external cache solution, it's recommended to avoid accessing the frontend before this process is complete, to avoid caching an incomplete version of the files.") ?></p>
+        </div>
+        <?php $appMode = $block->getMagentoMode(); ?>
+        <?php if ($appMode != \Magento\Framework\App\State::MODE_PRODUCTION) : ?>
+        <div class="notification-wrapper">
+            <p><?php echo __("We've detected that the store is in developer mode. Static Content MUST be deployed in order for the Advanced Bundling to work.") ?></p>
+        </div>
+        <?php endif; ?>
+        <button id="ab_step_1" title="<?php echo __("Start") ?>" type="button" class="action-default scalable save primary ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+            <span class="ui-button-text"><span><?php echo __("Start") ?></span></span>
+        </button>
+    </div>
+    <div class="ab-steps ab-step-2">
+        <p class="info-msg">
+        <?php echo __('Please select the theme and locale for which the advanced bundling should be applied:') ?>
+        </p>
+        <?php $themeLocales = $this->getBundlingOptions();  ?>
+        <select id="theme_locales_path" name="theme_locales_path" class="select multiselect admin__control-multiselect" size="10"  multiple="multiple">
+            <?php foreach ($themeLocales as $themePathLocale) : ?>
+            <option selected="SELECTED" value="<?php echo $themePathLocale ?>" ><?php echo $themePathLocale ?></option>
+            <?php endforeach; ?>
+        </select>
+        <br/><br/>
+        <button id="ab_step_2" title="<?php echo __("Go To Next Step") ?>" type="button" class="action-default scalable save primary ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+            <span class="ui-button-text"><span><?php echo __("Go To Next Step") ?></span></span>
+        </button>
+    </div>
+    <div class="ab-steps ab-step-3">
+        <div class="prev-step-result"></div>
+        <div class="no-error">
+            <button id="ab_step_3" title="<?php echo __("Go To Next Step") ?>" type="button" class="action-default scalable save primary ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+                <span class="ui-button-text"><span><?php echo __("Go To Next Step") ?></span></span>
+            </button>
+            <p class="info-msg-bottom">
+                <?php echo __('Preparing the the advancedbundling_build.js file') ?>
+            </p>
+        </div>
+    </div>
+    <div class="ab-steps ab-step-4">
+        <div class="prev-step-result"></div>
+    </div>
+</div>
+<script>
+    requirejs(['jquery', 'WeltPixel_SpeedOptimization/js/advancedBundling' ],
+        function   ($, advancedBundling) {
+            $(document).ready(function() {
+                advancedBundling.initialize('<?php echo $this->getUrlForItemsCreation() ?>');
+            });
+        });
+</script>

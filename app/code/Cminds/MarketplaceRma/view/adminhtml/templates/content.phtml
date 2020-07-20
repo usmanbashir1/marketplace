@@ -1,0 +1,16 @@
+<form action="<?= /* @escapeNotVerified */ $block->getUrl('*/*/save') ?>" method="post" id="marketplacerma-rma-edit-form">
+    <?= $block->getBlockHtml('formkey') ?>
+</form>
+
+<script>
+    require([
+        "jquery",
+        "mage/mage"
+    ], function(jQuery){
+
+        jQuery(document).ready(function() {
+            jQuery('#rmarketplacerma-rma-edit-form').mage('form').mage('validation');
+        });
+
+    });
+</script>

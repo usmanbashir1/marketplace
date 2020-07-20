@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="weltpixel_speedoptimization" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Speed Optimization</label>
+            <tab>weltpixel</tab>
+            <resource>WeltPixel_SpeedOptimization::SpeedOptimizationSettings</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Speed Optimization General Settings</label>
+                <field id="enable" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="js_optimization" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Js Optimization</label>
+                <field id="enable_advanced_bundling" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Advanced Bundling</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="weltpixel_speedoptimization/general/enable">1</field>
+                    </depends>
+                </field>
+                <field id="advanced_bundling_container" translate="label" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>WeltPixel\SpeedOptimization\Block\System\Config\AdvancedBundling</frontend_model>
+                    <depends>
+                        <field id="enable_advanced_bundling">1</field>
+                        <field id="weltpixel_speedoptimization/general/enable">1</field>
+                    </depends>
+                </field>
+                <field id="merge_files" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Merge JavaScript Files - Magento Core</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>dev/js/merge_files</config_path>
+                    <comment><![CDATA[<b> This is default Magento Core Option from Stores > Configuration > Advanced > Developer </b>]]></comment>
+                    <depends>
+                        <field id="weltpixel_speedoptimization/general/enable">1</field>
+                        <field id="enable_advanced_bundling">0</field>
+                    </depends>
+                </field>
+                <field id="enable_js_bundling" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable JavaScript Bundling - Magento Core</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>dev/js/enable_js_bundling</config_path>
+                    <comment><![CDATA[<b> This is default Magento Core Option from Stores > Configuration > Advanced > Developer </b>]]></comment>
+                    <depends>
+                        <field id="weltpixel_speedoptimization/general/enable">1</field>
+                        <field id="enable_advanced_bundling">0</field>
+                    </depends>
+                </field>
+                <field id="minify_files" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Minify JavaScript Files - Magento Core</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <config_path>dev/js/minify_files</config_path>
+                    <comment><![CDATA[<b> This is default Magento Core Option from Stores > Configuration > Advanced > Developer </b>]]></comment>
+                    <depends>
+                        <field id="weltpixel_speedoptimization/general/enable">1</field>
+                        <field id="enable_advanced_bundling">0</field>
+                    </depends>
+                </field>
+                <field id="move_js_to_bottom" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Move Javascript to the bottom of the page</label>
+                    <source_model>WeltPixel\Backend\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="weltpixel_speedoptimization/general/enable">1</field>
+                    </depends>
+                </field>
+                <field id="move_js_to_bottom_ignored_blocks" translate="label comment" type="textarea" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Excluded Block Names</label>
+                    <depends>
+                        <field id="weltpixel_speedoptimization/general/enable">1</field>
+                        <field id="move_js_to_bottom">1</field>
+                    </depends>
+                    <comment><![CDATA[List by layout block name the blocks (separated by ,) whose javascript should not be moved to the bottom of the page. <br/> <b>Default blocks that are ignored:</b> require.js, head.additional, transparent_iframe]]> </comment>
+                </field>
+            </group>
+            <group id="css_optimization" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Css Optimization</label>
+                <field id="merge_css_files" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Merge CSS Files - Magento Core</label>
+                    <source_model>WeltPixel\Backend\Model\Config\Source\YesNo</source_model>
+                    <config_path>dev/css/merge_css_files</config_path>
+                    <comment><![CDATA[<b> This is default Magento Core Option from Stores > Configuration > Advanced > Developer </b>]]></comment>
+                    <depends>
+                        <field id="weltpixel_speedoptimization/general/enable">1</field>
+                    </depends>
+                </field>
+                <field id="minify_files" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Minify CSS Files - Magento Core</label>
+                    <source_model>WeltPixel\Backend\Model\Config\Source\Yesno</source_model>
+                    <config_path>dev/css/minify_files</config_path>
+                    <comment><![CDATA[<b> This is default Magento Core Option from Stores > Configuration > Advanced > Developer </b>]]></comment>
+                    <depends>
+                        <field id="weltpixel_speedoptimization/general/enable">1</field>
+                    </depends>
+                </field>
+                <field id="css_preload" translate="label comment" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Css Preload</label>
+                    <source_model>WeltPixel\Backend\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="weltpixel_speedoptimization/general/enable">1</field>
+                    </depends>
+                    <comment>
+                        <![CDATA[When CSS Preload is enabled, stylesheets included in head will be downloaded asynchronously to prevent them from blocking page render.]]>
+                    </comment>
+                </field>
+                <field id="css_preload_for_all" translate="label comment" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Preload all Css files</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="weltpixel_speedoptimization/general/enable">1</field>
+                        <field id="css_preload">1</field>
+                    </depends>
+                    <comment><![CDATA[If set to Yes, all CSS files will be preloaded, otherwise CSS files with media query all will be included normally, and only the rest will be preloaded.<br/>
+                        <b>Note:</b> When set to Yes, depending on the server speed, for a brief period of time you might experience the
+                        Flash of Unstyled Content, an unstyled page, until the styles are fully downloaded and applied.]]></comment>
+                </field>
+            </group>
+            <group id="html_optimization" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Html Optimization</label>
+                <field id="minify_html" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Minify Html - Magento Core</label>
+                    <source_model>WeltPixel\Backend\Model\Config\Source\Yesno</source_model>
+                    <config_path>dev/template/minify_html</config_path>
+                    <comment><![CDATA[<b> This is default Magento Core Option from Stores > Configuration > Advanced > Developer </b>]]></comment>
+                    <depends>
+                        <field id="weltpixel_speedoptimization/general/enable">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

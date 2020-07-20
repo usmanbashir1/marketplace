@@ -1,0 +1,13 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="before.body.end">
+            <block
+                ifconfig="weltpixel_infinite_scroll/general/ajax_catalog_advanced"
+                class="Magento\Framework\View\Element\Template"
+                name="ajaxinfinitescroll.js"
+                template="WeltPixel_AjaxInfiniteScroll::ajaxinfinitescroll_js.phtml"
+            />
+        </referenceContainer>
+    </body>
+</page>

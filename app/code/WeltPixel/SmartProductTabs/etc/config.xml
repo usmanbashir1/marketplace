@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<weltpixel_smartproducttabs>
+			<general>
+				<enable_smartproducttabs>0</enable_smartproducttabs>
+				<block_matching_logic>1</block_matching_logic>
+				<attribute_smartproducttabs_tab_1>Smart Product Tab 1</attribute_smartproducttabs_tab_1>
+				<attribute_smartproducttabs_tab_2>Smart Product Tab 2</attribute_smartproducttabs_tab_2>
+				<attribute_smartproducttabs_tab_3>Smart Product Tab 3</attribute_smartproducttabs_tab_3>
+			</general>
+		</weltpixel_smartproducttabs>
+	</default>
+</config>

@@ -1,0 +1,22 @@
+<!--@subject {{trans "Your question has been submitted"}}  @-->
+
+{{template config_path="design/email/header_template"}}
+
+<table>
+    <tr class="email-intro">
+        <td>
+            <p class="greeting">{{trans "Hello, "}}{{var customer_name}}</p>
+            <p>
+                {{trans "You have submitted a question for "}} <a href="{{var product_url}}">{{var product_name}}</a>.
+            </p>
+            <p>
+                {{trans "Please find below your question: "}}
+            </p>
+            <p>
+                "{{var question}}"
+            </p>
+        </td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer_template"}}

@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="weltpixel_lazy_loading" translate="label" type="text" sortOrder="182" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Lazy Loading</label>
+            <tab>weltpixel</tab>
+            <resource>WeltPixel_LazyLoading::LazyLoadingSettings</resource>
+            <group id="general" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="enable" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Lazy Loading is also available in <a target="_blank" href="https://www.weltpixel.com/owl-carousel-and-slider.html">Banner Slider and OWL Carousel - Free Extension</a>, you can enable lazy loading for sliders and carousels using admin options.]]></comment>
+                </field>
+            </group>
+            <group id="advanced" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Advanced Settings</label>
+                <field id="loading_early" translate="label comment" type="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Start Loading Early</label>
+                    <comment><![CDATA[Enable to load images earlier than visible on viewport/screen. <br>
+                             <a target="_blank" href="https://www.weltpixel.com/magento-2-lazy-load-product-extension.html">Upgrade to Pro version</a> to enable this functionality.]]>
+                    </comment>
+                    <frontend_model>WeltPixel\LazyLoading\Block\System\Config\Form\Field\Disable</frontend_model>
+                </field>
+                <field id="negative_margin" translate="label comment" type="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Negative Margin</label>
+                    <comment><![CDATA[Insert the Threshold at which the images are loaded, before they appear on the screen. For example, insert 300, for images to be loaded at 300px from viewport/screen. <br>
+                             <a target="_blank" href="https://www.weltpixel.com/magento-2-lazy-load-product-extension.html">Upgrade to Pro version</a> to enable this functionality.]]>
+                    </comment>
+                    <frontend_model>WeltPixel\LazyLoading\Block\System\Config\Form\Field\Disable</frontend_model>
+                </field>
+                <field id="effect_speed" translate="label comment" type="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Effect Speed</label>
+                    <comment><![CDATA[Effect Speed in milliseconds. For example insert 1000 for 1 second of the animation speed. <br>
+                             <a target="_blank" href="https://www.weltpixel.com/magento-2-lazy-load-product-extension.html">Upgrade to Pro version</a> to enable this functionality.]]>
+                    </comment>
+                    <frontend_model>WeltPixel\LazyLoading\Block\System\Config\Form\Field\Disable</frontend_model>
+                </field>
+                <field id="loading_placeholder" translate="label comment" type="label" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Loading Placeholder</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Enable to be able to choose your own placeholder for the loading period of the images. <br> Below you can upload your own file. <br>
+                             <a target="_blank" href="https://www.weltpixel.com/magento-2-lazy-load-product-extension.html">Upgrade to Pro version</a> to enable this functionality.]]>
+                    </comment>
+                    <frontend_model>WeltPixel\LazyLoading\Block\System\Config\Form\Field\Disable</frontend_model>
+                </field>
+                <field id="loading_icon" translate="label comment" type="image" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Loading Icon</label>
+                    <upload_dir config="system/filesystem/media" scope_info="1">weltpixel/lazyloading/logo</upload_dir>
+                    <base_url type="media" scope_info="1">weltpixel/lazyloading/logo</base_url>
+                    <comment><![CDATA[Only 'jpg', 'jpeg', 'gif', 'png', 'svg' is allowed. <br>
+                             <a target="_blank" href="https://www.weltpixel.com/magento-2-lazy-load-product-extension.html">Upgrade to Pro version</a> to enable this functionality.]]>
+                    </comment>
+                    <frontend_model>WeltPixel\LazyLoading\Block\System\Config\Form\Field\Disable</frontend_model>
+                </field>
+                <field id="placeholder_width" translate="label comment" type="label" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Placeholder Width</label>
+                    <comment><![CDATA[Insert the maximum width of the placeholder in pixels. For example insert 50 for a width of 50px.<br>
+                             <a target="_blank" href="https://www.weltpixel.com/magento-2-lazy-load-product-extension.html">Upgrade to Pro version</a> to enable this functionality.]]>
+                    </comment>
+                    <frontend_model>WeltPixel\LazyLoading\Block\System\Config\Form\Field\Disable</frontend_model>
+                </field>
+            </group>
+
+            <group id="compatibility_notification" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <fieldset_css>weltpixel-recommended-header active</fieldset_css>
+                <field id="notification_msg" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>WeltPixel\LazyLoading\Block\Adminhtml\System\Config\LazyLoadingCompatibilityNotice</frontend_model>
+                </field>
+            </group>
+
+            <group id="notification" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Lazy Load Tips</label>
+                <fieldset_css>weltpixel-recommended-header active</fieldset_css>
+                <field id="notification_msg" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>WeltPixel\LazyLoading\Block\Adminhtml\System\Config\LazyLoadingTutorial</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

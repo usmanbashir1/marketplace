@@ -1,0 +1,17 @@
+<script>
+    require(['jquery', 'WeltPixel_CustomHeader/js/header_js'], function ($, Header) {
+        $(document).ready(function () {
+            Header.action();
+        });
+
+        $(window).on('load',function () {
+            Header.action();
+        });
+
+        var reinitTimer;
+        $(window).on('resize', function () {
+            clearTimeout(reinitTimer);
+            reinitTimer = setTimeout(function() {Header.action();}, 100);
+        });
+    });
+</script>

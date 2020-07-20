@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="WeltPixel_DesignElements::DesignElements" title="Design Elements" module="WeltPixel_DesignElements" action="adminhtml/system_config/edit/section/weltpixel_design_elements/" sortOrder="20" parent="WeltPixel_Backend::Pearl_Theme_Options" resource="WeltPixel_DesignElements::DesignElements"/>
+    </menu>
+</config>

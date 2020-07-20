@@ -1,0 +1,55 @@
+.sl-admin-tooltip {
+    display: none;
+    border: 1px solid #ccc;
+    background: #3f9cc8;
+    color: #fff;
+    padding: 8px;
+    width: 156px;
+    font-size: 12px;
+    position: absolute;
+    margin-top: -33px;
+    margin-left: 104px;
+}
+.sl-dashboard table{
+    border: 1px solid #ccc;
+    width: 100%;
+}
+.sl-dashboard table thead th{
+    padding: 15px;
+    text-align: left;
+    background: gainsboro;
+}
+    .sl-dashboard table thead th.al-left{
+        text-align: left;
+    }
+    .sl-dashboard table thead th.al-right{
+        text-align: right;
+    }
+
+.sl-dashboard table tbody td{
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+    .sl-dashboard table tbody td.al-left{
+        text-align: left;
+        width: 20%;
+        background: #efefef;
+        font-weight: 600;
+    }
+    .sl-dashboard table tbody td.al-right{
+        text-align: right;
+        width: 10%
+    }
+
+.sl-dashboard table tfoot td{
+    padding: 15px;
+    text-align: right;
+    background: #ccc;
+}
+    .sl-dashboard table tfoot td.al-left{
+         text-align: left;
+     }
+    .sl-dashboard table tfoot td.al-right{
+        text-align: right;
+}

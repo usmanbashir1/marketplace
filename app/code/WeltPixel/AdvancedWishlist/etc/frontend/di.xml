@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Wishlist\Controller\WishlistProviderInterface">
+        <plugin name="weltpixel-advancedwishlist-wishlistprovider"
+                type="WeltPixel\AdvancedWishlist\Plugin\WishlistProvider" sortOrder="1"/>
+    </type>
+    <type name="Magento\Wishlist\Block\Customer\Sharing">
+        <plugin name="weltpixel-advancedwishlist-customersharing"
+                type="WeltPixel\AdvancedWishlist\Plugin\CustomerSharingBlock" sortOrder="1"/>
+    </type>
+    <type name="Magento\Wishlist\Controller\Index\Add">
+        <plugin name="weltpixel-advancedwishlist-controller-index-add"
+                type="WeltPixel\AdvancedWishlist\Plugin\WishlistAddAction"></plugin>
+    </type>
+    <type name="Magento\Wishlist\CustomerData\Wishlist">
+        <plugin name="weltpixel-advancedwishlist-customerdata-wishlist"
+                type="WeltPixel\AdvancedWishlist\Plugin\CustomerDataWishlist"></plugin>
+    </type>
+    <type name="WeltPixel\AdvancedWishlist\CustomerData\Wishlist">
+        <arguments>
+            <argument name="wishlistHelper" xsi:type="object">WeltPixel\AdvancedWishlist\Helper\WishlistData</argument>
+        </arguments>
+    </type>
+    <!-- Enterprise only -->
+    <type name="Magento\MultipleWishlist\Controller\Index\Index">
+        <plugin name="weltpixel-advancedwishlist-controller-index-add"
+                type="WeltPixel\AdvancedWishlist\Plugin\Enterprise\WishlistIndex" sortOrder="1"/>
+    </type>
+    <!-- Enterprise only -->
+</config>

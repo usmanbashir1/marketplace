@@ -1,0 +1,12 @@
+<?php
+$product = $block->getProduct();
+if($product->getData('manufacturer_code')):
+?>
+<h2 class="text-center">
+    <?php /* @escapeNotVerified */ echo __("This product can't be cloned"); ?>.
+</h2>
+<?
+else:
+    echo $this->getChildHtml('supplier.default.edit.block');
+endif;
+?>

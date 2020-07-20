@@ -1,0 +1,111 @@
+& when (@media-common = true) {
+    ul.weltpixel_multistore {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-size: 0;
+        li {
+            list-style-type: none;
+            display: inline-block;
+            margin: 0;
+            padding: 0px;
+            margin: 0px;
+            border: 0px solid transparent;
+            position: relative;
+            &:hover {
+                img {
+                    opacity: 0.6;
+                    transition: opacity .55s ease-in-out;
+                    -moz-transition: opacity .55s ease-in-out;
+                    -webkit-transition: opacity .55s ease-in-out;
+                }
+                &.active {
+                    img {
+                        opacity: 1;
+                        transition: none;
+                        -moz-transition: none;
+                        -webkit-transition: none;
+                    }
+                }
+            }
+            img {
+                display: block;
+
+
+            }
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .page-header-v4 {
+        .page-header {
+            .panel.wrapper {
+                position: relative;
+            }
+        }
+    }
+    #multistore-mobile-switcher-language {
+        padding-top: 0px;
+        background-color: #000;
+        min-height: 35px;
+        img{
+            min-height: 35px !important;
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    #multistore-mobile-switcher-language {
+        display: none;
+        &.multistore-desktop {
+            display: block;
+            background: #000;
+            padding-top: 0px;
+            ul.weltpixel_multistore {
+                text-align: left;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .page-header-v1 {
+        .page-header {
+            .multistore-switcher {
+                position: absolute;
+                top: 0px;
+                margin-left: -20px;
+            }
+        }
+    }
+
+    .page-header-v2 {
+        .page-header {
+            .multistore-switcher {
+                position: relative;
+                top: -8px;
+                .weltpixel_multistore{
+                    margin-top: 9px;
+                }
+            }
+        }
+    }
+
+    .page-header-v3 {
+        .page-header {
+            .multistore-switcher {
+                position: absolute;
+                top: 0px;
+                left: -5px;
+            }
+        }
+    }
+
+    .page-header-v4 {
+        .page-header {
+            .multistore-switcher {
+                position: relative;
+                top: -8px;
+                margin-bottom: -10px;
+            }
+        }
+    }
+}

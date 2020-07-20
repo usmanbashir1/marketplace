@@ -1,0 +1,29 @@
+<?php
+$_helper = $this->helper('WeltPixel\ProductPage\Helper\Data');
+$isMagnifierEnabled = $_helper->getMagnifierEnabled();
+$zoomType = $_helper->getMagnifierEventType();
+?>
+
+<?php if ($isMagnifierEnabled && $zoomType == 'hover') : ?>
+
+<script>
+    require(["jquery"], function ($) {
+        $(document).ready(function() {
+            $(document).on('mouseleave', '.fotorama__stage' ,function() {
+                $('.magnify-lens').addClass('magnify-hidden');
+                $('.magnifier-preview').addClass('magnify-hidden');
+            });
+        });
+    });
+    require(['jquery', 'mage/gallery/gallery'], function($, gallery){
+        $('[data-gallery-role=gallery-placeholder]').on('gallery:loaded', function () {
+            $(this).on('fotorama:ready', function() {
+                var fotoramaStageLeft = parseInt($('.fotorama__stage').css('left'));
+                if (fotoramaStageLeft) {
+                    $('.fotorama__stage').width($('.fotorama__stage').width() - fotoramaStageLeft);
+                }
+            });
+        });
+    });
+</script>
+<?php endif; ?>

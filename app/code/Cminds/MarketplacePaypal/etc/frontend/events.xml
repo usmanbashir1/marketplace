@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Cminds MarketplacePaypal frontend events config.
+ *
+ * @category Cminds
+ * @package  Cminds_MarketplacePaypal
+ * @author   Piotr Pierzak <piotrek.pierzak@gmail.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="supplierfrontendproductuploader_navbar_init">
+        <observer name="cminds_marketplacepaypal_vendorpanel_navbar_init"
+                  instance="Cminds\MarketplacePaypal\Observer\VendorPanel\Navbar\Init"/>
+    </event>
+</config>

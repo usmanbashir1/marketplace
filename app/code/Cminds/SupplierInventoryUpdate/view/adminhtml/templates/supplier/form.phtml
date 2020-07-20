@@ -1,0 +1,124 @@
+<?php
+$supplier = $block->getSupplier();
+$updateCollection = $block->getUpdateCollection($supplier->getId());
+?>
+<div class="fieldset-wrapper">
+    <div class="fieldset-wrapper-title">
+        <h1 class="text-left"><?php echo __('Inventory Updater Configuration'); ?></h1>
+    </div>
+    <div class="admin__fieldset-wrapper-content">
+        <fieldset class="admin__fieldset">
+            <div name="productinventory-info-form"
+                 id="productinventory-info-form"
+                 <?php echo $block->getUrl("supplier_inventory/inventory/save"); ?>
+                 >
+                <div class="admin__field">
+                    <label class="admin__field-label" for="updater_csv_link">
+                        <span><?php echo __('CSV Link'); ?></span>
+                    </label>
+                    <div class="admin__field-control">
+                        <input type="text" id="updater_csv_link"
+                               name="updater_csv_link"
+                               value="<?php echo isset($updateCollection['updater_csv_link']) ? $updateCollection['updater_csv_link'] : ''; ?>"
+                               data-update="<?php echo isset($updateCollection['updater_csv_link']) ? $updateCollection['updater_csv_link'] : ''; ?>"
+                               data-form-part="customer_form"
+                        />
+                    </div>
+                </div>
+                <div class="admin__field">
+                    <label class="admin__field-label" class="admin__field-label" for="updater_csv_column">
+                        <?php echo __('CSV delimiter'); ?>
+                    </label>
+                    <div class="admin__field-controll">
+                        <input type="text"
+                               id="updater_csv_delimiter"
+                               name="updater_csv_delimiter"
+                               value="<?php echo isset($updateCollection['updater_csv_delimeter']) ? $updateCollection['updater_csv_delimeter'] : ','; ?>"
+                               data-update="<?php echo isset($updateCollection['updater_csv_delimeter']) ? $updateCollection['updater_csv_delimeter'] : ','; ?>"
+                               data-form-part="customer_form"
+                        />
+                    </div>
+                </div>
+                <div class="admin__field">
+                    <label class="admin__field-label" class="admin__field-label" for="updater_csv_column">
+                        <?php echo __('Matching Csv Column'); ?>
+                    </label>
+                    <div class="admin__field-control">
+                        <input type="text" id="updater_csv_column"
+                               name="updater_csv_column"
+                               value="<?php echo isset($updateCollection['updater_csv_column']) ? $updateCollection['updater_csv_column'] : ''; ?>"
+                               data-update="<?php echo isset($updateCollection['updater_csv_column']) ? $updateCollection['updater_csv_column'] : ''; ?>"
+                               data-form-part="customer_form"
+                        />
+                    </div>
+                </div>
+                <div class="admin__field">
+                    <label class="admin__field-label" for="updater_csv_column">
+                        <?php echo __('Matching Product Attribute'); ?>
+                    </label>
+                    <div class="admin__field-control">
+                        <select
+                                class="admin__control-select"
+                                name="updater_csv_attribute"
+                                id="updater_csv_attribute"
+                                data-form-part="customer_form">
+                            <?php foreach ($block->getAllAvailableAttributes() as $option): ?>
+                                <option data-update="<?php echo $option['code'] ?>"
+                                        value="<?php echo $option['code'] ?>"<?php if (isset($updateCollection['updater_csv_attribute']) and $updateCollection['updater_csv_attribute'] == $option['code']) echo 'selected = "selected"'; ?>
+                                        >
+                                    <?php echo $option['label'] ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="admin__field">
+                    <label class="admin__field-label" for="updater_qty_column">
+                        <?php echo __('Matching Qty Column'); ?>
+                    </label>
+                    <div class="admin__field-control">
+                        <input type="text"
+                               id="updater_qty_column"
+                               name="updater_qty_column"
+                               value="<?php echo isset($updateCollection['updater_qty_column']) ? $updateCollection['updater_qty_column'] : ''; ?>"
+                               data-update="<?php echo isset($updateCollection['updater_qty_column']) ? $updateCollection['updater_qty_column'] : ''; ?>"
+                               data-form-part="customer_form"
+                        />
+                    </div>
+                </div>
+                <div class="admin__field">
+                    <label class="admin__field-label" for="updater_csv_action">
+                        <?php echo __('If Product is not in the Feed'); ?>
+                    </label>
+                    <div class="admin__field-control">
+                        <select class="admin__controll-select"
+                                name="updater_csv_action"
+                                id="updater_csv_action"
+                                data-form-part="customer_form">
+                            <?php foreach ($block->getActionOptions() as $option): ?>
+                                <option value="<?php echo $option['value'] ?>"
+                                        data-update="<?php echo $option['value'] ?>"
+                                        name="updater_csv_action">
+                                    <?php echo $option['label'] ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="admin__field">
+                    <label class="admin__field-label" for="updater_cost_column">
+                        <?php echo __('Matching Cost Column'); ?>
+                    </label>
+                    <div class="admin__field-control">
+                        <input type="text"
+                               id="updater_cost_column"
+                               name="updater_cost_column"
+                               value="<?php echo isset($updateCollection['updater_cost_column']) ? $updateCollection['updater_cost_column'] : ''; ?>"
+                               data-update="<?php isset($updateCollection['updater_cost_column']) ? $updateCollection['updater_cost_column'] : ''; ?>"
+                               data-form-part="customer_form"
+                        />
+                    </div>
+                </div>
+                <div class="clearfix" style="margin-bottom: 30px;"></div>
+        </fieldset>
+    </div>
+</div>

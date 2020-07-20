@@ -1,0 +1,95 @@
+<?php
+    $_order = $block->getCurrentOrder();
+    $totalDisplaySettings = $block->getDisplaySettings();
+?>
+
+<tr class="subtotal">
+    <?php if ($totalDisplaySettings['subtotal'] == 3): ?>
+        <th colspan="5" class="mark textalign-right" scope="row"><?=  /* @escapeNotVerified */ __('Subtotal Excl. Tax') ?></th>
+    <?php else: ?>
+        <th colspan="5" class="mark textalign-right" scope="row"><?=  /* @escapeNotVerified */ __('Subtotal') ?></th>
+    <?php endif; ?>
+    <td class="amount textalign-right">
+        <?php if ($totalDisplaySettings['subtotal'] == 2): ?>
+            <span class="price"><?= $_order->formatPrice($_order->getSubtotalInclTax()) ?></span>
+        <?php else: ?>
+            <span class="price"><?= $_order->formatPrice($_order->getSubtotal()) ?></span>
+        <?php endif ?>
+    </td>
+</tr>
+
+<?php if ($totalDisplaySettings['subtotal'] == 3): ?>
+    <tr class="subtotal">
+        <th colspan="5" class="mark textalign-right" scope="row"><?=  /* @escapeNotVerified */ __('Subtotal Incl. Tax') ?></th>
+        <td class="amount textalign-right" data-th="Subtotal (Incl. Tax)">
+            <span class="price"><?= $_order->formatPrice($_order->getSubtotalInclTax()) ?></span>
+        </td>
+    </tr>
+<?php endif; ?>
+
+<?php if ($_order->getDiscountAmount() != 0): ?>
+    <tr class="discount">
+        <th colspan="5" class="mark textalign-right" scope="row"><?=  /* @escapeNotVerified */ __('Discount (%1)', $_order->getDiscountDescription()) ?></th>
+        <td class="amount textalign-right" data-th="Discount">
+            <span class="price"><?= $_order->formatPrice($_order->getDiscountAmount()) ?></span>
+        </td>
+    </tr>
+<?php endif; ?>
+
+<?php if ($_order->getShippingAmount() != 0): ?>
+    <tr class="shipping">
+        <?php $shippingDescription =  $_order->getShippingDescription(); ?>
+        <?php if ($totalDisplaySettings['shipping'] == 3): ?>
+            <th colspan="5" class="mark textalign-right" scope="row"><?=  /* @escapeNotVerified */ __('Shipping Excl. Tax (%1)', $shippingDescription) ?></th>
+        <?php else: ?>
+            <th colspan="5" class="mark textalign-right" scope="row"><?=  /* @escapeNotVerified */ __('Shipping (%1)', $shippingDescription) ?></th>
+        <?php endif; ?>
+        <td class="amount textalign-right">
+            <?php if ($totalDisplaySettings['shipping'] == 2): ?>
+                <span class="price"><?= $_order->formatPrice($_order->getShippingInclTax()) ?></span>
+            <?php else: ?>
+                <span class="price"><?= $_order->formatPrice($_order->getShippingAmount()) ?></span>
+            <?php endif ?>
+        </td>
+    </tr>
+
+    <?php if ($totalDisplaySettings['shipping'] == 3): ?>
+        <tr class="shipping">
+            <th colspan="5" class="mark textalign-right" scope="row"><?=  /* @escapeNotVerified */ __('Shipping Incl. Tax (%1)', $shippingDescription) ?></th>
+            <td class="amount textalign-right" data-th="<?php echo __('Shipping Incl. Tax (%1)', $shippingDescription) ?>">
+                <span class="price"><?= $_order->formatPrice($_order->getShippingInclTax()) ?>
+            </td>
+        </tr>
+    <?php endif; ?>
+<?php endif; ?>
+
+<?php if ($_order->getTaxAmount() != 0 || $totalDisplaySettings['zero_tax']): ?>
+    <tr class="tax">
+        <th colspan="5" class="mark textalign-right" scope="row"><?=  /* @escapeNotVerified */ __('Tax') ?></th>
+        <td class="amount textalign-right" data-th="Tax">
+            <span class="price"><?= $_order->formatPrice($_order->getTaxAmount()) ?></span>
+        </td>
+    </tr>
+<?php endif; ?>
+
+<tr class="grand_total">
+    <?php if (!$totalDisplaySettings['grandtotal']): ?>
+        <th colspan="5" class="mark textalign-right" scope="row"><strong><?=  /* @escapeNotVerified */ __('Grand Total') ?></strong></th>
+    <?php else: ?>
+        <th colspan="5" class="mark textalign-right" scope="row"><strong><?=  /* @escapeNotVerified */ __('Grand Total Incl. Tax') ?></strong></th>
+    <?php endif ?>
+    <td class="amount textalign-right">
+        <strong><span class="price"><?= $_order->formatPrice($_order->getGrandTotal()) ?></span></strong>
+    </td>
+</tr>
+
+<?php if ($totalDisplaySettings['grandtotal']): ?>
+    <tr class="grand_total_incl_tax">
+        <th colspan="5" class="mark textalign-right" scope="row"><strong><?=  /* @escapeNotVerified */ __('Grand Total Excl. Tax') ?></strong></th>
+        <td class="amount textalign-right" data-th="<?=  /* @escapeNotVerified */ __('Grand Total Excl. Tax') ?>">
+            <?php $priceExclTax = $_order->getGrandTotal() - $_order->getTaxAmount() ?>
+            <strong><span class="price"><?= $_order->formatPrice($priceExclTax) ?></span></strong>
+        </td>
+    </tr>
+<?php endif; ?>
+

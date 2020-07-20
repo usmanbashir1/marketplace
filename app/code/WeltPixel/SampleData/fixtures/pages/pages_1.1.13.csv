@@ -1,0 +1,301 @@
+title,page_layout,meta_keywords,meta_description,identifier,content_heading,content,is_active,sort_order,layout_update_xml,custom_theme,custom_root_template,custom_layout_update_xml,custom_theme_from,custom_theme_to,css_global,css_phone_small,css_phone,css_tablet_small,css_tablet,css_desktop,css_desktop_large,custom_js
+"Home Page V11",1column,,,home-page-v11,"","
+<div class=""container-v11"">
+	<div class=""row table-order mg-first-element"">
+		<div class=""column home-promotion-text"">
+			<h1 class=""feature-title"">Single-Product Perfection</h1>
+			<p>Pearl Theme is a modular solution designed also for single product stores. This homepage is a great way to showcase your product.</p>
+			<a class=""weltpixel-quickview action tocart primary"" href=""#"">Get It Now</a>
+		</div>
+		<div class=""column home-promotion-image"">
+                        <img src=""{{media url=""wysiwyg/pearl_theme/base-black.png""}}"" alt="""" />
+		</div>
+	</div>
+</div>
+
+<div class=""container-v11"">
+	<div class=""col-sm-12 nopadding"">
+		<div class=""img-bar"">
+                        <img  class=""bg-img"" src=""{{media url=""wysiwyg/pearl_theme/Home-Quotes-2.jpg""}}"" alt="""" />
+			<div class=""home-full-width-feature-content"">
+				<div class=""module-inner"">
+					<h1 class=""feature-title"">Responsive &amp; Reliable</h1>
+					<div class=""rte""><p>Pearl Theme is optimized to look flawless on any browser, screen, and device.</p></div>
+					<div class=""home-module-cta mg-top"">
+	    				       <a class=""weltpixel-quickview action tocart primary"" href=""#"">Check it Out</a>
+	          		        </div>
+				</div>
+			</div>
+		</div>
+		<div class=""overlay-blue""></div>
+	</div>
+</div>
+
+<div class=""container-v11"">
+		<div class=""row nomarginmob"">
+			<div class=""module-inner"">
+				<div class=""home-left-right-media margin-top-section margin-top-section-mob"">
+					<img class=""box-img-1"" src=""{{media url=""wysiwyg/pearl_theme/hero_hardware_startframe_large_edit.jpg""}}"" alt="""" />
+				</div>
+				<div class=""home-left-right-text margin-top-section margin-bottom-section-mob"">
+					<h1 class=""feature-title"">The Perfect Layout</h1>
+					<p>Alternating Features, like this one, let you showcase up to three full-width sections of images and text. Show off your product from multiple angles, tell the story of how it came to be, or introduce customers to your newest campaign.</p>
+					<p>
+		              <a href=""#"" class=""link-details"">See More</a>
+		            </p>
+				</div>
+			</div>
+		</div>
+		<div class=""row nomarginmob"">
+			<div class=""module-inner table-order"">
+				<div class=""home-left-right-text margin-top-section margin-bottom-section margin-bottom-section-mob"">
+					<h1 class=""feature-title"">Attention to Detail</h1>
+					<p>Alternating Features, like this one, let you showcase up to three full-width sections of images and text. Show off your product from multiple angles, tell the story of how it came to be, or introduce customers to your newest campaign.</p>
+					<p>
+		              	<a href=""#"" class=""link-details"">Get It Now</a>
+		            </p>
+				</div>
+				<div class=""home-left-right-media margin-top-section margin-bottom-section"">
+                                   <img src=""{{media url=""wysiwyg/pearl_theme/base-white.png""}}"" alt="""" />
+				</div>
+			</div>
+		</div>
+</div>
+
+<div class=""container-v11"">
+	<div class=""bg-grey"">
+		<div class=""row nomarginmob"">
+			<h1 class=""section-title"">Testimonials</h1>
+	        <ul class=""testimonials-grid grid-3 clearfix module-inner"">
+	            <li>
+	                <div class=""testimonial"">
+	                    <div class=""testi-image"">
+	                        <a href=""#""><i class=""i-plain i-xlarge icon-user""></i></a>
+	                    </div>
+	                    <div class=""testi-content"">
+	                        <p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum repellendus!</p>
+	                        <div class=""testi-meta"">
+	                            John Doe
+	                            <span>XYZ Inc.</span>
+	                        </div>
+	                    </div>
+	                </div>
+	            </li>
+	            <li>
+	                <div class=""testimonial"">
+	                    <div class=""testi-image"">
+	                        <a href=""#""><i class=""i-plain i-xlarge icon-user""></i></a>
+	                    </div>
+	                    <div class=""testi-content"">
+	                        <p>Natus voluptatum enim quod necessitatibus quis expedita harum provident eos obcaecati id culpa corporis molestias.</p>
+	                        <div class=""testi-meta"">
+	                            Collis Ta'eed
+	                            <span>Envato Inc.</span>
+	                        </div>
+	                    </div>
+	                </div>
+	            </li>
+	        </ul>
+        </div>
+	</div>
+</div>
+
+
+<div class=""container-v11"">
+	<div class=""row mg-top nomarginleft"">
+		<div class=""module-inner"">
+			<div class=""product-slideshow"">
+                               <img src=""{{media url=""wysiwyg/pearl_theme/base-purple.png""}}"" alt="""" />
+		    	</h2>
+			</div>
+			<div class=""product-details"">
+				<h2 class=""product-title"">VOICE-ACTIVATED SPEAKER</h2>
+				<p class=""product-price""><span>$119.00</span></p>
+				<a class=""weltpixel-quickview action tocart primary btn-tocart"" href=""javascript: void(0);"" data-quickview-url=""{{store url=""weltpixel_quickview/catalog_product/view/id/1""}}"">Buy now</a>
+				<div class=""product-descr"">
+					<p class=""p1"">This is your classic product description blurb. Lucky for you, there is no character limit, so feel free to give your customers all the nitty gritty details.&nbsp;This is just a demo shop, set up to show off our Startup theme for Shopify. If you're interested in the Snooz product for real, you can check it out&nbsp;</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class=""container-v11"">
+        <div class=""row nomarginmob"">
+        	<div class=""module-inner"">
+{{widget type=""WeltPixel\InstagramWidget\Block\Widget\Instagram"" instagram_client_id=""285acc9ecbb64e72b493c4a26ffcea31"" instagram_access_token=""10434539113.285acc9.82ca523e87854248818b5648d2533817""  title=""#YOUR PRODUCT ON INSTAGRAM"" description=""Users using your product. Sharing comments with the world."" images_in_new_tab=""0"" images_per_row=""col-6"" images_have_padding=""0"" optimize_image_layout=""0"" sort_by=""none"" resolution=""standard_resolution"" feed_type=""user"" user_id=""10434539113"" type_name=""WeltPixel InstagramWidget""}}
+			</div>
+         </div>
+</div>
+",1,,,,,,,,"
+.theme-pearl .page-main{
+       padding:0px !important;
+}
+.page-wrapper .breadcrumbs {display: none;}
+",,,,,,,"
+require(['jquery'], function($){
+    /* Get src attribute from img */
+    $("".bg-img"").each(function() {
+        var urlImg = $(this).attr('src'),
+        parent = $(this).closest( '.img-bar' )
+        $(this).css(""visibility"", ""hidden"");
+        parent.css(
+        {
+        'background':'url(""'+urlImg+'"") no-repeat 0 0',
+        'background-size': 'cover'
+        });
+    });
+});
+"
+"Aos Animations",1column,,,weltpixel-aos-animations,"","
+<div class=""container-aos"">
+    <div class=""row distance"">
+        <div class=""col-main main"">
+            <div class=""std"">
+                <div class=""col_full clearfix"">
+                    <h3>Fade Up</h3>
+                    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/Pearl_Responsive_Theme_For_Magento_2_01.jpg""}}"" class=""alignright notopmargin"" alt=""Image"" title=""Image"" data-aos=""fade-up""=""bounce"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, libero, temporibus quam eaque numquam debitis excepturi assumenda necessitatibus dolore dolorum vero enim distinctio ipsa. Quod, dolorum, quidem eum quisquam facilis nam molestias et voluptas omnis quibusdam dignissimos illum ullam. Possimus consectetur veniam fugit libero pariatur illum eos tempora repudiandae dolorum non. Adipisci, porro, natus hic expedita sed eius provident incidunt fugit autem alias quod ratione et reprehenderit architecto qui ea.</p>
+                </div>
+                <div class=""col_full clearfix"">
+                    <div class=""fancy-title title-dotted-border"">
+                        <h3>Fade down</h3>
+                    </div>
+                    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/Pearl_Responsive_Theme_For_Magento_2_01.jpg""}}"" class=""alignleft notopmargin"" alt=""Image"" title=""Image"" data-aos=""fade-down"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+                </div>
+                <div class=""col_full clearfix"">
+                    <div class=""fancy-title title-dotted-border"">
+                        <h3>Fade Left</h3>
+                    </div>
+                    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/Pearl_Responsive_Theme_For_Magento_2_01.jpg""}}"" class=""alignright notopmargin"" alt=""Image"" title=""Image"" data-aos=""fade-left"" data-aos-anchor-placement=""bottom-bottom"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+                </div>
+                <div class=""col_full clearfix"">
+                    <div class=""fancy-title title-dotted-border"">
+                        <h3>Fade right</h3>
+                    </div>
+                    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/Pearl_Responsive_Theme_For_Magento_2_01.jpg""}}"" class=""alignleft notopmargin"" alt=""Image"" title=""Image"" data-aos=""fade-right"" data-aos-anchor-placement=""bottom-bottom""/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+                </div>
+                <div class=""col_full clearfix"">
+                    <div class=""fancy-title title-dotted-border"">
+                        <h3>Fade Up Right</h3>
+                    </div>
+                    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/Pearl_Responsive_Theme_For_Magento_2_01.jpg""}}"" class=""alignright notopmargin"" alt=""Image"" title=""Image"" data-aos=""fade-up-right"" data-aos-anchor-placement=""bottom-bottom"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+                </div>
+                <div class=""col_full clearfix"">
+                    <div class=""fancy-title title-dotted-border"">
+                        <h3>Fade Up Left</h3>
+                    </div>
+                    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/Pearl_Responsive_Theme_For_Magento_2_01.jpg""}}"" class=""alignleft notopmargin"" alt=""Image"" title=""Image"" data-aos=""fade-up-left"" data-aos-anchor-placement=""bottom-bottom"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+                </div>
+                <div class=""col_full clearfix"">
+                    <div class=""fancy-title title-dotted-border"">
+                        <h3>Fade Down Right</h3>
+                    </div>
+                    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/Pearl_Responsive_Theme_For_Magento_2_01.jpg""}}"" class=""alignright notopmargin"" alt=""Image"" title=""Image"" data-aos=""fade-down-right"" data-aos-anchor-placement=""bottom-bottom"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+                </div>
+                <div class=""col_full clearfix"">
+                    <div class=""fancy-title title-dotted-border"">
+                        <h3>Fade Down Left</h3>
+                    </div>
+                    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/Pearl_Responsive_Theme_For_Magento_2_01.jpg""}}"" class=""alignleft notopmargin"" alt=""Image"" title=""Image"" data-aos=""fade-down-left"" data-aos-anchor-placement=""bottom-bottom""/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+                </div>
+                <div class=""col_full clearfix"">
+                    <div class=""fancy-title title-dotted-border"">
+                        <h3>Flip Up</h3>
+                    </div>
+                    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/Pearl_Responsive_Theme_For_Magento_2_01.jpg""}}"" class=""alignright notopmargin"" alt=""Image"" title=""Image"" data-aos=""flip-up"" data-aos-anchor-placement=""bottom-bottom""/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+                </div>
+                <div class=""col_full clearfix"">
+                    <div class=""fancy-title title-dotted-border"">
+                        <h3>Flip Down</h3>
+                    </div>
+                    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/Pearl_Responsive_Theme_For_Magento_2_01.jpg""}}"" class=""alignleft notopmargin"" alt=""Image"" title=""Image""  data-aos=""flip-down"" data-aos-anchor-placement=""bottom-bottom""/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+                </div>
+                <div class=""col_full clearfix"">
+                    <div class=""fancy-title title-dotted-border"">
+                        <h3>Flip Left</h3>
+                    </div>
+                    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/Pearl_Responsive_Theme_For_Magento_2_01.jpg""}}"" class=""alignright notopmargin"" alt=""Image"" title=""Image"" data-aos=""flip-left"" data-aos-anchor-placement=""bottom-bottom""/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+                </div>
+                <div class=""col_full clearfix"">
+                    <div class=""fancy-title title-dotted-border"">
+                        <h3>Flip Right</h3>
+                    </div>
+                    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/Pearl_Responsive_Theme_For_Magento_2_01.jpg""}}"" class=""alignleft notopmargin"" alt=""Image"" title=""Image"" data-aos=""flip-right"" data-aos-anchor-placement=""bottom-bottom""/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+                </div>
+                <div class=""col_full clearfix"">
+                    <div class=""fancy-title title-dotted-border"">
+                        <h3>Zoom In Up</h3>
+                    </div>
+                    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/Pearl_Responsive_Theme_For_Magento_2_01.jpg""}}"" class=""alignleft notopmargin"" alt=""Image"" title=""Image"" data-aos=""zoom-in-up"" data-aos-anchor-placement=""bottom-bottom"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+                </div>
+                <div class=""col_full clearfix"">
+                    <div class=""fancy-title title-dotted-border"">
+                        <h3>Zoom In Down</h3>
+                    </div>
+                    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/Pearl_Responsive_Theme_For_Magento_2_01.jpg""}}"" class=""alignright notopmargin"" alt=""Image"" title=""Image"" data-aos=""zoom-in-down"" data-aos-anchor-placement=""bottom-bottom"" />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+                </div>
+                <div class=""col_full clearfix"">
+                    <div class=""fancy-title title-dotted-border"">
+                        <h3>Zoom In Left</h3>
+                    </div>
+                    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/Pearl_Responsive_Theme_For_Magento_2_01.jpg""}}"" class=""alignleft notopmargin"" alt=""Image"" title=""Image"" data-aos=""zoom-in-left"" data-aos-anchor-placement=""bottom-bottom""/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+                </div>
+                <div class=""col_full clearfix"">
+                    <div class=""fancy-title title-dotted-border"">
+                        <h3>Zoom In Right</h3>
+                    </div>
+                    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/Pearl_Responsive_Theme_For_Magento_2_01.jpg""}}"" class=""alignright notopmargin"" alt=""Image"" title=""Image"" data-aos=""zoom-in-right"" data-aos-anchor-placement=""bottom-bottom""/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+                </div>
+                <div class=""col_full clearfix"">
+                    <div class=""fancy-title title-dotted-border"">
+                        <h3>Zoom Out Up</h3>
+                    </div>
+                    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/Pearl_Responsive_Theme_For_Magento_2_01.jpg""}}"" class=""alignleft notopmargin"" alt=""Image"" title=""Image"" data-aos=""zoom-out-up"" data-aos-anchor-placement=""bottom-bottom""/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+                </div>
+                <div class=""col_full clearfix"">
+                    <div class=""fancy-title title-dotted-border"">
+                        <h3>Zoom Out Down</h3>
+                    </div>
+                    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/Pearl_Responsive_Theme_For_Magento_2_01.jpg""}}"" class=""alignright notopmargin"" alt=""Image"" title=""Image"" data-aos=""zoom-out-down"" data-aos-anchor-placement=""bottom-bottom""/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+                </div>
+                <div class=""col_full clearfix"">
+                    <div class=""fancy-title title-dotted-border"">
+                        <h3>Zoom Out Left</h3>
+                    </div>
+                    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/Pearl_Responsive_Theme_For_Magento_2_01.jpg""}}"" class=""alignleft notopmargin"" alt=""Image"" title=""Image"" data-aos=""zoom-out-left"" data-aos-anchor-placement=""bottom-bottom""/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+                </div>
+                <div class=""col_full clearfix"">
+                    <div class=""fancy-title title-dotted-border"">
+                        <h3>Zoom Out Right</h3>
+                    </div>
+                    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/Pearl_Responsive_Theme_For_Magento_2_01.jpg""}}"" class=""alignright notopmargin"" alt=""Image"" title=""Image"" data-aos=""zoom-out-right"" data-aos-anchor-placement=""bottom-bottom""/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+                </div>
+                <div class=""col_full clearfix"">
+                    <div class=""fancy-title title-dotted-border"">
+                        <h3>Slide Up</h3>
+                    </div>
+                    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/Pearl_Responsive_Theme_For_Magento_2_01.jpg""}}"" class=""alignleft notopmargin"" alt=""Image"" title=""Image"" data-aos=""slide-up"" data-aos-anchor-placement=""bottom-bottom""/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+                </div>
+                <div class=""col_full clearfix"">
+                    <div class=""fancy-title title-dotted-border"">
+                        <h3>Slide Down</h3>
+                    </div>
+                    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/Pearl_Responsive_Theme_For_Magento_2_01.jpg""}}"" class=""alignright notopmargin"" alt=""Image"" title=""Image"" data-aos=""slide-down"" data-aos-anchor-placement=""bottom-bottom""/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+                </div>
+                <div class=""col_full clearfix"">
+                    <div class=""fancy-title title-dotted-border"">
+                        <h3>Slide Left</h3>
+                    </div>
+                    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/Pearl_Responsive_Theme_For_Magento_2_01.jpg""}}"" class=""alignleft notopmargin"" alt=""Image"" title=""Image"" data-aos=""slide-left"" data-aos-anchor-placement=""bottom-bottom""/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+                </div>
+                <div class=""col_full clearfix"">
+                    <div class=""fancy-title title-dotted-border"">
+                        <h3>Slide Right</h3>
+                    </div>
+                    <p style=""font-size: 14px; line-height: 22px;""><img src=""{{media url=""wysiwyg/Pearl_Responsive_Theme_For_Magento_2_01.jpg""}}"" class=""alignright notopmargin"" alt=""Image"" title=""Image"" data-aos=""slide-right"" data-aos-anchor-placement=""bottom-bottom""/>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, cumque, distinctio, in assumenda voluptates iste autem fugiat recusandae quas corporis laboriosam maxime vero. Harum, similique, doloribus, voluptate aliquam unde quas at consequuntur rem iste eum iusto placeat quae inventore quibusdam explicabo itaque eaque dolor quam omnis assumenda. Hic, nesciunt vel debitis quas reiciendis. Debitis, natus, voluptas, quaerat, nostrum tempora aliquid nesciunt sapiente commodi excepturi fugiat neque facilis perferendis quam porro!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+",1,,,,,,,,,,,,,,,

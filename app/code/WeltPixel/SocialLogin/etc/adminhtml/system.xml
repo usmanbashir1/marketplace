@@ -1,0 +1,310 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="weltpixel_sociallogin" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="220"
+                 translate="label">
+            <label>Social Login</label>
+            <tab>weltpixel</tab>
+            <resource>WeltPixel_SocialLogin::SocialLogin</resource>
+
+            <group id="general" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+                <label>WeltPixel Social Login - General Settings</label>
+                <field id="enabled" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label"
+                       type="select">
+                    <label>Enable Social Login</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable WeltPixel Social Login extension.</comment>
+                </field>
+
+                <field id="show_on_cart" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label"
+                       type="select">
+                    <label>Show Social Login On Cart Page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Show Social Login buttons on cart page.</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+
+                <field id="cart_style" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="25" translate="label"
+                       type="select">
+                    <label>Social Login default state</label>
+                    <frontend_model>WeltPixel\Backend\Block\Adminhtml\System\Config\Form\Field\Disable</frontend_model>
+                    <comment><![CDATA[
+                    Social Login accordion default state<br/>
+                                <strong>“Social Login default state”</strong> only available in PRO version of this extension. <br>
+                                <a style="font-size: 14px" target="_blank" href="https://www.weltpixel.com/magento2-social-login.html">Upgrade to Pro version</a> to enable this functionality.
+                            ]]>
+                    </comment>
+                </field>
+
+                <field id="popup" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="30" translate="label"
+                       type="select">
+                    <label>Display Customer Sign In/Create Account in a popup</label>
+                    <frontend_model>WeltPixel\Backend\Block\Adminhtml\System\Config\Form\Field\Disable</frontend_model>
+                    <comment><![CDATA[
+                    Display Customer Sign In/Create Account block in a popup.<br/>
+                                <strong>“Display Customer Sign In/Create Account in a popup”</strong> only available in PRO version of this extension. <br>
+                                <a style="font-size: 14px" target="_blank" href="https://www.weltpixel.com/magento2-social-login.html">Upgrade to Pro version</a> to enable this functionality.
+                            ]]>
+                    </comment>
+                </field>
+                <field id="popup_style" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="35" translate="label"
+                       type="select">
+                    <label>Social Login Popup Style</label>
+                    <frontend_model>WeltPixel\Backend\Block\Adminhtml\System\Config\Form\Field\Disable</frontend_model>
+                    <comment><![CDATA[
+                    Select the style of the Social Login popup.<br/>
+                    On mobile devices the <strong>Right Side</strong> design is applied.<br/>
+                                <strong>“Social Login Popup Style”</strong> only available in PRO version of this extension. <br>
+                                <a style="font-size: 14px" target="_blank" href="https://www.weltpixel.com/magento2-social-login.html">Upgrade to Pro version</a> to enable this functionality.
+                            ]]>
+                    </comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                        <field id="popup">1</field>
+                    </depends>
+                </field>
+
+            </group>
+
+            <group id="fb" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label">
+                <label>Facebook Login</label>
+                <comment>
+                    <![CDATA[
+                    To get the required credentials, head over to <a href="https://developers.facebook.com/" target="_blank">Facebook developers</a> page and create an app.</br>
+                    To create a Facebook App, please visit the <a href="https://developers.facebook.com/docs/apps/" target="_blank">Facebook App development</a> page.</br>
+                    Or consult the WeltPixel Social Login extension <a href="http://weltpixel.com/magento2-social-login.html" target="_blank">documentation</a> page.
+                    ]]>
+                </comment>
+                <field id="fb_enabled" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label"
+                       type="select">
+                    <label>Enable Facebook Login</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable Facebook Login.</comment>
+                    <depends>
+                        <field id="weltpixel_sociallogin/general/enabled">1</field>
+                    </depends>
+                </field>
+                <field id="app_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Facebook App Id(API Key)</label>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="fb_enabled">1</field>
+                        <field id="weltpixel_sociallogin/general/enabled">1</field>
+                    </depends>
+                </field>
+                <field id="app_secret" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Facebook App Secret(API Secret)</label>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="fb_enabled">1</field>
+                        <field id="weltpixel_sociallogin/general/enabled">1</field>
+                    </depends>
+                </field>
+                <field id="callback" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>OAuth Redirect URI</label>
+                    <frontend_model>WeltPixel\SocialLogin\Block\Adminhtml\System\Config\Form\CallbackUri</frontend_model>
+                    <comment>
+                        <![CDATA[
+                            This URL(s) should be added in the 'Valid OAuth Redirect URIs' while creating a new Facebook Login application. <span>"https" protocol is required for this provider. If you have multiple stores with different urls, a redirect URL will be generated for each one, make sure to add them all to your social media application.</span>
+                        ]]>
+                    </comment>
+                    <depends>
+                        <field id="fb_enabled">1</field>
+                        <field id="weltpixel_sociallogin/general/enabled">1</field>
+                    </depends>
+                </field>
+                <!-- to be added in next release
+                <field id="copy_button" translate="label" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>WeltPixel\SocialLogin\Block\Adminhtml\System\Config\Form\Button</frontend_model>
+                    <depends>
+                        <field id="fb_enabled">1</field>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                -->
+            </group>
+
+            <group id="google" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="40" translate="label">
+                <label>Google Login</label>
+                <comment>
+                    <![CDATA[
+                    To get the required credentials, head over to <a href="https://console.developers.google.com" target="_blank">Google developers</a> page and create a project.</br>
+                    To create a new Project on Google, please visit <a href="https://console.developers.google.com/projectcreate?previousPage=%2Fprojectselector%2Fapis%2Fdashboard" target="_blank">this Google</a> page.</br>
+                    Or consult the WeltPixel Social Login extension <a href="http://weltpixel.com/magento2-social-login.html" target="_blank">documentation</a> page.
+                    ]]>
+                </comment>
+                <field id="google_enabled" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label"
+                       type="select">
+                    <label>Enable Google Login</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable Google Login.</comment>
+                    <depends>
+                        <field id="weltpixel_sociallogin/general/enabled">1</field>
+                    </depends>
+                </field>
+                <field id="app_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Client Id</label>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="google_enabled">1</field>
+                        <field id="weltpixel_sociallogin/general/enabled">1</field>
+                    </depends>
+                </field>
+                <field id="app_secret" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Client Secret</label>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="google_enabled">1</field>
+                        <field id="weltpixel_sociallogin/general/enabled">1</field>
+                    </depends>
+                </field>
+                <field id="callback" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>OAuth Redirect URI</label>
+                    <frontend_model>WeltPixel\SocialLogin\Block\Adminhtml\System\Config\Form\CallbackUri</frontend_model>
+                    <comment>
+                        <![CDATA[
+                            This URL(s) should be added in the 'Authorized Redirect URIs' while creating a new Google application. <span>"https" protocol is required for this provider. If you have multiple stores with different urls, a redirect URL will be generated for each one, make sure to add them all to your social media application.</span>
+                        ]]>
+                    </comment>
+                    <depends>
+                        <field id="google_enabled">1</field>
+                        <field id="weltpixel_sociallogin/general/enabled">1</field>
+                    </depends>
+                </field>
+                <!-- to be added in next release
+                <field id="copy_button" translate="label" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>WeltPixel\SocialLogin\Block\Adminhtml\System\Config\Form\Button</frontend_model>
+                    <depends>
+                        <field id="google_enabled">1</field>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                -->
+            </group>
+
+            <group id="amazon" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="50" translate="label">
+                <label>Amazon Login</label>
+                <comment>
+                    <![CDATA[
+                    To get the required credentials, head over to <a href="https://sellercentral.amazon.com" target="_blank">Amazon seller central</a> page and register an application.</br>
+                    To create a new application on Amazon, please visit <a href="https://sellercentral.amazon.com/hz/home?" target="_blank">this Amazon</a> page.</br>
+                    Or consult the WeltPixel Social Login extension <a href="http://weltpixel.com/magento2-social-login.html" target="_blank">documentation</a> page.
+                    ]]>
+                </comment>
+                <field id="amazon_enabled" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label"
+                       type="select">
+                    <label>Enable Amazon Login</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable Amazon Login.</comment>
+                    <depends>
+                        <field id="weltpixel_sociallogin/general/enabled">1</field>
+                    </depends>
+                </field>
+                <field id="app_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Amazon Client Id</label>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="amazon_enabled">1</field>
+                        <field id="weltpixel_sociallogin/general/enabled">1</field>
+                    </depends>
+                </field>
+                <field id="app_secret" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Amazon Client Secret</label>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="amazon_enabled">1</field>
+                        <field id="weltpixel_sociallogin/general/enabled">1</field>
+                    </depends>
+                </field>
+                <field id="callback" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>OAuth Redirect URI</label>
+                    <frontend_model>WeltPixel\SocialLogin\Block\Adminhtml\System\Config\Form\CallbackUri</frontend_model>
+                    <comment>
+                        <![CDATA[
+                            This URL(s) should be added in the 'Allowed Redirect URLs' while creating a new Amazon Login application. <span>"https" protocol is required for this provider. If you have multiple stores with different urls, a redirect URL will be generated for each one, make sure to add them all to your social media application.</span>
+                        ]]>
+                    </comment>
+                    <depends>
+                        <field id="amazon_enabled">1</field>
+                        <field id="weltpixel_sociallogin/general/enabled">1</field>
+                    </depends>
+                </field>
+                <!-- to be added in next release
+                <field id="copy_button" translate="label" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <frontend_model>WeltPixel\SocialLogin\Block\Adminhtml\System\Config\Form\Button</frontend_model>
+                    <depends>
+                        <field id="amazon_enabled">1</field>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                -->
+            </group>
+
+            <group id="instagram" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="55" translate="label">
+                <label>Instagram Login</label>
+                <comment>
+                    <![CDATA[
+                    Instagram functionality is deprecated.</br>
+                    If you already have a Client registered on Instagram, you can use this functionality until Instagram removes old API completely.
+                    ]]>
+                </comment>
+                <field id="instagram_enabled" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label"
+                       type="select">
+                    <label>Enable Instagram Login</label>
+                    <frontend_model>WeltPixel\Backend\Block\Adminhtml\System\Config\Form\Field\Disable</frontend_model>
+                    <comment><![CDATA[
+                                <strong>“Instagram Login”</strong> only available in PRO version of this extension. <br>
+                                <a style="font-size: 14px" target="_blank" href="https://www.weltpixel.com/magento2-social-login.html">Upgrade to Pro version</a> to enable this functionality.
+                            ]]>
+                    </comment>
+                </field>
+            </group>
+
+            <group id="twitter" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="60" translate="label">
+                <label>Twitter Login</label>
+                <field id="twitter_enabled" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label"
+                       type="select">
+                    <label>Enable Twitter Login</label>
+                    <frontend_model>WeltPixel\Backend\Block\Adminhtml\System\Config\Form\Field\Disable</frontend_model>
+                    <comment><![CDATA[
+                                <strong>“Twitter Login”</strong> only available in PRO version of this extension. <br>
+                                <a style="font-size: 14px" target="_blank" href="https://www.weltpixel.com/magento2-social-login.html">Upgrade to Pro version</a> to enable this functionality.
+                            ]]>
+                    </comment>
+                </field>
+            </group>
+
+            <group id="linkedin" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="70" translate="label">
+                <label>LinkedIn Login</label>
+                <field id="linkedin_enabled" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label"
+                       type="select">
+                    <label>Enable LinkeIn Login</label>
+                    <frontend_model>WeltPixel\Backend\Block\Adminhtml\System\Config\Form\Field\Disable</frontend_model>
+                    <comment><![CDATA[
+                                <strong>“LinkedIn Login”</strong> only available in PRO version of this extension. <br>
+                                <a style="font-size: 14px" target="_blank" href="https://www.weltpixel.com/magento2-social-login.html">Upgrade to Pro version</a> to enable this functionality.
+                            ]]>
+                    </comment>
+                </field>
+            </group>
+
+            <group id="paypal" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="80" translate="label">
+                <label>PayPal Login</label>
+                <field id="paypal_enabled" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label"
+                       type="select">
+                    <label>Enable PayPal Login</label>
+                    <frontend_model>WeltPixel\Backend\Block\Adminhtml\System\Config\Form\Field\Disable</frontend_model>
+                    <comment><![CDATA[
+                                <strong>“PayPal Login”</strong> only available in PRO version of this extension. <br>
+                                <a style="font-size: 14px" target="_blank" href="https://www.weltpixel.com/magento2-social-login.html">Upgrade to Pro version</a> to enable this functionality.
+                            ]]>
+                    </comment>
+                </field>
+            </group>
+
+        </section>
+    </system>
+</config>

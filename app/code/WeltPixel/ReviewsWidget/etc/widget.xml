@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="weltpixel_reviewswidget_reviewform" class="WeltPixel\ReviewsWidget\Block\Widget\Review" is_email_compatible="true" placeholder_image="WeltPixel_ReviewsWidget::images/widget_reviewform.png">
+        <label translate="true">WeltPixel Reviews Listing and Form</label>
+        <description>Reviews Listing and Form</description>
+        <parameters>
+            <parameter name="product_id" xsi:type="block" visible="true" required="true" sort_order="10">
+                <label translate="true">Product</label>
+                <description>Select the product</description>
+                <block class="WeltPixel\ReviewsWidget\Block\Adminhtml\Widget\ProductChooser">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string" translate="true">Select Product...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="Magento_Backend::stores">
+					<resource id="Magento_Backend::stores_settings">
+						<resource id="Magento_Config::config">
+							<resource id="WeltPixel_SearchAutoComplete::SearchAutoCompleteSettings" title="WeltPixel SearchAutoComplete" sortOrder="280" />
+						</resource>
+					</resource>
+				</resource>
+				<resource id="WeltPixel_Backend::WeltPixel" >
+					<resource id="WeltPixel_SearchAutoComplete::SearchAutoComplete_Label" sortOrder="80" title="SearchAutoComplete" >
+						<resource id="WeltPixel_SearchAutoComplete::SearchAutoComplete" sortOrder="10" title="SearchAutoComplete" />
+					</resource>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

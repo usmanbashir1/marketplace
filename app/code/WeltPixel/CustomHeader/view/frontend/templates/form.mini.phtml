@@ -1,0 +1,151 @@
+<?php
+// @codingStandardsIgnoreFile
+?>
+<?php
+/** @var $block \Magento\Framework\View\Element\Template */
+/** @var $helper \Magento\Search\Helper\Data */
+$helper = $this->helper('Magento\Search\Helper\Data');
+$customHeaderHelper = $this->helper('WeltPixel\CustomHeader\Helper\Data');
+$searchAutoCompleteHelper = $this->helper('WeltPixel\SearchAutoComplete\Helper\Data');
+$templateResultsContainer = $searchAutoCompleteHelper->getTemplateResultsContainer();
+$templateResultsContainerControl = !$templateResultsContainer ? 'vertically-control' : 'horizontally-control';
+$templateResultsContainer = !$templateResultsContainer ? 'vertically-black' : 'horizontally-white';
+$magnifierIconIsEnabled = $customHeaderHelper->magnifierIconIsEnabled();
+$placeholderText = $customHeaderHelper->getPlaceholderText();
+$customHtml = $customHeaderHelper->getCustomHtml();
+$serachOptionsVersion = $customHeaderHelper->getSerachOptionsVersion();
+$serachOptionsVersionClass = !$serachOptionsVersion ? 'version-1' : 'version-2';
+?>
+
+<div class="wrap">
+    <div id="search-mod" class="modal">
+        <div class="close-sec search-visible-md">
+            <a class="closebutton icon-line-cross"></a>
+        </div>
+        <div class="modal-content">
+            <div class="block block-search wpx-block-search">
+                <div class="block block-content">
+                    <form class="form minisearch <?php echo $serachOptionsVersionClass;  ?>" id="search_mini_form" action="<?= /* @escapeNotVerified */ $helper->getResultUrl() ?>" method="get">
+                        <div class="field search wpx-pos-search">
+                            <label class="label active" for="search" data-role="minisearch-label">
+                                <span><?= /* @escapeNotVerified */ __('Search') ?></span>
+                            </label>
+                            <div class="control <?php echo $templateResultsContainerControl; ?>">
+                                <input id="search"
+                                       data-mage-init='{"quickSearch":{
+                                        "formSelector":"#search_mini_form",
+                                        "url":"<?= /* @escapeNotVerified */ $block->getUrl('search/ajax/suggest', ['_secure' => $block->getRequest()->isSecure()]) ?>",
+                                        "destinationSelector":"#search_autocomplete"}
+                                   }'
+                                       type="text"
+                                       name="<?= /* @escapeNotVerified */ $helper->getQueryParamName() ?>"
+                                       value="<?= /* @escapeNotVerified */ $helper->getEscapedQueryText() ?>"
+                                       placeholder="<?php echo $placeholderText; ?>"
+                                       class="input-text <?php echo $templateResultsContainer; ?>"
+                                       maxlength="<?= /* @escapeNotVerified */ $helper->getMaxQueryLength() ?>"
+                                       role="combobox"
+                                       aria-haspopup="false"
+                                       aria-expanded="false"
+                                       aria-autocomplete="both"
+                                       autocomplete="off"/>
+
+                                <div class="actions wpx-pos-search search-visible-md" <?php if($magnifierIconIsEnabled == 0) :?> style="display: none" <?php endif; ?>>
+                                    <button type="submit" class="action search" title="<?= $block->escapeHtml(__('Search')) ?>"></button>
+                                </div>
+
+
+                                <div id="search_autocomplete" class="search-autocomplete"></div>
+                                <?= $block->getChildHtml() ?>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="customHtml">
+                        <?php echo htmlspecialchars_decode($customHtml); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="block block-search search-visible-md minisearch-v2">
+    <div class="block block-content">
+        <i class="open-modal-search icon-search3"></i>
+    </div>
+</div>
+
+<script>
+    require(['jquery'],
+        function ($) {
+
+            var resizeIdClose,
+                searchMod = $("#search-mod"),
+                searchInput = $('#search'),
+                ua = window.navigator.userAgent,
+                msie = ua.indexOf("MSIE ");
+
+            $(window).resize(function() {
+                clearTimeout(resizeIdClose);
+            });
+
+            if (document.documentMode || /Edge/.test(navigator.userAgent)) {
+                $( ".open-modal-search" ).wrap( "<a href='#search-mod'></a>" );
+            }
+
+            $(".open-modal-search").on('click', function(){
+                if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)){
+                    searchMod.addClass("isOpenIE");
+                }
+                searchMod.addClass("isOpen");
+                setTimeout(function(){ searchInput.select(); }, 500);
+                window.location.hash = 'search-mod';
+                if($('.page-header').hasClass('page-header-v4')){
+                    $(".nav-sections-4.sticky-header").attr('style', 'z-index: 0 !important');
+                    $(".nav-toggle, .logo").attr('style', 'z-index: 0');
+                }
+                window.history.pushState("", document.title, window.location.pathname);
+            });
+
+            $(".block.block-content").on('click', function(){
+                onClickSearchBtn(searchMod);
+            });
+
+            $(".closebutton").on('click', function(e){
+                closeSearchModal(searchMod);
+                window.location.hash = 'search-mod';
+                setTimeout(function(){
+                    window.location.hash= '#';
+                    window.history.pushState("", document.title, window.location.pathname);
+                    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)){
+                        searchMod.removeClass("isOpenIE");
+                    }
+                }, 500);
+
+                if($('.page-header').hasClass('page-header-v4')) {
+                    $(".nav-sections-4.sticky-header").attr('style', 'z-index: 10 !important');
+                    setTimeout(function(){
+                        $(".nav-toggle, .logo").attr('style', 'z-index: 14');
+                    }, 500);
+                }
+            });
+
+            function onClickSearchBtn(searchMod){
+                if(searchMod.hasClass( "isOpen" )){
+                    $('body').addClass("hidescroll");
+                    $('.actions.wpx-pos-search button').prop("disabled", false); // Search button are now enabled.
+                }
+            }
+
+            function closeSearchModal(searchMod){
+                if (searchMod.length) {
+                    searchInput.val('');
+                    setTimeout(function(){
+                        $('body').removeClass('hidescroll');
+                        $('#searchautocomplete').hide();
+                    }, 10);
+                }
+            }
+        }
+    );
+
+</script>

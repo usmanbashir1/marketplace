@@ -1,0 +1,28 @@
+<!--@subject {{trans "Your question has new answer"}}  @-->
+
+{{template config_path="design/email/header_template"}}
+
+<table>
+    <tr class="email-intro">
+        <td>
+            <p class="greeting">{{trans "Hello, "}}{{var customer_name}}</p>
+            <p>
+                {{trans "Your question: "}}
+            </p>
+            <p>
+                "{{var question}}"
+            </p>
+            <p>
+                {{trans "about "}}<a href="{{var product_url}}">{{var product_name}}</a>{{trans " has new answer."}}
+            </p>
+            <p>
+                {{trans "Please find the answer below: "}}
+            </p>
+            <p>
+                "{{var answer}}"
+            </p>
+        </td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer_template"}}

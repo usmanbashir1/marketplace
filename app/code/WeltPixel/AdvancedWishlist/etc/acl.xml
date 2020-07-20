@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="WeltPixel_AdvancedWishlist::AdvancedWishlistSettings" title="WeltPixel Advanced Wishlist" sortOrder="270" />
+                        </resource>
+                    </resource>
+                </resource>
+                <resource id="WeltPixel_Backend::WeltPixel" >
+                    <resource id="WeltPixel_AdvancedWishlist::AdvancedWishlist_Label" sortOrder="170" title="Advanced Wishlist" >
+                        <resource id="WeltPixel_AdvancedWishlist::AdvancedWishlist" sortOrder="10" title="Advanced Wishlist Settings" />
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

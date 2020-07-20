@@ -1,0 +1,41 @@
+<?php
+// @codingStandardsIgnoreFile
+/** @var $_helper WeltPixel\ThankYouPage\Helper\Data */
+$_helper = $this->helper('WeltPixel\ThankYouPage\Helper\Data');
+?>
+<div class="icon_thank_you_02"></div>
+<div id="registration" class="registration-thank-you" data-bind="scope:'registration'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+
+    <script type="text/x-magento-init">
+        {
+            "#registration": {
+                "Magento_Ui/js/core/app": {
+                   "components": {
+                        "registration": {
+                            "component": "Magento_Checkout/js/view/registration",
+                            "config": {
+                                "registrationUrl": "<?= /* @escapeNotVerified */ $block->getCreateAccountUrl() ?>",
+                                "email": "<?= /* @escapeNotVerified */ $block->getEmailAddress() ?>",
+                                "template": "<?= $_helper->getRegistrationTemplate() ?>",
+                                "description": <?= json_encode(nl2br($_helper->getCreateAccountDescription())) ?>,
+                                "emailLabel": <?= json_encode($_helper->getCreateAccountEmailLabel())  ?>,
+                                "afterCreationLabel": <?= json_encode(nl2br($_helper->getCreateAccountAfterCreationLabel())) ?>
+                            },
+                            "children": {
+                                "errors": {
+                                    "component": "Magento_Ui/js/view/messages",
+                                    "sortOrder": 0,
+                                    "displayArea": "messages",
+                                    "config": {
+                                        "autoHideTimeOut": -1
+                                     }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</div>

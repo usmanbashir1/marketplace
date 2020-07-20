@@ -1,0 +1,89 @@
+Back,Back
+"Delete Item","Delete Item"
+"Are you sure you want to do this?","Are you sure you want to do this?"
+Reset,Reset
+"Save and Continue Edit","Save and Continue Edit"
+"Save Item","Save Item"
+Conditions,Conditions
+"Conditions (don't add conditions if rule is applied to all products)","Conditions (don't add conditions if rule is applied to all products)"
+ProductLabels,ProductLabels
+"You deleted the product label.","You deleted the product label."
+"We can't find the item to delete.","We can't find the item to delete."
+"This product label no longer exists.","This product label no longer exists."
+"Edit Product Label","Edit Product Label"
+"New Product Label","New Product Label"
+"Product Labels","Product Labels"
+"Add Product Labels","Add Product Labels"
+"A total of %1 record(s) have been deleted.","A total of %1 record(s) have been deleted."
+"You saved the product label.","You saved the product label."
+"Something went wrong while saving the product label.","Something went wrong while saving the product label."
+"Top Left","Top Left"
+"Top Center","Top Center"
+"Top Right","Top Right"
+"Middle Left","Middle Left"
+"Middle Center","Middle Center"
+"Middle Right","Middle Right"
+"Bottom Left","Bottom Left"
+"Bottom Center","Bottom Center"
+"Bottom Right","Bottom Right"
+Active,Active
+Inactive,Inactive
+"All Store Views","All Store Views"
+"Make sure the From Date is later than or the same as the From Date.","Make sure the From Date is later than or the same as the From Date."
+Edit,Edit
+Delete,Delete
+"Delete ""${ $.$data.url }""","Delete ""${ $.$data.url }"""
+"Are you sure you wan't to delete a ""${ $.$data.url }"" record?","Are you sure you wan't to delete a ""${ $.$data.url }"" record?"
+"We can't find products matching the selection.","We can't find products matching the selection."
+"Add to Cart","Add to Cart"
+"In stock","In stock"
+"Out of stock","Out of stock"
+"Learn More","Learn More"
+"Product Labels Settings","Product Labels Settings"
+"ProductLabels Settings","ProductLabels Settings"
+"Enable on product listing","Enable on product listing"
+"Display Mode","Display Mode"
+"Enable on product page","Enable on product page"
+"WeltPixel ProductLabels Rule Product","WeltPixel ProductLabels Rule Product"
+"Indexed productlabels rule/product association","Indexed productlabels rule/product association"
+"Product Label Information","Product Label Information"
+Title,Title
+"Set current label title. Only for admin purposes, not displayed in frontend.","Set current label title. Only for admin purposes, not displayed in frontend."
+Priority,Priority
+"Use 0 for highest priority and bigger value for lowest priority.","Use 0 for highest priority and bigger value for lowest priority."
+Status,Status
+"Set current label status.","Set current label status."
+"Valid From","Valid From"
+"Valid To","Valid To"
+"Store View","Store View"
+"Customer Group","Customer Group"
+"Label Text","Label Text"
+"Insert text for label.","Insert text for label."
+"Text Font Color","Text Font Color"
+"Select color for Label text.","Select color for Label text."
+"Text Background Color","Text Background Color"
+"Select color for label background.","Select color for label background."
+"Text Font Size","Text Font Size"
+"Insert font size for label's text. e.g.: 12px","Insert font size for label's text. e.g.: 12px"
+"Text Padding","Text Padding"
+"Insert pandding values. e.g. 10px 20px 10px 20px ","Insert pandding values. e.g. 10px 20px 10px 20px "
+Preview,Preview
+"Custom Css","Custom Css"
+"Customize product label and text styles with CSS parameters. e.g.: transform:rotate(320deg); border-radius:30px; margin-top: 12px;","Customize product label and text styles with CSS parameters. e.g.: transform:rotate(320deg); border-radius:30px; margin-top: 12px;"
+Image,Image
+"
+                        Upload image for Product Label. If image is uploaded, text is no longer visible. <br/> For sample Product Label Images and how to customize your Product Labels click <a href=""https://support.weltpixel.com/hc/en-us/articles/360010853553-How-to-customize-product-labels-like-New-Sale-20-OFF-etc-"" target=""_blank"" >here</a>.
+                    ","
+                        Upload image for Product Label. If image is uploaded, text is no longer visible. <br/> For sample Product Label Images and how to customize your Product Labels click <a href=""https://support.weltpixel.com/hc/en-us/articles/360010853553-How-to-customize-product-labels-like-New-Sale-20-OFF-etc-"" target=""_blank"" >here</a>.
+                    "
+Position,Position
+"Add New Product Label","Add New Product Label"
+"Delete items","Delete items"
+"Are you sure you wan't to delete selected items?","Are you sure you wan't to delete selected items?"
+Id,Id
+"Product Image","Product Image"
+"Product Text","Product Text"
+"Product Position","Product Position"
+"Category Image","Category Image"
+"Category Text","Category Text"
+"Category Position","Category Position"

@@ -1,0 +1,46 @@
+{
+    "name": "weltpixel/m2-theme-frontend-weltpixel",
+    "description": "N/A",
+    "require": {
+        "magento/theme-frontend-luma": "100.*",
+        "weltpixel/m2-weltpixel-backend": "~1.0 | master",
+        "weltpixel/m2-weltpixel-category-page": "~1.0 | master",
+        "weltpixel/module-command": "~1.0 | master",
+        "weltpixel/m2-weltpixel-custom-footer": "~1.0 | master",
+        "weltpixel/m2-weltpixel-custom-header": "~1.0 | master",
+        "weltpixel/m2-weltpixel-design-elements": "~1.0 | master",
+        "weltpixel/m2-weltpixel-mobiledetect": "~1.0 | master",
+        "weltpixel/m2-weltpixel-navigation-links": "~1.0 | master",
+        "weltpixel/m2-weltpixel-product-page": "~1.0 | master",
+        "weltpixel/m2-weltpixel-sample-data": "~1.0 | master",
+        "weltpixel/m2-weltpixel-frontend-options": "~1.0 | master",
+        "weltpixel/m2-weltpixel-quickview": "~1.0 | master",
+        "weltpixel/m2-weltpixel-google-cards": "~1.0 | master",
+        "weltpixel/m2-weltpixel-owl-carousel-slider": "~1.0 | master",
+        "weltpixel/module-smartproducttabs": "~1.0 | master",
+        "weltpixel/m2-weltpixel-h1-title-rewrite": "~1.0 | master",
+        "weltpixel/module-fullpagescroll": "~1.0 | master",
+        "weltpixel/module-instagramwidget": "~1.0 | master",
+        "weltpixel/module-sitemap": "~1.0 | master",
+        "weltpixel/module-google-tag-manager": "~1.0 | master",
+        "weltpixel/m2-weltpixel-quick-cart": "~1.0 | master",
+        "weltpixel/m2-reviews-widget": "~1.0 | master",
+        "weltpixel/m2-weltpixel-multistore": "~1.0 | master",
+        "weltpixel/m2-weltpixel-lazyload": "~1.0 | master",
+        "weltpixel/m2-weltpixel-thankyou-page": "~1.0 | master",
+        "weltpixel/m2-weltpixel-searchautocomplete": "~1.0 | master",
+        "weltpixel/m2-weltpixel-ajax-infinite-scroll": "~1.0 | master",
+        "magento/framework": "100.* | 101.*"
+    },
+    "type": "magento2-theme",
+    "version": "101.9.7",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ]
+    }
+}

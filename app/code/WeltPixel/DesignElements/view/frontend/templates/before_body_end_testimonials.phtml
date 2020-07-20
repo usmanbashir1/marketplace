@@ -1,0 +1,14 @@
+<script>
+require(['jquery', 'designelements_default', 'testimonialsGrid' ],
+function   ($, SEMICOLONDEFAULT, SEMICOLONSTESTIMONIALSGRID) {
+    $(document).ready(function() {
+        SEMICOLONDEFAULT.widget.init();
+        SEMICOLONSTESTIMONIALSGRID.widget.init();
+    });
+    $(window).on( 'resize', function() {
+        var t = setTimeout( function(){
+            SEMICOLONSTESTIMONIALSGRID.widget.testimonialsGrid();
+        }, 500 );
+    });
+});
+</script>

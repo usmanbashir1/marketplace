@@ -1,0 +1,42 @@
+<?php
+// @codingStandardsIgnoreFile
+
+/** @var $block \WeltPixel\Quickview\Block\Initialize */
+
+/** @var \WeltPixel\Quickview\Helper\Data $_helper */
+$_helper = $this->helper('WeltPixel\Quickview\Helper\Data');
+?>
+<script>
+    requirejs(['jquery', 'weltpixel_quickview' ],
+        function   ($, quickview) {
+            $(document).ready(function() {
+                $('.weltpixel-quickview').bind('click', function() {
+                    var prodUrl = $(this).attr('data-quickview-url');
+                    if (prodUrl.length) {
+                        quickview.displayContent(prodUrl);
+                    }
+                });
+            });
+        });
+
+    window.weltpixel_quickview = <?php /* @escapeNotVerified */ echo \Zend_Json::encode($block->getConfig()); ?>;
+</script>
+
+<style scoped>
+    .mfp-bg {
+        opacity: <?= $_helper->getLoadingOverlayOpacity() ?>;
+        background: <?= $_helper->getLoadingOverlayBgColor() ?>;
+    }
+<?php if ($_helper->isLoadingPlaceholderEnabled()) : ?>
+    <?php $loadingPlaceholderResolutions = $_helper->getLoadingIconResolutions(); ?>
+    .mfp-preloader-image {
+        animation: none !important;
+        -moz-animation: none !important;
+        -webkit-animation: none !important;
+        -o-animation: none !important;
+        background: url("<?= $_helper->getLoadingIcon() ?>") no-repeat;
+        width: <?= $loadingPlaceholderResolutions['width'] ?>px;
+        height: <?= $loadingPlaceholderResolutions['height'] ?>px;
+    }
+<?php endif; ?>
+</style>

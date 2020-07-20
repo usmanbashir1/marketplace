@@ -1,0 +1,38 @@
+.advanced_bundling_main_container {
+    .ab-steps {
+        display: none;
+        .info-msg {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .info-msg-cmd {
+            margin-top: -10px;
+        }
+        .info-msg-bottom {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .prev-step-result {
+            display: none;
+            padding: 10px;
+            border: 1px solid #b2b2b2;
+            margin-bottom: 10px;
+            background: #cde4c2;
+            &.step-error {
+                background-color: #f59da7;
+            }
+            &.content-visible {
+                display: block;
+            }
+        }
+        .notification-wrapper {
+            padding: 10px;
+            border: 1px solid #b2b2b2;
+            margin-bottom: 10px;
+            background: #c7c7c7;
+        }
+        .no-error {
+            display: none;
+        }
+    }
+}

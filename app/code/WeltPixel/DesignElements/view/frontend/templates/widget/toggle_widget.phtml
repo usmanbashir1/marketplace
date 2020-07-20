@@ -1,0 +1,20 @@
+<?php
+$style = $this->getData('style');
+$iconOpen = $this->getData('open_icon');
+$iconClose = $this->getData('close_icon');
+$backgroundColor = $this->getData('bkg_color');
+$borderColor = $this->getData('border_color');
+if($backgroundColor){
+    $backgroundColor = 'background-color:'.$backgroundColor.';';
+}
+if($borderColor){
+    $borderColor = 'border-color:'.$borderColor.';';
+}
+$title = $this->getData('title');
+$text = trim($this->getContent());
+?>
+
+<div class="toggle <?php echo $style;?>" style="<?php echo $borderColor;?>">
+    <div class="togglet" style="<?php echo $backgroundColor;?>"><i class="toggle-closed <?php echo $iconOpen;?>"></i><i class="toggle-open <?php echo $iconClose;?>"></i><?php echo $title;?></div>
+    <div class="togglec"><?php echo $text;?></div>
+</div>

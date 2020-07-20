@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Indexer\Model\Indexer">
+        <plugin name="testPluginPleaseWork" type="Cminds\MultipleProductVendors\Plugin\Indexer" />
+    </type>
+    <preference
+            for="Cminds\MultipleProductVendors\Model\Indexer\Product\Manufacturer\Action\FullActionInterface"
+            type="Cminds\MultipleProductVendors\Model\Indexer\Product\Manufacturer\Action\Full" />
+    <preference
+            for="Cminds\MultipleProductVendors\Model\Indexer\Product\Manufacturer\Action\RowActionInterface"
+            type="Cminds\MultipleProductVendors\Model\Indexer\Product\Manufacturer\Action\Row" />
+</config>

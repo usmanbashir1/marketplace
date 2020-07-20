@@ -1,0 +1,183 @@
+<?php
+$items = $block->getFlatCollection();
+$isDiscountEff = $block->isDiscountEffective();
+$statuses = $block->gestSalesOrderStatusModel();
+$visibleStatuses = $block->getMarketplaceHelper()->getStatusesCanSee();
+?>
+
+<div class="container main-container vendor-container">
+    <h1 class="text-center"><?php echo /* @escapeNotVerified */ __('Orders')?></h1>
+
+    <div class="row">
+        <div class="col-md-12">
+            <form
+                name="report_filter"
+                id="report_filter"
+                action="<?php echo $block->getUrl('*/*/*') ?>"
+                method="post"
+                enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-md-2">
+                        <input
+                            type="text"
+                            class="form-control input-text"
+                            placeholder="Order ID"
+                            name="autoincrement_id"
+                            value="<?php echo $block->escapeHtml($block->getRequestParams('autoincrement_id', '')); ?>"
+                        />
+                    </div>
+                    <div class="col-md-2">
+                        <input
+                            type="text"
+                            class="form-control datepicker input-text input-text validate-date"
+                            name="from"
+                            value="<?php echo $block->escapeHtml($block->getRequestParams('from', '')); ?>"
+                            placeholder=<?php echo /* @escapeNotVerified */ __('From')?>
+                        />
+                    </div>
+                    <div class="col-md-2">
+                        <input
+                            type="text"
+                            class="form-control datepicker input-text input-text validate-date"
+                            name="to"
+                            value="<?php echo $block->escapeHtml($block->getRequestParams('to', '')); ?>"
+                            placeholder=<?php echo /* @escapeNotVerified */ __('To')?>
+                        />
+                    </div>
+                    <div class="col-md-2">
+                        <select name="status">
+                            <option value=""> Status</option>
+                            <?php foreach ($statuses as $status) : ?>
+                                <?php if (in_array($status->getStatus(), $visibleStatuses)) : ?>
+                                    <?php
+                                    $selected = $status->getStatus() === $block->getRequestParams('status', '')
+                                        ? ' selected="selected"'
+                                        : '';
+                                    ?>
+                                    <option
+                                        value="<?php echo $status->getStatus() ?>"
+                                        <?php echo $selected; ?>
+                                    ><?php echo $status->getLabel() ?></option>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="col-md-1">
+                        <input
+                            type="submit"
+                            name="submit"
+                            class="btn btn-primary btn-sm"
+                            value="<?php /* @escapeNotVerified */ echo __('Filter') ?>"
+                        />
+                    </div>
+                    <div class="col-md-2">
+                        <button
+                            class="btn btn-sm btn-info export-to-csv"
+                        ><?php echo /* @escapeNotVerified */ __('Export to CSV') ?></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class='table-responsive'>
+                <table class="table table-striped">
+                    <thead>
+                        <th><?php echo /* @escapeNotVerified */ __('Order #') ?></th>
+                        <th><?php echo /* @escapeNotVerified */ __('Purchased On') ?></th>
+                        <th><?php echo /* @escapeNotVerified */ __('Bill to Name') ?></th>
+                        <th><?php echo /* @escapeNotVerified */ __('Ship to Name') ?></th>
+                        <th><?php echo /* @escapeNotVerified */ __('Subtotal') ?></th>
+                        <th><?php echo /* @escapeNotVerified */ __('Income') ?></th>
+                        <?php if ($isDiscountEff) : ?>
+                            <th><?php echo /* @escapeNotVerified */ __('Discount') ?></th>
+                            <th><?php echo /* @escapeNotVerified */ __('With Discount') ?></th>
+                        <?php endif; ?>
+                        <th><?php echo /* @escapeNotVerified */ __('Status')?></th>
+                        <th><?php echo /* @escapeNotVerified */ __('Actions')?></th>
+                        </thead>
+                    <tbody>
+                    <?php if ($items->count()) : ?>
+                        <?php foreach($items as $item) : ?>
+                            <?php $order = $block->getSalesOrderModel()->load($item->getOrderId()); ?>
+                            <?php if (in_array($order->getStatus(), $visibleStatuses)) : ?>
+                                <?php $subtotal = $block->calculateSubtotal($order); ?>
+                                <?php if($isDiscountEff):?>
+                                    <?php $discount = $block->calculateDiscount($order); ?>
+                                <?php endif; ?>
+                                <tr class="item">
+                                    <td>#<?php echo $block->escapeHtml($order->getIncrementId()); ?></td>
+                                    <td><?php echo $block->escapeHtml(date('M d, Y g:i:s A', strtotime($order->getCreatedAt()))); ?></td>
+                                    <td><?php echo $block->escapeHtml($order->getBillingAddress()->getFirstname()); ?> <?php echo $block->escapeHtml($order->getBillingAddress()->getLastname()); ?></td>
+                                    <td><?php if ($order->getShippingAddress()) : ?><?php echo $block->escapeHtml($order->getShippingAddress()->getFirstname()); ?> <?php echo $block->escapeHtml($order->getShippingAddress()->getLastname()); ?><?php endif; ?></td>
+                                    <td><?php echo $block->getCurrencyHelper()->currency($subtotal); ?></td>
+                                    <td><?php echo $block->getCurrencyHelper()->currency($block->getProfitsHelper()->calculateNetIncome($block->getMarketplaceHelper()->getSupplierId(), $subtotal)); ?></td>
+                                    <?php if ($isDiscountEff) :?>
+                                        <td><?php echo $block->getCurrencyHelper()->currency($discount); ?></td>
+                                        <td><?php echo $block->getCurrencyHelper()->currency($block->getProfitsHelper()->calculateNetIncome($block->getMarketplaceHelper()->getSupplierId(), $subtotal - $discount)); ?></td>
+                                    <?php endif; ?>
+                                    <td><?php echo ucfirst($order->getStatus()); ?></td>
+                                    <td>
+                                        <a href="<?php echo $block->getUrl('marketplace/order/view/', ['id' => $item->getOrderId()]) ?>"
+                                           class="btn btn-primary"><?php echo $block->escapeHtml(__('View')); ?></a>
+
+                                        <?php if ($block->canCreateShipment($order)) : ?>
+                                            <a href="<?php echo $block->getUrl('marketplace/shipment/create/', ['id' => $item->getOrderId()]) ?>" class="btn btn-primary btn-success"><?php echo $block->escapeHtml(__('Ship')); ?></a>
+                                        <?php endif; ?>
+
+                                        <?= $block->getAdditionalRowButtons($order); ?>
+                                    </td>
+                                </tr>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    <?php else : ?>
+                        <td colspan="7"><?php echo /* @escapeNotVerified */ __('No results'); ?></td>
+                    <?php endif; ?>
+                    </tbody>
+                    <tfoot>
+                        <th><?php echo /* @escapeNotVerified */ __('Order #') ?></th>
+                        <th><?php echo /* @escapeNotVerified */ __('Purchased On') ?></th>
+                        <th><?php echo /* @escapeNotVerified */ __('Bill to Name') ?></th>
+                        <th><?php echo /* @escapeNotVerified */ __('Ship to Name') ?></th>
+                        <th><?php echo /* @escapeNotVerified */ __('Subtotal') ?></th>
+                        <th><?php echo /* @escapeNotVerified */ __('Income') ?></th>
+                        <?php if ($isDiscountEff) :?>
+                            <th><?php echo /* @escapeNotVerified */ __('Discount') ?></th>
+                            <th><?php echo /* @escapeNotVerified */ __('With Discount') ?></th>
+                        <?php endif; ?>
+                        <th><?php echo /* @escapeNotVerified */ __('Status') ?></th>
+                        <th><?php echo /* @escapeNotVerified */ __('Actions') ?></th>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    require([
+        "jquery",
+        "jquery/ui",
+        'jquery/fileUploader/jquery.fileupload'
+    ], function ($) {
+        $(document).ready(function () {
+            $('.datepicker').datepicker();
+
+            jQuery('#report_filter input[type="submit"]').click(function (e) {
+                var actionExport = '<?php echo $block->getUrl('*/*/*') ?>';
+                var form = jQuery('#report_filter');
+                form.attr('action', actionExport);
+                form.submit();
+            });
+
+            jQuery('.export-to-csv').click(function (e) {
+                var actionExport = '<?php echo $block->getUrl('*/*/export') ?>';
+                var form = jQuery('#report_filter');
+                form.attr('action', actionExport);
+                form.submit();
+            });
+        });
+    });
+</script>

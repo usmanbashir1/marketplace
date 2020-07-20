@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="WeltPixel_CategoryPage::CategoryPage" title="Category Page" module="WeltPixel_CategoryPage" action="adminhtml/system_config/edit/section/weltpixel_category_page/" sortOrder="50" parent="WeltPixel_Backend::Pearl_Theme_Options" resource="WeltPixel_CategoryPage::CategoryPage"/>
+    </menu>
+</config>

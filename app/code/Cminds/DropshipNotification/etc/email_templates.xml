@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Cminds DropshipNotification email templates config.
+ *
+ * @category Cminds
+ * @package  Cminds_DropshipNotification
+ * @author   Piotr Pierzak <piotr@cminds.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="cminds_dropshipnotification_notification"
+              label="Dropship Notification"
+              file="dropship_notification.html"
+              type="html"
+              module="Cminds_DropshipNotification"
+              area="frontend"/>
+</config>

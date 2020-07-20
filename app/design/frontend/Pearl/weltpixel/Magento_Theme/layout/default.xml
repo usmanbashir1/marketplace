@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<body>
+		<attribute name="class" value="theme-pearl"/>
+		<referenceBlock name="form.subscribe" remove="true"/>
+		<referenceBlock name="footer_links" remove="true"/>
+		<move element="store_switcher" destination="header.panel" after="store_language" />
+		<referenceBlock name="store.settings">
+			<block class="Magento\Store\Block\Switcher" name="store.settings.storeswitcher" template="switch/stores.phtml">
+				<arguments>
+					<argument name="id_modifier" xsi:type="string">nav</argument>
+				</arguments>
+			</block>
+		</referenceBlock>
+        <referenceContainer name="footer">
+            <block class="MSP\ReCaptcha\Block\Frontend\ReCaptcha"
+                   name="pearl-recaptcha-newsletter"
+                   after="-"
+                   template="Magento_Theme::msp_recaptcha_newsletter_pearl.phtml">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="msp-recaptcha" xsi:type="array">
+                                <item name="component" xsi:type="string">MSP_ReCaptcha/js/reCaptcha</item>
+                                <item name="reCaptchaId" xsi:type="string">wpn-recaptcha-newsletter-pearl</item>
+                                <item name="zone" xsi:type="string">newsletter</item>
+                                <item name="badge" xsi:type="string">bottomright</item>
+                                <item name="settings" xsi:type="array">
+                                    <item name="size" xsi:type="string">invisible</item>
+                                </item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+	</body>
+</page>

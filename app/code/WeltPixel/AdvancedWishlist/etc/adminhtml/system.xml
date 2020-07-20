@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="weltpixel_advancedwishlist" translate="label" type="text" sortOrder="270" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Advanced Wishlist</label>
+            <tab>weltpixel</tab>
+            <resource>WeltPixel_AdvancedWishlist::AdvancedWishlistSettings</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Advanced Wishlist General Settings</label>
+                <field id="enable_multiwishlist" translate="label comment" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Multiple Wishlist</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable Multiple Wishlist.</comment>
+                </field>
+                <field id="enable_ajaxwishlist" translate="label comment" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Ajax Wishlist</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable Ajax Wishlist.</comment>
+                </field>
+                <field id="enable_sharewishlist" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Share Wishlist</label>
+                    <frontend_model>WeltPixel\Backend\Block\Adminhtml\System\Config\Form\Field\Disable</frontend_model>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[
+                                <strong>“Enable/Disable Share Wishlist.”</strong> only available in PRO version of this extension. <br>
+                                <a style="font-size: 14px" target="_blank" href="https://www.weltpixel.com/magento-2-multiple-ajax-wishlist-and-share-extension.html">Upgrade to Pro version</a> to enable this functionality.
+                            ]]>
+                    </comment>
+                </field>
+                <field id="enable_pricealert" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enable Price Alert</label>
+                    <frontend_model>WeltPixel\Backend\Block\Adminhtml\System\Config\Form\Field\Disable</frontend_model>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[
+                                <strong>“Enable/Disable Price Alert For Wishlist Items.”</strong> only available in PRO version of this extension. <br>
+                                <a style="font-size: 14px" target="_blank" href="https://www.weltpixel.com/magento-2-multiple-ajax-wishlist-and-share-extension.html">Upgrade to Pro version</a> to enable this functionality.
+                            ]]>
+                    </comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

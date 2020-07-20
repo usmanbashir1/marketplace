@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.main.title">
+            <block name="title" class="Cminds\Marketplace\Block\Catalog\Product\Supplier\Name"
+                   template="Cminds_Marketplace::marketplace/catalog/product/supplier/name.phtml"
+                   before="-"
+            />
+        </referenceContainer>
+    </body>
+</page>

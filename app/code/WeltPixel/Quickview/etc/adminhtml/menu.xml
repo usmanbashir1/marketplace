@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+                id="WeltPixel_Quickview::Quickview_Label"
+                title="Quickview &amp; Ajax Cart Pro"
+                module="WeltPixel_Quickview"
+                sortOrder="70"
+                parent="WeltPixel_Backend::WeltPixel"
+                resource="WeltPixel_Quickview::Quickview_Label"
+        />
+        <add
+                id="WeltPixel_Quickview::Quickview"
+                title="Quick View Settings"
+                module="WeltPixel_Quickview"
+                action="adminhtml/system_config/edit/section/weltpixel_quickview/"
+                sortOrder="10"
+                parent="WeltPixel_Quickview::Quickview_Label"
+                resource="WeltPixel_Quickview::Quickview"
+        />
+        <add
+            id="WeltPixel_Quickview::QuickviewMessages"
+            title="Dynamic Quickview Custom Messages"
+            module="WeltPixel_Quickview"
+            action="weltpixelquickview/custommessages"
+            sortOrder="20"
+            parent="WeltPixel_Quickview::Quickview_Label"
+            resource="WeltPixel_Quickview::QuickviewMessages"
+        />
+    </menu>
+</config>

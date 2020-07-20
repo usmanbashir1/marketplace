@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <type name="Magento\Theme\Block\Html\Title">
+        <plugin name="m2-weltpixel-h1-title-rewrite" type="WeltPixel\TitleRewrite\Block\Rewrite" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="Magento\Catalog\Model\Category\DataProvider">
+        <plugin name="weltpixel-titlerewrite-category-dataprovider" type="WeltPixel\TitleRewrite\Plugin\Category\DataProvider" sortOrder="1" />
+    </type>
+</config>

@@ -1,0 +1,23 @@
+<script>
+    require(['jquery', 'mage/gallery/gallery', 'wpProductLabels'], function($, gallery){
+        $('[data-gallery-role=gallery-placeholder]').on('gallery:loaded', function () {
+            var requestUrl = '<?php echo $this->getUrl("wpproductlabels/product/labels/product_id/" . $this->getProduct()->getId()); ?>';
+            $.get({
+                url: requestUrl,
+                cache: false
+            }, function(labelData) {
+                if(labelData.imagePosition) {
+                    $('.fotorama__stage').append(labelData.imagePosition);
+                }
+                if(labelData.otherPosition) {
+                    var insertBeforeElement = $('.product-info-main').find('.product.info.detailed');
+                    if (insertBeforeElement.length) {
+                        $(labelData.otherPosition).insertBefore(insertBeforeElement);
+                    } else {
+                        $('.product-info-main').append(labelData.otherPosition);
+                    }
+                }
+            });
+        });
+    });
+</script>

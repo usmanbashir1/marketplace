@@ -1,0 +1,42 @@
+title,identifier,content,is_active
+"WeltPixel Global Promo Message",weltpixel_global_promo_message,"
+<div id=""carousel"">
+    <div class=""btn-bar"">
+        <div id=""buttons"">
+            <a id=""prev"" class=""icon-angle-left"" href=""#"">&nbsp;</a>
+            <a id=""next"" class=""icon-angle-right"" href=""#"">&nbsp;</a>
+        </div>
+    </div>
+    <div id=""slides"">
+        <ul>
+            <li class=""slide"">
+                <div class=""quoteContainer"">
+                    <i class=""icon-reload wpx-i""></i>
+                    <span class=""wpx-sub"">30-DAY FREE RETURNS</span>
+                    <p class=""quote-phrase"">Wear it, test it, keep what you like.</p>
+                    <a href=""#"" target=""_blank"" class=""wpx-link"">See Details</a>
+                </div>
+            </li>
+            <li class=""slide"">
+                <div class=""quoteContainer"">
+                    <span class=""wpx-sub"">$5 TWO DAY SHIPPING NOW AVAILABLE</span>
+                    <p class=""quote-phrase"">Applicable to USA and Canada</p>
+                </div>
+            </li>
+            <li class=""slide"">
+                <div class=""quoteContainer glb-prm"">
+                    <span class=""wpx-sub"">GLOBAL PROMO MESSAGE CONTENT HERE</span>
+                    <a class=""wpx-link wpx-mg se-det"" href=""https://support.weltpixel.com/hc/en-us/articles/115003513554-How-to-add-a-Global-Promo-Message-for-Magento-2-Pearl-Theme"" target=""_blank"">See details</a>
+                    <a href=""https://support.weltpixel.com/hc/en-us"" target=""_blank"" class=""wpx-link wpx-mg"">Setup instructions</a>
+                </div>
+            </li>
+            <li class=""slide"">
+                <div class=""quoteContainer"">
+                    <span class=""wpx-sub"">EDIT ME IN WELTPIXEL_GLOBAL_PROMO_MESSAGE STATIC BLOCK</span>
+                    <a href=""#"" target=""_blank"" class=""wpx-link wpx-mg"">See Details</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+",1

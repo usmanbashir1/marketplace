@@ -1,0 +1,176 @@
+
+/* ----------------------------------------------------------------
+	Flex Slider
+-----------------------------------------------------------------*/
+
+.fslider,
+.fslider .flexslider,
+.fslider .slider-wrap,
+.fslider .slide,
+.fslider .slide > a,
+.fslider .slide > img,
+.fslider .slide > a > img {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+}
+
+.fslider { min-height: 32px; }
+
+
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  { outline: none; border: none; }
+.slider-wrap,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none; border: none;}
+
+.flexslider {position: relative;margin: 0; padding: 0;}
+.flexslider .slider-wrap > .slide {display: none; -webkit-backface-visibility: hidden;}
+.flexslider .slider-wrap img {width: 100%; display: block;}
+.flex-pauseplay span {text-transform: capitalize;}
+
+.slider-wrap:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+html[xmlns] .slider-wrap {display: block;}
+* html .slider-wrap {height: 1%;}
+
+.no-js .slider-wrap > .slide:first-child {display: block;}
+
+.flex-viewport {
+	max-height: 2000px;
+	-webkit-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+}
+
+.flex-control-nav {
+	position: absolute;
+	z-index: 10;
+	text-align: center;
+	top: 14px;
+	right: 10px;
+	margin: 0;
+}
+
+.flex-control-nav li {
+	float: left;
+	display: block;
+	margin: 0 3px;
+	width: 10px;
+	height: 10px;
+}
+
+.flex-control-nav li a {
+	display: block;
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 10px !important;
+	height: 10px !important;
+	border: 1px solid #FFF;
+	border-radius: 50%;
+	transition: all .3s ease-in-out;
+	-webkit-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+}
+
+.flex-control-nav li:hover a,
+.flex-control-nav li a.flex-active { background-color: #458074; }
+
+
+/* ----------------------------------------------------------------
+	Slider
+-----------------------------------------------------------------*/
+
+
+#slider {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+
+/* Flex Slider - Thumbs
+-----------------------------------------------------------------*/
+
+.fslider[data-animation="fade"] .flexslider { height: auto !important; }
+
+.flex-control-nav.flex-control-thumbs {
+	position: relative;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 2px -2px -2px 0;
+	height: 75px;
+}
+
+.flex-control-nav.flex-control-thumbs li { margin: 0 2px 2px 0; }
+
+.flex-control-nav.flex-control-thumbs li img {
+	cursor: pointer;
+	text-indent: -9999px;
+	border: 0;
+	border-radius: 0;
+	margin: 0;
+	opacity: 0.5;
+	-webkit-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+.flex-control-nav.flex-control-thumbs li,
+.flex-control-nav.flex-control-thumbs li img {
+	display: block;
+	width: 100px !important;
+	height: 75px !important;
+}
+
+.flex-control-nav.flex-control-thumbs li:hover img,
+.flex-control-nav.flex-control-thumbs li img.flex-active {
+	border-width: 0;
+	opacity: 1;
+}
+
+
+/* Flex Thumbs - Flexible
+-----------------------------------------------------------------*/
+
+.fslider.flex-thumb-grid .flex-control-nav.flex-control-thumbs {
+	margin: 2px -2px -2px 0;
+	height: auto;
+}
+
+.fslider.flex-thumb-grid .flex-control-nav.flex-control-thumbs li {
+	width: 25% !important;
+	height: auto !important;
+	margin: 0;
+	padding: 0 2px 2px 0;
+}
+
+.fslider.flex-thumb-grid.grid-3 .flex-control-nav.flex-control-thumbs li { width: 33.30% !important; }
+.fslider.flex-thumb-grid.grid-5 .flex-control-nav.flex-control-thumbs li { width: 20% !important; }
+.fslider.flex-thumb-grid.grid-6 .flex-control-nav.flex-control-thumbs li { width: 16.66% !important; }
+.fslider.flex-thumb-grid.grid-8 .flex-control-nav.flex-control-thumbs li { width: 12.5% !important; }
+.fslider.flex-thumb-grid.grid-10 .flex-control-nav.flex-control-thumbs li { width: 10% !important; }
+.fslider.flex-thumb-grid.grid-12 .flex-control-nav.flex-control-thumbs li { width: 8.33% !important; }
+
+.fslider.flex-thumb-grid .flex-control-nav.flex-control-thumbs li img {
+	width: 100% !important;
+	height: auto !important;
+}
+
+
+@media (min-width: 480px) and (max-width: 767px) {
+	.slider-parallax, .slider-parallax div {
+		height: 300px !important;
+	}
+}
+
+@media (max-width: 479px) {
+	.slider-parallax, .slider-parallax div  {
+		height: 180px !important;
+	}
+}

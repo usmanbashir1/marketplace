@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="WeltPixel_Backend::WeltPixel">
+                    <resource id="WeltPixel_Sitemap::Sitemap_Label" sortOrder="100" title="Sitemap" >
+                        <resource id="WeltPixel_Sitemap::Sitemap" title="Sitemap Settings" translate="title" sortOrder="10" />
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="WeltPixel_FrontendOptions::ColorOptions" title="Frontend Options" module="WeltPixel_FrontendOptions" action="adminhtml/system_config/edit/section/weltpixel_frontend_options/" sortOrder="10" parent="WeltPixel_Backend::Pearl_Theme_Options" resource="WeltPixel_FrontendOptions::FrontendOptions"/>
+    </menu>
+</config>

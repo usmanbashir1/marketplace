@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Cminds_MarketplaceQa::css/marketplaceqa/custom.css"/>
+    </head>
+    <body>
+        <referenceContainer name="product.info.main">
+            <block class="Cminds\MarketplaceQa\Block\Catalog\Product\Summary"
+                   name="questions.count"
+                   template="marketplaceqa/questions/qa.phtml"
+                   cacheable="false"
+            />
+        </referenceContainer>
+        <referenceBlock name="product.info.details">
+            <block class="Cminds\MarketplaceQa\Block\Product\View"
+                   name="qa"
+                   template="qa_tab.phtml"
+                   ifconfig="configuration_marketplace_qa/configure/enabled"
+                   group="detailed_info"
+                   cacheable="false">
+                <arguments>
+                    <argument translate="true"
+                              name="title"
+                              xsi:type="string">Questions and Answers</argument>
+                    <argument name="at_code"
+                              xsi:type="string">description</argument>
+                    <argument name="css_class"
+                              xsi:type="string">description</argument>
+                    <argument name="at_label"
+                              xsi:type="string">none</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

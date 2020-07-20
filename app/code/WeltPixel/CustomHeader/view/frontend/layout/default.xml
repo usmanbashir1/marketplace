@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.container">
+            <container before="-" name="header-global-promo" label="Page Header Global Promo" as="header-wrapper-global-promo" htmlTag="div" htmlClass="header-global-promo">
+                <block class="Magento\Framework\View\Element\Template" name="weltpixel_global_promo_message" as="weltpixel_global_promo_message" template="WeltPixel_CustomHeader::global_promo.phtml">
+                    <block class="Magento\Cms\Block\Block" name="global_promo_message_content">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">weltpixel_global_promo_message</argument>
+                        </arguments>
+                    </block>
+                </block>
+            </container>
+        </referenceContainer>
+        <referenceContainer name="before.body.end">
+            <block
+                class="Magento\Framework\View\Element\Template"
+                ifconfig="weltpixel_custom_header/sticky_header/enable"
+                name="welpixel.sticky.header.js" template="WeltPixel_CustomHeader::sticky_header_js.phtml"
+            />
+        </referenceContainer>
+    </body>
+</page>

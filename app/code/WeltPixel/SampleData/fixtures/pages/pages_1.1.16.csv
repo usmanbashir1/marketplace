@@ -1,0 +1,296 @@
+title,page_layout,meta_keywords,meta_description,identifier,content_heading,content,is_active,sort_order,layout_update_xml,custom_theme,custom_root_template,custom_layout_update_xml,custom_theme_from,custom_theme_to,css_global,css_phone_small,css_phone,css_tablet_small,css_tablet,css_desktop,css_desktop_large,custom_js
+"Home Page V14",1column,,,home-page-v14,"","
+<div class=""container-v14"">
+	<div class=""inner-img pos-rel"">
+		<img class=""bg-img"" src=""{{media url=""wysiwyg/pearl_theme/homepage-v14/home-v14-cover.jpg""}}"" alt="""" />
+		<div class=""row"">
+			<div class=""wpb_content_element"">
+				<h1><span>Autumn Mood</span><br>
+				<span>Collection</span></h1>
+				<p class=""link-with-effect-p""><span><a class=""link-with-effect wpx-white"" href=""#"">Shop Collection</a></span></p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class=""container-v14 mg-top-desk-v14 mg-top-mob-v14"">
+	<div class=""row"">
+		<div class=""category_item paddinglist img-cont"">
+			<div class=""inner-img img-hover"">
+				<img class=""bg-img"" src=""{{media url=""wysiwyg/pearl_theme/homepage-v14/home-v3-g1.jpg""}}"" alt="""" />
+			</div>
+			<div class=""category_name"">
+				<a href=""#"">Furniture</a>
+				<p class=""category_desc"">Celiac cornhole vice neutra. Succulents freegan four dollar toast pop-up, meggings brooklyn flexitarian irony snackwave. </p>
+			</div>
+		</div>
+		<div class=""category_item_2 paddinglist img-cont"">
+			<div class=""inner-img img-hover"">
+				<img class=""bg-img"" src=""{{media url=""wysiwyg/pearl_theme/homepage-v14/home-v3-g2.jpg""}}"" alt="""" />
+			</div>
+			<div class=""category_name"">
+				<a href=""#"">Art & Frames</a>
+				<p class=""category_desc"">Brooklyn vexillologist vice chia keytar</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class=""container-v14 mg-top-desk-v14"">
+	<div class=""row"">
+		<div class=""category_item_3 paddinglist img-cont"">
+			<div class=""inner-img img-hover"">
+				<img class=""bg-img"" src=""{{media url=""wysiwyg/pearl_theme/homepage-v14/home-v3-g3.jpg""}}"" alt="""" />
+			</div>
+			<div class=""category_name"">
+				<a href=""#"">Bowls & Vases </a>
+				<p class=""category_desc"">Stumptown raw denim bicycle rights, beard single-origin coffee</p>
+			</div>
+		</div>
+		<div class=""category_item_4 paddinglist img-cont"">
+			<div class=""inner-img img-hover"">
+				<img class=""bg-img"" src=""{{media url=""wysiwyg/pearl_theme/homepage-v14/home-v3-g4.jpg""}}"" alt="""" />
+			</div>
+			<div class=""category_name"">
+				<a href=""#"">Decorative Objects</a>
+				<p class=""category_desc"">Kale chips master cleanse chambray street art vaporware, chicharrones mumblecore af photo booth four loko migas mixtape banjo aesthetic brunch</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class=""container-v14 mg-top-desk-v14"">
+	<div class=""row"">
+		<div class=""category_item paddinglist img-cont"">
+			<div class=""inner-img img-hover"">
+               <img class=""bg-img"" src=""{{media url=""wysiwyg/pearl_theme/homepage-v14/home-v3-g5.jpg""}}"" alt="""" />
+			</div>
+			<div class=""category_name"">
+				<a href=""#"">Design Miniatures </a>
+				<p class=""category_desc"">Waistcoat williamsburg chartreuse, twee roof party pop-up brunch.</p>
+			</div>
+		</div>
+		<div class=""category_item_2 paddinglist img-cont"">
+			<div class=""inner-img img-hover"">
+				<img class=""bg-img"" src=""{{media url=""wysiwyg/pearl_theme/homepage-v14/home-v3-g6.jpg""}}"" alt="""" />
+			</div>
+			<div class=""category_name"">
+				<a href=""#"">Storage </a>
+				<p class=""category_desc"">Selfies art party everyday</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class=""container-v14 mg-top-desk-v14"">
+	<div class=""row"">
+		<div class=""category_item_3 paddinglist img-cont"">
+			<div class=""inner-img img-hover"">
+				<img class=""bg-img"" src=""{{media url=""wysiwyg/pearl_theme/homepage-v14/home-v3-g3.jpg""}}"" alt="""" />
+			</div>
+			<div class=""category_name"">
+				<a href=""#"">Floor Lamps</a>
+				<p class=""category_desc"">Lumbersexual kombucha chambray narwhal fam wolf bespoke, pug chia mixtape.</p>
+			</div>
+		</div>
+		<div class=""category_item_4 paddinglist img-cont"">
+			<div class=""inner-img img-hover"">
+                               <img class=""bg-img"" src=""{{media url=""wysiwyg/pearl_theme/homepage-v14/hooks.jpg""}}"" alt="""" />
+			</div>
+			<div class=""category_name"">
+				<a href=""#"">Stools & Benches</a>
+				<p class=""category_desc"">Craft beer leggings street art</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class=""container-v14 mg-top-desk-v14 mg-top-mob-v14"">
+	<div class=""vc_column_container"">
+		<div class=""col-sm-6 vc_column-inner vc_custom no-padd-mob"">
+			<div class=""wpb_text_column"">
+				<div class=""wpb_wrapper"">
+					<h3>Don’t miss a thing,<br>
+					subscribe to our newsletter</h3>
+					<div class=""wpb_inline"">
+						<a class=""link-with-effect open-newsletter"">Join The Mailing List</a>
+					</div>
+              <!-- FOOTER NEWSLETTER BLOCK BEGIN -->
+               <div class=""newsletter-subscribe"">
+                  <form action=""{{store url=""newsletter/subscriber/new/""}}"" method=""post""
+                  id=""newsletter-footer"" data-mage-init='{""validation"": {""errorClass"": ""mage-error""}}'>
+                  <div class=""form-group"">
+                     <input name=""email"" type=""email"" id=""newsletter-home"" placeholder=""Enter your email address""
+                        data-validate=""{required:true, 'validate-email':true}""
+                        class=""input-text required-entry validate-email""/>
+                     <button class=""button"" title=""Subscribe"" type=""submit"">
+                     <span>Sign Up</span>
+                     </button>
+                  </div>
+                  </form>
+               </div>
+               <!-- FOOTER NEWSLETTER BLOCK END -->
+				</div>
+			</div>
+		</div>
+		<div class=""col-sm-6 vc_column-inner no-padd-mob"">
+			<div class=""inner-img img-hover padd-mob-last"">
+				<img class=""bg-img"" src=""{{media url=""wysiwyg/pearl_theme/homepage-v14/home-v3-g8-lamps.jpg""}}"" alt="""" />
+			</div>
+		</div>
+	</div>
+</div>
+<div class=""container-v14"">
+       <div class=""vc_single_image-wrapper"">
+             <img src=""{{media url=""wysiwyg/pearl_theme/homepage-v14/badge.jpg""}}"" alt="""" />
+       </div>
+</div>
+",1,,,,,,,,"
+.theme-pearl .page-main {
+    padding: 0px;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+.page-wrapper .breadcrumbs {display: none;}
+.columns .column.main{
+   padding-bottom:0px;
+}
+",,"
+.page-wrapper > .page-header:not(.sticky-header) .block-search .action.search:before{
+   color: #fff;
+}
+.page-wrapper > .page-header:not(.sticky-header)  .header.content .block-search input,
+.page-wrapper > .page-header:not(.sticky-header)  .header_right .block-search input {
+    color: #FFF;
+    border-color: #fff;
+}
+",,"
+.page-main {
+    margin-top: -160px !important;
+}
+.page-wrapper > .page-header:not(.sticky-header) .header.content .block-search input,
+.page-wrapper > .page-header:not(.sticky-header) .header.content .block-search input:focus,
+.page-wrapper > .header-placeholder > .page-header:not(.sticky-header) .header.content .block-search input,
+.page-wrapper > .header-placeholder > .page-header:not(.sticky-header) .header.content .block-search input:focus {
+    border-color: #ffffff;
+}
+.page-wrapper > .nav-sections:not(.sticky-header-nav) .navigation ul li.level0 > a,
+.page-wrapper > .header-placeholder > .nav-sections:not(.sticky-header-nav) .navigation ul li.level0 > a,
+.page-wrapper > .nav-sections:not(.sticky-header-nav) .navigation ul li.level0 > a:visited,
+.page-wrapper > .header-placeholder > .nav-sections:not(.sticky-header-nav) .navigation ul li.level0 > a:visited,
+.page-wrapper > .page-header:not(.sticky-header) .block-search .action.search:before,
+.page-wrapper > .header-placeholder > .page-header:not(.sticky-header) .block-search .action.search:before {
+    color: #ffffff !important
+}
+.page-wrapper > .nav-sections:not(.sticky-header-nav) .navigation ul li.level0.has-active > a,
+.page-wrapper > .header-placeholder > .nav-sections:not(.sticky-header-nav) .navigation ul li.level0.has-active > a {
+    border-color: #ffffff;
+}
+.page-wrapper > .nav-sections:not(.sticky-header-nav) .navigation ul li.level0 > a:active,
+.page-wrapper > .header-placeholder > .nav-sections:not(.sticky-header-nav) .navigation ul li.level0 > a:active,
+.page-wrapper > .nav-sections:not(.sticky-header-nav) .navigation ul li.level0 > a:hover,
+.page-wrapper > .header-placeholder > .nav-sections:not(.sticky-header-nav) .navigation ul li.level0 > a:hover,
+.page-wrapper > .page-header:not(.sticky-header) .minicart-wrapper a.action:active,
+.page-wrapper > .header-placeholder > .page-header:not(.sticky-header) .minicart-wrapper a.action:active,
+.page-wrapper > .page-header:not(.sticky-header) .minicart-wrapper a.action:hover,
+.page-wrapper > .header-placeholder > .page-header:not(.sticky-header) .minicart-wrapper a.action:hover,
+.page-wrapper > .page-header:not(.sticky-header) .header.links a:active,
+.page-wrapper > .header-placeholder > .page-header:not(.sticky-header) .header.links a:active,
+.page-wrapper > .page-header:not(.sticky-header) .header.links a:hover,
+.page-wrapper > .header-placeholder > .page-header:not(.sticky-header) .header.links a:hover {
+    color: #cccccc !important;
+}
+.page-wrapper > .page-header.sticky-header #search::-webkit-input-placeholder,
+.page-wrapper > .header-placeholder > .page-header.sticky-header #search::-webkit-input-placeholder {
+    color: initial !important; opacity: 1;
+}
+.page-wrapper > .page-header.sticky-header #search:-moz-placeholder,
+.page-wrapper > .header-placeholder > .page-header.sticky-header #search:-moz-placeholder {
+    color: initial !important; opacity: 1;
+}
+.page-wrapper > .page-header.sticky-header #search::-moz-placeholder,
+.page-wrapper > .header-placeholder > .page-header.sticky-header #search::-moz-placeholder {
+    color: initial !important; opacity: 1;
+}
+.page-wrapper > .page-header.sticky-header #search:-ms-input-placeholder,
+.page-wrapper > .header-placeholder > .page-header #search:-ms-input-placeholder {
+    color: initial !important; opacity: 1;
+}
+.page-wrapper > .page-header.sticky-header #search::-ms-input-placeholder,
+.page-wrapper > .header-placeholder > .page-header.sticky-header #search::-ms-input-placeholder {
+    color: initial !important; opacity: 1;
+}
+.page-wrapper > .page-header:not(.sticky-header) .block-search .action.search:before,
+.page-wrapper > .header-placeholder > .page-header:not(.sticky-header) .block-search .action.search:before {
+    color: #ffffff !important
+}
+.page-wrapper > .page-header:not(.sticky-header) #search::-webkit-input-placeholder,
+.page-wrapper > .header-placeholder > .page-header:not(.sticky-header) #search::-webkit-input-placeholder {
+    color: #ffffff; opacity: 1;
+}
+.page-wrapper > .page-header:not(.sticky-header)  #search:-moz-placeholder,
+.page-wrapper > .header-placeholder > .page-header:not(.sticky-header)  #search:-moz-placeholder {
+    color: #ffffff; opacity: 1;
+}
+.page-wrapper > .page-header:not(.sticky-header) #search::-moz-placeholder,
+.page-wrapper > .header-placeholder > .page-header:not(.sticky-header) #search::-moz-placeholder {
+    color: #ffffff; opacity: 1;
+}
+.page-wrapper > .page-header:not(.sticky-header) #search:-ms-input-placeholder,
+.page-wrapper > .header-placeholder > .page-header:not(.sticky-header) #search:-ms-input-placeholder {
+    color: #ffffff; opacity: 1;
+}
+.page-wrapper > .page-header:not(.sticky-header) #search::-ms-input-placeholder,
+.page-wrapper > .header-placeholder > .page-header:not(.sticky-header) #search::-ms-input-placeholder {
+    color: #ffffff; opacity: 1;
+}
+.page-wrapper > .page-header:not(.sticky-header)  .header.links .authorization-link a:before,
+.page-wrapper > .header-placeholder > .page-header:not(.sticky-header)  .header.links .authorization-link a:before,
+.page-wrapper > .page-header:not(.sticky-header) .minicart-wrapper .action.showcart:before,
+.page-wrapper > .header-placeholder > .page-header:not(.sticky-header) .minicart-wrapper .action.showcart:before{
+    color:white !important;
+}
+.page-wrapper > .page-header:not(.sticky-header) div.header_right > ul.header.links.moved-header > li.authorization-link > a:before,
+.page-wrapper > .header-placeholder > .page-header:not(.sticky-header) div.header_right > ul.header.links.moved-header > li.authorization-link > a:before{
+    color:white !important;
+}
+.page-wrapper > .page-header:not(.sticky-header) #switcher-currency-trigger,
+.page-wrapper > .header-placeholder > .page-header:not(.sticky-header) #switcher-currency-trigger {
+    color: white;
+}
+.page-wrapper > .page-header:not(.sticky-header) #switcher-currency-trigger:hover,
+.page-wrapper > .header-placeholder > .page-header:not(.sticky-header) #switcher-currency-trigger:hover {
+    color: #cccccc !important;
+}
+.nav-toggle:before,
+.page-header-v2 .compare.wrapper .action.compare,
+.page-header-v2 .compare.wrapper .action.compare:hover,
+.page-header-v2 .compare.wrapper .counter.qty,
+.page-header-v2 .compare.wrapper .counter.qty:hover{
+    color: white;
+}
+",,,"
+require(['jquery'], function ($) {
+    $("".bg-img"").each(function () {
+        var urlImg = $(this).attr('src'),
+            parent = $(this).parent();
+        $(this).css(""visibility"", ""hidden"");
+        parent.css({
+            'background': 'url(""' + urlImg + '"") no-repeat 50% 0',
+            'background-size': 'cover',
+            'background-position': 'center'
+        });
+    });
+    $("".open-newsletter"").on('click', function () {
+        $("".newsletter-subscribe"").slideToggle(""slow"");
+    });
+    var navToggle = $('.header.content').find('.nav-toggle');
+    if (!navToggle.is(':visible')) {
+        var headerLogo = $('.page-wrapper > .page-header').not('.sticky-header').find('.logo img');
+        var headerContent = $('.page-wrapper > .page-header .header.content');
+        headerLogo.attr('src', '/pub/media/wysiwyg/pearl_theme/logo_white.png');
+        $(window).on('scroll resize', function () {
+            if ($(window).scrollTop() > headerContent.position().top) {
+                headerLogo.attr('src', '/pub/media/wysiwyg/pearl_theme/pearl_logo.png');
+            } else {
+                headerLogo.attr('src', '/pub/media/wysiwyg/pearl_theme/logo_white.png');
+            }
+        });
+    }
+});
+"

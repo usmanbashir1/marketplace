@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Indexer/etc/indexer.xsd">
+    <indexer id="weltpixel_quickviewmessages_rule" view_id="weltpixel_quickviewmessages_rule" class="WeltPixel\Quickview\Model\Indexer\Rule\RuleProductIndexer">
+        <title translate="true">WeltPixel Quickview Messages Rule Product</title>
+        <description translate="true">Indexed quickview messages rule/product association</description>
+    </indexer>
+    <indexer id="weltpixel_quickviewmessages_product" view_id="weltpixel_quickviewmessages_product" class="WeltPixel\Quickview\Model\Indexer\Product\ProductRuleIndexer">
+        <title translate="true">WeltPixel Quickview Messages Product Rule</title>
+        <description translate="true">Indexed quickview messages product/rule association</description>
+    </indexer>
+</config>

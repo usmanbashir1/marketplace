@@ -1,0 +1,144 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+$helperProductPage = $this->helper('WeltPixel\ProductPage\Helper\Data');
+$accordionVersion = $helperProductPage->getAccordionVersion($helperProductPage->getStoreId());
+$accordionCollapsible = $helperProductPage->isAccordionCollapsible($helperProductPage->getStoreId());
+$noBorder = '';
+$noBorderAccordion = '';
+$tabsLayout = $helperProductPage->getTabsLayout();
+$reviewUrl = $block->getBaseUrl() . 'review/product/listAjax/id/' . $helperProductPage->getProductId();
+
+?>
+<?php if ($detailedInfoGroup = $block->getGroupChildNames('detailed_info', 'getChildHtml')) : ?>
+    <?php if($tabsLayout == 'accordion')  :  ?>
+        <?php
+            // Check if accordion version is Version 2
+            if($accordionVersion == '1'): ?>
+                    <div class="product info detailed">
+                        <?php $layout = $block->getLayout(); ?>
+                        <div class="product data items acc-v2-noborder" data-mage-init='{"tabs":{"openedState": "active", "collapsible": true, "active": false, "multipleCollapsible": true, "animate": 300}}'>
+                            <?php foreach ($detailedInfoGroup as $name):?>
+                                <?php
+                                $html = $layout->renderElement($name);
+                                if (!trim($html)) {
+                                    continue;
+                                }
+                                $alias = $layout->getElementAlias($name);
+                                $label = $block->getChildData($alias, 'title');
+                                ?>
+                                <div class="bg-accordion"
+                                     aria-labeledby="tab-label-<?= /* @escapeNotVerified */ $alias ?>-title"
+                                     data-role="collapsible" id="tab-label-<?= /* @escapeNotVerified */ $alias ?>">
+                                    <a class="bg-link"
+                                       tabindex="-1"
+                                       data-toggle="switch"
+                                       href="#<?= /* @escapeNotVerified */ $alias ?>"
+                                       id="tab-label-<?= /* @escapeNotVerified */ $alias ?>-title" data-role="trigger">
+                                        <?= /* @escapzeNotVerified */ $label ?>
+                                    </a>
+                                </div>
+                                <div class="cnt-acc" id="<?= /* @escapeNotVerified */ $alias ?>" data-role="content">
+                                    <div class="content-acc">
+                                        <?= /* @escapeNotVerified */ $html ?>
+                                    </div>
+                                </div>
+                            <?php endforeach;?>
+                        </div>
+                    </div>
+            <?php else: ?>
+                <?php $noBorderAccordion = $helperProductPage->getAccordionVersion() == '0' ? 'no-border-accordion' : '' ?>
+                <div class="product-info-main-extend">
+                    <div class="accordion-1 product info detailed <?php echo  $noBorder; ?>">
+                        <?php $layout = $block->getLayout(); ?>
+                        <div class="product data items" data-mage-init='{"tabs":{"openedState":"active" <?php echo $accordionCollapsible ? ', "collapsible": "true"' : ''; ?>  }}'>
+                            <?php foreach ($detailedInfoGroup as $name):?>
+                                <?php
+                                $html = $layout->renderElement($name);
+                                if (!trim($html)) {
+                                    continue;
+                                }
+                                $alias = $layout->getElementAlias($name);
+                                $label = $block->getChildData($alias, 'title');
+                                ?>
+                                <div class="data item title <?php echo $noBorderAccordion; ?>"
+                                     aria-labeledby="tab-label-<?= /* @escapeNotVerified */ $alias ?>-title"
+                                     data-role="collapsible" id="tab-label-<?= /* @escapeNotVerified */ $alias ?>">
+                                    <a class="data switch <?php echo $noBorderAccordion; ?>"
+                                       tabindex="-1"
+                                       data-toggle="switch"
+                                       href="#<?= /* @escapeNotVerified */ $alias ?>"
+                                       id="tab-label-<?= /* @escapeNotVerified */ $alias ?>-title">
+                                        <?= /* @escapeNotVerified */ $label ?>
+                                    </a>
+                                </div>
+                                <div class="data item content <?php echo $noBorderAccordion; ?>" id="<?= /* @escapeNotVerified */ $alias ?>" data-role="content">
+                                    <?= /* @escapeNotVerified */ $html ?>
+                                </div>
+                            <?php endforeach;?>
+                        </div>
+                    </div>
+                </div>
+        <?php endif; ?>
+
+    <?php else: ?>
+        <?php $noBorder = $tabsLayout == 'tab' && $helperProductPage->getTabsVersion() == '1' ? 'no-border' : '' ?>
+        <div class="tabs-1 product info detailed <?php echo  $noBorder; ?>">
+            <?php $layout = $block->getLayout(); ?>
+            <div class="product data items" data-mage-init='{"tabs":{"openedState":"active"}}'>
+                <?php foreach ($detailedInfoGroup as $name):?>
+                    <?php
+                    $html = $layout->renderElement($name);
+                    if (!trim($html)) {
+                        continue;
+                    }
+                    $alias = $layout->getElementAlias($name);
+                    $label = $block->getChildData($alias, 'title');
+                    ?>
+                    <div class="data item title"
+                         aria-labeledby="tab-label-<?= /* @escapeNotVerified */ $alias ?>-title"
+                         data-role="collapsible" id="tab-label-<?= /* @escapeNotVerified */ $alias ?>">
+                        <a class="data switch"
+                           tabindex="-1"
+                           data-toggle="switch"
+                           href="#<?= /* @escapeNotVerified */ $alias ?>"
+                           id="tab-label-<?= /* @escapeNotVerified */ $alias ?>-title">
+                            <?= /* @escapeNotVerified */ $label ?>
+                        </a>
+                    </div>
+                    <div class="data item content" id="<?= /* @escapeNotVerified */ $alias ?>" data-role="content">
+                        <?= /* @escapeNotVerified */ $html ?>
+                    </div>
+                <?php endforeach;?>
+            </div>
+        </div>
+    <?php endif; ?>
+<?php endif; ?>
+<script>
+    require(['jquery', 'productPage'],
+        function ($, productPage) {
+            $(function() {
+                /** pre-load product reviews */
+                window.reviewUrl = '<?= /* @escapeNotVerified */ $reviewUrl ?>';
+                var tabsLayout = '<?= /* @escapeNotVerified */ $tabsLayout; ?>';
+                if (tabsLayout === 'list') {
+                    productPage.preLoadProductReviews(function() {});
+                }
+
+                /** have to wait until all the images are loaded */
+                $('[data-gallery-role=gallery-placeholder]').on('gallery:loaded', function () {
+                    $(this).on('fotorama:ready', function(){
+                        productPage.scrollToUrlHash(window.location.href);
+                    });
+                });
+
+                $('.reviews-actions a.action').on('click', function() {
+                    productPage.scrollToUrlHash($(this).attr('href'));
+                });
+            });
+        });
+</script>

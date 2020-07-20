@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Cminds MarketplaceMinAmount frontend events config.
+ *
+ * @category Cminds
+ * @package  MarketplaceMinAmount
+ * @author   Cminds Core Team <info@cminds.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="supplierfrontendproductuploader_navbar_init">
+        <observer name="cminds_marketplaceminamount_vendorpanel_navbar_init"
+                  instance="Cminds\MarketplaceMinAmount\Observer\VendorPanel\Navbar\Init"/>
+    </event>
+    <event name="controller_action_predispatch_checkout_cart_index">
+        <observer name="cminds_marketplaceminamount_on_cart_load"
+                  instance="Cminds\MarketplaceMinAmount\Observer\OnCartAndMultishippingLoad"/>
+    </event>
+    <event name="controller_action_predispatch_multishipping_checkout_addresses">
+        <observer name="cminds_marketplaceminamount_predispatch_multishipping_checkout_addresses"
+                  instance="Cminds\MarketplaceMinAmount\Observer\OnCartAndMultishippingLoad"/>
+    </event>
+    <event name="controller_action_predispatch_multishipping_checkout_shipping">
+        <observer name="cminds_marketplaceminamount_predispatch_multishipping_checkout_shipping"
+                  instance="Cminds\MarketplaceMinAmount\Observer\OnCartAndMultishippingLoad"/>
+    </event>
+    <event name="controller_action_predispatch_multishipping_checkout_billing">
+        <observer name="cminds_marketplaceminamount_predispatch_multishipping_checkout_billing"
+                  instance="Cminds\MarketplaceMinAmount\Observer\OnCartAndMultishippingLoad"/>
+    </event>
+    <event name="controller_action_predispatch_multishipping_checkout_overview">
+        <observer name="cminds_marketplaceminamount_predispatch_multishipping_checkout_overview"
+                  instance="Cminds\MarketplaceMinAmount\Observer\OnCartAndMultishippingLoad"/>
+    </event>
+    <event name="controller_action_predispatch_checkout_index_index">
+        <observer name="cminds_marketplaceminamount_predispatch_checkout_onepage_index"
+                  instance="Cminds\MarketplaceMinAmount\Observer\OnCheckoutLoad"/>
+    </event>
+    <event name="sales_order_save_before">
+        <observer name="cminds_marketplaceminamount_sales_order_save_before"
+                  instance="Cminds\MarketplaceMinAmount\Observer\OnCheckoutLoad"/>
+    </event>
+</config>

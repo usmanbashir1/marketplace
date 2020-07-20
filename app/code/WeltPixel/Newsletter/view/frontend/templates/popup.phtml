@@ -1,0 +1,28 @@
+<?php
+/** @var  \WeltPixel\Newsletter\Helper\Data $_helper */
+$_helper = $this->helper('WeltPixel\Newsletter\Helper\Data');
+?>
+<form action="<?php echo $_helper->getFormActionUrl(); ?>"
+      novalidate
+      method="post"
+      action="<?= $block->escapeUrl($block->getFormActionUrl()) ?>"
+      method="post"
+      data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+      id="weltpixel_newsletter">
+    <div class="form-group">
+        <input name="email" type="email" id="popup_newsletter_email"
+               placeholder="<?php echo $block->escapeHtml(__('Enter your email address')) ?>"
+               data-validate="{required:true, 'validate-email':true}"/>
+        <button class="action subscribe primary" title="<?= $block->escapeHtml(__('Sign Up')) ?>" type="submit">
+            <span><?= $block->escapeHtml(__('Sign Up')) ?></span>
+        </button>
+        <?php if ($_helper->isTermsConditionsEnabled()) : ?>
+        <div class="terms-condition-container">
+            <?php  if ($_helper->isTermsConditionsCheckboxRequired()) : ?>
+            <input id="terms_conditions_consent" name="terms_conditions_consent" type="checkbox" data-validate="{required:true}" />
+            <?php endif; ?>
+            <label for="terms_conditions_consent" ><?php echo $_helper->getTermsConditionsText(); ?></label>
+        </div>
+        <?php endif; ?>
+    </div>
+</form>

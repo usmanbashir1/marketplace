@@ -1,0 +1,36 @@
+<?php
+
+// @codingStandardsIgnoreFile
+
+/** @var \WeltPixel\AdvancedWishlist\Block\WishlistAddto $block */
+$isMultiWishslitEnabled = $block->isMultiWishlistEnabled();
+$isAjaxWishslitEnabled = $block->isAjaxWishlistEnabled();
+?>
+<?php if ($isMultiWishslitEnabled) : ?>
+<div class="multiple-wishlists-selector-container">
+    <select class="wp-wishlist-selector" name="wp-multi-wishlist-id">
+    </select>
+</div>
+<script>
+    requirejs(['jquery',  'WeltPixel_AdvancedWishlist/js/weltpixel_wishlist_addto'],
+        function   ($, wishlistAddTo) {
+            $(document).ready(function() {
+                wishlistAddTo.initMultiWishlist({
+                    getWishlistsUrl: "<?= $block->getUrl('wp_collection/multiwishlist/get', ['_secure' =>  true]) ?>",
+                    ajaxWishlist: <?= ($isAjaxWishslitEnabled) ? 'true' : 'false' ?>
+                });
+            });
+        });
+</script>
+<?php elseif ($isAjaxWishslitEnabled) :?>
+<script>
+    requirejs(['jquery',  'WeltPixel_AdvancedWishlist/js/weltpixel_wishlist_addto'],
+        function   ($, wishlistAddTo) {
+            $(document).ready(function() {
+                wishlistAddTo.initAjaxWishlist({
+                    ajaxWishlist: true
+                });
+            });
+        });
+</script>
+<?php endif; ?>

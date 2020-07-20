@@ -1,0 +1,93 @@
+<?php
+/**
+ * Cminds Supplierfrontendproductuploader product list template.
+ *
+ * @category Cminds
+ * @package  Cminds_Supplierfrontendproductuploader
+ */
+?>
+<?php
+/**
+ * @var \Cminds\Supplierfrontendproductuploader\Block\Product\Productlist $block
+ */
+?>
+<?php $items = $block->getItems(); ?>
+<?php $status = $block->getItemStatus(); ?>
+<?php $canEditProducts = $block->getCmindsHelper()->canEditProducts(); ?>
+
+<div class="container-fluid main-container  vendor-container">
+    <h1 class="text-center"><?php /* @escapeNotVerified */ echo __('Returns') ?></h1>
+    <div class="row">
+        <div class="col-md-12">
+            <div class='table-responsive'>
+                <table class="table table-striped">
+                    <thead>
+                    <th><?php /* @escapeNotVerified */ echo __('Returns #') ?></th>
+                    <th><?php /* @escapeNotVerified */ echo __('Order #') ?></th>
+                    <th><?php /* @escapeNotVerified */ echo __('Initiated On') ?></th>
+                    <th><?php /* @escapeNotVerified */ echo __('Customer Name') ?></th>
+                    <th><?php /* @escapeNotVerified */ echo __('Customer Email') ?></th>
+                    <th><?php /* @escapeNotVerified */ echo __('Status') ?></th>
+                    <th><?php /* @escapeNotVerified */ echo __('Reason') ?></th>
+                    <th colspan="<?php echo $canEditProducts ? '3' : '2' ?>"><?php /* @escapeNotVerified */ echo __('Actions') ?></th>
+                    </thead>
+                    <tbody>
+                    <?php if (!empty($items->getData())) : ?>
+                        <?php foreach ($items->getData() as $item): ?>
+                            <?php
+                                $customerName = $item['customer_firstname'].' '.$item['customer_lastname'];
+                            ?>
+                            <?php #$item = $block->getProductModel()->load($_item['entity_id']); ?>
+
+                            <tr class="item">
+                                <td><?php echo $item['rma_id']; ?></td>
+                                <td><?php echo $item['increment_id']; ?></td>
+                                <td><?php echo $item['rma_created_at']; ?></td>
+                                <td><?php echo $customerName; ?></td>
+                                <td><?php echo $item['customer_email']; ?></td>
+                                <td><span class="label label-primary"><?php echo $item['status_name']; ?></span></td>
+                                <td><?php echo $item['reason_name']; ?></td>
+                                <td>
+                                    <a href="<?php echo $block->getViewUrl($item['rma_id']); ?>">
+                                        <button class="btn btn-default">View</button>
+                                    </a>
+                                    <?php if ($block->canDeleteRma()) : ?>
+                                        <a href="<?php echo $block->getDeleteUrl($item['rma_id']); ?>">
+                                            <button class="btn btn-default">Delete</button>
+                                        </a>
+                                    <?php endif; ?>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php else : ?>
+                        <td colspan="7"><?php /* @escapeNotVerified */ echo __('No results') ?></td>
+                    <?php endif; ?>
+                    </tbody>
+                    <tfoot>
+                    <th><?php /* @escapeNotVerified */echo __('Returns #') ?></th>
+                    <th><?php /* @escapeNotVerified */ echo __('Order #') ?></th>
+                    <th><?php /* @escapeNotVerified */ echo __('Initiated On') ?></th>
+                    <th><?php /* @escapeNotVerified */ echo __('Customer Name') ?></th>
+                    <th><?php /* @escapeNotVerified */ echo __('Customer Email') ?></th>
+                    <th><?php /* @escapeNotVerified */ echo __('Status') ?></th>
+                    <th><?php /* @escapeNotVerified */ echo __('Reason') ?></th>
+                    <th colspan="<?php echo $canEditProducts ? '3' : '2' ?>"><?php /* @escapeNotVerified */ echo __('Actions') ?></th>
+                    </tfoot>
+                </table>
+                <?php if ($block->getPagerHtml()): ?>
+                    <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
+                <?php endif ?>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    jQuery(document).ready(function () {
+        if (jQuery("[data-toggle=tooltip]").length) {
+            jQuery("[data-toggle=tooltip]").tooltip().on('hidden.bs.popover', function () {
+                jQuery(this).show();
+            });
+        }
+        jQuery('.navbar-nav > li a:contains("Returns")').parents('li').addClass('active');
+    });
+</script>

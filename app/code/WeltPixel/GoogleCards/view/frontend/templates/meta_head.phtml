@@ -1,0 +1,97 @@
+<?php
+$_product = $this->getProduct();
+$_brand = $this->getBrand($_product);
+$_sku = $this->getSku($_product);
+$_mpn = $this->getMpn($_product);
+$_gtin = $this->getGtin($_product);
+$_itemCondition = $this->getItemCondition($_product);
+
+$reviewsFormat = $this->getReviewsFormat();
+
+$summaryModel = $block->getReviewSummary();
+$reviewCount = $summaryModel->getReviewsCount();
+if (!$reviewCount) {
+    $reviewCount = 0;
+}
+$ratingSummary = ($summaryModel->getRatingSummary()) ? $summaryModel->getRatingSummary() : 20;
+?>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "<?php /* @escapeNotVerified */
+    echo $block->escapeQuote($block->stripTags($_product->getName())); ?>",
+        "image": "<?php /* @escapeNotVerified */
+    echo $block->stripTags($block->getImage($_product, 'product_base_image')->getImageUrl()); ?>",
+        "description": "<?php /* @escapeNotVerified */
+    echo $block->escapeQuote($block->stripTags($block->getDescription($_product))); ?>",
+<?php if (strlen(trim($_brand))): ?>
+        "brand": {
+            "@type": "Thing",
+            "name": "<?php echo $block->stripTags($_brand); ?>"
+        },
+<?php endif; ?>
+
+<?php if (strlen(trim($_sku))): ?>
+        "sku": "<?php echo $block->stripTags($_sku); ?>",
+<?php endif; ?>
+<?php if (strlen(trim($_mpn))): ?>
+        "mpn": "<?php echo $block->stripTags($_mpn); ?>",
+<?php endif; ?>
+<?php if (strlen(trim($_gtin))): ?>
+        "gtin13": "<?php echo $block->stripTags($_gtin); ?>",
+<?php endif; ?>
+<?php if ($reviewCount) : ?>
+        <?php if ($reviewsFormat != 0) : ?>
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "bestRating": 5,
+            "worstRating": 1,
+            "ratingValue": "<?php echo $ratingSummary / 20; ?>",
+            "reviewCount": "<?php echo $reviewCount ?>"
+        },
+        <?php endif ;?>
+        <?php if($reviewsFormat == 2) : $reviews = $block->getReviews(); ?>
+            <?php if ($reviews):  $countReviews = count($reviews);?>
+                "review": [
+                    <?php $ctr = 1; foreach ($reviews as $key => $reviewItem) : ?>
+                         {
+                            "@type": "Review",
+                            "reviewRating": {
+                              "@type": "Rating",
+                              "ratingValue": "<?php echo $reviewItem->getRating() ?>"
+                            },
+                            "name": "<?php /* @escapeNotVerified */ echo $block->escapeQuote($block->stripTags($reviewItem->getTitle())) ?>",
+                            "author": {
+                              "@type": "Person",
+                              "name": "<?php /* @escapeNotVerified */ echo $block->escapeQuote($block->stripTags($reviewItem->getNickname())) ?>"
+                            },
+                            "datePublished": "<?php echo $this->formatedDate($reviewItem->getCreatedAt()) ?>",
+                            "reviewBody": "<?php /* @escapeNotVerified */ echo $block->escapeQuote($block->stripTags($reviewItem->getDetail())) ?>"
+                        }<?php echo ($countReviews > $ctr) ? ',' : '';?>
+                    <?php $ctr++; endforeach; ?>
+                    ],
+            <?php endif; ?>
+        <?php endif; ?>
+    <?php endif; ?>
+        "offers": {
+            "@type": "Offer",
+            "priceCurrency": "<?php echo $block->getCurrencyCode() ?>",
+            "url": "<?php echo $block->stripTags($block->getCurrentUrl($_product)); ?>",
+<?php if ($_product->isAvailable()): ?>
+            "availability": "https://schema.org/InStock",
+ <?php else : ?>
+            "availability": "https://schema.org/OutOfStock",
+<?php endif; ?>
+            "price": "<?php echo $this->getPrice(); ?>"
+<?php if ($_product->getSpecialPrice()): ?>
+            ,"priceValidUntil": "<?php echo $this->formatedDate($_product->getSpecialToDate()); ?>"
+<?php endif; ?>
+<?php if($_itemCondition) :?>
+            ,"itemCondition": "https://schema.org/<?php echo $_itemCondition;?>"
+<?php endif; ?>
+        }
+    }
+
+</script>

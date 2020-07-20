@@ -1,0 +1,19 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="before.body.end">
+            <block
+                    ifconfig="weltpixel_infinite_scroll/general/ajax_catalog_category"
+                    class="WeltPixel\AjaxInfiniteScroll\Block\Product\ListProduct"
+                    name="listproduct.js"
+                    template="WeltPixel_AjaxInfiniteScroll::listproduct_js.phtml"
+            />
+            <block
+                ifconfig="weltpixel_infinite_scroll/general/ajax_catalog_category"
+                class="WeltPixel\AjaxInfiniteScroll\Block\AjaxInfiniteScroll"
+                name="ajaxinfinitescroll.js"
+                template="WeltPixel_AjaxInfiniteScroll::ajaxinfinitescroll_js.phtml"
+            />
+        </referenceContainer>
+    </body>
+</page>

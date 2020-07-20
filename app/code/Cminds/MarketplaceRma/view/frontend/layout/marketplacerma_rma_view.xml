@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_account"/>
+    <head>
+        <css src="Cminds_MarketplaceRma::css/supplierrma/view.css"/>
+    </head>
+    <body>
+        <referenceBlock name="customer-account-navigation-rma">
+          <arguments>
+              <argument name="current" xsi:type="boolean">true</argument>
+          </arguments>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Cminds\MarketplaceRma\Block\Rma\View" 
+                   name="cminds.rma.view" 
+                   cacheable="false">
+                <block class="Cminds\MarketplaceRma\Block\Rma\View\Container"
+                       name="cminds.rma.view.extra.container" 
+                       as="view.extra.container">
+                    <block class="Magento\Framework\View\Element\Template"
+                           name="cminds.rma.view.extra.container.data" 
+                           as="view.extra.container.data"/>
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,16 @@
+<?php
+$questionCount = $block->getQaCollection()->getSize();
+?>
+<div class="product-reviews-summary product-qa-summary">
+    <div class="reviews-actions">
+        <a class="action view"
+           href="#qa">
+            <span itemprop="reviewCount"><?php /* @escapeNotVerified */ echo __($questionCount) ?></span>
+           	<span><?php /* @escapeNotVerified */ echo($questionCount == 1) ? __('Question') : __('Questions'); ?></span>
+        </a>
+        <a class="action add"
+           href="#qa-form">
+           	  <?php /* @escapeNotVerified */ echo __('Ask Questions'); ?>
+         </a>
+    </div>
+</div>

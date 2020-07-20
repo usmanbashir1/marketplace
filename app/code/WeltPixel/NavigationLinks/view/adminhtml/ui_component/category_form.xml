@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="weltpixel_options">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">WeltPixel Options</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="sortOrder" xsi:type="number">15</item>
+            </item>
+        </argument>
+        <container name="weltpixel_category_url_container" >
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">21</item>
+                </item>
+            </argument>
+            <field name="weltpixel_category_url">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="sortOrder" xsi:type="number">10</item>
+                        <item name="dataType" xsi:type="string">string</item>
+                        <item name="formElement" xsi:type="string">input</item>
+                        <item name="scopeLabel" xsi:type="string">[STORE VIEW]</item>
+                        <item name="label" xsi:type="string" translate="true">Custom Link</item>
+                        <item name="description" xsi:type="string" translate="true"><![CDATA[1. Use 'http://' or 'https://' to create external link <br/>2. Use '/' to create link to home page <br/>3. Use '#' to disable link]]></item>
+                    </item>
+                </argument>
+            </field>
+            <htmlContent name="html_content">
+                <argument name="block" xsi:type="object">WeltPixel\NavigationLinks\Block\Adminhtml\CategoryUrlTemplate</argument>
+            </htmlContent>
+        </container>
+        <field name="weltpixel_category_url_newtab">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">20</item>
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="scopeLabel" xsi:type="string">[STORE VIEW]</item>
+                    <item name="label" xsi:type="string" translate="true">Open Link In New Tab</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="true" xsi:type="string">1</item>
+                        <item name="false" xsi:type="string">0</item>
+                    </item>
+                    <item name="default" xsi:type="number">0</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+
+    <fieldset name="weltpixel_megamenu">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">WeltPixel Mega Menu Options</item>
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="sortOrder" xsi:type="number">20</item>
+            </item>
+        </argument>
+        <container name="weltpixel_megamenu_container" >
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">21</item>
+                </item>
+            </argument>
+            <field name="weltpixel_mm_display_mode">
+                <argument name="data" xsi:type="array">
+                    <item name="options" xsi:type="object">WeltPixel\NavigationLinks\Model\Attribute\Source\Displaymode</item>
+                    <item name="config" xsi:type="array">
+                        <item name="sortOrder" xsi:type="number">10</item>
+                        <item name="dataType" xsi:type="string">varchar</item>
+                        <item name="formElement" xsi:type="string">select</item>
+                        <item name="scopeLabel" xsi:type="string">[STORE VIEW]</item>
+                        <item name="label" xsi:type="string" translate="true">Display Mode</item>
+                        <item name="default" xsi:type="string">sectioned</item>
+                        <item name="notice" xsi:type="string" translate="true">Menu display mode for each level 1 category.</item>
+                    </item>
+                </argument>
+            </field>
+            <field name="weltpixel_mm_columns_number">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="sortOrder" xsi:type="number">20</item>
+                        <item name="dataType" xsi:type="string">string</item>
+                        <item name="formElement" xsi:type="string">input</item>
+                        <item name="scopeLabel" xsi:type="string">[STORE VIEW]</item>
+                        <item name="label" xsi:type="string" translate="true">Number of columns in submenu</item>
+                        <item name="notice" xsi:type="string" translate="true">Number of columns in which the sub-categories will be displayed.</item>
+                        <item name="default" xsi:type="number">4</item>
+                        <item name="validation" xsi:type="array">
+                            <item name="validate-digits" xsi:type="boolean">true</item>
+                            <item name="validate-greater-than-zero" xsi:type="boolean">true</item>
+                        </item>
+                    </item>
+                </argument>
+            </field>
+            <field name="weltpixel_mm_column_width">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="sortOrder" xsi:type="number">30</item>
+                        <item name="dataType" xsi:type="string">string</item>
+                        <item name="formElement" xsi:type="string">input</item>
+                        <item name="scopeLabel" xsi:type="string">[STORE VIEW]</item>
+                        <item name="label" xsi:type="string" translate="true">Column Width</item>
+                        <item name="notice" xsi:type="string" translate="true">.</item>
+                        <item name="tooltip" xsi:type="array">
+                            <item name="description"
+                                  xsi:type="string"><![CDATA[If you have 10 sub-categories displayed in 5 columns and also a right or left block, the column width should be 100% / (5 columns + 1 block) = 16.66%]]></item>
+                        </item>
+                        <item name="default" xsi:type="string">auto</item>
+                    </item>
+                </argument>
+            </field>
+            <field name="weltpixel_mm_top_block_type">
+                <argument name="data" xsi:type="array">
+                    <item name="options" xsi:type="object">WeltPixel\NavigationLinks\Model\Attribute\Source\BlockType</item>
+                    <item name="config" xsi:type="array">
+                        <item name="sortOrder" xsi:type="number">34</item>
+                        <item name="dataType" xsi:type="string">varchar</item>
+                        <item name="formElement" xsi:type="string">select</item>
+                        <item name="scopeLabel" xsi:type="string">[STORE VIEW]</item>
+                        <item name="label" xsi:type="string" translate="true">Top Block</item>
+                        <item name="default" xsi:type="string">none</item>
+                    </item>
+                </argument>
+            </field>
+            <field name="weltpixel_mm_top_block_cms">
+                <argument name="data" xsi:type="array">
+                    <item name="options" xsi:type="object">\Magento\Catalog\Model\Category\Attribute\Source\Page</item>
+                    <item name="config" xsi:type="array">
+                        <item name="sortOrder" xsi:type="number">36</item>
+                        <item name="dataType" xsi:type="string">varchar</item>
+                        <item name="formElement" xsi:type="string">select</item>
+                        <item name="scopeLabel" xsi:type="string">[STORE VIEW]</item>
+                        <item name="label" xsi:type="string" translate="true">Select Top CMS Block</item>
+                    </item>
+                </argument>
+            </field>
+            <field name="weltpixel_mm_top_block">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="sortOrder" xsi:type="number">40</item>
+                        <item name="dataType" xsi:type="string">text</item>
+                        <item name="formElement" xsi:type="string">textarea</item>
+                        <item name="rows" xsi:type="number">10</item>
+                        <item name="wysiwyg" xsi:type="boolean">false</item>
+                        <item name="scopeLabel" xsi:type="string">[STORE VIEW]</item>
+                        <item name="label" xsi:type="string" translate="true">Top Custom HTML</item>
+                    </item>
+                </argument>
+            </field>
+            <field name="weltpixel_mm_right_block_type">
+                <argument name="data" xsi:type="array">
+                    <item name="options" xsi:type="object">WeltPixel\NavigationLinks\Model\Attribute\Source\BlockType</item>
+                    <item name="config" xsi:type="array">
+                        <item name="sortOrder" xsi:type="number">44</item>
+                        <item name="dataType" xsi:type="string">varchar</item>
+                        <item name="formElement" xsi:type="string">select</item>
+                        <item name="scopeLabel" xsi:type="string">[STORE VIEW]</item>
+                        <item name="label" xsi:type="string" translate="true">Right Block</item>
+                        <item name="default" xsi:type="string">none</item>
+                    </item>
+                </argument>
+            </field>
+            <field name="weltpixel_mm_right_block_cms">
+                <argument name="data" xsi:type="array">
+                    <item name="options" xsi:type="object">\Magento\Catalog\Model\Category\Attribute\Source\Page</item>
+                    <item name="config" xsi:type="array">
+                        <item name="sortOrder" xsi:type="number">46</item>
+                        <item name="dataType" xsi:type="string">varchar</item>
+                        <item name="formElement" xsi:type="string">select</item>
+                        <item name="scopeLabel" xsi:type="string">[STORE VIEW]</item>
+                        <item name="label" xsi:type="string" translate="true">Select Right CMS Block</item>
+                    </item>
+                </argument>
+            </field>
+            <field name="weltpixel_mm_right_block">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="sortOrder" xsi:type="number">50</item>
+                        <item name="dataType" xsi:type="string">text</item>
+                        <item name="formElement" xsi:type="string">textarea</item>
+                        <item name="rows" xsi:type="number">10</item>
+                        <item name="wysiwyg" xsi:type="boolean">false</item>
+                        <item name="scopeLabel" xsi:type="string">[STORE VIEW]</item>
+                        <item name="label" xsi:type="string" translate="true">Right Custom HTML</item>
+                    </item>
+                </argument>
+            </field>
+            <field name="weltpixel_mm_bottom_block_type">
+                <argument name="data" xsi:type="array">
+                    <item name="options" xsi:type="object">WeltPixel\NavigationLinks\Model\Attribute\Source\BlockType</item>
+                    <item name="config" xsi:type="array">
+                        <item name="sortOrder" xsi:type="number">54</item>
+                        <item name="dataType" xsi:type="string">varchar</item>
+                        <item name="formElement" xsi:type="string">select</item>
+                        <item name="scopeLabel" xsi:type="string">[STORE VIEW]</item>
+                        <item name="label" xsi:type="string" translate="true">Bottom Block</item>
+                        <item name="default" xsi:type="string">none</item>
+                    </item>
+                </argument>
+            </field>
+            <field name="weltpixel_mm_bottom_block_cms">
+                <argument name="data" xsi:type="array">
+                    <item name="options" xsi:type="object">\Magento\Catalog\Model\Category\Attribute\Source\Page</item>
+                    <item name="config" xsi:type="array">
+                        <item name="sortOrder" xsi:type="number">56</item>
+                        <item name="dataType" xsi:type="string">varchar</item>
+                        <item name="formElement" xsi:type="string">select</item>
+                        <item name="scopeLabel" xsi:type="string">[STORE VIEW]</item>
+                        <item name="label" xsi:type="string" translate="true">Select Bottom CMS Block</item>
+                    </item>
+                </argument>
+            </field>
+            <field name="weltpixel_mm_bottom_block">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="sortOrder" xsi:type="number">60</item>
+                        <item name="dataType" xsi:type="string">text</item>
+                        <item name="formElement" xsi:type="string">textarea</item>
+                        <item name="rows" xsi:type="number">10</item>
+                        <item name="wysiwyg" xsi:type="boolean">false</item>
+                        <item name="scopeLabel" xsi:type="string">[STORE VIEW]</item>
+                        <item name="label" xsi:type="string" translate="true">Bottom Custom HTML</item>
+                    </item>
+                </argument>
+            </field>
+            <field name="weltpixel_mm_left_block_type">
+                <argument name="data" xsi:type="array">
+                    <item name="options" xsi:type="object">WeltPixel\NavigationLinks\Model\Attribute\Source\BlockType</item>
+                    <item name="config" xsi:type="array">
+                        <item name="sortOrder" xsi:type="number">64</item>
+                        <item name="dataType" xsi:type="string">varchar</item>
+                        <item name="formElement" xsi:type="string">select</item>
+                        <item name="scopeLabel" xsi:type="string">[STORE VIEW]</item>
+                        <item name="label" xsi:type="string" translate="true">Left Block</item>
+                        <item name="default" xsi:type="string">none</item>
+                    </item>
+                </argument>
+            </field>
+            <field name="weltpixel_mm_left_block_cms">
+                <argument name="data" xsi:type="array">
+                    <item name="options" xsi:type="object">\Magento\Catalog\Model\Category\Attribute\Source\Page</item>
+                    <item name="config" xsi:type="array">
+                        <item name="sortOrder" xsi:type="number">66</item>
+                        <item name="dataType" xsi:type="string">varchar</item>
+                        <item name="formElement" xsi:type="string">select</item>
+                        <item name="scopeLabel" xsi:type="string">[STORE VIEW]</item>
+                        <item name="label" xsi:type="string" translate="true">Select Left CMS Block</item>
+                    </item>
+                </argument>
+            </field>
+            <field name="weltpixel_mm_left_block">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="sortOrder" xsi:type="number">70</item>
+                        <item name="dataType" xsi:type="string">text</item>
+                        <item name="formElement" xsi:type="string">textarea</item>
+                        <item name="rows" xsi:type="number">10</item>
+                        <item name="wysiwyg" xsi:type="boolean">false</item>
+                        <item name="scopeLabel" xsi:type="string">[STORE VIEW]</item>
+                        <item name="label" xsi:type="string" translate="true">Left Custom HTML</item>
+                    </item>
+                </argument>
+            </field>
+            <field name="weltpixel_mm_mob_hide_allcat">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="sortOrder" xsi:type="number">80</item>
+                        <item name="dataType" xsi:type="string">boolean</item>
+                        <item name="formElement" xsi:type="string">checkbox</item>
+                        <item name="scopeLabel" xsi:type="string">[STORE VIEW]</item>
+                        <item name="label" xsi:type="string" translate="true">Hide Mobile Link "All [category name]"</item>
+                        <item name="prefer" xsi:type="string">toggle</item>
+                        <item name="valueMap" xsi:type="array">
+                            <item name="true" xsi:type="string">1</item>
+                            <item name="false" xsi:type="string">0</item>
+                        </item>
+                        <item name="default" xsi:type="number">0</item>
+                    </item>
+                </argument>
+            </field>
+            <htmlContent name="html_content">
+                <argument name="block" xsi:type="object">WeltPixel\NavigationLinks\Block\Adminhtml\System\Config\DependeciesJsTemplate</argument>
+            </htmlContent>
+        </container>
+    </fieldset>
+</form>

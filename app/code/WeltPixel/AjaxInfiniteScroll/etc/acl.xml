@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="WeltPixel_AjaxInfiniteScroll::AjaxInfiniteScrollSettings" title="WeltPixel AjaxInfiniteScroll" sortOrder="280" />
+                        </resource>
+                    </resource>
+                </resource>
+                <resource id="WeltPixel_Backend::WeltPixel" >
+                    <resource id="WeltPixel_AjaxInfiniteScroll::AjaxInfiniteScroll_Label" sortOrder="80" title="AjaxInfiniteScroll" >
+                        <resource id="WeltPixel_AjaxInfiniteScroll::AjaxInfiniteScroll" sortOrder="10" title="AjaxInfiniteScroll" />
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

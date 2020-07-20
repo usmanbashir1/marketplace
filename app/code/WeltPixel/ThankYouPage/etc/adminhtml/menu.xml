@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+                id="WeltPixel_ThankYouPage::ThankYouPage_Label"
+                title="Success Page"
+                module="WeltPixel_ThankYouPage"
+                sortOrder="100"
+                parent="WeltPixel_Backend::WeltPixel"
+                resource="WeltPixel_ThankYouPage::ThankYouPage_Label"
+        />
+        <add
+                id="WeltPixel_ThankYouPage::ThankYouPage"
+                title="Success Page Settings"
+                module="WeltPixel_ThankYouPage"
+                action="adminhtml/system_config/edit/section/weltpixel_thankyoupage/"
+                sortOrder="10"
+                parent="WeltPixel_ThankYouPage::ThankYouPage_Label"
+                resource="WeltPixel_ThankYouPage::ThankYouPage"
+        />
+    </menu>
+</config>

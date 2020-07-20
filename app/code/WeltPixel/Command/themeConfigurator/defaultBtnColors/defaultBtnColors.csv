@@ -1,0 +1,6 @@
+weltpixel_frontend_options/default_buttons/button__background,#FF0000,stores
+weltpixel_frontend_options/default_buttons/button__color,#000000,stores
+weltpixel_frontend_options/default_buttons/button__border,#000000,stores
+weltpixel_frontend_options/default_buttons/button__hover__border,#000000,stores
+weltpixel_frontend_options/default_buttons/button__hover__background,#000000,stores
+weltpixel_frontend_options/default_buttons/button__hover__color,#FF0000,stores

@@ -1,0 +1,57 @@
+<?php
+$style = $this->getData('style');
+$title = $this->getData('title');
+$subtitle = $this->getData('subtitle');
+$color = $this->getData('color');
+$headingColor = '';
+$headingType = substr($style,0,2);
+$class = substr($style,3);
+$noSubtitleHeading = array(
+    'fancy-title title-double-border',
+    'fancy-title title-border',
+    'fancy-title title-border-color title-right',
+    'fancy-title title-dotted-border title-center'
+);
+$customCss = trim($this->getData('custom_css'));
+
+if((strpos($title, '$#') !== false) && (strpos($title, '#$') !== false)) {
+    $title = str_replace('$#', '<span class="t-rotate"><span class="animated flipUp">', $title);
+    $title = str_replace('#$', '</span></span>', $title);
+}
+
+if($color){
+    $headingColor = 'color: '.$color.';';
+}
+?>
+<?php if ($customCss) : ?>
+    <style>
+        <?php echo $customCss; ?>
+    </style>
+<?php endif; ?>
+<?php if($style == "dropcap"):?>
+    <h3><?php echo $title;?></h3>
+    <?php if($subtitle):?>
+        <?php $dropcap = $subtitle[0];?>
+        <p><span class="dropcap"><?php echo $dropcap;?></span><?php echo substr($subtitle, 1);?></p>
+    <?php endif;?>
+<?php elseif($style == "text-rotater"):?>
+    <div class="text-rotater" style="font-size:30px; <?php echo $headingColor; ?>" data-separator="|" data-rotate="flipUp" data-speed="2500">
+        <?php echo $title;?>
+    </div>
+<?php elseif($style == "emphasis-title"):?>
+    <div class="section parallax dark notopmargin noborder" style="padding: 80px 0px; background-image: url(http://canvashtml-cdn.semicolonweb.com/images/parallax/home/5.jpg); background-position: 50% 181.2px;" data-stellar-background-ratio="0.4">
+        <div class="container center clearfix">
+            <div class="emphasis-title">
+                <h2 style="<?php echo $headingColor;?>"><?php echo $title;?></h2>
+                <p class="lead topmargin-sm"><?php echo $subtitle; ?></p>
+            </div>
+        </div>
+    </div>
+<?php else:?>
+    <div class="<?php echo $class;?>">
+        <?php echo '<'.$headingType.' style="'.$headingColor.'">'.$title.'</'.$headingType.'>'; ?>
+        <?php if($subtitle && !in_array($class, $noSubtitleHeading)):?>
+            <span><?php echo $subtitle; ?></span>
+        <?php endif;?>
+    </div>
+<?php endif;?>

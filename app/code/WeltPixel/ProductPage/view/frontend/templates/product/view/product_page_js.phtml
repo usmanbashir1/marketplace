@@ -1,0 +1,49 @@
+<?php $_helper = $this->helper('WeltPixel\ProductPage\Helper\Data'); ?>
+<?php $_mobileHelper = $this->helper('WeltPixel\MobileDetect\Helper\Data'); ?>
+<?php $positionProductInfo = $_helper->getPositionProductInfo($_helper->getStoreId()) ?>
+<?php $isMobile = $_mobileHelper->isMobile() ?>
+<div id="swipeOff"></div>
+<script>
+require(['jquery', 'productPage', 'mage/mage', 'mage/ie-class-fixer', 'mage/gallery/gallery'],
+	function ($, productPage) {
+        window.positionProductInfo = '<?php echo $positionProductInfo ?>';
+        window.isMobile = '<?php echo $isMobile ?>';
+
+        var positionProductInfo = window.positionProductInfo;
+        var isMobileCheck = productPage.isMobileCheck();
+
+
+        $(document).ready(function () {
+            productPage.init();
+        });
+
+        $(window).on('load',function () {
+            productPage.load();
+            jQuery('html, body').animate({scrollTop: 0}, 'fast');
+            if (positionProductInfo == 1 && !isMobileCheck) {
+                productPage.bindStickyScroll();
+            }
+            $('.product-info-main').removeClass('pp-floating-v4');
+            if(!isMobileCheck && $('.product-info-main').hasClass('product_v4')) {
+                $('.product-info-main').addClass('pp-floating-v4');
+            }
+
+        });
+
+        $(document).ajaxComplete(function () {
+            productPage.ajaxComplete();
+        });
+
+
+        var reinitTimer;
+        $(window).on('resize', function () {
+            clearTimeout(reinitTimer);
+            reinitTimer = setTimeout(productPage.resize(), 100);
+            if (positionProductInfo == 1 && !isMobileCheck) {
+                productPage.bindStickyScroll();
+            }
+        });
+
+    }
+);
+</script>

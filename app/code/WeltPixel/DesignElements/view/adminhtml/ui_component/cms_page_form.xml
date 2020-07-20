@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="design">
+        <field name="css_global">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Custom Global CSS</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="source" xsi:type="string">page</item>
+                    <item name="dataScope" xsi:type="string">css_global</item>
+                </item>
+            </argument>
+        </field>
+        <field name="css_phone_small">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Custom CSS for XXS screen size</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="source" xsi:type="string">page</item>
+                    <item name="dataScope" xsi:type="string">css_phone_small</item>
+                    <item name="notice" xsi:type="string" translate="true">Configure breakpoints in WeltPixel > Frontend Options > Breakpoints</item>
+                </item>
+            </argument>
+        </field>
+        <field name="css_phone">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Custom CSS for XS screen size</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="source" xsi:type="string">page</item>
+                    <item name="dataScope" xsi:type="string">css_phone</item>
+                    <item name="notice" xsi:type="string" translate="true">Configure breakpoints in WeltPixel > Frontend Options > Breakpoints</item>
+                </item>
+            </argument>
+        </field>
+        <field name="css_tablet_small">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Custom CSS for S screen size</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="source" xsi:type="string">page</item>
+                    <item name="dataScope" xsi:type="string">css_tablet_small</item>
+                    <item name="notice" xsi:type="string" translate="true">Configure breakpoints in WeltPixel > Frontend Options > Breakpoints</item>
+                </item>
+            </argument>
+        </field>
+        <field name="css_tablet">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Custom CSS for M screen size</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="source" xsi:type="string">page</item>
+                    <item name="dataScope" xsi:type="string">css_tablet</item>
+                    <item name="notice" xsi:type="string" translate="true">Configure breakpoints in WeltPixel > Frontend Options > Breakpoints</item>
+                </item>
+            </argument>
+        </field>
+        <field name="css_desktop">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Custom CSS for L screen size</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="source" xsi:type="string">page</item>
+                    <item name="dataScope" xsi:type="string">css_desktop</item>
+                    <item name="notice" xsi:type="string" translate="true">Configure breakpoints in WeltPixel > Frontend Options > Breakpoints</item>
+                </item>
+            </argument>
+        </field>
+        <field name="css_desktop_large">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Custom CSS for XL screen size</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="source" xsi:type="string">page</item>
+                    <item name="dataScope" xsi:type="string">css_desktop_large</item>
+                    <item name="notice" xsi:type="string" translate="true">Configure breakpoints in WeltPixel > Frontend Options > Breakpoints</item>
+                </item>
+            </argument>
+        </field>
+        <field name="custom_js">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Custom Js</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="source" xsi:type="string">page</item>
+                    <item name="dataScope" xsi:type="string">custom_js</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>

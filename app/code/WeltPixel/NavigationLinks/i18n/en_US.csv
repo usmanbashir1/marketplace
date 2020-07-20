@@ -1,0 +1,26 @@
+"Mega Menu","Mega Menu"
+Urls,Urls
+"WeltPixel Mega Menu Instructions","WeltPixel Mega Menu Instructions"
+Default,Default
+"Full Width","Full Width"
+Sectioned,Sectioned
+Boxed,Boxed
+"Go to Products > Categories (Level 1) > WeltPixel Mega Menu","Go to Products > Categories (Level 1) > WeltPixel Mega Menu"
+"You will be able to configure a different display mode for each category:","You will be able to configure a different display mode for each category:"
+"Menu display mode for each level 1 category: Full Width / Sectioned / Boxed / Default Magento","Menu display mode for each level 1 category: Full Width / Sectioned / Boxed / Default Magento"
+"Number of columns for each category menu","Number of columns for each category menu"
+"Width of the columns","Width of the columns"
+"Add CMS blocks or custom HTML to categories - Top / Left / Right / Bottom","Add CMS blocks or custom HTML to categories - Top / Left / Right / Bottom"
+"Control visibility for mobile Link “ALL [category name]” at category level","Control visibility for mobile Link “ALL [category name]” at category level"
+"Go to Products > Categories (any) > WeltPixel Options","Go to Products > Categories (any) > WeltPixel Options"
+"Custom Link - set a custom link for any category in the menu","Custom Link - set a custom link for any category in the menu"
+"Open in new tab - opens the custom link/category page in new tab","Open in new tab - opens the custom link/category page in new tab"
+"WeltPixel Options","WeltPixel Options"
+"Custom Link","Custom Link"
+"1. Use 'http://' or 'https://' to create external link <br/>2. Use '/' to create link to home page <br/>3. Use '#' to disable link","1. Use 'http://' or 'https://' to create external link <br/>2. Use '/' to create link to home page <br/>3. Use '#' to disable link"
+"Open Link In New Tab","Open Link In New Tab"
+"WeltPixel Mega Menu Options","WeltPixel Mega Menu Options"
+"Display Mode","Display Mode"
+"Number of columns in dropdown menu","Number of columns in dropdown menu"
+"Only applies for ""Full Width"" and ""Sectioned"" display modes.","Only applies for ""Full Width"" and ""Sectioned"" display modes."
+"Column Width","Column Width"

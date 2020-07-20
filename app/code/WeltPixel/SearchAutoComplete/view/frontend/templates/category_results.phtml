@@ -1,0 +1,32 @@
+<?php /* @var $block \Magento\Catalog\Block\Product\AbstractProduct */ ?>
+
+<?php
+$categoriesArr = $block->getData('categories');
+$helper = $this->helper('WeltPixel\SearchAutoComplete\Helper\Data');
+$containerTextColor = $helper->getContainerTextColor() ;
+$searchVersion = $helper->getSearchVersion();
+$titleBackgroundColor = $helper->getTitleBackgroundColor();
+$titleColor = $helper->getTitleColor();
+
+?>
+<?php if(!isset($categoriesArr['nores'])):?>
+    <?php if(!$searchVersion) : ?>
+        <div class="separator" style="background: <?php echo $titleBackgroundColor; ?>; color:<?php echo $titleColor; ?>"><?php echo __('Categories') ?></div>
+    <?php endif;?>
+    <ul class="category-list">
+        <?php foreach($categoriesArr as $catId => $categoryData):?>
+            <li>
+                <?php $parentsArr = $categoryData['parents']; if(!empty($parentsArr)):?>
+                    <span class="parent-cats">
+                        <?php foreach($parentsArr as $parent):?>
+                            <?php echo $parent . '<span class="parent-cats-separator"></span>';?>
+                        <?php endforeach;?>
+                    </span>
+                <?php endif;?>
+                <a href="<?=$categoryData['url']?>" style="color: <?php echo $containerTextColor; ?>">
+                    <?=$categoryData['name']?>
+                </a>
+            </li>
+        <?php endforeach;?>
+    </ul>
+<?php endif;?>

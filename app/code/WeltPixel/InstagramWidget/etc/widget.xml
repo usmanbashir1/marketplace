@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="weltpixel_instagramwidget" class="WeltPixel\InstagramWidget\Block\Widget\Instagram" is_email_compatible="true" placeholder_image="WeltPixel_InstagramWidget::images/widget_instagram.png">
+        <label translate="true">WeltPixel InstagramWidget</label>
+        <description>Adds Instagram Feed</description>
+        <parameters>
+            <parameter name="instagram_api_type" xsi:type="select" visible="true" sort_order="1"
+                       source_model="WeltPixel\InstagramWidget\Model\Config\Source\ApiType">
+                <label translate="true">Instagram Api Type</label>
+            </parameter>
+            <parameter name="instagram_client_id" xsi:type="text" visible="true" required="true" sort_order="10" >
+                <label translate="true">Instagram Client Id</label>
+                <depends>
+                    <parameter name="instagram_api_type" value="old" />
+                </depends>
+            </parameter>
+            <parameter name="instagram_access_token" xsi:type="text" visible="true" required="true" sort_order="20" >
+                <label translate="true">Instagram Access Token</label>
+                <depends>
+                    <parameter name="instagram_api_type" value="old" />
+                </depends>
+            </parameter>
+            <parameter name="title" xsi:type="text" visible="true" sort_order="30" >
+                <label translate="true">Title</label>
+            </parameter>
+            <parameter name="description" xsi:type="block" visible="true" sort_order="40" >
+                <label translate="true">Description</label>
+                <block class="WeltPixel\InstagramWidget\Block\Adminhtml\Widget\TextArea"/>
+            </parameter>
+            <parameter name="background_color" xsi:type="block"  visible="true" sort_order="45" >
+                <label translate="true">Container Background Color</label>
+                <block class="WeltPixel\InstagramWidget\Block\Adminhtml\Widget\ColorPicker"/>
+            </parameter>
+            <parameter name="images_in_new_tab" xsi:type="select" visible="true" sort_order="50"
+                       source_model="WeltPixel\InstagramWidget\Model\Config\Source\YesNo">
+                <label translate="true">Open Images in new Tab</label>
+            </parameter>
+            <parameter name="images_per_row" xsi:type="select" visible="true" sort_order="55"
+                       source_model="WeltPixel\InstagramWidget\Model\Config\Source\ImagesPerRow">
+                <label translate="true">Images Per Row</label>
+            </parameter>
+            <parameter name="images_have_padding" xsi:type="select" visible="true" sort_order="56"
+                       source_model="WeltPixel\InstagramWidget\Model\Config\Source\YesNo">
+                <label translate="true">Images Should Have Padding</label>
+            </parameter>
+            <parameter name="images_alt_text" xsi:type="select" visible="true" sort_order="57"
+                       source_model="WeltPixel\InstagramWidget\Model\Config\Source\AltText">
+                <label translate="true">Add ALT text for image</label>
+            </parameter>
+            <parameter name="custom_alt_text" xsi:type="text"  visible="true" sort_order="58">
+                <label translate="true">Custom ALT tag</label>
+                <depends>
+                    <parameter name="images_alt_text" value="2" />
+                </depends>
+            </parameter>
+            <parameter name="optimize_image_layout" xsi:type="select" visible="true" sort_order="59"
+                       source_model="WeltPixel\InstagramWidget\Model\Config\Source\YesNo">
+                <label translate="true">Optimize Image Layout</label>
+            </parameter>
+            <parameter name="enable_lazyload" xsi:type="select" visible="true" sort_order="59"
+                       source_model="WeltPixel\InstagramWidget\Model\Config\Source\YesNo">
+                <label translate="true">Enable Lazy Image Load</label>
+                <description translate="true">
+                    <![CDATA[ You must have the <a target="_blank" href="https://www.weltpixel.com/magento-2-lazy-load-product-extension.html">LAZY LOAD PRODUCTS AND IMAGES</a> module for this functionality.]]>
+                </description>
+                <depends>
+                    <parameter name="instagram_api_type" value="javascript_parser" />
+                </depends>
+            </parameter>
+            <parameter name="limit" xsi:type="text" visible="true" sort_order="60" >
+                <label translate="true">Number of images</label>
+                <description translate="true">Number of images to be pulled from Instagram and displayed. Insert number between 1-12. Default: 6</description>
+            </parameter>
+            <parameter name="sort_by" xsi:type="select"  visible="true" sort_order="70"
+                       source_model="WeltPixel\InstagramWidget\Model\Config\Source\SortBy">
+                <label translate="true">SortBy</label>
+                <description translate="true">Sort the images in a set order.</description>
+                <depends>
+                    <parameter name="instagram_api_type" value="old" />
+                </depends>
+            </parameter>
+            <parameter name="resolution" xsi:type="select"  visible="true" sort_order="80"
+                       source_model="WeltPixel\InstagramWidget\Model\Config\Source\Resolution">
+                <label translate="true">Resolution</label>
+                <description translate="true">Size of the images to get.</description>
+                <depends>
+                    <parameter name="instagram_api_type" value="old" />
+                </depends>
+            </parameter>
+            <parameter name="resolution_jsparser" xsi:type="select"  visible="true" sort_order="80"
+                       source_model="WeltPixel\InstagramWidget\Model\Config\Source\ResolutionJsParser">
+                <label translate="true">Resolution</label>
+                <description translate="true">Size of the images to get.</description>
+                <depends>
+                    <parameter name="instagram_api_type" value="javascript_parser" />
+                </depends>
+            </parameter>
+            <parameter name="feed_type" xsi:type="select" visible="true" sort_order="90"
+                       source_model="WeltPixel\InstagramWidget\Model\Config\Source\FeedType">
+                <label translate="true">Feed Type</label>
+                <description translate="true">Customize what Instafeed fetches. (Tag and Location was removed by Instagram)</description>
+                <depends>
+                    <parameter name="instagram_api_type" value="old" />
+                </depends>
+            </parameter>
+            <parameter name="user_id" xsi:type="text"  visible="true" sort_order="100" required="true">
+                <label translate="true">User Id</label>
+                <description translate="true">Unique id of a user to get</description>
+                <depends>
+                    <parameter name="feed_type" value="user" />
+                    <parameter name="instagram_api_type" value="old" />
+                </depends>
+            </parameter>
+            <parameter name="feed_type_jsparser" xsi:type="select" visible="true" sort_order="90"
+                       source_model="WeltPixel\InstagramWidget\Model\Config\Source\FeedTypeJsParser">
+                <label translate="true">Feed Type</label>
+                <description translate="true">Customize what Instafeed fetches.</description>
+                <depends>
+                    <parameter name="instagram_api_type" value="javascript_parser" />
+                </depends>
+            </parameter>
+            <parameter name="user_name" xsi:type="text"  visible="true" sort_order="97" required="true">
+                <label translate="true">User Name</label>
+                <description translate="true">Username of a user to get</description>
+                <depends>
+                    <parameter name="feed_type_jsparser" value="user" />
+                    <parameter name="instagram_api_type" value="javascript_parser" />
+                </depends>
+            </parameter>
+            <parameter name="tag_name" xsi:type="text"  visible="true" sort_order="110" required="true">
+                <label translate="true">Tag Name</label>
+                <description translate="true">Images with a specific tag</description>
+                <depends>
+                    <parameter name="feed_type_jsparser" value="tagged" />
+                    <parameter name="instagram_api_type" value="javascript_parser" />
+                </depends>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

@@ -1,0 +1,209 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<section id="weltpixel_searchautocomplete" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="210" translate="label">
+			<label>Ajax Search Autocomplete</label>
+			<tab>weltpixel</tab>
+			<resource>WeltPixel_SearchAutoComplete::SearchAutoComplete</resource>
+			<group id="general" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+				<label>General Settings for Ajax Search Autocomplete</label>
+				<field id="enable" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+					<label>Enable Ajax Search </label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Enable/Disable Search Auto Complete.</comment>
+				</field>
+			</group>
+			<group id="productSearch" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label">
+				<label>Product Search Settings </label>
+				<depends>
+					<field id="weltpixel_searchautocomplete/general/enable">1</field>
+				</depends>
+				<field id="enableAutoComplete" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+					<label>Enable Product Search</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Enable/Disable Product Search, if enabled, ajax search will return products matching the search term.</comment>
+				</field>
+				<field id="minimalChar" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Minimum number of characters to search</label>
+					<comment>Set the minimum number of characters which customers should enter to trigger autocomplete. Example: 3</comment>
+					<validate>validate-number validate-greater-than-zero validate-no-empty</validate>
+					<depends>
+						<field id="enableAutoComplete">1</field>
+					</depends>
+				</field>
+				<field id="maxItems" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Maximum number of items displayed</label>
+                    <comment>
+                    <![CDATA[
+                        Set the maximum number of items displayed in the dropdown list. Example: 3<br/>
+                        <b>Note:</b> For Display Results are set Horizontally the maximum number of items can be up to 8.
+                        ]]>
+                    </comment>
+					<validate>validate-number validate-greater-than-zero validate-no-empty</validate>
+					<depends>
+						<field id="enableAutoComplete">1</field>
+					</depends>
+				</field>
+				<field id="showImg" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="50" translate="label" type="select">
+					<label>Show Product Image</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<depends>
+						<field id="enableAutoComplete">1</field>
+					</depends>
+					<comment>Show/Hide the product image in the dropdown results list.</comment>
+				</field>
+				<field id="widthImg" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Width of the product image</label>
+					<comment>Set the width for the products images in the dropdown results list [pixels]. Example: 80</comment>
+					<depends>
+						<field id="showImg">1</field>
+						<field id="enableAutoComplete">1</field>
+					</depends>
+					<validate>validate-number validate-greater-than-zero validate-no-empty</validate>
+				</field>
+				<field id="showDescr" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="70" translate="label" type="select">
+					<label>Show Product Description</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<depends>
+						<field id="enableAutoComplete">1</field>
+					</depends>
+					<comment>Show/Hide product description in the dropdown results list.</comment>
+				</field>
+				<field id="maxWordsProdDescr" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="80" translate="label" type="text">
+					<label>Maximum number of words for the description</label>
+					<comment>Set te maximum number of words displayed for product description in the dropdown results list. Example: 10</comment>
+					<validate>validate-number validate-greater-than-zero validate-no-empty</validate>
+					<depends>
+						<field id="showDescr">1</field>
+						<field id="enableAutoComplete">1</field>
+					</depends>
+				</field>
+				<field id="showPrice" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="90" translate="label" type="select">
+					<label>Show product price</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<depends>
+						<field id="enableAutoComplete">1</field>
+					</depends>
+					<comment>Show/Hide product price in the dropdown results list, if a promotion is enabled, the discounted price will show here. Once the promotion is over, the normal price will show.</comment>
+				</field>
+				<field id="noResult" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Custom text when no results</label>
+					<comment>Set your custom text to be displayed if there is no search results. Example: Sorry, no results were found.</comment>
+					<depends>
+						<field id="enableAutoComplete">1</field>
+					</depends>
+				</field>
+				<field id="resultHeader" translate="label" type="textarea" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Head custom CSS/HTML</label>
+					<depends>
+						<field id="enableAutoComplete">1</field>
+					</depends>
+					<comment>Insert custom header text to be displayed in the dropdown results list. You can also insert CSS/HTML for design adjustments of product search header section.</comment>
+				</field>
+				<field id="resultFooter" translate="label" type="editor" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Footer custom CSS/HTML</label>
+					<depends>
+						<field id="enableAutoComplete">1</field>
+					</depends>
+					<comment>Insert custom footer text to be displayed in the dropdown results list. You can also insert CSS/HTML for design adjustments of product search footer section. Note: Sample footer custom CSS uses image located under SearchAutoComplete/view/frontend/web/images/img-footer.svg, if needed you can use any other images from your server.</comment>
+				</field>
+			</group>
+			<group id="popularSuggestions" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="30" translate="label">
+				<label>Popular Suggestions Settings</label>
+				<depends>
+					<field id="weltpixel_searchautocomplete/general/enable">1</field>
+				</depends>
+				<field id="enablePopularSuggestions" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+					<label>Enable Popular Suggestions</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Enable/Disable Popular suggestions. (default Magento)</comment>
+					<depends>
+						<field id="enable">1</field>
+					</depends>
+				</field>
+			</group>
+			<group id="categorySearch" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="40" translate="label">
+				<label>Category Search Settings</label>
+				<depends>
+					<field id="weltpixel_searchautocomplete/general/enable">1</field>
+				</depends>
+				<field id="enableCategorySearch" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label" type="select">
+					<label>Enable Category Search</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Enable/Disable Category Search, if enabled, ajax search will return categories matching the search term.</comment>
+					<depends>
+						<field id="enable">1</field>
+					</depends>
+				</field>
+				<field id="maxItems" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Maximum number of categories displayed</label>
+					<validate>validate-number validate-greater-than-zero</validate>
+					<comment>Set the maximum number of categories displayed in the 'Categories' list. Example: 3;
+						If not set, all the results will be displayed.</comment>
+					<depends>
+						<field id="enableCategorySearch">1</field>
+					</depends>
+				</field>
+			</group>
+			<group id="frontendSettings" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="50" translate="label">
+				<label>Frontend Settings</label>
+				<depends>
+					<field id="weltpixel_searchautocomplete/general/enable">1</field>
+				</depends>
+				<field id="widthResult" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Width of results container</label>
+					<comment>Set the width of the results container [pixels]. Example: 250</comment>
+					<validate>validate-number validate-greater-than-zero validate-no-empty</validate>
+					<depends>
+						<field id="enableAutoComplete">1</field>
+					</depends>
+				</field>
+				<field id="templateResultsContainer" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label" type="select">
+					<label>Display Results</label>
+					<source_model>WeltPixel\SearchAutoComplete\Model\Config\Source\TemplateResults</source_model>
+					<comment>Select how the results are displayed. See tooltip for more details. </comment>
+					<tooltip>Horizontal option only available with Search V2 from Pearl Theme. Check your search version in WeltPixel -> Custom Header -> Search Options -> Search Version </tooltip>
+				</field>
+				<field id="enableProductDivider" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label" type="select">
+					<label>Show Product Divider</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<comment>Show/Hide Product Divider.</comment>
+					<depends>
+						<field id="weltpixel_searchautocomplete/productSearch/enableAutoComplete">1</field>
+						<field id="templateResultsContainer">0</field>
+					</depends>
+				</field>
+				<field id="colorProductDivider" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="25" translate="label" >
+					<label>Divider Color</label>
+					<validate>color {required:false, hash:true} validate-no-empty</validate>
+					<depends>
+						<field id="weltpixel_searchautocomplete/productSearch/enableAutoComplete">1</field>
+						<field id="enableProductDivider">1</field>
+						<field id="templateResultsContainer">0</field>
+					</depends>
+					<comment>Set color for divider used to separate ajax product results in search container, example #CCCCCC</comment>
+				</field>
+				<field id="containerBackgroundColor" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Search container background color</label>
+					<validate>color {required:false, hash:true} validate-no-empty</validate>
+					<comment>Set color for search container, example #FFFFFF</comment>
+				</field>
+				<field id="containerTextColor" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Container Text Color</label>
+					<validate>color {required:false, hash:true} validate-no-empty</validate>
+					<comment>Set color for product results text in search container, Example #000000</comment>
+				</field>
+				<field id="titleBackgroundColor" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Title Background Color</label>
+					<validate>color {required:false, hash:true} validate-no-empty</validate>
+					<comment>Set background color for search container titles like Product Results, Popular Suggestions, Example: #F0EFF0</comment>
+				</field>
+				<field id="titleColor" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Title Color</label>
+					<validate>color {required:false, hash:true} validate-no-empty</validate>
+					<comment>Set text color for search container titles like Product Results, Popular Suggestions, Example: #000000</comment>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

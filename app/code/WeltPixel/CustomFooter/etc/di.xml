@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="WeltPixel\Command\Console\Command\ExportConfigurationsCommand">
+        <arguments>
+            <argument name="sectionContainer" xsi:type="array">
+                <item name="WeltPixel_CustomFooter" xsi:type="string">weltpixel_custom_footer</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="WeltPixel\Command\Console\Command\GenerateLessCommand">
+        <arguments>
+            <argument name="generationContainer" xsi:type="array">
+                <item name="WeltPixel_CustomFooter" xsi:type="object">WeltPixel\CustomFooter\Observer\CustomFooterEditActionControllerSaveObserver</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Cminds SupplierRedirection
+ *
+ * @category Cminds
+ * @package  Cminds_SupplierRedirection
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="customer">
+        <field name="domain_url" formElement="input">
+            <settings>
+                <visible>true</visible>
+            </settings>
+        </field>
+    </fieldset>
+</form>

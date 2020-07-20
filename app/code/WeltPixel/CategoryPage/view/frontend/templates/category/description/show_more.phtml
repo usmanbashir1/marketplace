@@ -1,0 +1,46 @@
+<?php if ($block->getCurrentCategory()->getDescription()): ?>
+    <?php $helper = $this->helper('WeltPixel\CategoryPage\Helper\Data'); ?>
+    <?php $descriptionOptions = $helper->getCategoryDescriptionOptions(); ?>
+    <?php if ($descriptionOptions['enable_show_more']): ?>
+        <div class="category-description-copy"></div>
+        <div class="category-show-more">
+            <div class="action-view show-more active">
+                <span><?= /* @escapeNotVerified */ __('Show More') ?></span>
+            </div>
+            <div class="action-view show-less">
+                <span><?= /* @escapeNotVerified */ __('Show Less') ?></span>
+            </div>
+        </div>
+        <script>
+            require(['jquery'], function ($){
+                'use strict';
+                $(function() {
+                    var categoryViewContainer = $('.category-view'),
+                        categoryDescription = categoryViewContainer.find('.category-description'),
+                        showMore = categoryViewContainer.find('.category-show-more'),
+                        iniHeight = categoryDescription.innerHeight();
+
+                    $('.category-description-copy').html(categoryDescription.clone());
+                    var fullHeight = categoryViewContainer.find('.category-description-copy').innerHeight();
+
+                    categoryDescription.addClass('more-less less');
+                    showMore.on('click', '.action-view', function() {
+                        if (categoryDescription.hasClass('less')) {
+                            categoryDescription
+                                .removeClass('less').addClass('more')
+                                .animate({'max-height': fullHeight + 'px'}, '<?= /* @noEscape */ $descriptionOptions['animation_speed'] ?>');
+                        } else {
+                            categoryDescription
+                                .removeClass('more').addClass('less')
+                                .animate({'max-height': iniHeight + 'px'}, '<?= /* @noEscape */ $descriptionOptions['animation_speed'] ?>');
+                        }
+
+                        showMore.find('.action-view').each(function() {
+                            $(this).toggleClass('active');
+                        });
+                    });
+                });
+            });
+        </script>
+    <?php endif; ?>
+<?php endif; ?>

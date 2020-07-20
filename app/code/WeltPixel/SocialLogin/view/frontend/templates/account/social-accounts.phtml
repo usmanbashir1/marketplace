@@ -1,0 +1,28 @@
+<div class="block social-accounts">
+    <div class="title"><strong><?= $block->escapeHtml(__('Linked Accounts')) ?></strong></div>
+    <div class="content">
+        <?php $socialAccounts = $this->getSocialAccounts()?>
+        <?php if($socialAccounts):?>
+            <ul class="sl-unlinks">
+                <?php foreach($socialAccounts as $sAccounts): $type = ($sAccounts->getType() == 'fb') ? 'facebook' : $sAccounts->getType()?>
+                    <li class="sl-link-line">
+                        <a href="#" class="social-icons si-borderless si-<?=$type?>" alt="<?=$type?>" title="<?=$type?>">
+                            <i class="icon-<?=$type?>"></i>
+                            <i class="icon-<?=$type?>"></i>
+                        </a>
+
+                        <span class="sl-link-name"><?=$sAccounts->getFirstname() . ' ' .$sAccounts->getLastname()?></span>
+                        <a class="sl-link-unlink social-icons si-borderless si-unlink" href="<?=$this->getUnlinkUrl($sAccounts->getData('id'))?>" alt="<?=__("Unlink")?>" title="<?=__("Unlink")?>">
+                            <i class="icon-unlink"></i>
+                            <i class="icon-unlink"></i>
+                        </a>
+
+                    </li>
+                <?php endforeach;?>
+            </ul>
+        <?php else :?>
+            <div class="sl-noaccount"><?=__('No Linked Accounts')?></div>
+        <?php endif;?>
+
+    </div>
+</div>

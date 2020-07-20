@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+    	<script src="Cminds_MarketplaceQa::js/changeVisibilityStatus.js"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Cminds\MarketplaceQa\Block\Adminhtml\Questions\Index"
+                   name="qa_questions_list"/>
+        </referenceContainer>
+    </body>
+</page>

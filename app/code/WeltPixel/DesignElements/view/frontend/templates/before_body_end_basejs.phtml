@@ -1,0 +1,22 @@
+<?php
+$_helper = $this->helper('WeltPixel\FrontendOptions\Helper\Data');
+$_designeElementsHelper = $this->helper('WeltPixel\DesignElements\Helper\Data');
+if ($_designeElementsHelper->isResponsiveHelpersEnabled()) :
+?>
+<script>
+require(['jquery', 'designelements_base' ],
+function   ($, SEMICOLONBASE) {
+    var options = <?php echo $_helper->getBreakPointsJson(); ?>;
+    $(document).ready( SEMICOLONBASE.widget.init(options) );
+    $(window).on( 'resize', function() {
+        var t = setTimeout( function(){
+            SEMICOLONBASE.widget.responsiveWpClasses();
+        }, 500 );
+    });
+});
+</script>
+<?php endif; ?>
+<script>
+    window.Pearl = window.Pearl || {};
+    window.Pearl.scrollCollapsibleToTop = <?php echo $_designeElementsHelper->getCollapsibleWidgetTopJump(); ?>;
+</script>

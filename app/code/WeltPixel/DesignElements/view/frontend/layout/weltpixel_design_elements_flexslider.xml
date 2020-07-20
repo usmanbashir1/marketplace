@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="weltpixel_design_elements_defaultjs" />
+    <head>
+        <css src="WeltPixel_DesignElements::css/imports/flex.slider.css" />
+        <css src="WeltPixel_DesignElements::css/utilities.css" />
+    </head>
+    <body>
+        <referenceContainer name="before.body.end">
+            <block class="Magento\Framework\View\Element\Template" name="welpixel.designelements.flexslider.js" template="WeltPixel_DesignElements::before_body_end_flexslider.phtml" />
+        </referenceContainer>
+    </body>
+</page>

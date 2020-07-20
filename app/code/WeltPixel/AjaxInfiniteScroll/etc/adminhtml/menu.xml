@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+            id="WeltPixel_AjaxInfiniteScroll::AjaxInfiniteScroll_Label"
+            title="Ajax Catalog and Infinite Scroll"
+            module="WeltPixel_AjaxInfiniteScroll"
+            sortOrder="80"
+            parent="WeltPixel_Backend::WeltPixel"
+            resource="WeltPixel_AjaxInfiniteScroll::AjaxInfiniteScroll_Label"
+        />
+        <add
+            id="WeltPixel_AjaxInfiniteScroll::AjaxInfiniteScroll"
+            title="Ajax Catalog and Infinite Scroll Settings"
+            module="WeltPixel_AjaxInfiniteScroll"
+            action="adminhtml/system_config/edit/section/weltpixel_infinite_scroll/"
+            sortOrder="10"
+            parent="WeltPixel_AjaxInfiniteScroll::AjaxInfiniteScroll_Label"
+            resource="WeltPixel_AjaxInfiniteScroll::AjaxInfiniteScroll"
+        />
+    </menu>
+</config>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <referenceBlock name="customer.wishlist" remove="true"/>
+            <block class="WeltPixel\AdvancedWishlist\Block\MultipleWishlist" name="customer.multiple.wishlist" template="WeltPixel_AdvancedWishlist::multiwishlist/view.phtml" cacheable="false">
+                <block class="Magento\Wishlist\Block\Customer\Wishlist\Item\Column\Image" name="customer.multiple.wishlist.item.image" template="WeltPixel_AdvancedWishlist::multiwishlist/item/image.phtml" cacheable="false"/>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

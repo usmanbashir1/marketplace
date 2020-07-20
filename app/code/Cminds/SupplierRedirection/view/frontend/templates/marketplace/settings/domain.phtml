@@ -1,0 +1,46 @@
+<?php 
+if ($block->getCustomerSession()->isLoggedIn()) {
+    $customerData = $block
+        ->getCustomerModel()
+        ->load($block->getCustomerSession()->getId());
+} else {
+    $customerData = new \Magento\Framework\DataObject();
+} ?>
+<div class="container main-container vendor-container">
+    <h1 style="padding-left: 10px; "><?php echo $block->escapeHtml(__('Supplier Domain Settings')); ?></h1>
+    <form name="settings_supplier_domain" id="settings_supplier_domain"
+          action="<?php echo $block->getUrl('supplierredirection/settings/domainsave') ?>"
+          method="post"
+          enctype="multipart/form-data"
+          data-mage-init='{"validation":{}}'>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 personal-info nopadding">
+                <div class="form-group">
+                    <label for="domain_url" class="col-lg-3 control-label">
+                        <?php echo $block->escapeHtml(__('Supplier URL')); ?>
+                    </label>
+                    <div class="col-sm-8 input-container">
+                        <input
+                            type="text"
+                            id="domain_url"
+                            name="domain_url"
+                            class="input-text form-control validate-length maximum-length-255"
+                            value="<?php echo $block->escapeHtml($customerData->getDomainUrl()) ?>"
+                        />                        
+                    </div>
+                    <p id="info-text" class="col-md-12 col-sm-12 col-xs-12 personal-info nopadding"><?php echo $block->escapeHtml(__('Without Trailing or Leading \'/\'.')) ?></p>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 personal-info nopadding">
+                <div style="margin-top: 10px; " class="col-md-2">
+                    <input
+                        type="submit"
+                        name="submit"
+                        class="btn btn-primary"
+                        value="<?php echo $block->escapeHtml(__('Save')) ?>"
+                    />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

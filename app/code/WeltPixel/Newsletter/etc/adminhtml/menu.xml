@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+                id="WeltPixel_Newsletter::Newsletter_Label"
+                title="Enhanced Newsletter Popup"
+                module="WeltPixel_Newsletter"
+                sortOrder="80"
+                parent="WeltPixel_Backend::WeltPixel"
+                resource="WeltPixel_Newsletter::Newsletter_Label"
+        />
+        <add
+                id="WeltPixel_Newsletter::Newsletter"
+                title="Newsletter Settings"
+                module="WeltPixel_Newsletter"
+                action="adminhtml/system_config/edit/section/weltpixel_newsletter/"
+                sortOrder="10"
+                parent="WeltPixel_Newsletter::Newsletter_Label"
+                resource="WeltPixel_Newsletter::Newsletter"
+        />
+    </menu>
+</config>

@@ -1,0 +1,51 @@
+<?php
+// @codingStandardsIgnoreFile
+/** @var $_helper WeltPixel\ThankYouPage\Helper\Data */
+$_helper = $this->helper('WeltPixel\ThankYouPage\Helper\Data');
+$pageSubtitle = $_helper->getPageSubTitle();
+?>
+<?php /** @var $block \Magento\Checkout\Block\Onepage\Success */ ?>
+<div class="checkout-page-title-wrapper thank-you-page">
+    <div class="icon_thank_you_01"></div>
+    <h1 class="page-title"><?= $_helper->getPageTitle() ?></h1>
+</div>
+<div class="checkout-success multicheckout success">
+    <p><?= $_helper->getOrderDescription() ?></p>
+    <?php if ($orderIds = $block->getOrderIds()) : ?>
+        <h3><?= $block->escapeHtml(__('Successfully ordered'))?></h3>
+        <div class="orders-succeed">
+            <ul class="orders-list">
+                <?php foreach ($orderIds as $orderId => $incrementId) : ?>
+                    <li class="shipping-list">
+                        <div class="order-id">
+                            <?= __($pageSubtitle, sprintf('<a href="%s"><strong>%s</strong></a>', $block->escapeUrl($block->getViewOrderUrl($orderId)), $block->escapeHtml($incrementId))) ?>
+                        </div>
+                        <?php $shippingAddress = $block->getCheckoutData()->getOrderShippingAddress($orderId); ?>
+                        <div class="shipping-item">
+                            <?php if ($shippingAddress) : ?>
+                                <span class="shipping-label"><?= $block->escapeHtml(__('Ship to:')); ?></span>
+                                <span class="shipping-address">
+                            <?= $block->escapeHtml(
+                                $block->getCheckoutData()->formatOrderShippingAddress($shippingAddress)
+                            ); ?>
+                        </span>
+                            <?php else : ?>
+                                <span class="shipping-address">
+                                <?= $block->escapeHtml(__('No shipping required.')); ?>
+                            </span>
+                            <?php endif; ?>
+                        </div>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    <?php endif; ?>
+    <?= $block->getChildHtml() ?>
+    <?php if ($_helper->showContinueShopping()) : ?>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <a class="action primary continue" href="<?= /* @escapeNotVerified */ $block->getContinueUrl() ?>"><span><?= /* @escapeNotVerified */ __('Continue Shopping') ?></span></a>
+        </div>
+    </div>
+    <?php endif; ?>
+</div>

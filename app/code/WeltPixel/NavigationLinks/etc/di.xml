@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config>
+    <type name="Magento\Catalog\Model\Category\DataProvider">
+        <plugin name="weltpixel-navigationlinks-category-dataprovider" type="WeltPixel\NavigationLinks\Plugin\Category\DataProvider" sortOrder="1" />
+    </type>
+</config>

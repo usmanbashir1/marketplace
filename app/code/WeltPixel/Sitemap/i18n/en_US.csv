@@ -1,0 +1,50 @@
+Back,Back
+"Delete Item","Delete Item"
+"Are you sure you want to do this?","Are you sure you want to do this?"
+Reset,Reset
+"Save and Continue Edit","Save and Continue Edit"
+"Save Item","Save Item"
+Sitemap,Sitemap
+Urls,Urls
+"You deleted the url.","You deleted the url."
+"We can't find the item to delete.","We can't find the item to delete."
+"This url no longer exists.","This url no longer exists."
+"Edit Url","Edit Url"
+"New Url","New Url"
+"Add Custom URL to sitemap","Add Custom URL to sitemap"
+"A total of %1 record(s) have been deleted.","A total of %1 record(s) have been deleted."
+"You saved the url.","You saved the url."
+"Something went wrong while saving the url.","Something went wrong while saving the url."
+No,No
+Yes,Yes
+Always,Always
+Hourly,Hourly
+Daily,Daily
+Weekly,Weekly
+Monthly,Monthly
+Never,Never
+Edit,Edit
+Delete,Delete
+"Delete ""${ $.$data.url }""","Delete ""${ $.$data.url }"""
+"Are you sure you wan't to delete a ""${ $.$data.url }"" record?","Are you sure you wan't to delete a ""${ $.$data.url }"" record?"
+"All Store Views","All Store Views"
+"You can edit visibility in sitemap for each Product / Category / CMS Page. Go to desired element -> Edit -> WeltPixel Options -> Visibility in Sitemap [ Yes / No ]","You can edit visibility in sitemap for each Product / Category / CMS Page. Go to desired element -> Edit -> WeltPixel Options -> Visibility in Sitemap [ Yes / No ]"
+"Sitemap Settings","Sitemap Settings"
+"WeltPixel Options","WeltPixel Options"
+"Exclude from Sitemap","Exclude from Sitemap"
+"Url Information","Url Information"
+Url,Url
+"
+                        Insert link without base url, ex: /homepage_v2
+                    ","
+                        Insert link without base url, ex: /homepage_v2
+                    "
+"Updated At","Updated At"
+"Store View","Store View"
+Changefrequency,Changefrequency
+Priority,Priority
+"Add New Url","Add New Url"
+"Delete items","Delete items"
+"Are you sure you wan't to delete selected items?","Are you sure you wan't to delete selected items?"
+ID,ID
+"Change Frequency","Change Frequency"

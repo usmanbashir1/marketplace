@@ -1,0 +1,65 @@
+<?php
+    $topImage = $this->getTopImage();
+    $BlockHtmlAfterId = $this->getBlockHtmlAfterId();
+    $isEnabledBlock = $this->isEnableBlock();
+    $classForm = $isEnabledBlock ? '' : 'mg-top-contact';
+?>
+
+<div class="contact-v2">
+    <?php if($topImage):?>
+        <div class="center">
+            <img class="top-image" src="<?php echo $topImage; ?>">
+        </div>
+    <?php endif; ?>
+    <?php if($isEnabledBlock):?>
+        <div class="block-container">
+            <?php echo $BlockHtmlAfterId; ?>
+        </div>
+    <?php endif; ?>
+    <form class="form contact contact_frm_wpx <?php echo $classForm; ?>"
+              action="<?php /* @escapeNotVerified */ echo $block->getFormAction(); ?>"
+              id="contact-form"
+              method="post"
+              data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>"
+              data-mage-init='{"validation":{}}'>
+            <fieldset class="fieldset text-center">
+                <div class="field name required inline-block text-left">
+                    <div class="control">
+                        <input name="name" id="name" title="<?php /* @escapeNotVerified */ echo __('Name') ?>" placeholder="<?php /* @escapeNotVerified */ echo __('Name') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getPostValue('name') ?: $this->helper('Magento\Contact\Helper\Data')->getUserName()) ?>" class="input-text" type="text" data-validate="{required:true}"/>
+                    </div>
+                </div>
+                <div class="field email required inline-block text-left mag-wpx">
+                    <div class="control">
+                        <input name="email" id="email" title="<?php /* @escapeNotVerified */ echo __('Email') ?>" placeholder="<?php /* @escapeNotVerified */ echo __('Email') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getPostValue('email') ?: $this->helper('Magento\Contact\Helper\Data')->getUserEmail()) ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
+                    </div>
+                </div>
+                <div class="field telephone inline-block text-left">
+                    <div class="control">
+                        <input name="telephone" id="telephone" placeholder="<?php /* @escapeNotVerified */ echo __('Phone Number') ?>" title="<?php /* @escapeNotVerified */ echo __('Phone Number') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getPostValue('telephone')) ?>" class="input-text" type="text" />
+                    </div>
+                </div>
+                <div class="field comment required text-left">
+                    <div class="control">
+                        <textarea name="comment" id="comment" placeholder="<?php /* @escapeNotVerified */ echo __('What’s on your mind?') ?>" title="<?php /* @escapeNotVerified */ echo __('What’s on your mind?') ?>" class="input-text" cols="5" rows="3" data-validate="{required:true}"><?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getPostValue('comment')) ?></textarea>
+                    </div>
+                </div>
+                <?php echo $block->getChildHtml('form.additional.info'); ?>
+            </fieldset>
+            <div class="actions-toolbar text-center">
+                <div class="primary">
+                    <input type="hidden" name="hideit" id="hideit" value="" />
+                    <button type="submit" title="<?php /* @escapeNotVerified */ echo __('Submit') ?>" class="action submit primary">
+                        <span><?php /* @escapeNotVerified */ echo __('Submit') ?></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+</div>
+
+<style>
+    .page-main,
+    #maincontent .columns{
+        max-width: 100% !important;
+        padding: 0px !important;
+    }
+</style>

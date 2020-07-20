@@ -1,0 +1,17 @@
+<?php
+/**
+ * @var $block \Cminds\Marketplace\Block\Catalog\Product\Supplier\Name
+ */
+?>
+<?php if ($block->canShowBlockOnFront()) : ?>
+    <p class="sold-by-vendor-name">
+        <?php echo /* @escapeNotVerified */ __('Sold by'); ?>
+        <?php if($block->isSupplierHasProfile()): ?>
+            <a class="sold-by-vendor-link" href="<?= $block->getSupplierPageUrl(); ?>">
+                <?= $block->escapeHtml($block->getProductSupplierName()); ?>
+            </a>
+        <?php else: ?>
+            <?= $block->escapeHtml($block->getProductSupplierName()); ?>
+        <?php endif; ?>
+    </p>
+<?php endif; ?>

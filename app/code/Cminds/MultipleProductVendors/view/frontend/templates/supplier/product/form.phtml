@@ -1,0 +1,57 @@
+<?php $product = $block->getProduct(); ?>
+<div class="row">
+    <div class="col-md-6 col-sm-6 form-container">
+        <form name="product_create_form" id="product_create_form"
+                action="" method="post" >
+            <input type="hidden" id='prototype' name="prototype" value="<?= $product ? $block->getMainProductId() : '' ?>"/>
+            <div class="container form-group">
+                <div class="col-md-3 label-container">
+                    <label for="name">
+                        <?php echo $block->getLabel('price', 'Price', false); ?>
+                        <span class="required">*</span>:
+                    </label>
+                </div>
+                <div class="col-md-5 input-container">
+                    <input type="text"
+                            id="price"
+                            name="price"
+                            class="input-text form-control required-entry validate-number"
+                            value="<?= $product ? $product->getPrice() : '' ?>"
+                    />
+                </div>
+            </div>
+            <div class="container form-group">
+                <div class="col-md-3 label-container">
+                    <label for="name">
+                        <?php echo $block->getLabel('qty', 'QTY Available', false); ?>
+                        <span class="required">*</span>:
+                    </label>
+                </div>
+                <div class="col-md-5 input-container">
+                    <input type="text"
+                            id="qty"
+                            name="qty"
+                            class="input-text form-control validate-number required-entry"
+                            value="<?= $product ? $block->getQty() : '' ?>"
+                    />
+                </div>
+            </div>
+            <div class="container form-group">
+                <div class="col-md-3 label-container">
+                    <label for="name">
+                        <?php echo $block->getLabel('vendor_description', 'Vendor Description', false); ?>
+                    </label>
+                </div>
+                <div class="col-md-5 input-container">
+                    <textarea type="text"
+                            id="vendor_description"
+                            name="vendor_description"
+                            class="input-text validate-length minimum-length-1"
+                            rows="15"><?= $product ? $product->getData('vendor_description') : '' ?></textarea>
+                </div>
+            </div>
+            <button type='button' class = 'submit-data btn btn-primary btn-lg btn-block'><?= /* @escapeNotVerified */  __('Save'); ?></button>
+            <button type='button' class = 'cancel btn btn-secondary btn-lg btn-block'><?= /* @escapeNotVerified */  __('Cancel'); ?></button>
+        </form>
+    </div>
+</div>

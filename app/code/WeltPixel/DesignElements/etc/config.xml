@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <weltpixel_design_elements>
+            <general>
+                <toggles_accordions_tabs>1</toggles_accordions_tabs>
+                <testimonials>1</testimonials>
+                <smooth_scrolling>1</smooth_scrolling>
+                <sections>1</sections>
+                <responsive_helpers>1</responsive_helpers>
+                <pricing_boxes>1</pricing_boxes>
+                <icon_boxes>1</icon_boxes>
+                <icons>1</icons>
+                <headings_blockquotes>1</headings_blockquotes>
+                <flexslider>1</flexslider>
+                <dividers>1</dividers>
+                <buttons>1</buttons>
+                <brand_lists>1</brand_lists>
+                <bootstrap_tables>1</bootstrap_tables>
+                <bootstrap_grids>1</bootstrap_grids>
+                <animations>1</animations>
+                <aos_animation>1</aos_animation>
+                <alert_boxes>1</alert_boxes>
+                <btt_button>1</btt_button>
+                <btt_offset>300</btt_offset>
+                <btt_offset_opacity>1200</btt_offset_opacity>
+                <btt_duration>700</btt_duration>
+                <collapsible_top_jump>0</collapsible_top_jump>
+            </general>
+        </weltpixel_design_elements>
+    </default>
+</config>

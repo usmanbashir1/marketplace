@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <weltpixel_speedoptimization>
+            <general>
+                <enable>0</enable>
+            </general>
+            <js_optimization>
+                <enable_advanced_bundling>0</enable_advanced_bundling>
+                <move_js_to_bottom>0</move_js_to_bottom>
+                <move_js_to_bottom_ignored_blocks></move_js_to_bottom_ignored_blocks>
+            </js_optimization>
+            <css_optimization>
+                <css_preload>0</css_preload>
+                <css_preload_for_all>0</css_preload_for_all>
+            </css_optimization>
+            <html_optimization>
+                <minify_html>0</minify_html>
+            </html_optimization>
+        </weltpixel_speedoptimization>
+    </default>
+</config>

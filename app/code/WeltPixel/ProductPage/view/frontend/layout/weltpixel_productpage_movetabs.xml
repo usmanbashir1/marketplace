@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <move element="product.info.details" destination="product.info.main" after="product.info.overview" />
+        <referenceContainer name="content">
+            <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.details.clear" template="WeltPixel_ProductPage::product/view/clear.phtml" after="product.info.media" />
+        </referenceContainer>
+    </body>
+</page>

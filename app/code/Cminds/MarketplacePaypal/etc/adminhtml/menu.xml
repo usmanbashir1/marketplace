@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Cminds_Marketplace::payout_status"
+             title="Paypal Payout Payments" module="Cminds_MarketplacePaypal"
+             sortOrder="90" parent="Cminds_Supplierfrontendproductuploader::suppliers_content"
+             action="marketplacepaypal/payout/grid"
+             resource="Cminds_Marketplace::billing"/>
+    </menu>
+</config>
